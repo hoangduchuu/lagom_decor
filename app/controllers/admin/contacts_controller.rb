@@ -1,6 +1,6 @@
-class ContactsController < ApplicationController
+class Admin::ContactsController < ApplicationController
 
-	def index
+		def index
 		@contact = Contact.all
 	end
 
@@ -28,7 +28,7 @@ class ContactsController < ApplicationController
 	def update
 		@contact = Contact.find(params[:id])
 		if @contact.update_attributes(allowed_params)
-			redirect_to contacts_path
+			redirect_to admin_contacts_path
 		else
 			render 'new'
 		end
