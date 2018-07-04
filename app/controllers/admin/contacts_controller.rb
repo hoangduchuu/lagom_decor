@@ -1,4 +1,5 @@
 class Admin::ContactsController < ApplicationController
+	layout 'admin'
 
 		def index
 		@contact = Contact.all

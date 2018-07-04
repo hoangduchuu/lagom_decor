@@ -1,36 +1,38 @@
 <%= form_for [:admin, @contact] do |f| %>
 
+<div class="container">
   <div class="form-group">
-    <%= f.label :phone %>
+  <%= f.label :phone %>
 	<%= f.text_field :phone, :class => 'form-control' %><br>
   </div>
   <div class="form-group">
-    <%= f.label :fax %>
+  <%= f.label :fax %>
 	<%= f.text_field :fax, :class => 'form-control' %><br>
   </div>
   <div class="form-check">
-    <%= f.label :email %>
+  <%= f.label :email %>
 	<%= f.text_field :email, :class => 'form-control' %><br>
   </div>
   <div class="form-group">
-    <%= f.label :address %>
+  <%= f.label :address %>
 	<%= f.text_field :address, :class => 'form-control' %><br>
   </div>
   <div class="form-group">
-    <%= f.label :open_from %>
+  <%= f.label :open_from %>
 	<%= f.text_field :opendate, :class => 'form-control' %><br>
   </div>
   <div class="form-check">
-    <%= f.label :open_to %>
+  <%= f.label :open_to %>
 	<%= f.text_field :closedate, :class => 'form-control' %><br>
   </div>
-    <div class="form-group">
-    <%= f.label :open_hour %>
+  <div class="form-group">
+  <%= f.label :open_hour %>
 	<%= f.text_field :openat, :class => 'form-control' %><br>
   </div>
   <div class="form-check">
-    <%= f.label :close_hour %>
+  <%= f.label :close_hour %>
 	<%= f.text_field :closeat, :class => 'form-control' %><br>
   </div>
   <%= f.submit 'save', :class => 'btn btn-primary' %>
   <% end -%>
+</div>
