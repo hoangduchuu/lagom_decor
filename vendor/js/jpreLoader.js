@@ -111,7 +111,7 @@
 				height: '100%'
 			})
 			.appendTo(jLoader)
-			.html(''); //removed loading
+			.html('Loading...');
 		}
 		if( !jpreOptions.autoclose ) {
 			jButton = $('<div></div>')
