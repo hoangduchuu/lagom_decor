@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
-	resources :contacts
 
 	namespace :admin do
     	resources :contacts
+  end
+
+  namespace :user do
+  	resources :contacts
   end
 end
