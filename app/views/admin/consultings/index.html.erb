@@ -1,0 +1,17 @@
+<% @faq.each do |f| %>
+
+<table class="table">
+    <tbody>
+        <tr>
+          <th>Faq Title</th>
+            <td><%= f.title %></td>
+            <td><%= link_to 'Edit', edit_faq_path(f) %></td>
+        </tr>
+        <tr>
+          <th>Faq Text</th>
+            <td><%= f.text %></td>
+            <td><%= link_to 'Edit', edit_faq_path(f) %></td>
+        </tr>
+    </tbody>
+</table>
+<% end -%>
