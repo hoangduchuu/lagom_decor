@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class FaqTest < ActiveSupport::TestCase
+class ConsultingTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

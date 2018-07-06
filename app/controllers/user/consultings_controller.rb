@@ -1,6 +1,6 @@
 class User::ConsultingsController < ApplicationController
 
 	def index
-		@faq = Faq.all
+		@consulting = Consulting.all
 	end
 end
