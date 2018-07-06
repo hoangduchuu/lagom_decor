@@ -1,0 +1,2 @@
+class Interioridea < ApplicationRecord
+end
