@@ -1,2 +1,0 @@
-class ConsultingsController < ApplicationController
-end
