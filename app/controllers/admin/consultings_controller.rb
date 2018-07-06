@@ -1,5 +1,4 @@
 class Admin::ConsultingsController < ApplicationController
-	layout 'admin'
 
 	def index
 		@faq = Faq.all
