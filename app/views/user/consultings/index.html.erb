@@ -140,55 +140,16 @@
             </div>
         </div>
         <div class="panel-group accordion text-light" id=accordion>
+            <% @consulting.each do |c| %>
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h4 class=panel-title> <a data-toggle=collapse data-parent=#accordion href=#collapse022> <i class="switch fa fa-plus"></i> What are the main services of Lagomdecor? </a> </h4> </div>
-                    <div id=collapse022 class="panel-collapse collapse">
-                        <div class=panel-body> - Retail furniture <br> - Interior design consultancy <br> - Interior design and construction, including raw materials </div>
+                    <h4 class=panel-title> <a data-toggle=collapse data-parent=#accordion href=#<%= c.id %>> <i class="switch fa fa-plus"></i> <%= c.title %></a> </h4> </div>
+                    <div id=<%= c.id %> class="panel-collapse collapse">
+                        <div class=panel-body><%= c.text %></div>
                     </div>
                 </div>
-                <div class="panel panel-default">
-                    <div class=panel-heading>
-                        <h4 class=panel-title> <a data-toggle=collapse data-parent=#accordion href=#collapse02> <i class="switch fa fa-plus"></i> How much does Lagomdecor cost? </a> </h4> </div>
-                        <div id=collapse02 class="panel-collapse collapse">
-                            <div class=panel-body>In particular, Lagomdecor has a refund policy designed when you perform the project, namely: 50% refund for the project from 80.000.000 to 100.000.000 VND, 100% fee for the project from 100,000 .000 VND or more. The value of the project is calculated according to the contract value at the time of the deposit of 40%. Lagomdecor's design consultancy package will include the status quo, layout, 3D perspective and detailed engineering drawings for construction and installation at the site.</div>
-                        </div>
-                    </div>
-                    <div class="panel panel-default">
-                        <div class=panel-heading>
-                            <h4 class=panel-title> <a data-toggle=collapse data-parent=#accordion href=#collapseTwo> <i class="switch fa fa-plus"></i> How does Lagomdecor work with clients? </a> </h4> </div>
-                            <div id=collapseTwo class="panel-collapse collapse">
-                                <div class=panel-body>Home Stylist of Lagomdecor will meet directly and advise you. After the first meeting, Lagomdecor will send you a preliminary quote based within 03 business days. If you agree with the quotation, the two parties will come to sign the contract.</div>
-                            </div>
-                        </div>
-                        <div class="panel panel-default">
-                            <div class=panel-heading>
-                                <h4 class=panel-title> <a data-toggle=collapse data-parent=#accordion href=#collapseThree> <i class="switch fa fa-plus"></i> What payment methods does Lagomdecor offer? </a> </h4> </div>
-                                <div id=collapseThree class="panel-collapse collapse">
-                                    <div class=panel-body>Bank transfer: Vietcombank - HCM Branch <br> Account name: Lagomdecor Company Limited <br> Account number: 0331 000 464 016</div>
-                                </div>
-                            </div>
-                            <div class="panel panel-default">
-                                <div class=panel-heading>
-                                    <h4 class=panel-title> <a data-toggle=collapse data-parent=#accordion href=#collapseFive> <i class="switch fa fa-plus"></i> Does Lagomdecor have a pay plan? </a> </h4> </div>
-                                    <div id=collapseFive class="panel-collapse collapse">
-                                        <div class=panel-body>Lagomdecor always offers convenience to customers shopping at Lagomdecor with the program "Pay 0% interest". See more about the installment plan.</div>
-                                    </div>
-                                </div>
-                                <div class="panel panel-default">
-                                    <div class=panel-heading>
-                                        <h4 class=panel-title> <a data-toggle=collapse data-parent=#accordion href=#collapseSix> <i class="switch fa fa-plus"></i> Can I ask Lagomdecor to provide a purchase invoice? </a> </h4> </div>
-                                        <div id=collapseSix class="panel-collapse collapse">
-                                            <div class=panel-body>The prices listed on the website are retail prices, excluding VAT. Lagomdecor will issue invoices upon request of customers at the rate of 10% on the total order value.</div>
-                                        </div>
-                                    </div>
-                                    <div class="panel panel-default">
-                                        <div class=panel-heading>
-                                            <h4 class=panel-title> <a data-toggle=collapse data-parent=#accordion href=#collapseSeven> <i class="switch fa fa-plus"></i> Can I terminate my contract when I am working on a project with Lagomdecor? </a> </h4> </div>
-                                            <div id=collapseSeven class="panel-collapse collapse">
-                                                <div class=panel-body>Lagomdecor will always want to bring the best experience to our customers. However, in the event the two parties can not continue to perform the contract, Lagomdecor will honor your decision and refund the termination clause. See more about termination clauses.</div>
-                                            </div>
-                                        </div>
+                <% end -%>
+
                                     </div>
                                 </section>
                                 <!-- FAQ section END -- >

@@ -17,7 +17,7 @@ class Admin::ConsultingsController < ApplicationController
 	end
 	
 	def create
-		@consulting = Consulting.new(accepted_params)
+		@consulting = Consulting.new(allowed_params)
 
 	if @consulting.save
 		redirect_to 'show'
@@ -27,13 +27,12 @@ class Admin::ConsultingsController < ApplicationController
 	end
 
 	def update
-	  @consulting = Consulting.find(params[:id])
-	 
-	  if @consulting.update(accepted_params)
-	    redirect_to 'show'
-	  else
-	    render 'edit'
-	  end
+		@consulting = Consulting.find(params[:id])
+		if @consulting.update_attributes(allowed_params)
+			redirect_to admin_consultings_path
+		else
+			render 'new'
+		end
 	end
 
 	
@@ -45,7 +44,7 @@ class Admin::ConsultingsController < ApplicationController
 	end
 
 	private 
-	def accepted_params
+	def allowed_params
 		params.require(:consulting).permit(:title, :text)
 	end
 end
