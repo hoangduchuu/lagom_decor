@@ -1,25 +1,35 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require bootstrap.css 
- *= require animate.css 
- *= require owl.carousel.css 
- *= require owl.theme.css 
- *= require owl.transitions.css 
- *= require style.css 
- *= require demo.css 
- *= require bg.css 
- *= require color 
- *= require settings.css 
- *= require rev-settings.css 
- *= require font-awesome.css 
+ *= require bootstrap
+ *= require jpreloader
+ *= require animate
+ *= require owl.carousel
+ *= require owl.theme
+ *= require owl.transitions
+ *= require magnific-popup
+ *= require style
+ *= require demo
+ *= require bg
+ *= require color
+ *= require font-awesome
+ *= require settings
+ *= require rev-settings
+ *= require mainslider
+ *= require buttons
+ *//*
+ *= require bootstrap
+ *= require jpreloader
+ *= require animate
+ *= require owl.carousel
+ *= require owl.theme
+ *= require owl.transitions
+ *= require magnific-popup
+ *= require style
+ *= require demo
+ *= require bg
+ *= require color
+ *= require font-awesome
+ *= require settings
+ *= require rev-settings
+ *= require mainslider
+ *= require buttons
  */
