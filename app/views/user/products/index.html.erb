@@ -173,6 +173,17 @@
             </div>
 
             <div id="sidebar" class="col-md-3">
+                <div class="widget widget_category">
+                    <h4>Product Category</h4>
+                    <ul>
+                        <li id="btnall"><a href="#">All</a></li>
+                        <li id="btnsofa"><a href="#">Sofa</a></li>
+                        <li id="btnchair"><a href="#">Chair / Dining Chair</a></li>
+                        <li id="btnconsole"><a href="#">Console</a></li>
+                        <li id="btndecoration"><a href="#">Decorations</a></li>
+                        <li id="btnfitinfurniture"><a href="#">Fit in Furniture</a></li>
+                    </ul>
+                </div>
                 <div class="widget widget_top_rated_product">
                     <h4>Top Rated Product</h4>
                     <ul>
@@ -211,18 +222,6 @@
                                 <div class="price">$240</div>
                             </div>
                         </li>
-                    </ul>
-                </div>
-
-                <div class="widget widget_category">
-                    <h4>Product Category</h4>
-                    <ul>
-                        <li id="btnall"><a href="#">All</a></li>
-                        <li id="btnsofa"><a href="#">Sofa</a></li>
-                        <li id="btnchair"><a href="#">Chair / Dining Chair</a></li>
-                        <li id="btnconsole"><a href="#">Console</a></li>
-                        <li id="btndecoration"><a href="#">Decorations</a></li>
-                        <li id="btnfitinfurniture"><a href="#">Fit in Furniture</a></li>
                     </ul>
                 </div>
             </div>
@@ -334,3 +333,35 @@ Please fill your contact details, One of our staff will contact you soon...
 </footer>
 <!-- footer close -->
 </div>
+
+        <script type="text/javascript">
+            document.getElementById("btnall").onclick = function() {hideFunction("all")};
+            document.getElementById("btnsofa").onclick = function() {hideFunction("sofa")};
+            document.getElementById("btnchair").onclick = function() {hideFunction("chair")};
+            document.getElementById("btnconsole").onclick = function() {hideFunction("console")};
+            document.getElementById("btndecoration").onclick = function() {hideFunction("decoration")};
+            document.getElementById("btnfitinfurniture").onclick = function() {hideFunction("fif")};
+
+            var getId;
+            function hideFunction(getId) {
+                var divs = ["sofa", "chair", "console", "decoration", "fif"];
+                var i, divId, div;
+                for(i = 0; i < divs.length; i++) {
+                    divId = divs[i];
+                    if(getId == "all"){
+                        div = document.getElementById(divId);
+                        div.style.display = "block";
+                    }else{
+                        if(divId != getId){
+                            div = document.getElementById(divId);
+                            div.style.display = "none";
+                        }else{
+                            div = document.getElementById(divId);
+                            div.style.display = "block";
+                        }
+                    }
+                }
+            }
+        </script>
+
+        </body>
