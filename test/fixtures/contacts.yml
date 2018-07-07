@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  phone: MyString
+  fax: MyString
+  email: MyString
+  address: MyString
+  opendate: MyString
+  closedate: MyString
+  openat: MyString
+  closeat: MyString
+
+two:
+  phone: MyString
+  fax: MyString
+  email: MyString
+  address: MyString
+  opendate: MyString
+  closedate: MyString
+  openat: MyString
+  closeat: MyString
