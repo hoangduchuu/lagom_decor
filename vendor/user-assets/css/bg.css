@@ -20,11 +20,11 @@ background-size: 100% !important;
 
 /* general background image for subheader */
 #subheader{
-background:url(../images/background/bg-subheader.jpg)top fixed;
+background:url(bg-subheader.jpg)top fixed;
 }
 
 /* background settings for page subheader */
-.page-projects #subheader{background-image:url(../images/background/subheader-1.jpg);}
+.page-projects #subheader{background-image:url(subheader-1.jpg);}
 .page-projects-alt #subheader{background-image:url(../images/background/subheader-1b.jpg);}
 .page-services #subheader{background-image:url(../images/background/subheader-2.jpg);}
 .page-about #subheader{background-image:url(../images/background/subheader-3.jpg);}

@@ -18,7 +18,7 @@ jQuery(document).ready(function () {
 	var sr = 466/700;
 
     if (de_color_style == 2) { $('body').addClass('de_light'); }
-    if (de_font_style == 2) { $('head').append('<link rel="stylesheet" href="css/font-style-2.css" type="text/css" />'); }
+    if (de_font_style == 2) { $('head').append(''); }
     if (de_header_style == 2) { $('header').addClass('transparent') }
     if (de_menu_separator == 2) {
         $('#mainmenu').addClass('line-separator');
@@ -315,7 +315,7 @@ jQuery(document).ready(function () {
 				$(this).css('height',(h*2)+this_gridspace);
 				gi.find(".pf_title").css('margin-top',(h)-20);
 			}
-			})
+			});
 		}
 		
 		grid_gallery();
