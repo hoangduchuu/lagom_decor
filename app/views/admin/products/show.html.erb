@@ -1,0 +1,12 @@
+<p>
+	<strong>Title: </strong>
+	<%= @consulting.title %>
+</p>
+
+<p>
+	<strong>Text: </strong>
+	<%= @consulting.text %>
+</p>
+
+<%= link_to 'Back', admin_consultings_path %>
+<%= link_to 'edit', edit_admin_consulting_path(@consulting) %>
