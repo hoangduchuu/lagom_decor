@@ -1,27 +1,23 @@
-<% @products.each do |p| %>
-
 <table class="table">
-    <tbody>
-        <tr>
-          <th>Phone</th>
-            <td><%= p.product_number %></td>
-            <td><%= link_to 'Edit', edit_product_path(p) %></td>
-        </tr>
-        <tr>
-          <th>Fax</th>
-            <td><%= p.category %></td>
-            <td><%= link_to 'Edit', edit_product_path(p) %></td>
-        </tr>
+    <thead>
       <tr>
-          <th>Email</th>
-            <td><%= p.name %></td>
-            <td><%= link_to 'Edit', edit_product_path(p) %></td>
-        </tr>
-        <tr>
-          <th>Address</th>
-            <td><%= p.price %></td>
-            <td><%= link_to 'Edit', edit_product_path(p) %></td>
-        </tr>
+        <th>Product Number</th>
+        <th>Category</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Top rated</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @products.each do |p| %>
+      <tr>
+        <td><%= p.product_number %></td>
+        <td><%= p.category %></td>
+        <td><%= p.product_name %></td>
+        <td><%= p.price %></td>
+        <td><%= p.top_rated %></td>
+        <td><%= link_to 'Edit', edit_admin_product_path(p) %></td>
+      </tr>
+      <% end -%>
     </tbody>
-</table>
-<% end -%>
+  </table>

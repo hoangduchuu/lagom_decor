@@ -21,7 +21,7 @@ class Admin::ProductsController < ApplicationController
 		@product = Product.new(allowed_params)
 
 	if @product.save
-		redirect_to 'show'
+		redirect_to admin_products_path
 	else
 		render 'new'
 	end
