@@ -1,4 +1,5 @@
 class Admin::ConsultingsController < ApplicationController
+	layout 'admin'
 
 	def index
 		@consulting = Consulting.all
@@ -20,7 +21,7 @@ class Admin::ConsultingsController < ApplicationController
 		@consulting = Consulting.new(allowed_params)
 
 	if @consulting.save
-		redirect_to 'show'
+		redirect_to admin_consultings_path
 	else
 		render 'new'
 	end
