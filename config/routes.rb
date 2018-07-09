@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
-	resources :homes
 
-	root 'homes#index'
+	namespace :admin do
+		resources :homes
+	end
+
+	namespace :user do
+		resources :homes
+	end
 end
