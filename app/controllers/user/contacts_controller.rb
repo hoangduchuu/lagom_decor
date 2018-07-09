@@ -1,4 +1,4 @@
-class User::ContactsController < ApplicationController
+class User::ContactsController < User::BaseUserController
 	layout 'user'
 
 	def index

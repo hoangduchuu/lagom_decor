@@ -1,7 +1,7 @@
 class Admin::ContactsController < ApplicationController
 	layout 'admin'
 
-		def index
+	def index
 		@contact = Contact.all
 	end
 
