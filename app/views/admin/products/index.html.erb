@@ -16,7 +16,9 @@
         <td><%= p.product_name %></td>
         <td><%= p.price %></td>
         <td><%= p.top_rated %></td>
+        <td><%= link_to 'show', admin_product_path(p) %></td>
         <td><%= link_to 'Edit', edit_admin_product_path(p) %></td>
+        <td><%= link_to 'Destroy', admin_products_path(p), method: :Destroy, data: { confirm: 'Are you sure?' } %></td>
       </tr>
       <% end -%>
     </tbody>

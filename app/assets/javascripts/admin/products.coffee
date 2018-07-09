@@ -1,3 +1,8 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
+//= require jquery.min
+//= require bootstrap.bundle.min
+//= require jquery.easing.min
+//= require Chart.min
+//= require jquery.dataTables
+//= require dataTables.bootstrap4
+//= require sb-admin.min
+//= require sb-admin-datatables.min
