@@ -10,6 +10,50 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180704094123) do
+ActiveRecord::Schema.define(version: 20180709073655) do
 
+  create_table "consultings", force: :cascade do |t|
+    t.string "title"
+    t.text "text"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "contacts", force: :cascade do |t|
+    t.string "phone"
+    t.string "fax"
+    t.string "email"
+    t.string "address"
+    t.string "opendate"
+    t.string "closedate"
+    t.string "openat"
+    t.string "closeat"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "customers", force: :cascade do |t|
+    t.string "customer_name"
+    t.string "phone"
+    t.string "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "interiorideas", force: :cascade do |t|
+    t.string "category"
+    t.string "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "products", force: :cascade do |t|
+    t.string "product_number"
+    t.string "category"
+    t.string "product_name"
+    t.string "price"
+    t.string "top_rated"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 end

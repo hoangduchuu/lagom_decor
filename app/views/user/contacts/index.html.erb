@@ -1,0 +1,199 @@
+<body class="page-contact">
+
+        <div id="wrapper">
+            <!-- header begin -->
+            <header class="header-bg">
+               <div class="info">
+                <div class="container">
+                 <div class="row">
+                  <div class="col-md-12">
+                    <% @contact.each do |c| %>
+                   <div class="col">Working Hours <%= c.opendate %> - <%= c.closedate %> <span class="id-color"><strong><%= c.openat %> - <%= c.closeat %></strong></span></div>
+                   <div class="col">Phone <span class="id-color"><strong><%= c.phone %></strong></span></div>
+                    <div class="col">Email <span class="id-color"><strong><%= c.email %></strong></span></div>
+                    <% end -%>
+                   <!-- social icons -->
+                   <div class="col social">
+                    <a href="#"><i class="fa fa-facebook"></i></a>
+                    <a href="#"><i class="fa fa-twitter"></i></a>
+                    <a href="#"><i class="fa fa-rss"></i></a>
+                    <a href="#"><i class="fa fa-google-plus"></i></a>
+                    <a href="#"><i class="fa fa-envelope-o"></i></a>
+                </div>
+                <!-- social icons close -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <!-- logo begin -->
+            <div id="logo">
+                <a href="index.html">
+                    <%=image_tag('logo.png', :class => 'logo')%>
+                </a>
+            </div>
+            <!-- logo close -->
+
+            <!-- small button begin -->
+            <span id="menu-btn"></span>
+            <!-- small button close -->
+
+            <!-- mainmenu begin -->
+            <nav>
+                <ul id="mainmenu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="projects-contained-3-cols.html">Projects</a></li>
+                    <li><a href="gallery-3-cols.html">InteriorDesign</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="shop.html">Consulting</a></li>
+                    <li><%= link_to 'contact', user_contacts_path %></li>
+                </ul>
+            </nav>
+        </div>
+        <!-- mainmenu close -->
+
+    </div>
+</div>
+</header>
+<!-- header close -->
+
+<!-- subheader -->
+<section id="subheader" data-speed="8" data-type="background">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Contact</h1>
+                <ul class="crumb">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="sep">/</li>
+                    <li>Contact</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- subheader close -->
+
+<!-- content begin -->
+<div id="content" class="no-top">
+    <section class="no-top-sub" aria-label="map-container">
+        <iframe width=100% height=400 frameborder=0 scrolling=no marginheight=0 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.0650212837263!2d106.74985581467159!3d10.80633209230125!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3175266a3b79106f%3A0x96039182cc2600d9!2sHurry+Up+Software+Company!5e0!3m2!1sen!2s!4v1528252916346" marginwidth=0></iframe><a class="addmaps" href="http://www.map-embed.com/wordpress-themes/" id=get-map-data></a>
+    </section>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <h3>Send Us Message</h3>
+                <%= form_for @customer, :url => { :action => "create" } do |f| %>
+                    <div class="row">
+                        <div class="col-md-4">
+						    <div>
+                                <p><%= f.text_field :customer_name, :class => 'form-control', :placeholder => 'your name...', :type => 'text', :required => true, :autocomplete => 'name' %></p>
+                            </div>
+							<div>
+                                <p><%= f.text_field :email, :class => 'form-control', :placeholder => 'your email...', :type => 'email', :required => true, :autocomplete => 'email' %></p>
+                            </div>
+                            <div>
+                                <p><%= f.text_field :phone, :class => 'form-control', :placeholder => 'your phone number...', :type => 'number', :required => true, :autocomplete => 'tel' %></p>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div>
+                                <textarea id="m" class="form-control" placeholder="Type your message here..." rows="5"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12">
+							<p><%= f.submit 'Send Message', :class => 'btn btn-line'  %></p>
+                        </div>
+                    </div>
+                <% end -%>
+            </div>
+
+            <div id="sidebar" class="col-md-4">
+
+                <div class="widget widget_text">
+                    <h3>Contact Info</h3>
+                    <address>
+                        <% @contact.each do |c| %>
+                        <span><%= c.address %></span>
+                        <span><strong>Phone:</strong><%= c.phone %></span>
+                        <span><strong>Fax:</strong><%= c.fax %></span>
+                        <span><strong>Email:</strong><%= c.email %></span>
+                        <span><strong>Open</strong><%= c.opendate %> - <%= c.closedate %> <%= c.openat %> - <%= c.closeat %></span>
+                        <% end -%>
+                    </address>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- footer begin -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <%=image_tag('logo.png', :class => 'logo-small')%>
+                We are a team based on HCM, Viet Nam expertise in Interior Design. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.
+            </div>
+
+            <div class="col-md-4">
+                <div class="widget widget_recent_post">
+                    <h3>Latest News</h3>
+                    <ul>
+                        <li><a href="#">5 Things That Take a Room from Good to Great</a></li>
+                        <li><a href="#">Functional and Stylish Wall-to-Wall Shelves</a></li>
+                        <li><a href="#">9 Unique and Unusual Ways to Display Your TV</a></li>
+                        <li><a href="#">The 5 Secrets to Pulling Off Simple, Minimal Design</a></li>
+                        <li><a href="#">How to Make a Huge Impact With Multiples</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <h3>Contact Us</h3>
+                <div class="widget widget-address">
+                    <address>
+                        <% @contact.each do |c| %>
+                        <span><%= c.address %></span>
+                        <span><strong>Phone:</strong><%= c.phone %></span>
+                        <span><strong>Fax:</strong><%= c.fax %></span>
+                        <span><strong>Email:</strong><%= c.email %></span>
+                        <% end -%>
+                    </address>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <!-- <div class="subfooter">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        &copy; Copyright 2018 - Archi Interior Design Template by <span class="id-color">Designesia</span>                     
+                    </div>
+                    <div class="col-md-6 text-right">
+                        <div class="social-icons">
+                            <a href="#"><i class="fa fa-facebook fa-lg"></i></a>
+                            <a href="#"><i class="fa fa-twitter fa-lg"></i></a>
+                            <a href="#"><i class="fa fa-rss fa-lg"></i></a>
+                            <a href="#"><i class="fa fa-google-plus fa-lg"></i></a>
+                            <a href="#"><i class="fa fa-skype fa-lg"></i></a>
+                            <a href="#"><i class="fa fa-dribbble fa-lg"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        <a href="#" id="back-to-top"></a>
+    </footer>
+    <!-- footer close -->
+
+</div>
+    </body>
