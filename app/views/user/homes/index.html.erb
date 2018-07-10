@@ -31,7 +31,7 @@
                             <!-- logo begin -->
                             <div id="logo">
                                 <a href="index.html">
-                                    <img class="logo" src="images/logo.png" alt="">
+                                    <%= image_tag('logo.png', :class => 'logo') %>
                                 </a>
                             </div>
                             <!-- logo close -->
@@ -66,13 +66,13 @@
                 <section id="section-slider" class="fullwidthbanner-container" aria-label="section-slider">
                     <div id="revolution-slider" class="slider-container">
 								  <div class="split left">
-									<a href="#" class="sliderbtn">shop with us</a>
+									<a href="#" class="button">shop with us</a>
 								  </div>
                                     <!-- <div class="grow" id="divhome" style="background-image: url('images/background/middle.jpg');">
                                         <div class="mask1" id="mask2"></div>
                                     </div> -->
 								  <div class="split right">
-									<a href="#" class="sliderbtn">consulting</a>
+									<a href="#" class="button">consulting</a>
 								  </div>
                 </div>
             </section>
@@ -350,77 +350,33 @@
 
 
             <!-- section begin -->
-            <section id="section-testimonial" class="text-light">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-6 col-md-offset-3 text-center wow fadeInUp">
-                            <h1>Customer Says</h1>
-                            <div class="separator"><span><i class="fa fa-circle"></i></span></div>
-                            <div class="spacer-single"></div>
+<section id="section-testimonial" class="text-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3 text-center wow fadeInUp">
+                <h1>Customer Says</h1>
+                <div class="separator"><span><i class="fa fa-circle"></i></span></div>
+                <div class="spacer-single"></div>
+            </div>
+        </div>
+        <div id="testimonial-carousel" class="de_carousel  wow fadeInUp" data-wow-delay=".3s">
+
+        <% @comments.each do |c| %>
+            <div class="col-md-6 item">
+                <div class="de_testi">
+                    <blockquote>
+                        <p><%= c.comment %></p>
+                        <div class="de_testi_by">
+                            <%= c.title %>
                         </div>
-                    </div>
-                    <div id="testimonial-carousel" class="de_carousel  wow fadeInUp" data-wow-delay=".3s">
-
-                        <div class="col-md-6 item">
-                            <div class="de_testi">
-                                <blockquote>
-                                    <p>Cám ơn LagomDecor đã giúp chị có căn hộ rất ưng ý. Bé nhà chị về nhà mới thích lắm. Bé nói thích nhất phòng của bé đó em. Chị đoán là do mảng tường LagomDecor vẽ và giường tầng "cầu vồng" đấy.</p>
-                                    <div class="de_testi_by">
-                                        Mrs.Ann, Customer
-                                    </div>
-                                </blockquote>
-
-                            </div>
-                        </div>
-
-                        <div class="col-md-6 item">
-                            <div class="de_testi">
-                                <blockquote>
-                                    <p>I have very much enjoyed with your services. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
-                                    <div class="de_testi_by">
-                                        Michael, Customer
-                                    </div>
-                                </blockquote>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6 item">
-                            <div class="de_testi">
-                                <blockquote>
-                                    <p>This is a test comment by coustomer..................</p>
-                                    <div class="de_testi_by">
-                                        Cus-01, Customer
-                                    </div>
-                                </blockquote>
-
-                            </div>
-                        </div>
-
-                        <div class="col-md-6 item">
-                            <div class="de_testi">
-                                <blockquote>
-                                    <p>I totally recommend your services. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
-                                    <div class="de_testi_by">
-                                        Patrick, Customer
-                                    </div>
-                                </blockquote>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6 item">
-                            <div class="de_testi">
-                                <blockquote>
-                                    <p>I have very much enjoyed with your services. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
-                                    <div class="de_testi_by">
-                                        James, Customer
-                                    </div>
-                                </blockquote>
-                            </div>
-                        </div>
-                    </div>
+                    </blockquote>
                 </div>
-            </section>
-            <!-- section close -->
+            </div>
+        <% end -%>
+        </div>
+    </div>
+</section>
+<!-- section close -->
 
             <!-- our customers slider START -->
             <section class="" id="section-customers">
