@@ -23,7 +23,7 @@ class Admin::ProductsController < ApplicationController
 	if @product.save
 		redirect_to admin_products_path
 	else
-		render 'new'
+		redirect_to new_admin_product_path
 	end
 	end
 
@@ -46,6 +46,6 @@ class Admin::ProductsController < ApplicationController
 
 	private 
 	def allowed_params
-		params.require(:product).permit(:product_number, :category, :product_name, :price, :top_rated)
+		params.require(:product).permit(:product_number, :category, :product_name, :price, :top_rated, :avatar)
 	end
 end

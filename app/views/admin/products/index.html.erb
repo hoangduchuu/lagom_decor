@@ -1,6 +1,7 @@
 <table class="table">
     <thead>
       <tr>
+        <th></th>
         <th>Product Number</th>
         <th>Category</th>
         <th>Name</th>
@@ -11,14 +12,16 @@
     <tbody>
       <% @products.each do |p| %>
       <tr>
-        <td><%= p.product_number %></td>
-        <td><%= p.category %></td>
-        <td><%= p.product_name %></td>
-        <td><%= p.price %></td>
-        <td><%= p.top_rated %></td>
-        <td><%= link_to 'show', admin_product_path(p) %></td>
-        <td><%= link_to 'Edit', edit_admin_product_path(p) %></td>
-        <td><%= link_to 'Destroy', admin_products_path(p), method: :Destroy, data: { confirm: 'Are you sure?' } %></td>
+        <td style="vertical-align: middle;"><%= image_tag p.avatar_url, :size => '100x100' %></td>
+        <td style="vertical-align: middle;"><%= p.product_number %></td>
+        <td style="vertical-align: middle;"><%= p.category %></td>
+        <td style="vertical-align: middle;"><%= p.product_name %></td>
+        <td style="vertical-align: middle;"><%= p.price %></td>
+        <td style="vertical-align: middle;"><%= p.top_rated %></td>
+        <td style="vertical-align: middle;"><%= link_to 'New', new_admin_product_path %></td>
+        <td style="vertical-align: middle;"><%= link_to 'show', admin_product_path(p) %></td>
+        <td style="vertical-align: middle;"><%= link_to 'Edit', edit_admin_product_path(p) %></td>
+        <td style="vertical-align: middle;"><%= link_to 'Destroy', admin_products_path(p), method: :Destroy, data: { confirm: 'Are you sure?' } %></td>
       </tr>
       <% end -%>
     </tbody>

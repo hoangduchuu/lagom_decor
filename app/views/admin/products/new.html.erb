@@ -24,6 +24,11 @@
     <%= form.label :top_rated %><br>
     <%= form.select(:top_rated, Product::TOP_RATED) %>
   </p>
+
+  <p>
+    <%= form.label :avatar %><br>
+    <%= form.file_field :avatar %>
+  </p>
  
   <p>
     <%= form.submit %>

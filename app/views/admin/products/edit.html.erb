@@ -20,5 +20,10 @@
     <%= f.label :top_rated %>
     <%= f.select(:top_rated, Product::TOP_RATED) %><br>
   </div>
+  <div class="form-group">
+    <%= f.label :avatar %>
+    <%= f.file_field :avatar %><br>
+  </div>
+
   <%= f.submit 'save', :class => 'btn btn-primary' %>
   <% end -%>

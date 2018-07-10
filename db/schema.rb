@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180707181701) do
+ActiveRecord::Schema.define(version: 20180710103649) do
+
+  create_table "comments", force: :cascade do |t|
+    t.string "title"
+    t.text "comment"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "consultings", force: :cascade do |t|
     t.string "title"
@@ -32,6 +39,14 @@ ActiveRecord::Schema.define(version: 20180707181701) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "customers", force: :cascade do |t|
+    t.string "customer_name"
+    t.string "phone"
+    t.string "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "interiorideas", force: :cascade do |t|
     t.string "category"
     t.string "title"
@@ -47,6 +62,7 @@ ActiveRecord::Schema.define(version: 20180707181701) do
     t.string "top_rated"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "avatar"
   end
 
 end
