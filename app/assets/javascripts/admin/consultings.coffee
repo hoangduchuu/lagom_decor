@@ -1,4 +1,7 @@
-//= require jquery.min
+//= require jquery3
+//= require jquery_ujs
+//= require popper
+//= require turbolinks
 //= require bootstrap.bundle.min
 //= require jquery.easing.min
 //= require Chart.min

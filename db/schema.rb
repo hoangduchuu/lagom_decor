@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 20180710171047) do
     t.text "comment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
 
   create_table "consultings", force: :cascade do |t|
     t.string "title"
@@ -34,7 +35,6 @@ ActiveRecord::Schema.define(version: 20180710171047) do
     t.string "closedate"
     t.string "openat"
     t.string "closeat"
-
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -60,9 +60,9 @@ ActiveRecord::Schema.define(version: 20180710171047) do
     t.string "product_name"
     t.string "price"
     t.string "top_rated"
-
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "avatar"
   end
+
 end
