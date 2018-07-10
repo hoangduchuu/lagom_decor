@@ -1,0 +1,2 @@
+class Consulting < ApplicationRecord
+end

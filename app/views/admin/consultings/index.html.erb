@@ -1,0 +1,20 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Text</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @consulting.each do |c| %>
+      <tr>
+        <td><%= c.title %></td>
+        <td><%= c.text %></td>
+        <td><%= link_to 'new', new_admin_consulting_path %></td>
+        <td><%= link_to 'show', admin_consulting_path(c) %></td>
+        <td><%= link_to 'edit', edit_admin_consulting_path(c) %></td>
+        <td><%= link_to "Delete", admin_consulting_path(c), method: :delete %></td>
+      </tr>
+      <% end -%>
+    </tbody>
+  </table>
