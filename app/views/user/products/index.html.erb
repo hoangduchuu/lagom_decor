@@ -187,34 +187,34 @@
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
       </button>
-  </div>
-<form id="my_form" onsubmit="submitForm(); return false;">
-<div class="modal-body">
-Please fill your contact details, One of our staff will contact you soon...
-<div class="form-group">
-<label for="n">Your Name:</label> 
-  <p><input id="n" class="form-control" placeholder="Name" required autocomplete="name"></p>
-  </div>
-  <div class="form-group">
-<label for="e">your Email:</label> 
-  <p><input id="e"class="form-control" placeholder="Email Address" type="email" required autocomplete="email"></p>
-  </div>
+      </div>
+    <%= form_for @customer, :url => { :action => "create" } do |f| %>
+    <div class="modal-body">
+    Please fill your contact details, One of our staff will contact you soon...
     <div class="form-group">
-<label for="p">your Phone Number:</label> 
-  <p><input id="p"class="form-control" placeholder="Phone number" type="number" required autocomplete="tel"></p>
-  </div>
-  <div class="form-group">
-<label for="m">Additional requests:</label> 
-  <textarea id="m" class="form-control" placeholder="place your request here..." rows="5"></textarea>
-  </
-  <p><input id="category" type="hidden" value=""></p>
-  <p><input id="productid" type="hidden" value=""></p>
-  <div class="modal-footer">
-    <p><input id="btnclose" class="btn btn-secondary" type="button" value="clsoe" data-dismiss="modal">
-    <input id="btnsubmit" class="btn btn-primary" type="submit" value="send inquiry"> <span id="status"></span></p>
-</div>
-  </div>
-</form>
+    <label for="n">Your Name:</label> 
+      <p><%= f.text_field :customer_name, :class => 'form-control', :placeholder => 'your name...', :type => 'text', :required => true, :autocomplete => 'name' %></p>
+      </div>
+      <div class="form-group">
+    <label for="e">your Email:</label> 
+      <p><%= f.text_field :email, :class => 'form-control', :placeholder => 'your email...', :type => 'email', :required => true, :autocomplete => 'email' %></p>
+      </div>
+        <div class="form-group">
+    <label for="p">your Phone Number:</label> 
+      <p><%= f.text_field :phone, :class => 'form-control', :placeholder => 'your phone number...', :type => 'number', :required => true, :autocomplete => 'tel' %></p>
+      </div>
+      <div class="form-group">
+    <label for="m">Additional requests:</label> 
+      <textarea id="m" class="form-control" placeholder="place your request here..." rows="5"></textarea>
+      </
+      <p><input id="category" type="hidden" value=""></p>
+      <p><input id="productid" type="hidden" value=""></p>
+      <div class="modal-footer">
+        <p><input id="btnclose" class="btn btn-secondary" type="button" value="clsoe" data-dismiss="modal">
+        <%= f.submit 'Send Message', :class => 'btn btn-primary'  %></p>
+    </div>
+      </div>
+<% end -%>
 </div>
 </div>
 </div>
