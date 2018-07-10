@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>LagomDecor</title>
+    <%= csrf_meta_tags %>
+
+     <%= stylesheet_link_tag params[:controller] %>
+    <%= javascript_include_tag params[:controller] %>
+  </head>
+
+  <body>
+    <%= yield %>
+  </body>
+</html>
