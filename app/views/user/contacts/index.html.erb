@@ -85,20 +85,19 @@
 
     <div class="container">
         <div class="row">
-
             <div class="col-md-8">
                 <h3>Send Us Message</h3>
-                <form name="contactForm" id='contact_form' onsubmit="submitForm(); return false;">
+                <%= form_for @customer, :url => { :action => "create" } do |f| %>
                     <div class="row">
                         <div class="col-md-4">
 						    <div>
-                                <p><input id="n" class="form-control" placeholder="Name" type="text" required autocomplete="name"></p>
+                                <p><%= f.text_field :customer_name, :class => 'form-control', :placeholder => 'your name...', :type => 'text', :required => true, :autocomplete => 'name' %></p>
                             </div>
 							<div>
-                                <p><input id="e" class="form-control" placeholder="Email Address" type="email" required autocomplete="email"></p>
+                                <p><%= f.text_field :email, :class => 'form-control', :placeholder => 'your email...', :type => 'email', :required => true, :autocomplete => 'email' %></p>
                             </div>
                             <div>
-                                <p><input id="p" class="form-control" placeholder="Phone number" type="number" required autocomplete="tel" style="color: #040405;"></p>
+                                <p><%= f.text_field :phone, :class => 'form-control', :placeholder => 'your phone number...', :type => 'number', :required => true, :autocomplete => 'tel' %></p>
                             </div>
                         </div>
                         <div class="col-md-8">
@@ -108,10 +107,10 @@
                         </div>
 
                         <div class="col-md-12">
-							<p><input id="btnsubmit" class="btn btn-line" type="submit" value="Send Message"> <span id="status"></span></p>
+							<p><%= f.submit 'Send Message', :class => 'btn btn-line'  %></p>
                         </div>
                     </div>
-                </form>
+                <% end -%>
             </div>
 
             <div id="sidebar" class="col-md-4">

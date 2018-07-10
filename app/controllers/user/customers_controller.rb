@@ -1,4 +1,4 @@
-class User::CustomersController < User::BaseUserController
+class User::CustomersController < ApplicationController
 	layout 'user'	
 
 	def new
