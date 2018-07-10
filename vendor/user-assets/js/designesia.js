@@ -288,6 +288,8 @@ jQuery(document).ready(function () {
 		
 		jQuery('.grid.border').css('padding-top',grid_size)
 		jQuery('.grid.border').css('padding-left',grid_size)
+
+        grid_gallery();
 		
 		function grid_gallery(){
 			jQuery('.grid-item').each(function () {			
@@ -318,7 +320,7 @@ jQuery(document).ready(function () {
 			})
 		}
 		
-		grid_gallery();
+		
 
 
         jQuery('.overlay').fadeTo(1, 0);
