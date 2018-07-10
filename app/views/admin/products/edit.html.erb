@@ -1,0 +1,29 @@
+<%= form_for [:admin, @product] do |f| %>
+
+  <div class="form-group">
+    <%= f.label :product_number %>
+	<%= f.text_field :product_number, :class => 'form-control' %><br>
+  </div>
+  <div class="form-group">
+    <%= f.label :category %>
+    <%= f.select(:category, Product::CATEGORIES) %><br>
+  </div>
+  <div class="form-group">
+    <%= f.label :product_name %>
+  <%= f.text_field :product_name, :class => 'form-control' %><br>
+  </div>
+  <div class="form-group">
+    <%= f.label :price %>
+  <%= f.text_field :price, :class => 'form-control' %><br>
+  </div>
+  <div class="form-group">
+    <%= f.label :top_rated %>
+    <%= f.select(:top_rated, Product::TOP_RATED) %><br>
+  </div>
+  <div class="form-group">
+    <%= f.label :avatar %>
+    <%= f.file_field :avatar %><br>
+  </div>
+
+  <%= f.submit 'save', :class => 'btn btn-primary' %>
+  <% end -%>

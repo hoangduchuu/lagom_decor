@@ -1,0 +1,31 @@
+<p>
+	<%= image_tag @product.avatar_url %>
+</p>
+
+<p>
+	<strong>Product number: </strong>
+	<%= @product.product_number %>
+</p>
+
+<p>
+	<strong>Category: </strong>
+	<%= @product.category %>
+</p>
+
+<p>
+	<strong>Name: </strong>
+	<%= @product.product_name %>
+</p>
+
+<p>
+	<strong>Price: </strong>
+	<%= @product.price %>
+</p>
+
+<p>
+	<strong>Top rated: </strong>
+	<%= @product.top_rated %>
+</p>
+
+<%= link_to 'Back', admin_products_path %>
+<%= link_to 'edit', edit_admin_product_path(@product) %>

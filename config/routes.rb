@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 		resources :customers
 		resources :consultings
 		resources :consultings
+		resources :products
 	end
 
 	namespace :user do
@@ -15,5 +16,6 @@ Rails.application.routes.draw do
 		resources :contacts
 		resources :consultings
 		resources :consultings
+		resources :products
 	end
 end

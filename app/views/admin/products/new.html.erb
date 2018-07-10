@@ -1,0 +1,37 @@
+<%= form_with model: [:admin, @product], local: true do |form| %>
+ 
+  <p>
+    <%= form.label :product_number %><br>
+    <%= form.text_field :product_number %>
+  </p>
+ 
+  <p>
+    <%= form.label :category %><br>
+    <%= form.select(:category, Product::CATEGORIES) %>
+  </p>
+
+  <p>
+    <%= form.label :product_name %><br>
+    <%= form.text_field :product_name %>
+  </p>
+
+  <p>
+    <%= form.label :price %><br>
+    <%= form.text_field :price %>
+  </p>
+
+  <p>
+    <%= form.label :top_rated %><br>
+    <%= form.select(:top_rated, Product::TOP_RATED) %>
+  </p>
+
+  <p>
+    <%= form.label :avatar %><br>
+    <%= form.file_field :avatar %>
+  </p>
+ 
+  <p>
+    <%= form.submit %>
+  </p>
+ 
+<% end %>

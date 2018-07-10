@@ -1,0 +1,28 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th></th>
+        <th>Product Number</th>
+        <th>Category</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Top rated</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @products.each do |p| %>
+      <tr>
+        <td style="vertical-align: middle;"><%= image_tag p.avatar_url, :size => '100x100' %></td>
+        <td style="vertical-align: middle;"><%= p.product_number %></td>
+        <td style="vertical-align: middle;"><%= p.category %></td>
+        <td style="vertical-align: middle;"><%= p.product_name %></td>
+        <td style="vertical-align: middle;"><%= p.price %></td>
+        <td style="vertical-align: middle;"><%= p.top_rated %></td>
+        <td style="vertical-align: middle;"><%= link_to 'New', new_admin_product_path %></td>
+        <td style="vertical-align: middle;"><%= link_to 'show', admin_product_path(p) %></td>
+        <td style="vertical-align: middle;"><%= link_to 'Edit', edit_admin_product_path(p) %></td>
+        <td style="vertical-align: middle;"><%= link_to 'Destroy', admin_products_path(p), method: :Destroy, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+      <% end -%>
+    </tbody>
+  </table>

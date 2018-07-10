@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> shop
 jQuery(document).ready(function () {
     'use strict';				// use strict mode
 
@@ -288,8 +291,11 @@ jQuery(document).ready(function () {
 		
 		jQuery('.grid.border').css('padding-top',grid_size)
 		jQuery('.grid.border').css('padding-left',grid_size)
+<<<<<<< HEAD
 
         grid_gallery();
+=======
+>>>>>>> shop
 		
 		function grid_gallery(){
 			jQuery('.grid-item').each(function () {			
@@ -320,7 +326,11 @@ jQuery(document).ready(function () {
 			})
 		}
 		
+<<<<<<< HEAD
 		
+=======
+		grid_gallery();
+>>>>>>> shop
 
 
         jQuery('.overlay').fadeTo(1, 0);

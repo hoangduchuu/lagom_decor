@@ -5476,8 +5476,13 @@ display:table;
 	letter-spacing:5px;
 	}
 
+<<<<<<< HEAD
 	#filters li.float-right{
 	float:none;
+=======
+	#filters li.pull-right{
+	float:none !important;
+>>>>>>> shop
 	}
 	
 	.sm-hide{
