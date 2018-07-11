@@ -20,6 +20,13 @@ test:
   <<: *default
   database: db/test.sqlite3
 
+staging:
+ <<: *default
+ database: lagom__decor__staging
+ username: deploy
+ password: <%= ENV["DATABASE_PASSWORD" ] %>
 production:
-  <<: *default
-  database: db/production.sqlite3
+ <<: *default
+ database: lagom__decor_production
+ username: deploy
+ password: <%= ENV["DATABASE_PASSWORD" ] %>
