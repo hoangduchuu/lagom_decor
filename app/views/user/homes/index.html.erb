@@ -8,17 +8,11 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-md-12">
-                                <div class="col">Working Hours Monday - Friday <span class="id-color"><strong>08:00-16:00</strong></span></div>
-                                <div class="col">Phone <span class="id-color"><strong>0978.999.999</strong></span></div>
-                                <div class="col">Email <span class="id-color"><strong>support@lagomdecor.vn</strong></span></div>
-                                <!-- social icons -->
-                                <div class="col social">
-                                    <a href="#"><i class="fa fa-facebook"></i></a>
-                                    <a href="#"><i class="fa fa-twitter"></i></a>
-                                    <a href="#"><i class="fa fa-rss"></i></a>
-                                    <a href="#"><i class="fa fa-google-plus"></i></a>
-                                    <a href="#"><i class="fa fa-envelope-o"></i></a>
-                                </div>
+                                <% @contact.each do |c| %>
+                   <div class="col">Working Hours <%= c.opendate %> - <%= c.closedate %> <span class="id-color"><strong><%= c.openat %> - <%= c.closeat %></strong></span></div>
+                   <div class="col">Phone <span class="id-color"><strong><%= c.phone %></strong></span></div>
+                    <div class="col">Email <span class="id-color"><strong><%= c.email %></strong></span></div>
+                    <% end -%>
                                 <!-- social icons close -->
                             </div>
                         </div>
@@ -42,14 +36,14 @@
 
                             <!-- mainmenu begin -->
                             <nav>
-                                <ul id="mainmenu">
-                                    <li><a href="index.html">Home</a></li>
-                                    <li><a href="projects-contained-3-cols.html">Projects</a></li>
-                                    <li><a href="gallery-3-cols.html">InteriorDesign</a></li>
-                                    <li><a href="shop.html">Shop</a></li>
-                                    <li><a href="services.html">Consulting</a></li>  
-                                    <li><a href="contact.html">Contact</a></li>
-                                </ul>
+                        <ul id="mainmenu">
+                            <li><%= link_to 'Home', user_homes_path %></li>
+                            <li><a href="#">Projects</a></li>
+                            <li><a href="#">InteriorDesign</a></li>
+                            <li><%= link_to 'Shop', user_products_path %></li>
+                            <li><%= link_to 'Consulting', user_consultings_path %></li>  
+                            <li><%= link_to 'Contact', user_contacts_path %></li>
+                        </ul>
                             </nav>
                         </div>
                         <!-- mainmenu close -->
@@ -212,14 +206,14 @@
                     <!-- gallery item -->
                     <div class="item residential">
                         <div class="picframe">
-                            <a class="simple-ajax-popup-align-top" href="project-details-1.html">
+                            <a class="simple-ajax-popup-align-top" href="">
                                 <span class="overlay">
                                     <span class="pf_text">
                                         <span class="project-name">Eco Green Interior</span>
                                     </span>
                                 </span>
                             </a>
-                            <img src="" alt="" />
+                            <%= image_tag 'h1.jpg' %>
                         </div>
                     </div>
                     <!-- close gallery item -->
@@ -227,7 +221,7 @@
                     <!-- gallery item -->
                     <div class="item hospitaly">
                         <div class="picframe">
-                            <a class="simple-ajax-popup-align-top" href="project-details-2.html">
+                            <a class="simple-ajax-popup-align-top" href="">
                                 <span class="overlay">
                                     <span class="pf_text">
                                         <span class="project-name">Modern Elegance Suite</span>
@@ -235,7 +229,7 @@
                                 </span>
                             </a>
 
-                            <img src="images/portfolio/pf%20(2).jpg" alt="" />
+                            <%= image_tag 'h2.jpg' %>
                         </div>
                     </div>
                     <!-- close gallery item -->
@@ -243,7 +237,7 @@
                     <!-- gallery item -->
                     <div class="item hospitaly">
                         <div class="picframe">
-                            <a class="simple-ajax-popup-align-top" href="project-details-3.html">
+                            <a class="simple-ajax-popup-align-top" href="">
                                 <span class="overlay">
                                     <span class="pf_text">
                                         <span class="project-name">Apartment Renovation</span>
@@ -251,7 +245,7 @@
                                 </span>
                             </a>
 
-                            <img src="images/portfolio/pf%20(3).jpg" alt="" />
+                            <%= image_tag 'h3.jpg' %>
                         </div>
                     </div>
                     <!-- close gallery item -->
@@ -259,14 +253,14 @@
                     <!-- gallery item -->
                     <div class="item residential">
                         <div class="picframe">
-                            <a class="simple-ajax-popup-align-top" href="project-details-youtube.html">
+                            <a class="simple-ajax-popup-align-top" href="">
                                 <span class="overlay">
                                     <span class="pf_text">
                                         <span class="project-name">Youtube Video</span>
                                     </span>
                                 </span>
                             </a>
-                            <img src="images/portfolio/pf%20(4).jpg" alt="" />
+                            <%= image_tag 'h4.jpg' %>
                         </div>
                     </div>
                     <!-- close gallery item -->
@@ -274,14 +268,14 @@
                     <!-- gallery item -->
                     <div class="item office">
                         <div class="picframe">
-                            <a class="simple-ajax-popup-align-top" href="project-details-vimeo.html">
+                            <a class="simple-ajax-popup-align-top" href="">
                                 <span class="overlay">
                                     <span class="pf_text">
                                         <span class="project-name">Vimeo Video</span>
                                     </span>
                                 </span>
                             </a>
-                            <img src="images/portfolio/pf%20(5).jpg" alt="" />
+                            <%= image_tag 'h5.jpg' %>
                         </div>
                     </div>
                     <!-- close gallery item -->
@@ -289,14 +283,14 @@
                     <!-- gallery item -->
                     <div class="item commercial">
                         <div class="picframe">
-                            <a class="simple-ajax-popup-align-top" href="project-details.html">
+                            <a class="simple-ajax-popup-align-top" href="">
                                 <span class="overlay">
                                     <span class="pf_text">
                                         <span class="project-name">Restaurant In Texas</span>
                                     </span>
                                 </span>
                             </a>
-                            <img src="images/portfolio/pf%20(6).jpg" alt="" />
+                            <%= image_tag 'h6.jpg' %>
                         </div>
                     </div>
                     <!-- close gallery item -->
@@ -304,7 +298,7 @@
                     <!-- gallery item -->
                     <div class="item residential">
                         <div class="picframe">
-                            <a class="simple-ajax-popup-align-top" href="project-details-youtube.html">
+                            <a class="simple-ajax-popup-align-top" href="">
                                 <span class="overlay">
                                     <span class="pf_text">
                                         <span class="project-name">Summer House</span>
@@ -312,7 +306,7 @@
                                 </span>
                             </a>
 
-                            <img src="images/portfolio/pf%20(7).jpg" alt="" />
+                            <%= image_tag 'h7.jpg' %>
                         </div>
                     </div>
                     <!-- close gallery item -->
@@ -320,7 +314,7 @@
                     <!-- gallery item -->
                     <div class="item office">
                         <div class="picframe">
-                            <a class="simple-ajax-popup-align-top" href="project-details-vimeo.html">
+                            <a class="simple-ajax-popup-align-top" href="">
                                 <span class="overlay">
                                     <span class="pf_text">
                                         <span class="project-name">Office On Space</span>
@@ -328,7 +322,7 @@
                                 </span>
                             </a>
 
-                            <img src="images/portfolio/pf%20(8).jpg" alt="" />
+                            <%= image_tag 'h8.jpg' %>
                         </div>
                     </div>
                     <!-- close gallery item -->
@@ -344,7 +338,7 @@
 
             <!-- section begin -->
             <section id="view-all-projects" class="call-to-action bg-color text-center" data-speed="5" data-type="background" aria-label="view-all-projects">
-                <a href="gallery-3-cols.html" class="btn btn-line-black btn-big">View All Designs</a>
+                <a href="#" class="btn btn-line-black btn-big">View All Designs</a>
             </section>
             <!-- logo carousel section close -->
 
@@ -388,7 +382,7 @@
                     </div>
                     <section style="max-height: 200px; min-height: 100px;">
                         <div id=owl-demo class="owl-carousel text-center slideanim">
-                            <div class=item> <%= image_tag('p1.png', :class => 'lazyOwl') %> </div>
+                            <div class=item> <%= image_tag("p2.png", :class => 'lazyOwl') %> </div>
                             <div class=item> <%= image_tag("p2.png", :class => 'lazyOwl') %> </div>
                             <div class=item> <%= image_tag("p3.png", :class => 'lazyOwl') %> </div>
                             <div class=item> <%= image_tag("p4.png", :class => 'lazyOwl') %> </div>
@@ -450,10 +444,12 @@
                 <h3>Contact Us</h3>
                 <div class="widget widget-address">
                     <address>
-                        <span>Địa chỉ: 114 Đường số 1, Phường 16, Quận Gò Vấp, Hồ Chí Minh</span>
-                        <span><strong>Phone:</strong>0978.999.999</span>
-                        <span><strong>Fax:</strong>0978.999.999</span>
-                        <span><strong>Email:</strong><a href="support@lagomdecor.vn">support@lagomdecor.vn</a></span>
+                        <% @contact.each do |c| %>
+                        <span><%= c.address %></span>
+                        <span><strong>Phone:</strong><%= c.phone %></span>
+                        <span><strong>Fax:</strong><%= c.fax %></span>
+                        <span><strong>Email:</strong><%= c.email %></span>
+                        <% end -%>
                     </address>
                 </div>
             </div>

@@ -7,9 +7,11 @@
                 <div class="container">
                  <div class="row">
                   <div class="col-md-12">
-                   <div class="col">Working Hours Monday - Friday <span class="id-color"><strong>08:00-16:00</strong></span></div>
-                   <div class="col">Phone <span class="id-color"><strong>0978.999.999</strong></span></div>
-                   <div class="col">Email <span class="id-color"><strong>support@lagomdecor.vn</strong></span></div>
+                   <% @contact.each do |c| %>
+                   <div class="col">Working Hours <%= c.opendate %> - <%= c.closedate %> <span class="id-color"><strong><%= c.openat %> - <%= c.closeat %></strong></span></div>
+                   <div class="col">Phone <span class="id-color"><strong><%= c.phone %></strong></span></div>
+                    <div class="col">Email <span class="id-color"><strong><%= c.email %></strong></span></div>
+                    <% end -%>
                    <!-- social icons -->
                    <div class="col social">
                     <a href="#"><i class="fa fa-facebook"></i></a>
@@ -41,14 +43,14 @@
 
             <!-- mainmenu begin -->
             <nav>
-                <ul id="mainmenu">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="projects-contained-3-cols.html">Projects</a></li>
-                    <li><a href="gallery-3-cols.html">InteriorDesign</a></li>
-                    <li><a href="shop.html">Shop</a></li>
-                    <li><a href="services.html">Consulting</a></li>  
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
+                        <ul id="mainmenu">
+                            <li><%= link_to 'Home', user_homes_path %></li>
+                            <li><a href="#">Projects</a></li>
+                            <li><a href="#">InteriorDesign</a></li>
+                            <li><%= link_to 'Shop', user_products_path %></li>
+                            <li><%= link_to 'Consulting', user_consultings_path %></li>  
+                            <li><%= link_to 'Contact', user_contacts_path %></li>
+                        </ul>
             </nav>
         </div>
         <!-- mainmenu close -->
@@ -218,6 +220,7 @@
 </div>
 </div>
 </div>
+</div>
 <!-- pop up contact form END -->
 
 <!-- footer begin -->
@@ -225,7 +228,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-4">
-                <%= image_tag("logo.png", :class => 'logo-small') %>
+                <%=image_tag('logo.png', :class => 'logo-small')%>
                 We are a team based on HCM, Viet Nam expertise in Interior Design. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
                 quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.
@@ -248,37 +251,39 @@
                 <h3>Contact Us</h3>
                 <div class="widget widget-address">
                     <address>
-                        <span>Địa chỉ: 114 Đường số 1, Phường 16, Quận Gò Vấp, Hồ Chí Minh</span>
-                        <span><strong>Phone:</strong>0978.999.999</span>
-                        <span><strong>Fax:</strong>0978.999.999</span>
-                        <span><strong>Email:</strong><a href="support@lagomdecor.vn">support@lagomdecor.vn</a></span>
+                        <% @contact.each do |c| %>
+                        <span><%= c.address %></span>
+                        <span><strong>Phone:</strong><%= c.phone %></span>
+                        <span><strong>Fax:</strong><%= c.fax %></span>
+                        <span><strong>Email:</strong><%= c.email %></span>
+                        <% end -%>
                     </address>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- <div class="subfooter">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    &copy; Copyright 2018 - Archi Interior Design Template by <span class="id-color">Designesia</span>                     
-                </div>
-                <div class="col-md-6 text-right">
-                    <div class="social-icons">
-                        <a href="#"><i class="fa fa-facebook fa-lg"></i></a>
-                        <a href="#"><i class="fa fa-twitter fa-lg"></i></a>
-                        <a href="#"><i class="fa fa-rss fa-lg"></i></a>
-                        <a href="#"><i class="fa fa-google-plus fa-lg"></i></a>
-                        <a href="#"><i class="fa fa-skype fa-lg"></i></a>
-                        <a href="#"><i class="fa fa-dribbble fa-lg"></i></a>
+        <!-- <div class="subfooter">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        &copy; Copyright 2018 - Archi Interior Design Template by <span class="id-color">Designesia</span>                     
+                    </div>
+                    <div class="col-md-6 text-right">
+                        <div class="social-icons">
+                            <a href="#"><i class="fa fa-facebook fa-lg"></i></a>
+                            <a href="#"><i class="fa fa-twitter fa-lg"></i></a>
+                            <a href="#"><i class="fa fa-rss fa-lg"></i></a>
+                            <a href="#"><i class="fa fa-google-plus fa-lg"></i></a>
+                            <a href="#"><i class="fa fa-skype fa-lg"></i></a>
+                            <a href="#"><i class="fa fa-dribbble fa-lg"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>-->
-    <a href="#" id="back-to-top"></a>
-</footer>
+        </div> -->
+        <a href="#" id="back-to-top"></a>
+    </footer>
 <!-- footer close -->
 </div>
 

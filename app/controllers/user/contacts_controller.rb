@@ -10,6 +10,7 @@ class User::ContactsController < ApplicationController
 		@customer = Customer.new(allowed_params)
 		if @customer.save
 			ContactMailer.customer_message(@customer).deliver
+			UserMailer.inquiry_mailer(@customer).deliver
 			redirect_to user_contacts_path
 		else
 			render 'new'

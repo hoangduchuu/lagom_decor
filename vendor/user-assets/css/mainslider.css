@@ -1,20 +1,12 @@
 :root {
   --container-bg-color: #333;
-<<<<<<< HEAD
   --left-button-hover-color: rgba(247, 219, 4, 0.8);
   --right-button-hover-color: rgba(247, 219, 4, 0.8);
-=======
-  --left-bg-color: rgba(223, 39, 39, 0.7);
-  --left-button-hover-color: rgba(161, 11, 11, 0.3);
-  --right-bg-color: rgba(43, 43, 43, 0.8);
-  --right-button-hover-color: rgba(92, 92, 92, 0.3);
->>>>>>> shop
   --hover-width: 75%;
   --other-width: 25%;
   --speed: 1000ms;
 }
 
-<<<<<<< HEAD
 .button {
   display: block;
   position: absolute;
@@ -46,44 +38,6 @@
 	text-decoration: none;
   background-color: var(--right-button-hover-color);
   border-color: #f7db04 solid 0.2rem;
-=======
-.h1-text {
-  font-size: 4rem;
-  color: #fff;
-  position: absolute;
-  left: 50%;
-  top: 20%;
-  transform: translateX(-50%);
-  white-space: nowrap;
-}
-
-.slider-button {
-  display: block !important;
-  position: absolute !important;
-  left: 50% !important;
-  top: 40% !important;
-  height: 2.5rem !important;
-  padding-top: 1.3rem !important;
-  width: 15rem !important;
-  text-align: center !important;
-  color: #fff !important;
-  border: #fff solid 0.2rem !important;
-  font-size: 1rem !important;
-  font-weight: bold !important;
-  text-transform: uppercase !important;
-  text-decoration: none !important;
-  transform: translateX(-50%) !important;
-}
-
-.split.left .slider-button:hover {
-  background-color: var(--left-button-hover-color);
-  border-color: var(--left-button-hover-color);
-}
-
-.split.right .slider-button:hover {
-  background-color: var(--right-button-hover-color);
-  border-color: var(--right-button-hover-color);
->>>>>>> shop
 }
 
 .slider-container {
@@ -102,11 +56,7 @@
 
 .split.left {
   left:0;
-<<<<<<< HEAD
   background: url('shop.jpg') center center no-repeat;
-=======
-  background: url('https://image.ibb.co/m56Czw/designer.jpg') center center no-repeat;
->>>>>>> shop
   background-size: cover;
 }
 
@@ -115,19 +65,11 @@
   content: "";
   width: 100%;
   height: 100%;
-<<<<<<< HEAD
-=======
-  background: var(--left-bg-color);
->>>>>>> shop
 }
 
 .split.right {
   right:0;
-<<<<<<< HEAD
   background: url('consulting.png') center center no-repeat;
-=======
-  background: url('https://image.ibb.co/m3ZbRb/programmer.png') center center no-repeat;
->>>>>>> shop
   background-size: cover;
 }
 
@@ -136,10 +78,6 @@
   content: "";
   width: 100%;
   height: 100%;
-<<<<<<< HEAD
-=======
-  background: var(--right-bg-color);
->>>>>>> shop
 }
 
 .split.left, .split.right, .split.right:before, .split.left:before {
@@ -176,22 +114,13 @@
     font-size: 2rem;
   }
 
-<<<<<<< HEAD
   .button {
     width: 120rem;
-=======
-  .slider-button {
-    width: 12rem;
->>>>>>> shop
   }
 }
 
 @media(max-height: 700px) {
-<<<<<<< HEAD
   .button {
-=======
-  .slider-button {
->>>>>>> shop
     top: 70%;
   }
 }

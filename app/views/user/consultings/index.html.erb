@@ -7,9 +7,11 @@
                 <div class="container">
                    <div class="row">
                       <div class="col-md-12">
-                         <div class="col">Working Hours Monday - Friday <span class="id-color"><strong>08:00-16:00</strong></span></div>
-                         <div class="col">Phone <span class="id-color"><strong>0978.999.999</strong></span></div>
-                         <div class="col">Email <span class="id-color"><strong>support@lagomdecor.vn</strong></span></div>
+                         <% @contact.each do |c| %>
+                   <div class="col">Working Hours <%= c.opendate %> - <%= c.closedate %> <span class="id-color"><strong><%= c.openat %> - <%= c.closeat %></strong></span></div>
+                   <div class="col">Phone <span class="id-color"><strong><%= c.phone %></strong></span></div>
+                    <div class="col">Email <span class="id-color"><strong><%= c.email %></strong></span></div>
+                    <% end -%>
                          <!-- social icons -->
                          <div class="col social">
                             <a href="#"><i class="fa fa-facebook"></i></a>
@@ -42,12 +44,12 @@
                     <!-- mainmenu begin -->
                     <nav>
                         <ul id="mainmenu">
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="projects-contained-3-cols.html">Projects</a></li>
-                            <li><a href="gallery-3-cols.html">InteriorDesign</a></li>
-                            <li><a href="shop.html">Shop</a></li>
-                            <li><a href="services.html">Consulting</a></li>  
-                            <li><a href="contact.html">Contact</a></li>
+                            <li><%= link_to 'Home', user_homes_path %></li>
+                            <li><a href="#">Projects</a></li>
+                            <li><a href="#">InteriorDesign</a></li>
+                            <li><%= link_to 'Shop', user_products_path %></li>
+                            <li><%= link_to 'Consulting', user_consultings_path %></li>  
+                            <li><%= link_to 'Contact', user_contacts_path %></li>
                         </ul>
                     </nav>
                 </div>
@@ -156,42 +158,70 @@
 
                                     <!-- footer begin -->
                                     <footer>
-                                        <div class="container">
-                                            <div class="row">
-                                                <div class="col-md-4">
-                                                    <%= image_tag('logo.png', :clss => 'logo-small') %><br>
-                                                    We are a team based on HCM, Viet Nam expertise in Interior Design. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.
-                                                </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <%=image_tag('logo.png', :class => 'logo-small')%>
+                We are a team based on HCM, Viet Nam expertise in Interior Design. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.
+            </div>
 
-                                                <div class="col-md-4">
-                                                    <div class="widget widget_recent_post">
-                                                        <h3>Latest News</h3>
-                                                        <ul>
-                                                            <li><a href="#">5 Things That Take a Room from Good to Great</a></li>
-                                                            <li><a href="#">Functional and Stylish Wall-to-Wall Shelves</a></li>
-                                                            <li><a href="#">9 Unique and Unusual Ways to Display Your TV</a></li>
-                                                            <li><a href="#">The 5 Secrets to Pulling Off Simple, Minimal Design</a></li>
-                                                            <li><a href="#">How to Make a Huge Impact With Multiples</a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <h3>Contact Us</h3>
-                                                    <div class="widget widget-address">
-                                                        <address>
-                                                            <span>Địa chỉ: 114 Đường số 1, Phường 16, Quận Gò Vấp, Hồ Chí Minh</span>
-                                                            <span><strong>Phone:</strong>0978.999.999</span>
-                                                            <span><strong>Fax:</strong>0978.999.999</span>
-                                                            <span><strong>Email:</strong><a href="support@lagomdecor.vn">support@lagomdecor.vn</a></span>
-                                                        </address>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+            <div class="col-md-4">
+                <div class="widget widget_recent_post">
+                    <h3>Latest News</h3>
+                    <ul>
+                        <li><a href="#">5 Things That Take a Room from Good to Great</a></li>
+                        <li><a href="#">Functional and Stylish Wall-to-Wall Shelves</a></li>
+                        <li><a href="#">9 Unique and Unusual Ways to Display Your TV</a></li>
+                        <li><a href="#">The 5 Secrets to Pulling Off Simple, Minimal Design</a></li>
+                        <li><a href="#">How to Make a Huge Impact With Multiples</a></li>
+                    </ul>
+                </div>
+            </div>
 
-        <!--<div class="subfooter">
+            <div class="col-md-4">
+                <h3>Contact Us</h3>
+                <div class="widget widget-address">
+                    <address>
+                        <% @contact.each do |c| %>
+                        <span><%= c.address %></span>
+                        <span><strong>Phone:</strong><%= c.phone %></span>
+                        <span><strong>Fax:</strong><%= c.fax %></span>
+                        <span><strong>Email:</strong><%= c.email %></span>
+                        <% end -%>
+                    </address>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- contact us Sliding div START -->
+        <div id="feedback">
+          <div id="feedback-form" style='display:none;' class="col-xs-4 col-md-4 panel panel-default">
+            <div class="form panel-body">
+            <%= form_for @customer, :url => { :action => "create" } do |f| %>
+              <div class="form-group">
+                <p><%= f.text_field :customer_name, :class => 'form-control', :placeholder => 'your name...', :type => 'text', :required => true, :autocomplete => 'name' %></p>
+              </div>
+              <div class="form-group">
+                <p><%= f.text_field :email, :class => 'form-control', :placeholder => 'your email...', :type => 'email', :required => true, :autocomplete => 'email' %></p>
+              </div>
+              <div class="form-group">
+                <p><%= f.text_field :phone, :class => 'form-control', :placeholder => 'your phone number...', :type => 'number', :required => true, :autocomplete => 'tel' %></p>
+              </div>
+              <div class="form-group">
+                <textarea id="m" class="form-control" placeholder="Type your message here..." rows="5"></textarea>
+              </div>
+              <p><%= f.submit 'Send Message', :class => 'btn btn-line'  %></p>
+            <% end -%>
+        </div>
+          </div>
+          <div id="feedback-tab">Contact Us</div>
+        </div>
+        <!-- contact us Sliding div END -->
+
+        <!-- <div class="subfooter">
             <div class="container">
                 <div class="row">
                     <div class="col-md-6">
@@ -209,7 +239,7 @@
                     </div>
                 </div>
             </div>
-        </div>-->
+        </div> -->
         <a href="#" id="back-to-top"></a>
     </footer>
     <!-- footer close -->

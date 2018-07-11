@@ -2,6 +2,7 @@ class Admin::ContactsController < ApplicationController
 	layout 'admin'
 
 	def index
+		@customer = Customer.new
 		@contact = Contact.all
 	end
 
@@ -16,6 +17,7 @@ class Admin::ContactsController < ApplicationController
 	def create
 		@contact = Contact.new(allowed_params)
 		if @contact.save
+			ContactMailer.customer_message(@customer).deliver
 			redirect_to contacts_path
 		else
 			render 'new'

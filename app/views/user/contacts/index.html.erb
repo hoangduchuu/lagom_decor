@@ -44,13 +44,13 @@
             <!-- mainmenu begin -->
             <nav>
                 <ul id="mainmenu">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="projects-contained-3-cols.html">Projects</a></li>
-                    <li><a href="gallery-3-cols.html">InteriorDesign</a></li>
-                    <li><a href="shop.html">Shop</a></li>
-                    <li><a href="shop.html">Consulting</a></li>
-                    <li><%= link_to 'contact', user_contacts_path %></li>
-                </ul>
+                            <li><%= link_to 'Home', user_homes_path %></li>
+                            <li><a href="#">Projects</a></li>
+                            <li><a href="#">InteriorDesign</a></li>
+                            <li><%= link_to 'Shop', user_products_path %></li>
+                            <li><%= link_to 'Consulting', user_consultings_path %></li>  
+                            <li><%= link_to 'Contact', user_contacts_path %></li>
+                        </ul>
             </nav>
         </div>
         <!-- mainmenu close -->

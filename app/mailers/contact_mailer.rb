@@ -6,4 +6,5 @@ class ContactMailer < ApplicationMailer
 
     mail to: "anuruddhikahettige@gmail.com", subject: "customer message"
   end
+  
 end

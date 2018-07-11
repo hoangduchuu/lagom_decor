@@ -8,6 +8,7 @@ class UserMailer < ApplicationMailer
   def inquiry_mailer(customer)
     @customer = customer
 
-    mail to: "anuruddhikahettige@gmail.com", subject: "Customer Inquiry"
+    mail to: @customer.email, subject: "Lagomdecor support team"
   end
+
 end
