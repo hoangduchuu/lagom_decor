@@ -24,40 +24,28 @@
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
-          <a class="nav-link" href="charts.html">
-            <i class="fas fa fa-home"></i>
-            <span class="nav-link-text">Home Page</span>
-          </a>
+            <%= link_to ' Home', admin_homes_path, :class => 'fas fa fa-home nav-link' %>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
-          <a class="nav-link" href="tables.html">
+          <a class="nav-link" href="#">
             <i class="fas fa fa-tasks"></i>
             <span class="nav-link-text">Projects</span>
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
-          <a class="nav-link" href="tables.html">
+          <a class="nav-link" href="#">
             <i class="fas fa fa-comments"></i>
             <span class="nav-link-text">Interior Ideas</span>
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
-          <a class="nav-link" href="tables.html">
-            <i class="fas fa fa-shopping-cart"></i>
-            <span class="nav-link-text">Shop</span>
-          </a>
+          <%= link_to ' Shop', admin_products_path, :class => 'fas fa fa-shopping-cart nav-link' %>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
-          <a class="nav-link" href="tables.html">
-            <i class="fas fa fa-users"></i>
-            <span class="nav-link-text">Consulton</span>
-          </a>
+          <%= link_to ' Consulting', admin_consultings_path, :class => 'fas fa fa-users nav-link' %>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
-          <a class="nav-link" href="tables.html">
-            <i class="fas fa fa-phone"></i>
-            <span class="nav-link-text">Contact</span>
-          </a>
+          <%= link_to ' Contact', admin_contacts_path, :class => 'fas fa fa-phone nav-link' %>
         </li>
       </ul>
       <ul class="navbar-nav sidenav-toggler">
