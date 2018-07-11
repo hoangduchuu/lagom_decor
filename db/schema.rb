@@ -47,13 +47,6 @@ ActiveRecord::Schema.define(version: 20180710171047) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "interiorideas", force: :cascade do |t|
-    t.string "category"
-    t.string "title"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "products", force: :cascade do |t|
     t.string "product_number"
     t.string "category"
