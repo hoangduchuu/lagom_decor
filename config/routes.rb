@@ -17,4 +17,5 @@ Rails.application.routes.draw do
 		resources :consultings
 		resources :products
 	end
+	root 'user/homes#index'
 end
