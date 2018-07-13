@@ -15,7 +15,6 @@ gem 'mini_magick', '~> 4.8'
 gem "passenger"
 gem 'popper_js', '~> 1.12.9'
 gem 'rails', '~> 5.1.3'
-gem 'sqlite3'
 gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
 
@@ -26,10 +25,12 @@ group :development, :test do
 end
 
 group :development do
+	gem 'sqlite3'
 	gem 'web-console', '>= 3.3.0'
 end
 
 group :production do
+	gem 'pg', '~> 1.0'
 	gem 'rails_12factor'
 end
 
