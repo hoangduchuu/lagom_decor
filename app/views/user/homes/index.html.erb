@@ -57,23 +57,23 @@
             <div id="content" class="no-bottom no-top">
 
                 <!-- revolution slider begin -->
-                <section id="section-slider" class="fullwidthbanner-container" aria-label="section-slider">
+                <section id="section-slider" class="fullwidthbanner-container" aria-label="section-slider" style="padding-top: 0;">
                     <div id="revolution-slider" class="slider-container">
 								  <div class="split left">
-									<a href="#" class="button">shop with us</a>
+									<a href="#" class="button" style="margin-left: 10px;">shop with us</a>
 								  </div>
                                     <!-- <div class="grow" id="divhome" style="background-image: url('images/background/middle.jpg');">
                                         <div class="mask1" id="mask2"></div>
                                     </div> -->
 								  <div class="split right">
-									<a href="#" class="button">consulting</a>
+									<a href="#" class="button" style="margin-right: 10px;">consulting</a>
 								  </div>
                 </div>
             </section>
             <!-- revolution slider close -->
 
             <!-- section begin -->
-            <section id="section-about">
+            <section id="section-about" style="padding-top: 0;">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-6 col-md-offset-3 text-center wow fadeInUp">
@@ -187,7 +187,7 @@
                     <!-- portfolio filter begin -->
                     <div class="row">
                         <div class="col-md-12 text-center">
-                            <ul id="filters" class="wow fadeInUp" data-wow-delay="0s">
+                            <ul id="filters" class="filters" data-wow-delay="0s">
                                 <li><a href="#" data-filter="*" class="selected">New Concepts</a></li>
                                 <li><a href="#" data-filter=".residential">Bed Room</a></li>
                                 <li><a href="#" data-filter=".hospitaly">Kitchen</a></li>
@@ -373,26 +373,25 @@
 <!-- section close -->
 
             <!-- our customers slider START -->
-            <section class="" id="section-customers">
-                <div class="row">        
-                    <div class="col-md-6 col-md-offset-3 text-center wow fadeInUp">
-                        <h1>Our Partners</h1>
-                        <div class="separator"><span><i class="fa fa-circle"></i></span></div>
-                        <div class="spacer-single"></div>
-                    </div>
-                    <section style="max-height: 200px; min-height: 100px;">
-                        <div id=owl-demo class="owl-carousel text-center slideanim">
-                            <div class=item> <%= image_tag("p2.png", :class => 'lazyOwl') %> </div>
-                            <div class=item> <%= image_tag("p2.png", :class => 'lazyOwl') %> </div>
-                            <div class=item> <%= image_tag("p3.png", :class => 'lazyOwl') %> </div>
-                            <div class=item> <%= image_tag("p4.png", :class => 'lazyOwl') %> </div>
-                            <div class=item> <%= image_tag("p5.png", :class => 'lazyOwl') %> </div>
-                            <div class=item> <%= image_tag("p6.png", :class => 'lazyOwl') %> </div>
-                            <div class=item> <%= image_tag("p7.png", :class => 'lazyOwl') %> </div>
-                            <div class=item> <%= image_tag("p8.png", :class => 'lazyOwl') %> </div>
-                            <div class=item> <%= image_tag("p9.png", :class => 'lazyOwl') %> </div>
+                        <section id="section-about" style="padding-bottom: 0;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 col-md-offset-3 text-center wow fadeInUp">
+                            <h1>What We Do</h1>
+                            <div class="separator"><span><i class="fa fa-circle"></i></span></div>
+                            <div class="spacer-single"></div>
                         </div>
-                    </section>
+                    </div>
+                      <section class="customer-logos slider" style="padding-top: 0;">
+    <div class="slide"><%= image_tag('p5.png') %></div>
+    <div class="slide"><%= image_tag('p5.png') %></div>
+    <div class="slide"><%= image_tag('p5.png') %></div>
+    <div class="slide"><%= image_tag('p5.png') %></div>
+    <div class="slide"><%= image_tag('p5.png') %></div>
+    <div class="slide"><%= image_tag('p5.png') %></div>
+    <div class="slide"><%= image_tag('p5.png') %></div>
+    <div class="slide"><%= image_tag('p5.png') %></div>
+  </section>
                 </div>
             </section>
             <!-- our customers slider END -->
@@ -499,6 +498,31 @@ right.addEventListener("mouseenter", () => {
 
 right.addEventListener("mouseleave", () => {
   container.classList.remove("hover-right");
+});
+        </script>
+
+        <script>
+            $(document).ready(function(){
+  $('.customer-logos').slick({
+    slidesToShow: 6,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 1500,
+    arrows: false,
+    dots: false,
+    pauseOnHover: true,
+    responsive: [{
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 4
+      }
+    }, {
+      breakpoint: 520,
+      settings: {
+        slidesToShow: 3
+      }
+    }]
+  });
 });
         </script>
 </body>
