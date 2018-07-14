@@ -1,0 +1,21 @@
+<%= form_for [:admin, @interioridea] do |f| %>
+
+  <div class="form-group">
+    <%= f.label :title %>
+	<%= f.text_field :title, :class => 'form-control' %><br>
+  </div>
+  <div class="form-group">
+    <%= f.label :category %>
+    <%= f.select(:category, Interioridea::CATEGORIES) %><br>
+  </div>
+  <div class="form-group">
+    <%= f.label :show_on_home %>
+    <%= f.select(:show_on_home, Interioridea::SHOW_ON_HOME) %><br>
+  </div>
+  <div class="form-group">
+    <%= f.label :image %>
+    <%= f.file_field :image %><br>
+  </div>
+
+  <%= f.submit 'save', :class => 'btn btn-primary' %>
+  <% end -%>

@@ -2,6 +2,6 @@ class User::InteriorideasController < ApplicationController
 	layout 'user'
 
 	def index
-		@interioridea = Interioridea.all
+		@interiorideas = Interioridea.all
 	end
 end

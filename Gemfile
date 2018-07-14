@@ -6,6 +6,7 @@ git_source(:github) do |repo_name|
 end
 
 gem 'bootstrap', '~> 4.1.1'
+gem 'carrierwave', '~> 1.2', '>= 1.2.3'
 gem 'coffee-rails', '~> 4.2'
 gem 'devise', '~> 4.4', '>= 4.4.3'
 gem 'font-awesome-sass', '~> 5.0.13'
