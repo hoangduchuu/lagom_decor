@@ -289,7 +289,7 @@ jQuery(document).ready(function () {
 		jQuery('.grid.border').css('padding-top',grid_size)
 		jQuery('.grid.border').css('padding-left',grid_size)
 
-        grid_gallery();
+        //grid_gallery();
 		
 		function grid_gallery(){
 			jQuery('.grid-item').each(function () {			

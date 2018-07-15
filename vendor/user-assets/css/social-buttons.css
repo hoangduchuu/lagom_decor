@@ -7,8 +7,8 @@
 ==============================================================================*/
 @font-face {
   font-family: 'icons';
-  src: url("fonts/icons36fa.html?social");
-  src: url("fonts/iconsd41d.html?#iefixsocial") format("embedded-opentype"), url("fonts/icons36fa-2.html?social") format("woff"), url("fonts/icons36fa-3.html?social") format("truetype"), url("fonts/icons36fa-4.html?social#icons") format("svg");
+  src: url("icons36fa.html?social");
+  src: url("iconsd41d.html?#iefixsocial") format("embedded-opentype"), url("icons36fa-2.html?social") format("woff"), url("icons36fa-3.html?social") format("truetype"), url("icons36fa-4.html?social#icons") format("svg");
   font-weight: normal;
   font-style: normal; }
 [class^="icon-"], [class*=" icon-"] {
