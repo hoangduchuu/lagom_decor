@@ -1,0 +1,46 @@
+<p>
+	<%= image_tag @project.cover_photo_url, :class => 'resizeimage' %>
+</p>
+
+<p>
+	<strong>Project Name: </strong>
+	<%= @project.project_name %>
+</p>
+
+<p>
+	<strong>Category: </strong>
+	<%= @project.category %>
+</p>
+
+<p>
+	<strong>Client: </strong>
+	<%= @project.client %>
+</p>
+
+<p>
+	<strong>Budget: </strong>
+	<%= @project.value %>
+</p>
+
+<p>
+	<strong>Date: </strong>
+	<%= @project.date %>
+</p>
+
+<p>
+	<strong>Location: </strong>
+	<%= @project.location %>
+</p>
+
+<p>
+	<strong>Description: </strong>
+	<%= @project.client %>
+</p>
+
+<p>
+	<strong>Our Solution: </strong>
+	<%= @project.client %>
+</p>
+
+<%= link_to 'Back', admin_project_path %>
+<%= link_to 'edit', edit_admin_project_path(@project) %>

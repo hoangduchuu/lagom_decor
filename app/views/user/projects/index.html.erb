@@ -1,0 +1,213 @@
+<body class="page-projects">
+
+    <div id="wrapper">
+        <!-- header begin -->
+        <header class="header-bg">
+            <div class="info">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="col">Working Hours Monday - Friday <span class="id-color"><strong>08:00-16:00</strong></span></div>
+                            <div class="col">Toll Free <span class="id-color"><strong>1800.899.900</strong></span></div>
+                            <!-- social icons -->
+                            <div class="col social">
+                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                <a href="#"><i class="fa fa-rss"></i></a>
+                                <a href="#"><i class="fa fa-google-plus"></i></a>
+                                <a href="#"><i class="fa fa-envelope-o"></i></a>
+                            </div>
+                            <!-- social icons close -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <!-- logo begin -->
+                            <div id="logo">
+                                <a href="index.html">
+                                    <%= image_tag('logo.png', :class => 'logo') %>
+                                </a>
+                            </div>
+                            <!-- logo close -->
+
+                            <!-- small button begin -->
+                            <span id="menu-btn"></span>
+                            <!-- small button close -->
+
+                            <!-- mainmenu begin -->
+                            <nav>
+                                <ul id="mainmenu">
+                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="projects-contained-3-cols.html">Projects</a></li>
+                                    <li><a href="gallery-3-cols.html">InteriorDesign</a></li>
+                                    <li><a href="shop.html">Shop</a></li>
+                                    <li><a href="services.html">Consulting</a></li>  
+                                    <li><a href="contact.html">Contact</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <!-- mainmenu close -->
+
+                    </div>
+                </div>
+        </header>
+        <!-- header close -->
+
+        <!-- subheader -->
+        <section id="subheader" data-speed="8" data-type="background">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1>Projects</h1>
+                        <ul class="crumb">
+                            <li><a href="index.html">Home</a></li>
+                            <li class="sep">/</li>
+                            <li>Projects</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- subheader close -->
+
+        <!-- content begin -->
+        <div id="content">
+            <div class="container">
+
+                <div class="spacer-single"></div>
+
+                <!-- portfolio filter begin -->
+                <div class="row">
+                    <div class="col-md-12">
+                        <ul id="filters" class="wow fadeInUp" data-wow-delay="0s">
+                            <li><a href="#" data-filter=".residential">Residential</a></li>
+                            <li><a href="#" data-filter=".hospitaly">Hospitaly</a></li>
+                            <li><a href="#" data-filter=".office">Office</a></li>
+                            <li><a href="#" data-filter=".commercial">Commercial</a></li>
+                            <li class="pull-right"><a href="#" data-filter="*" class="selected">All Projects</a></li>
+                        </ul>
+
+                    </div>
+                </div>
+                <!-- portfolio filter close -->
+
+                <div id="gallery" class="row gallery full-gallery de-gallery pf_4_cols hover-1 wow fadeInUp" data-wow-delay=".3s">
+
+                    <!-- gallery item -->
+                    <% @projects.where(:category => 'residential').each do |pro| %>
+                    <div class="col-md-6 col-sm-6 col-xs-12 item mb30 residential">
+                        <div class="picframe">
+                            <a class="simple-ajax-popup-align-top" href="project-details-1.html">
+                                <span class="overlay-1">
+                                    <span class="pf_text">
+                                        <span class="project-name"><%= pro.project_name %></span>
+                                    </span>
+                                </span>
+                            </a>
+                            <%= image_tag pro.cover_photo_url %>
+                        </div>
+                    </div>
+                    <% end -%>
+                    <!-- close gallery item -->
+
+                    <!-- gallery item -->
+                    <% @projects.where(:category => 'hospitaly').each do |pro| %>
+                    <div class="col-md-6 col-sm-6 col-xs-12 item mb30 hospitaly">
+                        <div class="picframe">
+                            <a class="simple-ajax-popup-align-top" href="project-details-1.html">
+                                <span class="overlay-1">
+                                    <span class="pf_text">
+                                        <span class="project-name"><%= pro.project_name %></span>
+                                    </span>
+                                </span>
+                            </a>
+                            <%= image_tag pro.cover_photo_url %>
+                        </div>
+                    </div>
+                    <% end -%>
+                    <!-- close gallery item -->
+
+                    <!-- gallery item -->
+                    <% @projects.where(:category => 'office').each do |pro| %>
+                    <div class="col-md-6 col-sm-6 col-xs-12 item mb30 office">
+                        <div class="picframe">
+                            <a class="simple-ajax-popup-align-top" href="project-details-1.html">
+                                <span class="overlay-1">
+                                    <span class="pf_text">
+                                        <span class="project-name"><%= pro.project_name %></span>
+                                    </span>
+                                </span>
+                            </a>
+                            <%= image_tag pro.cover_photo_url %>
+                        </div>
+                    </div>
+                    <% end -%>
+                    <!-- close gallery item -->
+
+                    <!-- gallery item -->
+                    <% @projects.where(:category => 'commercial').each do |pro| %>
+                    <div class="col-md-6 col-sm-6 col-xs-12 item mb30 commercial">
+                        <div class="picframe">
+                            <a class="simple-ajax-popup-align-top" href="project-details-1.html">
+                                <span class="overlay-1">
+                                    <span class="pf_text">
+                                        <span class="project-name"><%= pro.project_name %></span>
+                                    </span>
+                                </span>
+                            </a>
+                            <%= image_tag pro.cover_photo_url %>
+                        </div>
+                    </div>
+                    <% end -%>
+                    <!-- close gallery item -->
+
+                </div>
+            </div>
+        </div>
+
+        <!-- footer begin -->
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <%= image_tag('logo.png', :class => 'logo-small') %><br>
+                        We are team based on Brookylin. Our expertise on Interior Design. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. 
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="widget widget_recent_post">
+                            <h3>Latest News</h3>
+                            <ul>
+                                <li><a href="#">5 Things That Take a Room from Good to Great</a></li>
+                                <li><a href="#">Functional and Stylish Wall-to-Wall Shelves</a></li>
+                                <li><a href="#">9 Unique and Unusual Ways to Display Your TV</a></li>
+                                <li><a href="#">The 5 Secrets to Pulling Off Simple, Minimal Design</a></li>
+                                <li><a href="#">How to Make a Huge Impact With Multiples</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <h3>Contact Us</h3>
+                        <div class="widget widget-address">
+                            <address>
+                                <span>100 Mainstreet Center, Sydney</span>
+                                <span><strong>Phone:</strong>(208) 333 9296</span>
+                                <span><strong>Fax:</strong>(208) 333 9298</span>
+                                <span><strong>Email:</strong><a href="mailto:contact@archi-interior.com">contact@archi-interior.com</a></span>
+                                <span><strong>Web:</strong><a href="#">http://archi-interior.com</a></span>
+                            </address>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <a href="#" id="back-to-top"></a>
+        </footer>
+        <!-- footer close -->
+
+    </div>
