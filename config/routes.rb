@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 		resources :consultings
 		resources :products
 		resources :interiorideas
+		resources :projects
 	end
 
 	namespace :user do
@@ -19,6 +20,7 @@ Rails.application.routes.draw do
 		resources :consultings
 		resources :products
 		resources :interiorideas
+		resources :projects
 	end
 	root 'user/homes#index'
 end
