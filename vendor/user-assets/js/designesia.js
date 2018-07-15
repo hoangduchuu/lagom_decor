@@ -288,6 +288,8 @@ jQuery(document).ready(function () {
 		
 		jQuery('.grid.border').css('padding-top',grid_size)
 		jQuery('.grid.border').css('padding-left',grid_size)
+
+        //grid_gallery();
 		
 		function grid_gallery(){
 			jQuery('.grid-item').each(function () {			
@@ -315,10 +317,10 @@ jQuery(document).ready(function () {
 				$(this).css('height',(h*2)+this_gridspace);
 				gi.find(".pf_title").css('margin-top',(h)-20);
 			}
-			});
+			})
 		}
 		
-		grid_gallery();
+		
 
 
         jQuery('.overlay').fadeTo(1, 0);

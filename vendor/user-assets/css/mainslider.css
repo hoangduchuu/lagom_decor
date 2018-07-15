@@ -1,50 +1,43 @@
 :root {
   --container-bg-color: #333;
-  --left-bg-color: rgba(223, 39, 39, 0.7);
-  --left-button-hover-color: rgba(161, 11, 11, 0.3);
-  --right-bg-color: rgba(43, 43, 43, 0.8);
-  --right-button-hover-color: rgba(92, 92, 92, 0.3);
+  --left-button-hover-color: rgba(247, 219, 4, 0.8);
+  --right-button-hover-color: rgba(247, 219, 4, 0.8);
   --hover-width: 75%;
   --other-width: 25%;
   --speed: 1000ms;
 }
 
-.h1-text {
-  font-size: 4rem;
-  color: #fff;
+.button {
+  display: block;
   position: absolute;
   left: 50%;
-  top: 20%;
+  top: 40%;
+   color: #f9f9f7 !important;
+  height: 7rem;
+  padding-top: 2rem;
+  width: 30rem;
+  text-align: center;
+  border: #ffffff solid 0.2rem;
+  font-size: 3rem;
+  background-color: rgb(252, 252, 252, 0.5);
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
   transform: translateX(-50%);
-  white-space: nowrap;
 }
 
-.slider-button {
-  display: block !important;
-  position: absolute !important;
-  left: 50% !important;
-  top: 40% !important;
-  height: 2.5rem !important;
-  padding-top: 1.3rem !important;
-  width: 15rem !important;
-  text-align: center !important;
-  color: #fff !important;
-  border: #fff solid 0.2rem !important;
-  font-size: 1rem !important;
-  font-weight: bold !important;
-  text-transform: uppercase !important;
-  text-decoration: none !important;
-  transform: translateX(-50%) !important;
-}
-
-.split.left .slider-button:hover {
+.split.left .button:hover {
+	  color: #f9f9f7;
+	text-decoration: none;
   background-color: var(--left-button-hover-color);
-  border-color: var(--left-button-hover-color);
+  border-color: #f7db04 solid 0.2rem;
 }
 
-.split.right .slider-button:hover {
+.split.right .button:hover {
+	color: #f9f9f7;
+	text-decoration: none;
   background-color: var(--right-button-hover-color);
-  border-color: var(--right-button-hover-color);
+  border-color: #f7db04 solid 0.2rem;
 }
 
 .slider-container {
@@ -63,7 +56,7 @@
 
 .split.left {
   left:0;
-  background: url('https://image.ibb.co/m56Czw/designer.jpg') center center no-repeat;
+  background: url('shop.jpg') center center no-repeat;
   background-size: cover;
 }
 
@@ -72,12 +65,11 @@
   content: "";
   width: 100%;
   height: 100%;
-  background: var(--left-bg-color);
 }
 
 .split.right {
   right:0;
-  background: url('https://image.ibb.co/m3ZbRb/programmer.png') center center no-repeat;
+  background: url('consulting.png') center center no-repeat;
   background-size: cover;
 }
 
@@ -86,7 +78,6 @@
   content: "";
   width: 100%;
   height: 100%;
-  background: var(--right-bg-color);
 }
 
 .split.left, .split.right, .split.right:before, .split.left:before {
@@ -123,13 +114,13 @@
     font-size: 2rem;
   }
 
-  .slider-button {
-    width: 12rem;
+  .button {
+    width: 120rem;
   }
 }
 
 @media(max-height: 700px) {
-  .slider-button {
+  .button {
     top: 70%;
   }
 }

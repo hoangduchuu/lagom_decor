@@ -475,7 +475,3 @@ footer.sticky-footer {
     width: calc(100% - 55px);
   }
 }
-
-.resizeimage{
-  max-width: 50px;
-}

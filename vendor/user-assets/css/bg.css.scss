@@ -19,18 +19,15 @@ background-size: 100% !important;
 }
 
 /* general background image for subheader */
-#subheader{
-background:url(../images/background/bg-subheader.jpg)top fixed;
-}
 
 /* background settings for page subheader */
-.page-projects #subheader{background-image:url(../images/background/subheader-1.jpg);}
+.page-projects #subheader{background:url(asset-path('subheader-1.jpg'));}
 .page-projects-alt #subheader{background-image:url(../images/background/subheader-1b.jpg);}
-.page-services #subheader{background-image:url(../images/background/subheader-2.jpg);}
-.page-about #subheader{background-image:url(../images/background/subheader-3.jpg);}
-.page-blog #subheader{background-image:url(../images/background/subheader-4.jpg);}
-.page-shop #subheader{background-image:url(../images/background/subheader-5.jpg);}
-.page-contact #subheader{background-image:url(subheader-6.jpg);}
+.page-services #subheader{background:url(asset-path('subheader-2.jpg'));}
+/*.page-about #subheader{background-image:url(../images/background/subheader-3.jpg);} */
+/* .page-blog #subheader{background-image:url(../images/background/subheader-4.jpg);} */
+.page-shop #subheader{background:url(asset-path('subheader-5.jpg'));}
+.page-contact #subheader{background:url(asset-path('subheader-6.jpg'));}
 
 /* background settings for section */
 #info-address{background:url(../images/background/bg-3.jpg) top fixed;}
@@ -59,14 +56,14 @@ background:url(../images/background/bg-subheader.jpg)top fixed;
 #section-welcome-10{background:url(../images/background/bg-23.jpg) top fixed;}
 #section-welcome-11{background:url(../images/background/bg-25.jpg) top fixed;}
 #section-welcome-12{background:url(../images/background/bg-26.jpg) top fixed;}
-#section-why-choose-us{background:url(bg-8.jpg) top fixed;}
+#section-why-choose-us{background:url(asset-path('bg-8.jpg')) top fixed;}
 #section-why-choose-us-3{background:url(../images/background/bg-16.jpg) top fixed;}
 #section-portfolio{background:#222; width:101%; overflow:hidden;}
 .de_light #section-portfolio{background:#fff;}
 #section-skill-bar{ background:url(../images/background/bg-8.jpg) top fixed;}
-#section-testimonial{ background:url(bg-3.jpg) top fixed;}
+#section-testimonial{background:url(asset-path('bg-3.jpg')) top fixed;}
 #section-testimonial-2{ background:url(../images/background/bg-17.jpg) top fixed;}
-#section-steps{ background:url(../images/background/bg-2.jpg) top fixed;}
+#section-steps{background:url(asset-path('bg-2.jpg')) top fixed;}
 #section-steps-2{ background:#f5f5f5;}
 #section-steps-3{ background:url(../images/background/bg-12.jpg) top fixed;}
 #section-team{background:#111;}

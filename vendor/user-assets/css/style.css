@@ -5476,8 +5476,8 @@ display:table;
 	letter-spacing:5px;
 	}
 
-	#filters li.pull-right{
-	float:none !important;
+	#filters li.float-right{
+	float:none;
 	}
 	
 	.sm-hide{
