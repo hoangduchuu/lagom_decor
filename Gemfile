@@ -11,7 +11,6 @@ gem 'coffee-rails', '~> 4.2'
 gem 'font-awesome-sass', '~> 5.0.13'
 gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
-gem 'mini_magick', '~> 4.8'
 gem "passenger"
 gem 'popper_js', '~> 1.12.9'
 gem 'rails', '~> 5.1.3'

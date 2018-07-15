@@ -212,7 +212,6 @@ DEPENDENCIES
   font-awesome-sass (~> 5.0.13)
   jbuilder (~> 2.5)
   jquery-rails
-  mini_magick (~> 4.8)
   passenger
   popper_js (~> 1.12.9)
   rails (~> 5.1.3)
