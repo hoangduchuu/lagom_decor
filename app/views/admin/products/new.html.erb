@@ -1,5 +1,18 @@
+<ol class="breadcrumb">
+<li class="breadcrumb-item">
+  <a href="#">Dashboard</a>
+</li>
+<li class="breadcrumb-item">
+<%= link_to 'Products', admin_products_path %>
+</li>
+<li class="breadcrumb-item active">New</li>
+<%= link_to 'Add new Product', new_admin_product_path, :class => 'btn btn-success left-right' %>
+</ol>
+
+
 <%= form_with model: [:admin, @product], local: true do |form| %>
  
+ <div class="container" style="margin: 50px;">
   <p>
     <%= form.label :product_number %><br>
     <%= form.text_field :product_number %>
@@ -31,7 +44,8 @@
   </p>
  
   <p>
-    <%= form.submit %>
+    <%= form.submit, :class => 'btn btn-primary' %>
   </p>
+</div>
  
 <% end %>

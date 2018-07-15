@@ -1,5 +1,18 @@
+<ol class="breadcrumb">
+<li class="breadcrumb-item">
+  <a href="#">Dashboard</a>
+</li>
+<li class="breadcrumb-item">
+<%= link_to 'Interior Ideas', admin_interiorideas_path %>
+</li>
+<li class="breadcrumb-item active">Show</li>
+<%= link_to 'Edit', edit_admin_interioridea_path(@project), :class => 'btn btn-danger left-right' %>
+<%= link_to 'Add new Project', new_admin_interioridea_path, :class => 'btn btn-success left-right' %>
+</ol>
+
+<div class="container" style="margin: 50px;">
 <p>
-	<%= image_tag @interioridea.image_url, :class => 'resizeimage' %>
+	<%= image_tag @interioridea.image_url, :class => 'resizeimage-big' %>
 </p>
 
 <p>
@@ -16,6 +29,4 @@
 	<strong>Name: </strong>
 	<%= @interioridea.show_on_home %>
 </p>
-
-<%= link_to 'Back', admin_interiorideas_path %>
-<%= link_to 'edit', edit_admin_interioridea_path(@interioridea) %>
+</div>

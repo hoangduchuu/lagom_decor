@@ -1,0 +1,55 @@
+<header class="header-bg">
+               <div class="info">
+                <div class="container">
+                 <div class="row">
+                  <div class="col-md-12">
+                    <% @contact.each do |c| %>
+                   <div class="col">Working Hours <%= c.opendate %> - <%= c.closedate %> <span class="id-color"><strong><%= c.openat %> - <%= c.closeat %></strong></span></div>
+                   <div class="col">Phone <span class="id-color"><strong><%= c.phone %></strong></span></div>
+                    <div class="col">Email <span class="id-color"><strong><%= c.email %></strong></span></div>
+                    <% end -%>
+                   <!-- social icons -->
+                   <div class="col social">
+                    <a href="#"><i class="fa fa-facebook"></i></a>
+                    <a href="#"><i class="fa fa-twitter"></i></a>
+                    <a href="#"><i class="fa fa-rss"></i></a>
+                    <a href="#"><i class="fa fa-google-plus"></i></a>
+                    <a href="#"><i class="fa fa-envelope-o"></i></a>
+                </div>
+                <!-- social icons close -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <!-- logo begin -->
+            <div id="logo">
+                <a href="index.html">
+                    <%=image_tag('logo.png', :class => 'logo')%>
+                </a>
+            </div>
+            <!-- logo close -->
+
+            <!-- small button begin -->
+            <span id="menu-btn"></span>
+            <!-- small button close -->
+
+            <!-- mainmenu begin -->
+            <nav>
+                <ul id="mainmenu">
+                    <li><%= link_to 'Home', user_homes_path %></li>
+                    <li><%= link_to 'Projects', user_projects_path %>
+                    <li><%= link_to 'Interiorideas', user_interiorideas_path %>
+                    <li><%= link_to 'Shop', user_products_path %></li>
+                    <li><%= link_to 'Consulting', user_consultings_path %></li>  
+                    <li><%= link_to 'Contact', user_contacts_path %></li>
+                </ul>
+            </nav>
+        </div>
+        <!-- mainmenu close -->
+    </div>
+</div>
+</header>

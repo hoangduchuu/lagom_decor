@@ -1,3 +1,11 @@
+<ol class="breadcrumb">
+<li class="breadcrumb-item">
+  <a href="#">Dashboard</a>
+</li>
+<li class="breadcrumb-item active">Projects</li>
+<%= link_to 'Add new Project', new_admin_project_path, :class => 'btn btn-success left-right' %>
+</ol>
+
 <table class="table">
     <thead>
       <tr>
@@ -24,7 +32,6 @@
         <td style="vertical-align: middle;"><%= pro.location %></td>
         <td style="vertical-align: middle;"><%= pro.description %></td>
         <td style="vertical-align: middle;"><%= pro.solution %></td>
-        <td style="vertical-align: middle;"><%= link_to 'New', new_admin_project_path %></td>
         <td style="vertical-align: middle;"><%= link_to 'show', admin_project_path(pro) %></td>
         <td style="vertical-align: middle;"><%= link_to 'Edit', edit_admin_project_path(pro) %></td>
         <td style="vertical-align: middle;"><%= link_to 'Destroy', admin_projects_path(pro), method: :destroy, data: { confirm: 'Are you sure?' } %></td>

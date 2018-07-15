@@ -1,5 +1,17 @@
+<ol class="breadcrumb">
+<li class="breadcrumb-item">
+  <a href="#">Dashboard</a>
+</li>
+<li class="breadcrumb-item">
+<%= link_to 'Projects', admin_projects_path %>
+</li>
+<li class="breadcrumb-item active">Edit</li>
+<%= link_to 'Add new Project', new_admin_project_path, :class => 'btn btn-success left-right' %>
+</ol>
+
 <%= form_with model: [:admin, @project], local: true do |f| %>
 
+<div class="container" style="padding: 50px;">
   <div class="form-group">
     <%= f.label :category %>
     <%= f.select(:category, Project::CATEGORIES) %><br>
@@ -37,5 +49,6 @@
     <%= f.file_field :cover_photo %><br>
   </div>
 
-  <%= f.submit 'save', :class => 'btn btn-primary' %>
+  <%= f.submit 'Save Changes', :class => 'btn btn-primary' %>
+</div>
   <% end -%>

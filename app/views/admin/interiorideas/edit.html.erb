@@ -1,5 +1,17 @@
+<ol class="breadcrumb">
+<li class="breadcrumb-item">
+  <a href="#">Dashboard</a>
+</li>
+<li class="breadcrumb-item">
+<%= link_to 'Interior Ideas', admin_interiorideas_path %>
+</li>
+<li class="breadcrumb-item active">Edit</li>
+<%= link_to 'Add new Project', new_admin_interioridea_path, :class => 'btn btn-success left-right' %>
+</ol>
+
 <%= form_with model: [:admin, @interioridea], local: true do |form| %>
  
+ <div class="container" style="padding: 50px;">
   <p>
     <%= form.label :category %><br>
     <%= form.select(:category, Interioridea::CATEGORIES) %>
@@ -23,5 +35,6 @@
   <p>
     <%= form.submit %>
   </p>
+</div>
  
 <% end %>

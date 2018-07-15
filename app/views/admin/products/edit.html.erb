@@ -1,5 +1,17 @@
+<ol class="breadcrumb">
+<li class="breadcrumb-item">
+  <a href="#">Dashboard</a>
+</li>
+<li class="breadcrumb-item">
+<%= link_to 'Products', admin_products_path %>
+</li>
+<li class="breadcrumb-item active">Edit</li>
+<%= link_to 'Add new Product', new_admin_product_path, :class => 'btn btn-success left-right' %>
+</ol>
+
 <%= form_for [:admin, @product] do |f| %>
 
+<div class="container" style="padding: 50px;">
   <div class="form-group">
     <%= f.label :product_number %>
 	<%= f.text_field :product_number, :class => 'form-control' %><br>
@@ -26,4 +38,5 @@
   </div>
 
   <%= f.submit 'save', :class => 'btn btn-primary' %>
+</div>
   <% end -%>

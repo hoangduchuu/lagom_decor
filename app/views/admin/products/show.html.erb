@@ -1,3 +1,16 @@
+<ol class="breadcrumb">
+<li class="breadcrumb-item">
+  <a href="#">Dashboard</a>
+</li>
+<li class="breadcrumb-item">
+<%= link_to 'Products', admin_projects_path %>
+</li>
+<li class="breadcrumb-item active">Show</li>
+<%= link_to 'Edit', edit_admin_product_path(@product), :class => 'btn btn-danger left-right' %>
+<%= link_to 'Add new Product', new_admin_product_path, :class => 'btn btn-success left-right' %>
+</ol>
+
+<div class="container" style="margin: 50px;">
 <p>
 	<%= image_tag @product.avatar_url %>
 </p>
@@ -26,6 +39,4 @@
 	<strong>Top rated: </strong>
 	<%= @product.top_rated %>
 </p>
-
-<%= link_to 'Back', admin_products_path %>
-<%= link_to 'edit', edit_admin_product_path(@product) %>
+</div>

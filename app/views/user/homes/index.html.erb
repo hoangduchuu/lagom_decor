@@ -3,54 +3,7 @@
         <div id="wrapper">
 
             <!-- header begin -->
-            <header>
-                <div class="info">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <% @contact.each do |c| %>
-                   <div class="col">Working Hours <%= c.opendate %> - <%= c.closedate %> <span class="id-color"><strong><%= c.openat %> - <%= c.closeat %></strong></span></div>
-                   <div class="col">Phone <span class="id-color"><strong><%= c.phone %></strong></span></div>
-                    <div class="col">Email <span class="id-color"><strong><%= c.email %></strong></span></div>
-                    <% end -%>
-                                <!-- social icons close -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <!-- logo begin -->
-                            <div id="logo">
-                                <a href="index.html">
-                                    <%= image_tag('logo.png', :class => 'logo') %>
-                                </a>
-                            </div>
-                            <!-- logo close -->
-
-                            <!-- small button begin -->
-                            <span id="menu-btn"></span>
-                            <!-- small button close -->
-
-                            <!-- mainmenu begin -->
-                            <nav>
-                        <ul id="mainmenu">
-                            <li><%= link_to 'Home', user_homes_path %></li>
-                            <li><a href="#">Projects</a></li>
-                            <li><a href="#">InteriorDesign</a></li>
-                            <li><%= link_to 'Shop', user_products_path %></li>
-                            <li><%= link_to 'Consulting', user_consultings_path %></li>  
-                            <li><%= link_to 'Contact', user_contacts_path %></li>
-                        </ul>
-                            </nav>
-                        </div>
-                        <!-- mainmenu close -->
-
-                    </div>
-                </div>
-            </header>
+                <%= render 'user/contacts/header' %>
             <!-- header close -->
 
             <!-- content begin -->
@@ -377,20 +330,20 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-6 col-md-offset-3 text-center wow fadeInUp">
-                            <h1>What We Do</h1>
+                            <h1>Proudly Partners With</h1>
                             <div class="separator"><span><i class="fa fa-circle"></i></span></div>
                             <div class="spacer-single"></div>
                         </div>
                     </div>
                       <section class="customer-logos slider" style="padding-top: 0;">
+    <div class="slide"><%= image_tag('p1.png') %></div>
+    <div class="slide"><%= image_tag('p2.png') %></div>
+    <div class="slide"><%= image_tag('p3.png') %></div>
+    <div class="slide"><%= image_tag('p4.png') %></div>
     <div class="slide"><%= image_tag('p5.png') %></div>
-    <div class="slide"><%= image_tag('p5.png') %></div>
-    <div class="slide"><%= image_tag('p5.png') %></div>
-    <div class="slide"><%= image_tag('p5.png') %></div>
-    <div class="slide"><%= image_tag('p5.png') %></div>
-    <div class="slide"><%= image_tag('p5.png') %></div>
-    <div class="slide"><%= image_tag('p5.png') %></div>
-    <div class="slide"><%= image_tag('p5.png') %></div>
+    <div class="slide"><%= image_tag('p6.png') %></div>
+    <div class="slide"><%= image_tag('p7.png') %></div>
+    <div class="slide"><%= image_tag('p8.png') %></div>
   </section>
                 </div>
             </section>
@@ -416,66 +369,7 @@
 <!-- Popup Window END -->
 
 <!-- footer begin -->
-<footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4">
-                <%= image_tag('logo.png', :class => 'logo-small') %><br>
-                We are a team based on HCM, Viet Nam expertise in Interior Design. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.
-            </div>
-
-            <div class="col-md-4">
-                <div class="widget widget_recent_post">
-                    <h3>Latest News</h3>
-                    <ul>
-                        <li><a href="#">5 Things That Take a Room from Good to Great</a></li>
-                        <li><a href="#">Functional and Stylish Wall-to-Wall Shelves</a></li>
-                        <li><a href="#">9 Unique and Unusual Ways to Display Your TV</a></li>
-                        <li><a href="#">The 5 Secrets to Pulling Off Simple, Minimal Design</a></li>
-                        <li><a href="#">How to Make a Huge Impact With Multiples</a></li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="col-md-4">
-                <h3>Contact Us</h3>
-                <div class="widget widget-address">
-                    <address>
-                        <% @contact.each do |c| %>
-                        <span><%= c.address %></span>
-                        <span><strong>Phone:</strong><%= c.phone %></span>
-                        <span><strong>Fax:</strong><%= c.fax %></span>
-                        <span><strong>Email:</strong><%= c.email %></span>
-                        <% end -%>
-                    </address>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- <div class="subfooter">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    &copy; Copyright 2018 - Archi Interior Design Template by <span class="id-color">Designesia</span>
-                </div>
-                <div class="col-md-6 text-right">
-                    <div class="social-icons">
-                        <a href="#"><i class="fa fa-facebook fa-lg"></i></a>
-                        <a href="#"><i class="fa fa-twitter fa-lg"></i></a>
-                        <a href="#"><i class="fa fa-rss fa-lg"></i></a>
-                        <a href="#"><i class="fa fa-google-plus fa-lg"></i></a>
-                        <a href="#"><i class="fa fa-skype fa-lg"></i></a>
-                        <a href="#"><i class="fa fa-dribbble fa-lg"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
-    <a href="#" id="back-to-top"></a>
-</footer>
+    <%= render 'user/contacts/footer' %>
 <!-- footer close -->
 </div>
 </div>

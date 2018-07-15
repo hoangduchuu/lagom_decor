@@ -1,3 +1,11 @@
+<ol class="breadcrumb">
+<li class="breadcrumb-item">
+  <a href="#">Dashboard</a>
+</li>
+<li class="breadcrumb-item active">Products</li>
+<%= link_to 'Add new Product', new_admin_product_path, :class => 'btn btn-success left-right' %>
+</ol>
+
 <table class="table">
     <thead>
       <tr>
@@ -18,7 +26,6 @@
         <td style="vertical-align: middle;"><%= p.product_name %></td>
         <td style="vertical-align: middle;"><%= p.price %></td>
         <td style="vertical-align: middle;"><%= p.top_rated %></td>
-        <td style="vertical-align: middle;"><%= link_to 'New', new_admin_product_path %></td>
         <td style="vertical-align: middle;"><%= link_to 'show', admin_product_path(p) %></td>
         <td style="vertical-align: middle;"><%= link_to 'Edit', edit_admin_product_path(p) %></td>
         <td style="vertical-align: middle;"><%= link_to 'Destroy', admin_products_path(p), method: :Destroy, data: { confirm: 'Are you sure?' } %></td>

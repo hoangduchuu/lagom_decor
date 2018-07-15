@@ -1,3 +1,5 @@
+<%= render 'head' %>
+
 <% @contact.each do |c| %>
 
 <table class="table">
@@ -23,12 +25,12 @@
             <td><%= link_to 'Edit', edit_admin_contact_path(c) %></td>
         </tr>
         <tr>
-          <th>Open Date</th>
+          <th>Open From</th>
             <td><%= c.opendate %></td>
             <td><%= link_to 'Edit', edit_admin_contact_path(c) %></td>
         </tr>
       <tr>
-          <th>Close Date</th>
+          <th>Open To</th>
             <td><%= c.closedate %></td>
             <td><%= link_to 'Edit', edit_admin_contact_path(c) %></td>
         </tr>
@@ -38,7 +40,7 @@
             <td><%= link_to 'Edit', edit_admin_contact_path(c) %></td>
         </tr>
       <tr>
-          <th>Close Date</th>
+          <th>Close at</th>
             <td><%= c.closeat %></td>
             <td><%= link_to 'Edit', edit_admin_contact_path(c) %></td>
         </tr>

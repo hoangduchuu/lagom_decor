@@ -1,5 +1,17 @@
+<ol class="breadcrumb">
+<li class="breadcrumb-item">
+  <a href="#">Dashboard</a>
+</li>
+<li class="breadcrumb-item">
+<%= link_to 'Interior Ideas', admin_interiorideas_path %>
+</li>
+<li class="breadcrumb-item active">New</li>
+<%= link_to 'Add new Project', new_admin_interioridea_path, :class => 'btn btn-success left-right' %>
+</ol>
+
 <%= form_for [:admin, @interioridea] do |f| %>
 
+<div class="container" style="margin: 50px;">
   <div class="form-group">
     <%= f.label :title %>
 	<%= f.text_field :title, :class => 'form-control' %><br>
@@ -18,4 +30,5 @@
   </div>
 
   <%= f.submit 'save', :class => 'btn btn-primary' %>
+</div>
   <% end -%>
