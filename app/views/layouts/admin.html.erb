@@ -17,11 +17,8 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-          <a class="nav-link" href="index.html">
-            <i class="fas fa fa-tachometer"></i>
-            <span class="nav-link-text">Dashboard</span>
-          </a>
+         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
+            <%= link_to ' Dashboard', admin_dashboards_path, :class => 'fas fa fa-tachometer nav-link' %>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
             <%= link_to ' Home', admin_homes_path, :class => 'fas fa fa-home nav-link' %>

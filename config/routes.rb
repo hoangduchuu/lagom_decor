@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 		resources :products
 		resources :interiorideas
 		resources :projects
+		resources :dashboards
 	end
 
 	namespace :user do

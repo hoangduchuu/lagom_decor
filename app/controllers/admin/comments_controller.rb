@@ -16,7 +16,7 @@ class Admin::CommentsController < ApplicationController
 	def create
 		@comment = Comment.new(allowed_params)
 		if @comment.save
-			redirect_to admin_comments_path
+			redirect_to admin_homes_path
 		else
 			render 'new'
 		end
@@ -29,7 +29,7 @@ class Admin::CommentsController < ApplicationController
 	def update
 		@comment = Comment.find(params[:id])
 		if @comment.update_attributes(allowed_params)
-			redirect_to admin_comments_path
+			redirect_to admin_homes_path
 		else
 			render 'new'
 		end
@@ -38,7 +38,7 @@ class Admin::CommentsController < ApplicationController
 	def destroy
 		@comment = Comment.find(params[:id])
 		@comment.destroy
-		redirect_to admin_comments_path
+		redirect_to admin_homes_path
 	end
 
 	private 
