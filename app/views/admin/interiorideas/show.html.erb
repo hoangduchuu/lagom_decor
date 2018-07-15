@@ -1,0 +1,21 @@
+<p>
+	<%= image_tag @interioridea.image_url, :class => 'resizeimage' %>
+</p>
+
+<p>
+	<strong>Product number: </strong>
+	<%= @interioridea.title %>
+</p>
+
+<p>
+	<strong>Category: </strong>
+	<%= @interioridea.category %>
+</p>
+
+<p>
+	<strong>Name: </strong>
+	<%= @interioridea.show_on_home %>
+</p>
+
+<%= link_to 'Back', admin_interiorideas_path %>
+<%= link_to 'edit', edit_admin_interioridea_path(@interioridea) %>

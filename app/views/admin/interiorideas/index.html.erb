@@ -1,0 +1,24 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th></th>
+        <th>Title</th>
+        <th>Category</th>
+        <th>Show on Home page</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @interiorideas.each do |g| %>
+      <tr>
+        <td style="vertical-align: middle;"><%= image_tag g.image_url, :class => 'resizeimage' %></td>
+        <td style="vertical-align: middle;"><%= g.title %></td>
+        <td style="vertical-align: middle;"><%= g.category %></td>
+        <td style="vertical-align: middle;"><%= g.show_on_home %></td>
+        <td style="vertical-align: middle;"><%= link_to 'New', new_admin_interioridea_path %></td>
+        <td style="vertical-align: middle;"><%= link_to 'show', admin_interioridea_path(g) %></td>
+        <td style="vertical-align: middle;"><%= link_to 'Edit', edit_admin_interioridea_path(g) %></td>
+        <td style="vertical-align: middle;"><%= link_to 'Destroy', admin_interiorideas_path(g), method: :destroy, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+      <% end -%>
+    </tbody>
+  </table>

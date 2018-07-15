@@ -1,0 +1,27 @@
+<%= form_with model: [:admin, @interioridea], local: true do |form| %>
+ 
+  <p>
+    <%= form.label :category %><br>
+    <%= form.select(:category, Interioridea::CATEGORIES) %>
+  </p>
+
+  <p>
+    <%= form.label :title %><br>
+    <%= form.text_field :title %>
+  </p>
+
+  <p>
+    <%= form.label :show_on_home %><br>
+    <%= form.select(:show_on_home, Interioridea::SHOW_ON_HOME) %>
+  </p>
+
+  <p>
+    <%= form.label :image %><br>
+    <%= form.file_field :image %>
+  </p>
+ 
+  <p>
+    <%= form.submit %>
+  </p>
+ 
+<% end %>
