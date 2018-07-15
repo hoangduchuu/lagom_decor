@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
 	namespace :admin do
 		resources :homes
 		resources :comments
@@ -7,6 +8,7 @@ Rails.application.routes.draw do
 		resources :consultings
 		resources :consultings
 		resources :products
+		resources :interiorideas
 	end
 
 	namespace :user do
@@ -16,6 +18,7 @@ Rails.application.routes.draw do
 		resources :consultings
 		resources :consultings
 		resources :products
+		resources :interiorideas
 	end
 	root 'user/homes#index'
 end
