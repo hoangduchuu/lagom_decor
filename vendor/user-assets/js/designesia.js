@@ -437,6 +437,37 @@ jQuery(document).ready(function () {
 
     };
 
+    //grid_gallery();
+        
+        function grid_gallery(){
+            jQuery('.grid-item').each(function () {         
+            var this_col = Number(jQuery(this).parent().attr('data-col'));
+            var this_gridspace = Number(jQuery(this).parent().attr('data-gridspace'));
+            var this_ratio = eval($(this).parent().attr('data-ratio'));
+            jQuery(this).parent().css('padding-left',this_gridspace);
+            var w = (($(document).width()-(this_gridspace*this_col+1))/this_col)-(this_gridspace/this_col);
+            var gi = $(this);
+            var h = w*this_ratio;
+            gi.css('width',w)
+            gi.css('height',h);
+            gi.find(".pf_title").css('margin-top',(h/2)-10);
+            gi.css('margin-right',this_gridspace);
+            gi.css('margin-bottom',this_gridspace); 
+            if(gi.hasClass('large')){
+                $(this).css('width',(w*2)+this_gridspace);
+                $(this).css('height',(h*2)+this_gridspace);
+            }   
+            if(gi.hasClass('large-width')){
+                $(this).css('width',(w*2)+this_gridspace);
+                $(this).css('height',h);
+            }           
+            if(gi.hasClass('large-height')){
+                $(this).css('height',(h*2)+this_gridspace);
+                gi.find(".pf_title").css('margin-top',(h)-20);
+            }
+            })
+        }
+
 
     function init() {
 

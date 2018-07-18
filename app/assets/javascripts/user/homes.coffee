@@ -13,6 +13,6 @@
 //= require enquire.min
 //= require designesia
 //= require demo
+//= require slick
 //= require jquery.themepunch.plugins.min
 //= require jquery.themepunch.revolution.min
-//= require slick
