@@ -18,17 +18,17 @@
       </tr>
     </thead>
     <tbody>
-      <% @products.each do |p| %>
+      <% @products.each do |pro| %>
       <tr>
-        <td style="vertical-align: middle;"><%= image_tag p.avatar_url, :size => '100x100' %></td>
-        <td style="vertical-align: middle;"><%= p.product_number %></td>
-        <td style="vertical-align: middle;"><%= p.category %></td>
-        <td style="vertical-align: middle;"><%= p.product_name %></td>
-        <td style="vertical-align: middle;"><%= p.price %></td>
-        <td style="vertical-align: middle;"><%= p.top_rated %></td>
-        <td style="vertical-align: middle;"><%= link_to 'show', admin_product_path(p) %></td>
-        <td style="vertical-align: middle;"><%= link_to 'Edit', edit_admin_product_path(p) %></td>
-        <td style="vertical-align: middle;"><%= link_to 'Destroy', admin_products_path(p), method: :Destroy, data: { confirm: 'Are you sure?' } %></td>
+        <td style="vertical-align: middle;"><%= image_tag pro.avatar_url, :size => '100x100' %></td>
+        <td style="vertical-align: middle;"><%= pro.product_number %></td>
+        <td style="vertical-align: middle;"><%= pro.category %></td>
+        <td style="vertical-align: middle;"><%= pro.product_name %></td>
+        <td style="vertical-align: middle;"><%= pro.price %></td>
+        <td style="vertical-align: middle;"><%= pro.top_rated %></td>
+        <td style="vertical-align: middle;"><%= link_to 'show', admin_product_path(pro) %></td>
+        <td style="vertical-align: middle;"><%= link_to 'Edit', edit_admin_product_path(pro) %></td>
+        <td style="vertical-align: middle;"><%= link_to "Delete", admin_product_path(pro), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
       <% end -%>
     </tbody>
