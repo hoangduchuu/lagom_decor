@@ -1,0 +1,12 @@
+<ol class="breadcrumb" style="margin-left: 10px; margin-right: 10px;">
+  <li class="breadcrumb-item">
+    <%= link_to 'DASHBOARD', admin_dashboards_path %>
+  </li>
+  <li class="breadcrumb-item">
+    <%= link_to 'INTERIOR IDEAS', admin_interiorideas_path %>
+  </li>
+  <li class="breadcrumb-item active">EDIT</li>
+  <li class="breadcrumb-item active"><%= @interioridea.title %></li>
+</ol>
+
+<%= render 'form' %>

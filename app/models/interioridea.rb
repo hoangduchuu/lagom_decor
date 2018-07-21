@@ -1,7 +1,10 @@
 class Interioridea < ApplicationRecord
 
-	SHOW_ON_HOME = [['YES', 'yes'], ['NO', 'no']]
-	CATEGORIES = [['Bed Room', 'bedroom'], ['Dining Room', 'diningroom'], ['Kitchen', 'kitchen'], ['Guest Rooms', 'guestroom']]
+	SHOW_ON_HOME = [['NO', 'no'], ['YES', 'yes']]
 
-	mount_uploader :image, GalleryUploader
+	mount_uploader :image, InteriorideasCoverUploader
+	mount_uploader :image_one, InteriorideasCoverUploader
+	mount_uploader :image_two, InteriorideasCoverUploader
+	mount_uploader :image_three, InteriorideasCoverUploader
+
 end

@@ -1,0 +1,105 @@
+<ol class="breadcrumb" style="margin-left: 10px; margin-right: 10px;">
+	<li class="breadcrumb-item">
+		<%= link_to 'DASHBOARD', admin_dashboards_path %>
+	</li>
+	<li class="breadcrumb-item">
+		<%= link_to 'INTERIOR IDEAS', admin_interiorideas_path %>
+	</li>
+	<li class="breadcrumb-item active">VIEW</li>
+	<%= link_to 'EDIT', edit_admin_interioridea_path(@interioridea), :class => 'btn btn-sm btn-info left-right' %>
+	<%= link_to ' delete', admin_interioridea_path(@interioridea), :class => 'btn btn-sm btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %>
+	<%= link_to 'NEW IDEA', new_admin_interioridea_path, :class => 'btn btn-sm btn-success only-left' %>
+</ol>
+
+<div class="row" style="margin-left: 10px; margin-right: 10px;">
+	<div class="col-sm-3">
+		<div class="picframe">
+			<div class="card mb-3">
+				<% if @interioridea.image.present? %>
+				<%= image_tag @interioridea.image_url, :class => 'card-img-top img-fluid w-100' %>
+				<% else %>
+				<%=image_tag('logo.png', :class => 'card-img-top img-fluid w-100')%>
+				<% end %>
+				<div class="card-body">
+					<h6 class="card-title mb-1">Main Image</h6>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-sm-3">
+		<div class="picframe">
+			<div class="card mb-3">
+				<% if @interioridea.image_one.present? %>
+				<%= image_tag @interioridea.image_one_url, :class => 'card-img-top img-fluid w-100' %>
+				<% else %>
+				<%=image_tag('logo.png', :class => 'card-img-top img-fluid w-100')%>
+				<% end %>
+				<div class="card-body">
+					<h6 class="card-title mb-1">Sub Image - 01</h6>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-sm-3">
+		<div class="picframe">
+			<div class="card mb-3">
+				<% if @interioridea.image_two.present? %>
+				<%= image_tag @interioridea.image_two_url, :class => 'card-img-top img-fluid w-100' %>
+				<% else %>
+				<%=image_tag('logo.png', :class => 'card-img-top img-fluid w-100')%>
+				<% end %>
+				<div class="card-body">
+					<h6 class="card-title mb-1">Sub Image - 02</h6>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-sm-3">
+		<div class="picframe">
+			<div class="card mb-3">
+				<% if @interioridea.image_three.present? %>
+				<%= image_tag @interioridea.image_three_url, :class => 'card-img-top img-fluid w-100' %>
+				<% else %>
+				<%=image_tag('logo.png', :class => 'card-img-top img-fluid w-100')%>
+				<% end %>
+				<div class="card-body">
+					<h6 class="card-title mb-1">Sub Image - 03</h6>
+				</div>
+			</div>
+		</div>
+	</div>
+	<table class="table" style="margin-left: 10px; margin-right: 10px;">
+		<tbody>
+			<tr>
+				<td class="text-success" style="min-width: 200px;"><i class="fa fa-header"></i> Post Title</td>
+				<td style="word-break: break-word;"><%= @interioridea.title %></td>
+			</tr>                                        
+			<tr>
+				<td class="text-success"><i class="fa fa-header"></i> Interior Catogory</td>
+				<td><%= @interioridea.category %></td>
+			</tr>                                        
+			<tr>
+				<td class="text-success"><i class="fa fa-laptop"></i> Designer</td>
+				<td><%= @interioridea.designer %></td>
+			</tr>
+			<tr>
+				<td class="text-success"><i class="fa fa-eye"></i> Show on Home Page</td>
+				<td><%= @interioridea.show_on_home %></td>
+			</tr>
+			<tr>
+				<td class="text-danger"><i class="fa fa-pencil-square-o"></i> Post Created on</td>
+				<td><%= @interioridea.created_at.to_date %></td>
+			</tr>
+			<tr>
+				<td class="text-danger"><i class="fa fa-pencil"></i> Last Updated on</td>
+				<td><%= @interioridea.updated_at.to_date %></td>
+			</tr>
+		</tbody>
+	</table>
+	<div class="container">
+  <h5 class="text-success">New Idea Introduction</h5>
+  <blockquote>
+    <p><%= sanitize @interioridea.description.html_safe %></p>
+  </blockquote>
+</div>
+</div>

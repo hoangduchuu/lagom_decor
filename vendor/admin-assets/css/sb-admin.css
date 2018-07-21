@@ -481,9 +481,18 @@ footer.sticky-footer {
 }
 
 .resizeimage-big {
-  min-width: 200px;
+  max-width: 200px;
 }
 
 .left-right {
   margin-left: 50px;
+  margin-right: 10px;
+}
+
+.only-left {
+  margin-left: 10px;
+}
+
+.interior-btn {
+  display: none;
 }
