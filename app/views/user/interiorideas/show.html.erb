@@ -1,0 +1,77 @@
+<body class="page-service-item">
+
+    <div id="wrapper">
+        <!-- header begin -->
+        <%= render 'user/contacts/header' %>
+        <!-- header close -->
+
+        <!-- subheader -->
+        <section id="subheader" data-speed="8" data-type="background">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1><%= truncate(sanitize(@interioridea.title, :tags => %w(br a)), :length => 20) %></h1>
+                        <ul class="crumb">
+                            <li><a href="index.html">Home</a></li>
+                            <li class="sep">/</li>
+                            <li><a href="services.html">Interiorideas</a></li>
+                            <li class="sep">/</li>
+                            <li><%= truncate(sanitize(@interioridea.title, :tags => %w(br a)), :length => 20) %></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- subheader close -->
+
+        <!-- content begin -->
+        <div id="content">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-6 post-image wow fadeInLeft">
+                                <% if @interioridea.image.present? %>
+                                <%= image_tag(@interioridea.image_url, :class => 'img-responsive') %>
+                                <% end %>
+                            </div>
+                            <div class="col-md-6">
+                                
+                            </div>
+                        </div>
+                        <div class="separator"><span><i class="fa fa-arrow-down"></i></span></div>
+                        <div class="row">
+                            <div class="col-md-6 wow fadeInUp" data-wow-delay=".3s">
+                                <%= sanitize @interioridea.description.html_safe %>
+                            </div>
+                            <div class="col-md-6 pic-services wow fadeInUp" data-wow-delay=".6s">
+                                <% if @interioridea.image_one.present? %>
+                                <%= image_tag(@interioridea.image_one_url, :class => 'img-responsive') %>
+                                <% end %>
+                                <% if @interioridea.image_two.present? %>
+                                <%= image_tag(@interioridea.image_two_url, :class => 'img-responsive') %>
+                                <% end %>
+                                <% if @interioridea.image_three.present? %>
+                                <%= image_tag(@interioridea.image_three_url, :class => 'img-responsive') %>
+                                <% end %>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+        </div>
+
+        <section id="view-all-projects" class="call-to-action bg-color text-center" data-speed="5" data-type="background" aria-label="view-all-projects">
+            <a href="contact.html" class="btn btn-line-black btn-big">Contact the Designer</a>
+        </section>
+
+        <!-- footer begin -->
+        <%= render 'user/contacts/footer' %>
+        <!-- footer close -->
+    </div>
+</body>

@@ -32,21 +32,21 @@
                             <li>
                                 <div class="post-content">
                                     <div class="post-image">
-                                        <img src="images/blog/pic-blog-1.jpg" alt="" />
+                                        <% if interior.image.present? %>
+                                        <%= link_to image_tag(interior.image_url, :class => 'card-img-top img-fluid w-100'), user_interioridea_path(interior) %>
+                                        <% end %>
                                     </div>
-
-
                                     <div class="date-box">
-                                        <div class="day">26</div>
-                                        <div class="month">FEB</div>
+                                        <div class="day"><%= interior.updated_at.strftime("%d") %></div>
+                                        <div class="month"><%= interior.updated_at.strftime("%b") %></div>
                                     </div>
 
                                     <div class="post-text">
-                                        <h3><a href=""><%= interior.title %></a></h3>
-                                        <p>truncate("Once upon a time in a world far far away", :length => 17, :separator => ' ')</p>
+                                        <h3><%= link_to truncate(interior.title, :length => 40), user_interioridea_path(interior) %></h3>
+                                        <p><%= truncate(sanitize(interior.description, :tags => %w(br a)), :length => 300) %></p>
                                     </div>
 
-                                    <a href="#" class="btn-more">Read More</a>
+                                    <%= link_to 'Read More', user_interioridea_path(interior), :class => 'btn-more' %>
                                 </div>
                             </li>
                             <% end %>
@@ -115,3 +115,4 @@
         <!-- footer close -->
 
     </div>
+</body>

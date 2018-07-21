@@ -5,4 +5,9 @@ class User::InteriorideasController < ApplicationController
 		@contact = Contact.all
 		@interiorideas = Interioridea.all
 	end
+
+	def show
+		@contact = Contact.all
+		@interioridea = Interioridea.find(params[:id])
+	end
 end
