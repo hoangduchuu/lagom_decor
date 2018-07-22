@@ -1,5 +1,20 @@
 Rails.application.routes.draw do
 
+	devise_for :admins, controllers: {registrations: "registrations"}
+
+	unauthenticated do
+   		root :to => 'user/homes#index'
+	end
+
+	authenticated do
+  		root :to => 'admin/dashboards#index'
+	end
+
+  	devise_scope :admin do  
+   		get '/admins/sign_out' => 'devise/sessions#destroy'
+   		get '/admins/sign_in' => 'devise/sessions#new'     
+	end
+
 	namespace :admin do
 		resources :homes
 		resources :comments
@@ -23,5 +38,5 @@ Rails.application.routes.draw do
 		resources :interiorideas
 		resources :projects
 	end
-	root 'user/homes#index'
+	
 end

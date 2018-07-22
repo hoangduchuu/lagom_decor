@@ -86,7 +86,7 @@
         <li class="nav-item">
           <a class="nav-link" data-toggle="modal" data-target=".bd-example-modal-lg">
             <i class="fas fa fa-user"></i>
-              Logged on user email shows here</a>
+              <%= current_admin.email %></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
@@ -101,13 +101,6 @@
 
     </div>
     <!-- /.container-fluid-->
-    <% if flash[:notice] %>
-      <div class="notice"><%= flash[:notice] %></div>
-    <% end -%>
-
-    <% if flash[:notice] %>
-      <div class="notice"><%= flash[:alert] %></div>
-    <% end -%>
 
     <%= yield %>
     
@@ -136,7 +129,7 @@
           <div class="modal-body">Next time you'll have to type your username and password again...</div>
           <div class="modal-footer">
             <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-            
+            <%= link_to 'Logout', destroy_admin_session_path, method: :delete,  :class => 'btn btn-primary' %>
           </div>
         </div>
       </div>
