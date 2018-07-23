@@ -1,0 +1,146 @@
+<%= form_with model: [:admin, @product], local: true do |f| %>
+<div class="row" style="margin-left: 10px; margin-right: 10px;">
+  <div class="col-md-4">
+    <div class="picframe col-md-8">
+      <div class="card mb-3">
+        <% if @product.avatar.present? %>
+        <%= image_tag @product.avatar_url, :class => 'card-img-top img-fluid w-100', :id => 'img_prev' %>
+        <% else %>
+        <%=image_tag('product-not-chosen.jpg', :class => 'card-img-top img-fluid w-100', :id => 'img_prev')%>
+        <% end %>
+        <div class="card-body">
+          <h6 class="card-title mb-1">Product Image</h6>
+        </div>
+        <hr class="my-0">
+        <div class="card-body py-2 small">    
+          <label class="btn btn-sm btn-primary">
+            Browse&hellip; <%= f.file_field :avatar, :class => 'interior-btn', :onchange => 'readURL(this);' %>
+          </label>
+        </div>
+        <div class="card-footer font-italic small text-info">Note : for a better out-look on the webstie, please choose picture size as 600 x 600 pixels</div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-8">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-9">
+          <div class="form-group">
+            <%= f.text_field :product_name, :class => 'form-control input-lg', :placeholder => 'please input product name here ...' %><p class="font-italic text-info small">choose a short and attractive product name</p>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-9">
+          <div class="form-group">
+            <%= f.text_field :product_number, :class => 'form-control input-lg', :placeholder => 'please input product id here...' %><p class="font-italic text-info small">choose a unique product id</p>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-9">
+          <div class="form-group">
+            <%= f.text_field :material, :class => 'form-control input-lg', :placeholder => 'please provide materials related to this product...' %><p class="font-italic text-info small">enter materials each separated by ","</p>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-9">
+          <div class="form-group">
+            <%= f.text_field :price, :class => 'form-control input-lg', :placeholder => 'please enter product price in here...' %><p class="font-italic text-info small">product price in VND</p>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-9">
+          <div class="form-group">
+            <%= f.select(:category, Product::CATEGORIES) %><p class="font-italic text-info small">choose a product category</p>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-9">
+          <div class="form-group">
+            <%= f.select(:top_rated, Product::TOP_RATED) %><p class="font-italic text-info small">if you choose "yes", this item will be shown under top rated products</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container" style="padding-bottom: 20px;">
+  <div class="row">
+    <div class="col-xs-12 col-sm-8 col-md-12 col-sm-offset-2 col-md-offset-3">
+      <form role="form">
+        <hr class="colorgraph">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12 nopadding">
+              <%= f.text_area :description %>
+            </div>
+          </div>
+        </div>
+        <hr class="colorgraph">
+        <div class="row">
+          <div class="col-xs-12 col-md-6"><%= link_to 'No! I changed my mind', admin_products_path, :class => 'btn btn-danger btn-block btn-lg' %></div> 
+          <div class="col-xs-12 col-md-6"><%= f.submit 'save this product', :class => 'btn btn-success btn-block btn-lg' %></div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<% end %>
+
+<script>
+  function readURL(input) {
+    if (input.files && input.files[0]) {
+      var reader = new FileReader();
+
+      reader.onload = function (e) {
+        $('#img_prev')
+        .attr('src', e.target.result)
+        .width(150)
+        .height(200);
+      };
+
+      reader.readAsDataURL(input.files[0]);
+    }
+  }
+
+  function readURL1(input) {
+    if (input.files && input.files[0]) {
+      var reader = new FileReader();
+
+      reader.onload = function (e) {
+        $('#img_prev-01')
+        .attr('src', e.target.result)
+        .width(150)
+        .height(200);
+      };
+
+      reader.readAsDataURL(input.files[0]);
+    }
+  }
+
+  function readURL2(input) {
+    if (input.files && input.files[0]) {
+      var reader = new FileReader();
+
+      reader.onload = function (e) {
+        $('#img_prev-02')
+        .attr('src', e.target.result)
+        .width(150)
+        .height(200);
+      };
+
+      reader.readAsDataURL(input.files[0]);
+    }
+  }
+
+  function readURL3(input) {
+    if (input.files && input.files[0]) {
+      var reader = new FileReader();
+
+      reader.onload = function (e) {
+        $('#img_prev-03')
+        .attr('src', e.target.result)
+        .width(150)
+        .height(200);
+      };
+
+      reader.readAsDataURL(input.files[0]);
+    }
+  }
+</script>
+<script src="https://cloud.tinymce.com/stable/tinymce.min.js?apiKey=goul95wfe7dv6l5drft1tmt3tsgj2fecd01dslwi86uzg7hr"></script>
+<script>tinymce.init({ selector:'textarea' });</script>

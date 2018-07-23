@@ -15,9 +15,9 @@ gem 'jquery-rails'
 gem "passenger"
 gem 'popper_js', '~> 1.12.9'
 gem 'rails', '~> 5.1.3'
+gem 'tinymce-rails', '~> 4.8'
 gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
-gem 'sqlite3'
 
 group :development, :test do
 	gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -27,9 +27,11 @@ end
 
 group :development do
 	gem 'web-console', '>= 3.3.0'
+	gem 'sqlite3'
 end
 
 group :production do
+	gem 'pg'
 	gem 'rails_12factor'
 end
 

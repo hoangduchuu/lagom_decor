@@ -121,7 +121,6 @@ body.fixed-nav {
 #mainNav .navbar-collapse .navbar-nav > .nav-item.dropdown > .nav-link:after {
   float: right;
   width: auto;
-  content: '\f105';
   border: none;
   font-family: 'FontAwesome';
 }
@@ -134,7 +133,7 @@ body.fixed-nav {
 }
 
 #mainNav .navbar-collapse .navbar-nav > .nav-item.dropdown.show > .nav-link:after {
-  content: '\f107';
+
 }
 
 #mainNav .navbar-collapse .navbar-nav > .nav-item.dropdown .dropdown-menu > .dropdown-item > .dropdown-message {
@@ -475,4 +474,25 @@ footer.sticky-footer {
   body.sidenav-toggled footer.sticky-footer {
     width: calc(100% - 55px);
   }
+}
+
+.resizeimage {
+  max-width: 60px;
+}
+
+.resizeimage-big {
+  max-width: 200px;
+}
+
+.left-right {
+  margin-left: 50px;
+  margin-right: 10px;
+}
+
+.only-left {
+  margin-left: 10px;
+}
+
+.interior-btn {
+  display: none;
 }

@@ -1,17 +1,11 @@
-<%= form_with model: [:admin, @comment], local: true do |form| %>
- 
-  <p>
-    <%= form.label :title %><br>
-    <%= form.text_field :title %>
-  </p>
- 
-  <p>
-    <%= form.label :comment %><br>
-    <%= form.text_area :comment %>
-  </p>
- 
-  <p>
-    <%= form.submit %>
-  </p>
- 
-<% end %>
+<ol class="breadcrumb" style="margin-left: 10px; margin-right: 10px;">
+  <li class="breadcrumb-item">
+    <%= link_to 'DASHBOARD', admin_dashboards_path %>
+  </li>
+  <li class="breadcrumb-item">
+    <%= link_to 'COMMENTS', admin_homes_path %>
+  </li>
+  <li class="breadcrumb-item active">NEW</li>
+</ol>
+
+<%= render 'form' %>

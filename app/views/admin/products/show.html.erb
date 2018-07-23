@@ -1,42 +1,71 @@
-<ol class="breadcrumb">
-<li class="breadcrumb-item">
-  <a href="#">Dashboard</a>
-</li>
-<li class="breadcrumb-item">
-<%= link_to 'Products', admin_projects_path %>
-</li>
-<li class="breadcrumb-item active">Show</li>
-<%= link_to 'Edit', edit_admin_product_path(@product), :class => 'btn btn-danger left-right' %>
-<%= link_to 'Add new Product', new_admin_product_path, :class => 'btn btn-success left-right' %>
+<ol class="breadcrumb" style="margin-left: 10px; margin-right: 10px;">
+	<li class="breadcrumb-item">
+		<%= link_to 'DASHBOARD', admin_dashboards_path %>
+	</li>
+	<li class="breadcrumb-item">
+		<%= link_to 'SHOP', admin_products_path %>
+	</li>
+	<li class="breadcrumb-item active">VIEW</li>
+	<%= link_to 'EDIT', edit_admin_product_path(@product), :class => 'btn btn-sm btn-info left-right' %>
+	<%= link_to ' delete', admin_product_path(@product), :class => 'btn btn-sm btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %>
+	<%= link_to 'NEW IDEA', new_admin_product_path, :class => 'btn btn-sm btn-success only-left' %>
 </ol>
 
-<div class="container" style="margin: 50px;">
-<p>
-	<%= image_tag @product.avatar_url %>
-</p>
-
-<p>
-	<strong>Product number: </strong>
-	<%= @product.product_number %>
-</p>
-
-<p>
-	<strong>Category: </strong>
-	<%= @product.category %>
-</p>
-
-<p>
-	<strong>Name: </strong>
-	<%= @product.product_name %>
-</p>
-
-<p>
-	<strong>Price: </strong>
-	<%= @product.price %>
-</p>
-
-<p>
-	<strong>Top rated: </strong>
-	<%= @product.top_rated %>
-</p>
+<div class="row" style="margin-left: 10px; margin-right: 10px;">
+	<div class="col-sm-3">
+		<div class="picframe">
+			<div class="card mb-3">
+				<% if @product.avatar.present? %>
+				<%= image_tag @product.avatar_url, :class => 'card-img-top img-fluid w-100' %>
+				<% else %>
+				<%=image_tag('product-not-chosen.jpg', :class => 'card-img-top img-fluid w-100')%>
+				<% end %>
+				<div class="card-body">
+					<h6 class="card-title mb-1">Product Image</h6>
+				</div>
+			</div>
+		</div>
+	</div>
+	<table class="table" style="margin-left: 10px; margin-right: 10px;">
+		<tbody>
+			<tr>
+				<td class="text-success"><i class="fa fa-header"></i> product Number</td>
+				<td><%= @product.product_number %></td>
+			</tr> 
+			<tr>
+				<td class="text-success" style="min-width: 200px;"><i class="fa fa-header"></i> Product name</td>
+				<td style="word-break: break-word;"><%= @product.product_name %></td>
+			</tr>                                        
+			<tr>
+				<td class="text-success"><i class="fa fa-header"></i> product Category</td>
+				<td><%= @product.category %></td>
+			</tr>                                        
+			<tr>
+				<td class="text-success"><i class="fa fa-laptop"></i> Price</td>
+				<td><%= @product.price %></td>
+			</tr>
+			<tr>
+				<td class="text-success"><i class="fa fa-laptop"></i> Material</td>
+				<td><%= @product.material %></td>
+			</tr>
+			<tr>
+				<td class="text-success"><i class="fa fa-eye"></i> Show on Top Rated</td>
+				<td><%= @product.top_rated %></td>
+			</tr>
+			<tr>
+				<td class="text-danger"><i class="fa fa-pencil-square-o"></i> Product Listning created on</td>
+				<td><%= @product.created_at.to_date %></td>
+			</tr>
+			<tr>
+				<td class="text-danger"><i class="fa fa-pencil"></i> product Listning Updated on</td>
+				<td><%= @product.updated_at.to_date %></td>
+			</tr>
+		</tbody>
+	</table>
+	<div class="container">
+		<h5 class="text-success">Product Description</h5>
+		<blockquote>
+			<p><%= sanitize @product.description.html_safe %></p>
+		</blockquote>
+	</div>
 </div>

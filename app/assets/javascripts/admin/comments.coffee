@@ -1,4 +1,7 @@
-//= require jquery.min
+//= require jquery3
+//= require jquery_ujs
+//= require popper
+//= require turbolinks
 //= require bootstrap.bundle.min
 //= require jquery.easing.min
 //= require Chart.min
@@ -6,3 +9,5 @@
 //= require dataTables.bootstrap4
 //= require sb-admin.min
 //= require sb-admin-datatables.min
+//= require tinymce
+//= require tinymce-jquery

@@ -1,51 +1,11 @@
-<ol class="breadcrumb">
-<li class="breadcrumb-item">
-  <a href="#">Dashboard</a>
-</li>
-<li class="breadcrumb-item">
-<%= link_to 'Products', admin_products_path %>
-</li>
-<li class="breadcrumb-item active">New</li>
-<%= link_to 'Add new Product', new_admin_product_path, :class => 'btn btn-success left-right' %>
+<ol class="breadcrumb" style="margin-left: 10px; margin-right: 10px;">
+  <li class="breadcrumb-item">
+    <%= link_to 'DASHBOARD', admin_dashboards_path %>
+  </li>
+  <li class="breadcrumb-item">
+    <%= link_to 'SHOP', admin_products_path %>
+  </li>
+  <li class="breadcrumb-item active">NEW</li>
 </ol>
 
-
-<%= form_with model: [:admin, @product], local: true do |form| %>
- 
- <div class="container" style="margin: 50px;">
-  <p>
-    <%= form.label :product_number %><br>
-    <%= form.text_field :product_number %>
-  </p>
- 
-  <p>
-    <%= form.label :category %><br>
-    <%= form.select(:category, Product::CATEGORIES) %>
-  </p>
-
-  <p>
-    <%= form.label :product_name %><br>
-    <%= form.text_field :product_name %>
-  </p>
-
-  <p>
-    <%= form.label :price %><br>
-    <%= form.text_field :price %>
-  </p>
-
-  <p>
-    <%= form.label :top_rated %><br>
-    <%= form.select(:top_rated, Product::TOP_RATED) %>
-  </p>
-
-  <p>
-    <%= form.label :avatar %><br>
-    <%= form.file_field :avatar %>
-  </p>
- 
-  <p>
-    <%= form.submit 'save', :class => 'btn btn-primary' %>
-  </p>
-</div>
- 
-<% end %>
+<%= render 'form' %>

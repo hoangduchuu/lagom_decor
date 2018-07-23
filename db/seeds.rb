@@ -7,3 +7,13 @@ contact = Contact.create(
 	closedate: "Friday",
 	openat: "08:00",
 	closeat: "16:00")
+
+	admin = Admin.new(
+	    email: "anu.in.vietnam@gmail.com",
+	    password: "000000",
+	    password_confirmation: "000000",
+	    username: "anu",
+	    role: "admin",
+	    phone: "00000000000")
+	admin.skip_confirmation!
+	admin.save!
