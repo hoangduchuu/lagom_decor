@@ -15,7 +15,7 @@ gem 'jquery-rails'
 gem "passenger"
 gem 'popper_js', '~> 1.12.9'
 gem 'rails', '~> 5.1.3'
-gem 'tinymce-rails', '~> 4.8'
+gem 'trix'
 gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
 

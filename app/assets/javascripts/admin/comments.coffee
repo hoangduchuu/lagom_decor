@@ -9,5 +9,4 @@
 //= require dataTables.bootstrap4
 //= require sb-admin.min
 //= require sb-admin-datatables.min
-//= require tinymce
-//= require tinymce-jquery
+//= require trix

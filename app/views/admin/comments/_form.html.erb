@@ -11,9 +11,7 @@
   <div class="container">
     <div class="col-md-12">
       <div class="col-lg-12 nopadding">
-        <%= f.text_area :comment, :class => "tinymce", :rows => 40, :cols => 120 %>
-        <%= tinymce_assets %>
-        <%= tinymce %>
+        <%= f.trix_editor :comment %>
       </div>
     </div>
   </div>
