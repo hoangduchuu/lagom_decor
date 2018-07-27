@@ -1,57 +1,111 @@
-<ol class="breadcrumb">
-<li class="breadcrumb-item">
-  <a href="#">Dashboard</a>
-</li>
-<li class="breadcrumb-item">
-<%= link_to 'Projects', admin_projects_path %>
-</li>
-<li class="breadcrumb-item active">Show</li>
-<%= link_to 'Edit', edit_admin_project_path(@project), :class => 'btn btn-danger left-right' %>
-<%= link_to 'Add new Project', new_admin_project_path, :class => 'btn btn-success left-right' %>
+<ol class="breadcrumb" style="margin-left: 10px; margin-right: 10px;">
+	<li class="breadcrumb-item">
+		<%= link_to 'DASHBOARD', admin_dashboards_path %>
+	</li>
+	<li class="breadcrumb-item">
+		<%= link_to 'PROJECTS', admin_projects_path %>
+	</li>
+	<li class="breadcrumb-item active">VIEW</li>
+	<%= link_to 'EDIT', edit_admin_project_path(@project), :class => 'btn btn-sm btn-info left-right' %>
+	<%= link_to ' DELETE', admin_project_path(@project), :class => 'btn btn-sm btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %>
+	<%= link_to 'NEW IDEA', new_admin_project_path, :class => 'btn btn-sm btn-success only-left' %>
 </ol>
 
-<div class="container" style="margin: 50px;">
-<p>
-	<%= image_tag @project.cover_photo_url, :class => 'resizeimage-big' %>
-</p>
-
-<p>
-	<strong>Project Name: </strong>
-	<%= @project.project_name %>
-</p>
-
-<p>
-	<strong>Category: </strong>
-	<%= @project.category %>
-</p>
-
-<p>
-	<strong>Client: </strong>
-	<%= @project.client %>
-</p>
-
-<p>
-	<strong>Budget: </strong>
-	<%= @project.value %>
-</p>
-
-<p>
-	<strong>Date: </strong>
-	<%= @project.date %>
-</p>
-
-<p>
-	<strong>Location: </strong>
-	<%= @project.location %>
-</p>
-
-<p>
-	<strong>Description: </strong>
-	<%= @project.client %>
-</p>
-
-<p>
-	<strong>Our Solution: </strong>
-	<%= @project.client %>
-</p>
+<div class="row" style="margin-left: 10px; margin-right: 10px;">
+	<div class="col-sm-3">
+		<div class="picframe">
+			<div class="card mb-3">
+				<% if @project.cover_photo.present? %>
+				<%= image_tag @project.cover_photo_url, :class => 'card-img-top img-fluid w-100' %>
+				<% else %>
+				<%=image_tag('no-post-chosen.jpg', :class => 'card-img-top img-fluid w-100')%>
+				<% end %>
+				<div class="card-body">
+					<h6 class="card-title mb-1">Main Image</h6>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-sm-3">
+		<div class="picframe">
+			<div class="card mb-3">
+				<% if @project.image_one.present? %>
+				<%= image_tag @project.image_one_url, :class => 'card-img-top img-fluid w-100' %>
+				<% else %>
+				<%=image_tag('no-post-chosen.jpg', :class => 'card-img-top img-fluid w-100')%>
+				<% end %>
+				<div class="card-body">
+					<h6 class="card-title mb-1">Sub Image - 01</h6>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-sm-3">
+		<div class="picframe">
+			<div class="card mb-3">
+				<% if @project.image_two.present? %>
+				<%= image_tag @project.image_two_url, :class => 'card-img-top img-fluid w-100' %>
+				<% else %>
+				<%=image_tag('no-post-chosen.jpg', :class => 'card-img-top img-fluid w-100')%>
+				<% end %>
+				<div class="card-body">
+					<h6 class="card-title mb-1">Sub Image - 02</h6>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-sm-3">
+		<div class="picframe">
+			<div class="card mb-3">
+				<% if @project.image_three.present? %>
+				<%= image_tag @project.image_three_url, :class => 'card-img-top img-fluid w-100' %>
+				<% else %>
+				<%=image_tag('no-post-chosen.jpg', :class => 'card-img-top img-fluid w-100')%>
+				<% end %>
+				<div class="card-body">
+					<h6 class="card-title mb-1">Sub Image - 03</h6>
+				</div>
+			</div>
+		</div>
+	</div>
+	<table class="table" style="margin-left: 10px; margin-right: 10px;">
+		<tbody>
+			<tr>
+				<td class="text-success" style="min-width: 200px;"><i class="fa fa-header"></i> Project Name</td>
+				<td style="word-break: break-word;"><%= @project.project_name %></td>
+			</tr>                                        
+			<tr>
+				<td class="text-success"><i class="fa fa-caret-right"></i> Project Catogory</td>
+				<td><%= @project.category %></td>
+			</tr>                                        
+			<tr>
+				<td class="text-success"><i class="fa fa-user"></i> Client</td>
+				<td><%= @project.client %></td>
+			</tr>			
+			<tr>
+				<td class="text-success"><i class="fa fa-eye"></i> Location</td>
+				<td><%= @project.location %></td>
+			</tr>
+			<tr>
+				<td class="text-success"><i class="fa fa-usd"></i> Budget</td>
+				<td><%= @project.value %></td>
+			</tr>
+			<tr>
+				<td class="text-danger"><i class="fa fa-calendar"></i> Conducted Date</td>
+				<td><%= @project.date %></td>
+			</tr>		
+		</tbody>
+	</table>
+	<div class="container">
+		<h5 class="text-success">Project Description</h5>
+		<blockquote>
+			<p><%= sanitize @project.description.html_safe %></p>
+		</blockquote>
+	</div>
+	<div class="container">
+		<h5 class="text-success">Our Solution</h5>
+		<blockquote>
+			<p><%= sanitize @project.solution.html_safe %></p>
+		</blockquote>
+	</div>
 </div>

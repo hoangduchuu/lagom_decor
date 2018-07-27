@@ -6,6 +6,8 @@ git_source(:github) do |repo_name|
 end
 
 gem 'bootstrap', '~> 4.1.1'
+gem 'bootstrap-datepicker-rails'
+gem 'cancan', '~> 1.6', '>= 1.6.10'
 gem 'carrierwave', '~> 1.2', '>= 1.2.3'
 gem 'coffee-rails', '~> 4.2'
 gem 'devise'

@@ -1,41 +1,33 @@
-<ol class="breadcrumb">
+<ol class="breadcrumb" style="margin-left: 10px; margin-right: 10px;">
 <li class="breadcrumb-item">
-  <a href="#">Dashboard</a>
+  <%= link_to 'DASHBOARD', admin_dashboards_path %>
 </li>
-<li class="breadcrumb-item active">Projects</li>
-<%= link_to 'Add new Project', new_admin_project_path, :class => 'btn btn-success left-right' %>
+<li class="breadcrumb-item active">PROJECTS</li>
+<%= link_to 'NEW PROJECT', new_admin_project_path, :class => 'btn btn-sm btn-success left-right' %>
 </ol>
 
-<table class="table">
-    <thead>
-      <tr>
-        <th>Cover Photo</th>
-        <th>Title</th>
-        <th>Category</th>
-        <th>Client</th>
-        <th>Budget</th>
-        <th>Date</th>
-        <th>Location</th>
-        <th>description</th>
-        <th>solution</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @projects.each do |pro| %>
-      <tr>
-        <td style="vertical-align: middle;"><%= image_tag pro.cover_photo_url, :class => 'resizeimage' %></td>
-        <td style="vertical-align: middle;"><%= pro.project_name %></td>
-        <td style="vertical-align: middle;"><%= pro.category %></td>
-        <td style="vertical-align: middle;"><%= pro.client %></td>
-        <td style="vertical-align: middle;"><%= pro.value %></td>
-        <td style="vertical-align: middle;"><%= pro.date %></td>
-        <td style="vertical-align: middle;"><%= pro.location %></td>
-        <td style="vertical-align: middle;"><%= pro.description %></td>
-        <td style="vertical-align: middle;"><%= pro.solution %></td>
-        <td style="vertical-align: middle;"><%= link_to 'show', admin_project_path(pro) %></td>
-        <td style="vertical-align: middle;"><%= link_to 'Edit', edit_admin_project_path(pro) %></td>
-        <td style="vertical-align: middle;"><%= link_to "Delete", admin_project_path(pro), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-      <% end -%>
-    </tbody>
-  </table>
+<div id="gallery" class="row grid_gallery gallery de-gallery wow fadeInUp" data-wow-delay=".3s" style="margin-left: 10px; margin-right: 10px;">
+    <% @projects.each do |pro| %>
+    <div class="col-md-4 item">
+        <div class="picframe">
+            <div class="card mb-3">
+                <% if pro.cover_photo.present? %>
+                <%= link_to image_tag(pro.cover_photo_url, :class => 'card-img-top img-fluid w-100'), admin_project_path(pro) %>
+                <% else %>
+                <%=image_tag('no-post-chosen.jpg', :class => 'card-img-top img-fluid w-100')%>
+                <% end %>
+            <div class="card-body">
+                <h6 class="card-title mb-1"><%= link_to truncate(pro.project_name, :length => 40), admin_project_path(pro) %></h6>
+          </div>
+          <hr class="my-0">
+          <div class="card-body py-2 small">
+            <%= link_to ' view', admin_project_path(pro), :class => 'fas fa fa-eye mr-3 d-inline-block' %>
+            <%= link_to ' edit', edit_admin_project_path(pro), :class => 'fas fa fa-pencil mr-3 d-inline-block' %>
+            <%= link_to ' delete', admin_project_path(pro), :class => 'fas fa fa-trash-o mr-3 d-inline-block', method: :delete, data: { confirm: 'Are you sure?' } %>
+                  </div>
+                  <div class="card-footer small text-muted">Last updated <%= pro.updated_at.to_date %></div>
+              </div>
+          </div>
+      </div>
+      <% end %>
+  </div>

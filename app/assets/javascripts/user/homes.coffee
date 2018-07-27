@@ -3,6 +3,7 @@
 //= require bootstrap.min
 //= require jquery.isotope.min
 //= require easing
+//= require jquery.flexslider-min
 //= require jquery.scrollto
 //= require owl.carousel
 //= require jquery.countTo

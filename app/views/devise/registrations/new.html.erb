@@ -1,29 +1,54 @@
-<h2>Sign up</h2>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+<body class="bg-dark">
+  <div class="container">
+    <div class="card card-register mx-auto mt-5">
+      <div class="card-header">Register an Account</div>
+      <div class="card-body">
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= devise_error_messages! %>
+          <div class="form-row">
+            <div class="col-md-12">
+              <label for="ModeratorName">Moderator Name</label>
+              <%= f.text_field :username, autofocus: true, autocomplete: 'off', :id => 'ModeratorName', :class => 'form-control', :placeholder => 'Enter Name'  %>
+            </div>
+          </div>
+          <br>
+          <div class="form-group">
+          <div class="form-row">
+            <div class="col-md-6">
+              <label for="ModeratorPhone">Moderator Phone Number</label>
+              <%= f.number_field :phone, autofocus: true, autocomplete: 'off', :id => 'ModeratorPhone', :class => 'form-control', :placeholder => 'Enter Phone'  %>
+            </div>
+            <div class="col-md-6">
+              <label for="ModeratorRole">Role</label><br>
+              <%= f.select(:role, Admin::ROLE, :class => 'form-control', :id => 'ModeratorRole') %> 
+              <p class="font-italic text-info small">Recommended Role : Moderator</p>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="ModeratorEmail">Email address</label>
+          <%= f.email_field :email, autofocus: true, autocomplete: 'off', :id => 'ModeratorEmail', :class => 'form-control', :placeholder => 'Enter email'  %>
+        </div>
+        <div class="form-group">
+          <div class="form-row">
+            <div class="col-md-6">
+              <label for="password1">Password</label>
+              <% if @minimum_password_length %>
+              <em>(<%= @minimum_password_length %> characters minimum)</em>
+              <% end %><br />
+              <%= f.password_field :password, autocomplete: 'off', :id => 'password1', :class => 'form-control', :placeholder => 'type password' %>
+            </div>
+            <div class="col-md-6">
+              <label for="password2">Confirm password</label>
+              <%= f.password_field :password_confirmation, autocomplete: 'off', :id => 'password2', :class => 'form-control', :placeholder => 'confirm password' %>
+            </div>
+          </div>
+        </div>
+        <%= f.submit 'Register', :class => 'btn btn-primary btn-block' %>
+        <% end %>
+        <div class="text-center">
+          <p class="d-block small mt-3">Please be careful when creating a new user. Users with "Admin" privileges can always create a new user. </p>
+        </div>
+      </div>
+    </div>
   </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>

@@ -9,3 +9,4 @@
 //= require sb-admin.min
 //= require sb-admin-datatables.min
 //= require trix
+//= require bootstrap-datepicker

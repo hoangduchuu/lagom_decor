@@ -3,6 +3,17 @@ class Admin::DashboardsController < ApplicationController
 	layout 'admin'
 
 	def index
-		
+		@admins = Admin.all
+	end
+
+	def show
+		@admin = Admin.find(params[:id])
+	end
+
+	def destroy
+	  @admin = Admin.find(params[:id])
+	  @admin.destroy
+	 
+	  redirect_to admin_dashboards_path
 	end
 end

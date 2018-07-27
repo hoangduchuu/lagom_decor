@@ -1,4 +1,6 @@
 //= require jquery.min
+//= require jquery_ujs
+//= require popper
 //= require bootstrap.bundle.min
 //= require jquery.easing.min
 //= require Chart.min

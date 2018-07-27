@@ -1,206 +1,107 @@
 <body class="page-shop">
 
-        <div id="wrapper">
-            <!-- header begin -->
-                <%= render 'user/contacts/header' %>
-            <!-- header close -->
+    <div id="wrapper">
+        <!-- header begin -->
+        <%= render 'user/contacts/header' %>
+        <!-- header close -->
 
-<!-- subheader -->
-<section id="subheader" data-speed="8" data-type="background">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <h1>Products</h1>
-                <ul class="crumb">
-                    <li><a href="index.html">Home</a></li>
-                    <li class="sep">/</li>
-                    <li>Products</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- subheader close -->
-
-<!-- content begin -->
-<div id="content">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-9">
-                <div class="row" id="sofa">
-                    <ul class="products">
-                        <% @products.where(:category => 'sofa').each do |p| %>
-                        <li class="col-md-4 product">
-                            <%= image_tag p.avatar_url, :class => 'img-responsive' %>
-                            <h4><%= p.product_name %></h4>
-                            <div class="price">$<%= p.price %></div>
-                            <a href="#" class="btn btn-line" data-toggle="modal" data-target="#exampleModal" onclick="inquiryform('sofa', 'sample-01')">Order this</a>
-                        </li>
-                        <% end -%>
-                    </ul>
-                </div>
-
-                <div class="row" id="chair">
-                    <ul class="products">
-                        <% @products.where(:category => 'chair').each do |p| %>
-                        <li class="col-md-4 product">
-                            <%= image_tag p.avatar_url, :class => 'img-responsive' %>
-                            <h4><%= p.product_name %></h4>
-                            <div class="price"><%= p.price %></div>
-                            <a href="#" class="btn btn-line" data-toggle="modal" data-target="#exampleModal" onclick="inquiryform('chair', 'sample-01')">Order this</a>
-                        </li>
-                        <% end -%>
-                    </ul>
-                </div>
-
-                <div class="row" id="console">
-                    <ul class="products">
-                        <% @products.where(:category => 'console').each do |p| %>
-                        <li class="col-md-4 product">
-                            <%= image_tag p.avatar_url, :class => 'img-responsive' %>
-                            <h4><%= p.product_name %></h4>
-                            <div class="price"><%= p.price %></div>
-                            <a href="#" class="btn btn-line" data-toggle="modal" data-target="#exampleModal" onclick="inquiryform('console', 'sample-01')">Order this</a>
-                        </li>
-                        <% end -%>
-                    </ul>
-                </div>
-
-                <div class="row" id="decoration">
-                    <ul class="products">
-                        <% @products.where(:category => 'decoration').each do |p| %>
-                        <li class="col-md-4 product">
-                            <%= image_tag p.avatar_url, :class => 'img-responsive' %>
-                            <h4><%= p.product_name %></h4>
-                            <div class="price"><%= p.price %></div>
-                            <a href="#" class="btn btn-line" data-toggle="modal" data-target="#exampleModal" onclick="inquiryform('decoration', 'sample-01')">Order this</a>
-                        </li>
-                        <% end -%>
-                    </ul>
-                </div>
-
-                <div class="row" id="fif">
-                    <ul class="products">
-                        <% @products.where(:category => 'fif').each do |p| %>
-                        <li class="col-md-4 product">
-                            <%= image_tag p.avatar_url, :class => 'img-responsive' %>
-                            <h4><%= p.product_name %></h4>
-                            <div class="price">$<%= p.price %></div>
-                            <a href="#" class="btn btn-line" data-toggle="modal" data-target="#exampleModal" onclick="inquiryform('fit in furniture', 'sample-01')">Order this</a>
-                        </li>
-                        <% end -%>
-                    </ul>
+        <!-- subheader -->
+        <section id="subheader" data-speed="8" data-type="background">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1>Products</h1>
+                        <ul class="crumb">
+                            <li><a href="index.html">Home</a></li>
+                            <li class="sep">/</li>
+                            <li>Products</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
+        </section>
+        <!-- subheader close -->
 
-            <div id="sidebar" class="col-md-3">
-                <div class="widget widget_category">
-                    <h4>Product Category</h4>
-                    <ul>
-                        <li id="btnall"><a href="#">All</a></li>
-                        <li id="btnsofa"><a href="#">Sofa</a></li>
-                        <li id="btnchair"><a href="#">Chair / Dining Chair</a></li>
-                        <li id="btnconsole"><a href="#">Console</a></li>
-                        <li id="btndecoration"><a href="#">Decorations</a></li>
-                        <li id="btnfitinfurniture"><a href="#">Fit in Furniture</a></li>
-                    </ul>
-                </div>
-                <div class="widget widget_top_rated_product">
-                    <h4>Top Rated Product</h4>
-                    <ul>
-                        <% @products.where(:top_rated => 'yes').each do |p| %>
-                        <li>
-                            <%= image_tag p.avatar_url %>
-                            <div class="text">
-                                <%= p.product_name %>
-                                <div class="price">$<%= p.price %></div>
+        <!-- content begin -->
+        <div id="content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                        <section id="section-portfolio" class="no-top no-bottom" aria-label="section-portfolio">
+
+                            <!-- portfolio filter begin -->
+                            <div class="row">
+                                <div class="col-md-12 text-center">
+                                    <ul id="filters" class="wow fadeInUp" data-wow-delay="0s">
+                                        <li><a href="#" data-filter="*" class="selected">All Designs</a></li>
+                                        <li><a href="#" data-filter=".residential">Bedroom</a></li>
+                                        <li><a href="#" data-filter=".sofa">Dining Room</a></li>
+                                        <li><a href="#" data-filter=".chair">Kitchen</a></li>
+                                        <li><a href="#" data-filter=".commercial">Guest Rooms</a></li>
+                                    </ul>
+
+                                </div>
                             </div>
-                        </li>
-                        <% end -%>
-                    </ul>
+                            <!-- portfolio filter close -->
+
+                            <div id="gallery" class="row grid_gallery gallery de-gallery wow fadeInUp" data-wow-delay=".3s">
+
+                                <!-- gallery item -->
+                                <div class="products">
+                                    <% @products.each do |pro| %>
+                                    <div class="col-md-4 item <%= pro.category %>" data-toggle="collapse" data-target="#<%= pro.id %>">
+                                        <%= image_tag pro.avatar_url, :class => 'img-responsive' %>
+                                        <h4><%= pro.product_name %></h4>
+                                        <div id="<%= pro.id %>" class="collapse">hhhhhh</div>
+                                        <div class="price"><%= pro.price %> ₫</div>
+                                        <a href="#" class="btn btn-line" data-toggle="modal" data-target="#exampleModal" onclick="inquiryform('decoration', 'sample-01')">Order this</a>
+                                    </div>
+                                    <% end -%>
+                                </div>
+                                <!-- close gallery item -->
+                            </div>
+                        </section>
+                    </div>
+                    <div id="sidebar" class="col-md-3">
+                        <div class="widget widget_top_rated_product">
+                            <h4>New Release</h4>
+                            <ul>
+                                <% @products.where(:top_rated => 'yes').each do |p| %>
+                                <li>
+                                    <%= image_tag p.avatar_url %>
+                                    <div class="text">
+                                        <%= p.product_name %>
+                                        <div class="price"><%= p.price %> ₫</div>
+                                    </div>
+                                </li>
+                                <% end -%>
+                            </ul>
+                        </div>
+                        <div class="widget widget_top_rated_product">
+                            <h4>Top Rated Product</h4>
+                            <ul>
+                                <% @products.where(:top_rated => 'yes').each do |p| %>
+                                <li>
+                                    <%= image_tag p.avatar_url %>
+                                    <div class="text">
+                                        <%= p.product_name %>
+                                        <div class="price"><%= p.price %> ₫</div>
+                                    </div>
+                                </li>
+                                <% end -%>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
-
         </div>
+        <!-- footer begin -->
+        <%= render 'user/contacts/footer' %>
+        <!-- footer close -->
     </div>
-</div>
-
-<!-- pop up contact form START -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Contact Form</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-      </button>
-      </div>
-    <%= form_for @customer, :url => { :action => "create" } do |f| %>
-    <div class="modal-body">
-    Please fill your contact details, One of our staff will contact you soon...
-    <div class="form-group">
-    <label for="n">Your Name:</label> 
-      <p><%= f.text_field :customer_name, :class => 'form-control', :placeholder => 'your name...', :type => 'text', :required => true, :autocomplete => 'name' %></p>
-      </div>
-      <div class="form-group">
-    <label for="e">your Email:</label> 
-      <p><%= f.text_field :email, :class => 'form-control', :placeholder => 'your email...', :type => 'email', :required => true, :autocomplete => 'email' %></p>
-      </div>
-        <div class="form-group">
-    <label for="p">your Phone Number:</label> 
-      <p><%= f.text_field :phone, :class => 'form-control', :placeholder => 'your phone number...', :type => 'number', :required => true, :autocomplete => 'tel' %></p>
-      </div>
-      <div class="form-group">
-    <label for="m">Additional requests:</label> 
-      <textarea id="m" class="form-control" placeholder="place your request here..." rows="5"></textarea>
-      </
-      <p><input id="category" type="hidden" value=""></p>
-      <p><input id="productid" type="hidden" value=""></p>
-      <div class="modal-footer">
-        <p><input id="btnclose" class="btn btn-secondary" type="button" value="clsoe" data-dismiss="modal">
-        <%= f.submit 'Send Message', :class => 'btn btn-primary'  %></p>
-    </div>
-      </div>
-<% end -%>
-</div>
-</div>
-</div>
-</div>
-<!-- pop up contact form END -->
-
-<!-- footer begin -->
-    <%= render 'user/contacts/footer' %>
-<!-- footer close -->
-</div>
-
-        <script type="text/javascript">
-            document.getElementById("btnall").onclick = function() {hideFunction("all")};
-            document.getElementById("btnsofa").onclick = function() {hideFunction("sofa")};
-            document.getElementById("btnchair").onclick = function() {hideFunction("chair")};
-            document.getElementById("btnconsole").onclick = function() {hideFunction("console")};
-            document.getElementById("btndecoration").onclick = function() {hideFunction("decoration")};
-            document.getElementById("btnfitinfurniture").onclick = function() {hideFunction("fif")};
-
-            var getId;
-            function hideFunction(getId) {
-                var divs = ["sofa", "chair", "console", "decoration", "fif"];
-                var i, divId, div;
-                for(i = 0; i < divs.length; i++) {
-                    divId = divs[i];
-                    if(getId == "all"){
-                        div = document.getElementById(divId);
-                        div.style.display = "block";
-                    }else{
-                        if(divId != getId){
-                            div = document.getElementById(divId);
-                            div.style.display = "none";
-                        }else{
-                            div = document.getElementById(divId);
-                            div.style.display = "block";
-                        }
-                    }
-                }
-            }
-        </script>
-
-        </body>
+    <script>
+$("#btn3").hover(function(){
+ $("#hide4").toggle('slow');
+});
+    </script>
+</body>

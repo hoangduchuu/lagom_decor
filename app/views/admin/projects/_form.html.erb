@@ -1,10 +1,10 @@
-<%= form_with model: [:admin, @interioridea], local: true do |f| %>
+<%= form_with model: [:admin, @project], local: true do |f| %>
 <div class="row" style="margin-left: 10px; margin-right: 10px;">
   <div class="col-sm-3">
     <div class="picframe">
       <div class="card mb-3">
-        <% if @interioridea.image.present? %>
-        <%= image_tag @interioridea.image_url, :class => 'card-img-top img-fluid w-100', :id => 'img_prev' %>
+        <% if @project.cover_photo.present? %>
+        <%= image_tag @project.cover_photo_url, :class => 'card-img-top img-fluid w-100', :id => 'img_prev' %>
         <% else %>
         <%=image_tag('no-post-chosen.jpg', :class => 'card-img-top img-fluid w-100', :id => 'img_prev')%>
         <% end %>
@@ -14,18 +14,18 @@
         <hr class="my-0">
         <div class="card-body py-2 small">    
           <label class="btn btn-sm btn-primary">
-            Browse&hellip; <%= f.file_field :image, :class => 'interior-btn', :onchange => 'readURL(this);' %>
+            Browse&hellip; <%= f.file_field :cover_photo, :class => 'interior-btn', :onchange => 'readURL(this);' %>
           </label>
         </div>
-        <div class="card-footer font-italic small text-info">Note : for a better out-look on the webstie, please choose picture size as 700 x 350 pixels</div>
+        <div class="card-footer font-italic small text-info">Note : for a better out-look on the webstie, please choose picture size as 700 x 466 pixels</div>
       </div>
     </div>
   </div>
   <div class="col-sm-3">
     <div class="picframe">
       <div class="card mb-3">
-        <% if @interioridea.image_one.present? %>
-        <%= image_tag @interioridea.image_one_url, :class => 'card-img-top img-fluid w-100', :id => 'img_prev-01' %>
+        <% if @project.image_one.present? %>
+        <%= image_tag @project.image_one_url, :class => 'card-img-top img-fluid w-100', :id => 'img_prev-01' %>
         <% else %>
         <%=image_tag('no-post-chosen.jpg', :class => 'card-img-top img-fluid w-100', :id => 'img_prev-01')%>
         <% end %>
@@ -38,15 +38,15 @@
             Browse&hellip; <%= f.file_field :image_one, :class => 'interior-btn', :onchange => 'readURL1(this);' %>
           </label>
         </div>
-        <div class="card-footer font-italic small text-info">Note : for a better out-look on the webstie, please choose picture size as 700 x 350 pixels</div>
+        <div class="card-footer font-italic small text-info">Note : for a better out-look on the webstie, please choose picture size as 1024 x 678 pixels</div>
       </div>
     </div>
   </div>
   <div class="col-sm-3">
     <div class="picframe">
       <div class="card mb-3">
-        <% if @interioridea.image_two.present? %>
-        <%= image_tag @interioridea.image_two_url, :class => 'card-img-top img-fluid w-100', :id => 'img_prev-02' %>
+        <% if @project.image_two.present? %>
+        <%= image_tag @project.image_two_url, :class => 'card-img-top img-fluid w-100', :id => 'img_prev-02' %>
         <% else %>
         <%=image_tag('no-post-chosen.jpg', :class => 'card-img-top img-fluid w-100', :id => 'img_prev-02')%>
         <% end %>
@@ -59,15 +59,15 @@
             Browse&hellip; <%= f.file_field :image_two, :class => 'interior-btn', :onchange => 'readURL2(this);' %>
           </label>
         </div>
-        <div class="card-footer font-italic small text-info">Note : for a better out-look on the webstie, please choose picture size as 700 x 350 pixels</div>
+        <div class="card-footer font-italic small text-info">Note : for a better out-look on the webstie, please choose picture size as 1024 x 678 pixels</div>
       </div>
     </div>
   </div>
   <div class="col-sm-3">
     <div class="picframe">
       <div class="card mb-3">
-        <% if @interioridea.image_three.present? %>
-        <%= image_tag @interioridea.image_three_url, :class => 'card-img-top img-fluid w-100', :id => 'img_prev-03' %>
+        <% if @project.image_three.present? %>
+        <%= image_tag @project.image_three_url, :class => 'card-img-top img-fluid w-100', :id => 'img_prev-03' %>
         <% else %>
         <%=image_tag('no-post-chosen.jpg', :class => 'card-img-top img-fluid w-100', :id => 'img_prev-03')%>
         <% end %>
@@ -80,7 +80,7 @@
             Browse&hellip; <%= f.file_field :image_three, :class => 'interior-btn', :onchange => 'readURL3(this);' %>
           </label>
         </div>
-        <div class="card-footer font-italic small text-info">Note : for a better out-look on the webstie, please choose picture size as 700 x 350 pixels</div>
+        <div class="card-footer font-italic small text-info">Note : for a better out-look on the webstie, please choose picture size as 1024 x 678 pixels</div>
       </div>
     </div>
   </div>
@@ -93,41 +93,63 @@
       <div class="row">
         <div class="col-xs-12 col-sm-6 col-md-9">
           <div class="form-group">
-            <%= f.text_field :title, :class => 'form-control input-lg', :placeholder => 'please input post title here...' %><p class="font-italic text-info small">please choose an attractive title sice the title is highlighted on the website</p>
+            <%= f.text_field :project_name, :class => 'form-control input-lg', :placeholder => 'please input the project title here...' %><p class="font-italic text-info small">please choose an attractive and short title</p>
           </div>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-3">
           <div class="form-group">
-            <%= f.select(:show_on_home, Interioridea::SHOW_ON_HOME, :class => 'form-control input-lg') %>
-            <p class="font-italic text-info small">If you choose "yes", main image of this post will be shown on home page</p>
+            <%= f.text_field :date, data:{ provide:'datepicker'}, :class => 'form-control input-lg', :placeholder => 'project date' %>
+            <p class="font-italic text-info small">just to give an idean of the timestamp of this project was held</p>
           </div>
         </div>
       </div>
       <div class="row">
         <div class="col-xs-12 col-sm-6 col-md-6">
           <div class="form-group">
-            <%= f.text_field :category, :class => 'form-control input-lg', :placeholder => 'design category' %>
-            <p class="font-italic text-info small">you can choose a fixed category or provide a short introduction</p>
+            <%= f.text_field :client, :class => 'form-control input-lg', :placeholder => 'client name or the company' %>
+            <p class="font-italic text-info small">show out your different clients</p>
           </div>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-6">
           <div class="form-group">
-            <%= f.text_field :designer, :class => 'form-control input-lg', :placeholder => 'designer name' %>
-            <p class="font-italic text-info small">let the customers know about the designer. Or keep it as company name</p>
+            <%= f.text_field :value, :class => 'form-control text-dark input-lg', :placeholder => 'project capital in VND' %>
+            <p class="font-italic text-info small">just to give an idea the scale of the project</p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6">
+          <div class="form-group">
+            <%= f.text_field :location, :class => 'form-control input-lg', :placeholder => 'location' %>
+            <p class="font-italic text-info small">location of the project was held(just city or full address)</p>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-6">
+          <div class="form-group">
+            <%= f.select(:category, Project::CATEGORIES) %><p class="font-italic text-info small">choose the category where this project belongs to</p>
           </div>
         </div>
       </div>
       <div class="container">
         <div class="row">
           <div class="col-lg-12 nopadding">
-            <%= f.trix_editor :description %>
+            <%= f.trix_editor :description, :id => 'trix-id-2' %>
           </div>
+          <p class="font-italic text-info small">Short description about the background</p>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 nopadding">
+            <%= f.trix_editor :solution, :id => 'trix-id-1' %>
+          </div>
+          <p class="font-italic text-info small">longer description about the project, or you may call it solution</p>
         </div>
       </div>
       <hr class="colorgraph">
       <div class="row">
         <div class="col-xs-12 col-md-6"><%= link_to 'No! I changed my mind', admin_interiorideas_path, :class => 'btn btn-danger btn-block btn-lg' %></div> 
-        <div class="col-xs-12 col-md-6"><%= f.submit 'save this post', :class => 'btn btn-success btn-block btn-lg' %></div>
+        <div class="col-xs-12 col-md-6"><%= f.submit 'save this project', :class => 'btn btn-success btn-block btn-lg' %></div>
       </div>
       <% end %>
     </div>

@@ -3795,7 +3795,7 @@ overflow:hidden !important;
 width:100px;
 height:100px;
 display:block;
-background:url(../images/close.html) center no-repeat;
+background:url(logo.png) center no-repeat;
 margin:0 auto;
 margin-bottom:80px;
 cursor:pointer;
@@ -3803,7 +3803,7 @@ padding:20px;
 }
 
 #btn-close-x{
-background:url(../images/close-2.html) center no-repeat;
+background:url(logo.png) center no-repeat;
 }
 
 

@@ -15,4 +15,3 @@
 //= require demo
 //= require jquery.themepunch.plugins.min
 //= require jquery.themepunch.revolution.min
-//= require products_categorized

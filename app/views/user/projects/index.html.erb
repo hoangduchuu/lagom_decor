@@ -2,7 +2,7 @@
 
     <div id="wrapper">
         <!-- header begin -->
-            <%= render 'user/contacts/header' %>
+        <%= render 'user/contacts/header' %>
         <!-- header close -->
 
         <!-- subheader -->
@@ -43,82 +43,31 @@
                 </div>
                 <!-- portfolio filter close -->
 
-                <div id="gallery" class="row gallery full-gallery de-gallery pf_4_cols hover-1 wow fadeInUp" data-wow-delay=".3s">
+                <div id="gallery" class="row gallery full-gallery de-gallery pf_4_cols wow fadeInUp" data-wow-delay=".3s">
 
                     <!-- gallery item -->
                     <% @projects.where(:category => 'residential').each do |pro| %>
-                    <div class="col-md-6 col-sm-6 col-xs-12 item mb30 residential">
+                    <div class="col-md-4 col-sm-6 col-xs-12 item mb30 hospitaly">
                         <div class="picframe">
-                            <a class="simple-ajax-popup-align-top" href="project-details-1.html">
-                                <span class="overlay-1">
+                            <%= link_to user_project_path(pro), :class => 'simple-ajax-popup-align-top' do %>
+                                <span class="overlay">
                                     <span class="pf_text">
                                         <span class="project-name"><%= pro.project_name %></span>
                                     </span>
                                 </span>
-                            </a>
+                                <% end %>
+
                             <%= image_tag pro.cover_photo_url %>
                         </div>
                     </div>
-                    <% end -%>
+                    <% end %>
                     <!-- close gallery item -->
-
-                    <!-- gallery item -->
-                    <% @projects.where(:category => 'hospitaly').each do |pro| %>
-                    <div class="col-md-6 col-sm-6 col-xs-12 item mb30 hospitaly">
-                        <div class="picframe">
-                            <a class="simple-ajax-popup-align-top" href="project-details-1.html">
-                                <span class="overlay-1">
-                                    <span class="pf_text">
-                                        <span class="project-name"><%= pro.project_name %></span>
-                                    </span>
-                                </span>
-                            </a>
-                            <%= image_tag pro.cover_photo_url %>
-                        </div>
-                    </div>
-                    <% end -%>
-                    <!-- close gallery item -->
-
-                    <!-- gallery item -->
-                    <% @projects.where(:category => 'office').each do |pro| %>
-                    <div class="col-md-6 col-sm-6 col-xs-12 item mb30 office">
-                        <div class="picframe">
-                            <a class="simple-ajax-popup-align-top" href="project-details-1.html">
-                                <span class="overlay-1">
-                                    <span class="pf_text">
-                                        <span class="project-name"><%= pro.project_name %></span>
-                                    </span>
-                                </span>
-                            </a>
-                            <%= image_tag pro.cover_photo_url %>
-                        </div>
-                    </div>
-                    <% end -%>
-                    <!-- close gallery item -->
-
-                    <!-- gallery item -->
-                    <% @projects.where(:category => 'commercial').each do |pro| %>
-                    <div class="col-md-6 col-sm-6 col-xs-12 item mb30 commercial">
-                        <div class="picframe">
-                            <a class="simple-ajax-popup-align-top" href="project-details-1.html">
-                                <span class="overlay-1">
-                                    <span class="pf_text">
-                                        <span class="project-name"><%= pro.project_name %></span>
-                                    </span>
-                                </span>
-                            </a>
-                            <%= image_tag pro.cover_photo_url %>
-                        </div>
-                    </div>
-                    <% end -%>
-                    <!-- close gallery item -->
-
                 </div>
             </div>
         </div>
 
         <!-- footer begin -->
-            <%= render 'user/contacts/footer' %>
+        <%= render 'user/contacts/footer' %>
         <!-- footer close -->
 
     </div>

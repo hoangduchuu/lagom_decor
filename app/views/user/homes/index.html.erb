@@ -12,21 +12,19 @@
                 <!-- revolution slider begin -->
                 <section id="section-slider" class="fullwidthbanner-container" aria-label="section-slider" style="padding-top: 0;">
                     <div id="revolution-slider" class="slider-container">
-								  <div class="split left">
-									<%= link_to 'Consulting', user_consultings_path, :class => 'button' %>
-								  </div>
-                                    <!-- <div class="grow" id="divhome" style="background-image: url('images/background/middle.jpg');">
-                                        <div class="mask1" id="mask2"></div>
-                                    </div> -->
-								  <div class="split right">
-									<%= link_to 'Shop with us', user_products_path, :class => 'button' %>
-								  </div>
+                    <div class="split left">
+                        <%= link_to 'Consulting', user_consultings_path, :class => 'but-slider' %>
+                    </div>
+
+                    <div class="split right">
+                        <%= link_to 'Shop with us', user_products_path, :class => 'but-slider' %>
+                    </div>
                 </div>
             </section>
             <!-- revolution slider close -->
 
             <!-- section begin -->
-            <section id="section-about" style="padding-top: 0;">
+            <section id="section-about">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-8 col-md-offset-2 text-center wow fadeInUp">
@@ -358,14 +356,12 @@
   <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog">
       <div class="modal-content">
-
         <div class="btn-big red" id="btnproject" onclick="clickHandle(this)"> <i class="fa fa-envelope fa-2x"></i> <span class="label bottom">Mail</span> </div>
         <div class="btn-big red" id="btninterior" onclick="clickHandle(this)"> <i class="fa fa-envelope fa-2x"></i> <span class="label bottom">Mail</span> </div>
         <div class="btn-big red" id="btnshop" onclick="clickHandle(this)"> <i class="fa fa-envelope fa-2x"></i> <span class="label bottom">Mail</span> </div>
         <div class="btn-big red" id="btnconsult" onclick="clickHandle(this)"> <i class="fa fa-envelope fa-2x"></i> <span class="label bottom">Mail</span> </div>
         <div class="btn-big red" id="btncontact" onclick="clickHandle(this)"> <i class="fa fa-envelope fa-2x"></i> <span class="label bottom">Mail</span> </div>
         <div class="btn-big gray" id="btnclose" onclick="clickHandle(this)"> <i class="fa fa-music fa-2x"></i> <span class="label bottom">Musics</span> </div>
-
     </div>
 </div>
 </div>
@@ -381,19 +377,15 @@
             const left = document.querySelector(".left");
 const right = document.querySelector(".right");
 const container = document.querySelector(".slider-container");
-
 left.addEventListener("mouseenter", () => {
   container.classList.add("hover-left");
 });
-
 left.addEventListener("mouseleave", () => {
   container.classList.remove("hover-left");
 });
-
 right.addEventListener("mouseenter", () => {
   container.classList.add("hover-right");
 });
-
 right.addEventListener("mouseleave", () => {
   container.classList.remove("hover-right");
 });
