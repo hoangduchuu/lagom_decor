@@ -1,17 +1,11 @@
-<%= form_with model: [:admin, @consulting], local: true do |form| %>
- 
-  <p>
-    <%= form.label :title %><br>
-    <%= form.text_field :title %>
-  </p>
- 
-  <p>
-    <%= form.label :text %><br>
-    <%= form.text_area :text %>
-  </p>
- 
-  <p>
-    <%= form.submit %>
-  </p>
- 
-<% end %>
+<ol class="breadcrumb" style="margin-left: 10px; margin-right: 10px;">
+  <li class="breadcrumb-item">
+    <%= link_to 'DASHBOARD', admin_dashboards_path %>
+  </li>
+  <li class="breadcrumb-item">
+    <%= link_to 'FAQ', admin_consultings_path %>
+  </li>
+  <li class="breadcrumb-item active">NEW</li>
+</ol>
+
+<%= render 'form' %>

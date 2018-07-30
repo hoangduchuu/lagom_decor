@@ -76,7 +76,7 @@
    </section>
 
    <!-- FAQ section START -->
-   <section id="section-faq" style="background-color: rgb(255, 183, 0, 0.8); padding-top: 20px; padding-bottom: 20px; padding-right: 70px; padding-left: 70px;">
+   <section id="section-faq" style="background-color: rgb(255, 183, 0, 0.8); padding-top: 20px; padding-bottom: 20px;">
     <div class="container">
         <div class="row">
             <div class="col-md-6 col-md-offset-3 text-center wow fadeInUp">
@@ -91,7 +91,7 @@
                 <div class="panel-heading">
                     <h4 class=panel-title> <a data-toggle=collapse data-parent=#accordion href=#<%= c.id %>> <i class="switch fa fa-plus"></i> <%= c.title %></a> </h4> </div>
                     <div id=<%= c.id %> class="panel-collapse collapse">
-                        <div class=panel-body><%= c.text %></div>
+                        <div class=panel-body><%= sanitize(c.text.html_safe) %></div>
                     </div>
                 </div>
                 <% end -%>

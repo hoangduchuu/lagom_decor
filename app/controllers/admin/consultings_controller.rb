@@ -3,7 +3,7 @@ class Admin::ConsultingsController < ApplicationController
 	layout 'admin'
 
 	def index
-		@consulting = Consulting.all
+		@consultings = Consulting.all
 	end
 
 	def show

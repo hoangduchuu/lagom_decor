@@ -49,59 +49,135 @@
                                 <!-- gallery item -->
                                 <div class="products">
                                     <% @products.each do |pro| %>
-                                    <div class="col-md-4 item <%= pro.category %>" data-toggle="collapse" data-target="#<%= pro.id %>">
-                                        <%= image_tag pro.avatar_url, :class => 'img-responsive' %>
-                                        <h4><%= pro.product_name %></h4>
-                                        <div id="<%= pro.id %>" class="collapse">hhhhhh</div>
-                                        <div class="price"><%= pro.price %> ₫</div>
-                                        <a href="#" class="btn btn-line" data-toggle="modal" data-target="#exampleModal" onclick="inquiryform('decoration', 'sample-01')">Order this</a>
-                                    </div>
-                                    <% end -%>
-                                </div>
-                                <!-- close gallery item -->
-                            </div>
-                        </section>
-                    </div>
-                    <div id="sidebar" class="col-md-3">
-                        <div class="widget widget_top_rated_product">
-                            <h4>New Release</h4>
-                            <ul>
-                                <% @products.where(:top_rated => 'yes').each do |p| %>
-                                <li>
-                                    <%= image_tag p.avatar_url %>
-                                    <div class="text">
-                                        <%= p.product_name %>
-                                        <div class="price"><%= p.price %> ₫</div>
-                                    </div>
-                                </li>
-                                <% end -%>
-                            </ul>
-                        </div>
-                        <div class="widget widget_top_rated_product">
-                            <h4>Top Rated Product</h4>
-                            <ul>
-                                <% @products.where(:top_rated => 'yes').each do |p| %>
-                                <li>
-                                    <%= image_tag p.avatar_url %>
-                                    <div class="text">
-                                        <%= p.product_name %>
-                                        <div class="price"><%= p.price %> ₫</div>
-                                    </div>
-                                </li>
-                                <% end -%>
-                            </ul>
+                                    <div class="col-md-4 item <%= pro.category %>" data-toggle="collapse" data-target="#<%= pro.id %>" style="cursor: pointer;">
+                                        <div class="corner-text-wrapper">
+                                            <div class="corner-text">
+                                              <span class="corner-span-text">NEW !</span>
+                                          </div>
+                                      </div>
+                                      <%= image_tag pro.avatar_url, :class => 'img-responsive' %>
+                                      <h4><%= pro.product_name %></h4>
+                                      <div class="modal fade product_view" id="<%= pro.id %>">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <a href="#" data-dismiss="modal" class="class pull-right"><span class="fa fa-times"></span></a>
+                                                    <h3 class="modal-title"><%= pro.product_name %></h3>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="row">
+                                                        <div class="col-md-6 product_img">
+                                                            <%= image_tag pro.avatar_url, :class => 'img-responsive' %>
+                                                        </div>
+                                                        <div class="col-md-6 product_content">
+                                                            <h3>Product Id: <span><%= pro.product_number %></span></h3>
+                                                            <div class="space-ten"></div>
+                                                            <h4>Material : <span><%= pro.material %></span></h4>
+                        <!-- <div class="rating">
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            (10 reviews)
+                        </div> !-->
+                        <p><%= sanitize pro.description.html_safe %></p>
+                        <h3 class="cost"> <%= pro.price %> ₫ <!-- <small class="pre-cost"><span class="glyphicon glyphicon-usd"></span> 60.00</small> !--></h3>
+                        <div class="space-ten"></div>
+                        <div class="btn-ground">
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" onclick="inquiryform('decoration', 'sample-01')"><span class="fa fa-shopping-cart"></span> Order this</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- footer begin -->
-        <%= render 'user/contacts/footer' %>
-        <!-- footer close -->
     </div>
-    <script>
-$("#btn3").hover(function(){
- $("#hide4").toggle('slow');
-});
-    </script>
+</div>
+<div class="price"><%= pro.price %> ₫</div>
+<a href="#" class="btn btn-line" data-toggle="modal" data-target="#exampleModal" onclick="inquiryform('decoration', 'sample-01')">Order this</a>
+</div>
+<% end -%>
+</div>
+<!-- close gallery item -->
+</div>
+</section>
+</div>
+<div id="sidebar" class="col-md-3">
+    <div class="widget widget_top_rated_product">
+        <h4>New Release</h4>
+        <ul>
+            <% @products.where(:top_rated => 'yes').each do |p| %>
+            <li>
+                <%= image_tag p.avatar_url %>
+                <div class="text">
+                    <%= p.product_name %>
+                    <div class="price"><%= p.price %> ₫</div>
+                </div>
+            </li>
+            <% end -%>
+        </ul>
+    </div>
+    <div class="widget widget_top_rated_product">
+        <h4>Top Rated Product</h4>
+        <ul>
+            <% @products.where(:top_rated => 'yes').each do |p| %>
+            <li>
+                <%= image_tag p.avatar_url %>
+                <div class="text">
+                    <%= p.product_name %>
+                    <div class="price"><%= p.price %> ₫</div>
+                </div>
+            </li>
+            <% end -%>
+        </ul>
+    </div>
+</div>
+</div>
+</div>
+</div>
+<!-- footer begin -->
+<%= render 'user/contacts/footer' %>
+<!-- footer close -->
+<!-- pop up contact form START -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Contact Form</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+      </button>
+  </div>
+  <form id="my_form" onsubmit="submitForm(); return false;">
+    <div class="modal-body">
+        Please fill your contact details, One of our staff will contact you soon...
+        <div class="form-group">
+            <label for="n">Your Name:</label> 
+            <p><input id="n" class="form-control" placeholder="Name" required autocomplete="name"></p>
+        </div>
+        <div class="form-group">
+            <label for="e">your Email:</label> 
+            <p><input id="e"class="form-control" placeholder="Email Address" type="email" required autocomplete="email"></p>
+        </div>
+        <div class="form-group">
+            <label for="p">your Phone Number:</label> 
+            <p><input id="p"class="form-control" placeholder="Phone number" type="number" required autocomplete="tel"></p>
+        </div>
+        <div class="form-group">
+            <label for="m">Additional requests:</label> 
+            <textarea id="m" class="form-control" placeholder="place your request here..." rows="5"></textarea>
+            </
+            <p><input id="category" type="hidden" value=""></p>
+            <p><input id="productid" type="hidden" value=""></p>
+            <div class="modal-footer">
+                <p><input id="btnclose" class="btn btn-secondary" type="button" value="clsoe" data-dismiss="modal">
+                    <input id="btnsubmit" class="btn btn-primary" type="submit" value="send inquiry"> <span id="status"></span></p>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+</div>
+<!-- pop up contact form END -->
+</div>
 </body>

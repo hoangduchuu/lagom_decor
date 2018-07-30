@@ -1,12 +1,11 @@
-<%= form_for [:admin, @consulting] do |f| %>
+<ol class="breadcrumb" style="margin-left: 10px; margin-right: 10px;">
+  <li class="breadcrumb-item">
+    <%= link_to 'DASHBOARD', admin_dashboards_path %>
+  </li>
+  <li class="breadcrumb-item">
+    <%= link_to 'FAQ', admin_consultings_path %>
+  </li>
+  <li class="breadcrumb-item active">EDIT</li>
+</ol>
 
-  <div class="form-group">
-    <%= f.label :title %>
-	<%= f.text_field :title, :class => 'form-control' %><br>
-  </div>
-  <div class="form-group">
-    <%= f.label :text %>
-	<%= f.text_field :text, :class => 'form-control' %><br>
-  </div>
-  <%= f.submit 'save', :class => 'btn btn-primary' %>
-  <% end -%>
+<%= render 'form' %>

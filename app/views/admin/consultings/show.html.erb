@@ -1,12 +1,29 @@
-<p>
-	<strong>Title: </strong>
-	<%= @consulting.title %>
-</p>
+<ol class="breadcrumb" style="margin-left: 10px; margin-right: 10px;">
+	<li class="breadcrumb-item">
+		<%= link_to 'DASHBOARD', admin_dashboards_path %>
+	</li>
+	<li class="breadcrumb-item">
+		<%= link_to 'FAQ', admin_consultings_path %>
+	</li>
+	<li class="breadcrumb-item active">SHOW</li>
+	<%= link_to 'EDIT', edit_admin_consulting_path(@consulting), :class => 'btn btn-sm btn-info left-right' %>
+	<%= link_to ' DELETE', admin_consulting_path(@consulting), :class => 'btn btn-sm btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %>
+	<%= link_to 'NEW FAQ', new_admin_consulting_path, :class => 'btn btn-sm btn-success only-left' %>
+</ol>
 
-<p>
-	<strong>Text: </strong>
-	<%= @consulting.text %>
-</p>
-
-<%= link_to 'Back', admin_consultings_path %>
-<%= link_to 'edit', edit_admin_consulting_path(@consulting) %>
+<div class="row" style="margin-left: 10px; margin-right: 10px;">
+	<table class="table" style="margin-left: 10px; margin-right: 10px;">
+		<tbody>
+			<tr>
+				<td class="text-success" style="min-width: 200px;"><i class="fa fa-user"></i> Question</td>
+				<td style="word-break: break-word;"><%= @consulting.title %></td>
+			</tr>                                        
+		</tbody>
+	</table>
+	<div class="container">
+		<h5 class="text-success">Answer</h5>
+		<blockquote>
+			<p><%= sanitize @consulting.text %></p>
+		</blockquote>
+	</div>
+</div>

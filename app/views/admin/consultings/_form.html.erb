@@ -1,0 +1,25 @@
+<%= form_with model: [:admin, @consulting], local: true do |f| %>
+<div class="row" style="margin-left: 10px; margin-right: 10px;">
+  <div class="container">
+    <div class="col-md-12">
+      <div class="form-group">
+        <%= f.text_field :title, :class => 'form-control input-lg', :placeholder => 'Question' %>
+        <p class="font-italic text-info small">short names will look better on the customer comments section</p>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="col-md-12">
+      <div class="col-lg-12 nopadding">
+        <%= f.trix_editor :text %>
+      </div>
+    </div>
+  </div>
+  <div class="container" style="padding-top: 10px;">
+    <div class="row">
+      <div class="col-xs-12 col-md-6"><%= link_to 'No! I changed my mind', admin_consultings_path, :class => 'btn btn-danger btn-block btn-lg' %></div> 
+      <div class="col-xs-12 col-md-6"><%= f.submit 'save this FAQ', :class => 'btn btn-success btn-block btn-lg' %></div>
+    </div>
+  </div>
+</div>
+<% end %>
