@@ -314,7 +314,7 @@
             <div class="col-md-6 item">
                 <div class="de_testi">
                     <blockquote>
-                        <p><%= c.comment %></p>
+                        <p><%= sanitize(c.comment.html_safe) %></p>
                         <div class="de_testi_by">
                             <%= c.title %>
                         </div>
@@ -350,23 +350,6 @@
                 </div>
             </section>
             <!-- our customers slider END -->
-
-            <!-- Popup Window START -->
-<!-- <div class="container">
-  <div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="btn-big red" id="btnproject" onclick="clickHandle(this)"> <i class="fa fa-envelope fa-2x"></i> <span class="label bottom">Mail</span> </div>
-        <div class="btn-big red" id="btninterior" onclick="clickHandle(this)"> <i class="fa fa-envelope fa-2x"></i> <span class="label bottom">Mail</span> </div>
-        <div class="btn-big red" id="btnshop" onclick="clickHandle(this)"> <i class="fa fa-envelope fa-2x"></i> <span class="label bottom">Mail</span> </div>
-        <div class="btn-big red" id="btnconsult" onclick="clickHandle(this)"> <i class="fa fa-envelope fa-2x"></i> <span class="label bottom">Mail</span> </div>
-        <div class="btn-big red" id="btncontact" onclick="clickHandle(this)"> <i class="fa fa-envelope fa-2x"></i> <span class="label bottom">Mail</span> </div>
-        <div class="btn-big gray" id="btnclose" onclick="clickHandle(this)"> <i class="fa fa-music fa-2x"></i> <span class="label bottom">Musics</span> </div>
-    </div>
-</div>
-</div>
-</div> -->
-<!-- Popup Window END -->
 
 <!-- footer begin -->
     <%= render 'user/contacts/footer' %>

@@ -13,12 +13,12 @@ class User::ContactsController < ApplicationController
 			UserMailer.inquiry_mailer(@customer).deliver
 			redirect_to user_contacts_path
 		else
-			render 'new'
+			redirect_to user_contacts_path
 		end
 	end
 
 	private 
 		def allowed_params
-			params.require(:customer).permit(:customer_name, :phone, :email)
+			params.require(:customer).permit(:customer_name, :phone, :email, :message)
 	end
 end

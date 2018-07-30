@@ -4,6 +4,7 @@ class Admin::DashboardsController < ApplicationController
 
 	def index
 		@admins = Admin.all
+		@customers = Customer.all
 	end
 
 	def show

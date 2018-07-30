@@ -49,7 +49,7 @@
                     <% @projects.where(:category => 'residential').each do |pro| %>
                     <div class="col-md-4 col-sm-6 col-xs-12 item mb30 hospitaly">
                         <div class="picframe">
-                            <%= link_to user_project_path(pro), :class => 'simple-ajax-popup-align-top' do %>
+                            <%= link_to user_project_path(pro) do %>
                                 <span class="overlay">
                                     <span class="pf_text">
                                         <span class="project-name"><%= pro.project_name %></span>
@@ -71,3 +71,4 @@
         <!-- footer close -->
 
     </div>
+</body>

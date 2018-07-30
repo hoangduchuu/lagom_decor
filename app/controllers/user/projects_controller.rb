@@ -7,6 +7,7 @@ class User::ProjectsController < ApplicationController
 	end
 
 	def show
+		@contact = Contact.all
 		@project = Project.find(params[:id])
 	end
 end
