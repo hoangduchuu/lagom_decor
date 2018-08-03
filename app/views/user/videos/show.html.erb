@@ -1,0 +1,85 @@
+<body class="page-projects" style="background-color: white;">
+
+    <div id="wrapper">
+        <!-- header begin -->
+        <%= render 'user/contacts/header' %>
+        <!-- header close -->
+
+        <!-- subheader -->
+        <section id="subheader" data-speed="8" data-type="background">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1>Projects</h1>
+                        <ul class="crumb">
+                            <li><a href="index.html">Home</a></li>
+                            <li class="sep">/</li>
+                            <li>Projects</li>
+                            <li class="sep">/</li>
+                            <li><%= truncate(sanitize(@video.project_name, :tags => %w(br a)), :length => 20) %></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- subheader close -->
+
+        <div class="container project-view">
+
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="@video-container">
+                        <% if @video.url.present? %>
+                        <iframe src="<%= @video.url %>" frameborder="0" width="600" height="400" allowfullscreen></iframe>
+                        <% end %>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="project-info">
+                        <h2><%= @video.project_name %></h2>
+
+                        <div class="details">
+                            <div class="info-text">
+                                <span class="title">Date</span>
+                                <span class="val"><%= @video.date %></span>
+                            </div>
+
+                            <div class="info-text">
+                                <span class="title">Location</span>
+                                <span class="val"><%= @video.location %></span>
+                            </div>
+
+                            <div class="info-text">
+                                <span class="title">Value</span>
+                                <span class="val"><%= @video.value %> ₫</span>
+                            </div>
+
+                            <div class="info-text">
+                                <span class="title">Client</span>
+                                <span class="val"><%= @video.client %></span>
+                            </div>
+
+                            <div class="info-text">
+                                <span class="title">Category</span>
+                                <span class="val"><%= @video.category %></span>
+                            </div>
+                        </div>
+
+                        <p><%= sanitize(@video.description.html_safe) %></p>
+
+                        <p>
+                            <h4>Our Solutions</h4>
+                            <%= sanitize(@video.solution.html_safe) %>
+                        </p>
+                    </p>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- footer begin -->
+    <%= render 'user/contacts/footer' %>
+    <!-- footer close -->
+</div>
+</body>

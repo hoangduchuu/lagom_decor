@@ -50,14 +50,32 @@
                     <div class="col-md-4 col-sm-6 col-xs-12 item mb30 hospitaly">
                         <div class="picframe">
                             <%= link_to user_project_path(pro) do %>
-                                <span class="overlay">
-                                    <span class="pf_text">
-                                        <span class="project-name"><%= pro.project_name %></span>
-                                    </span>
+                            <span class="overlay">
+                                <span class="pf_text">
+                                    <span class="project-name"><%= pro.project_name %></span>
                                 </span>
-                                <% end %>
+                            </span>
+                            <% end %>
 
                             <%= image_tag pro.cover_photo_url %>
+                        </div>
+                    </div>
+                    <% end %>
+                    <!-- close gallery item -->
+
+                    <!-- gallery item -->
+                    <% @videos.each do |video| %>
+                    <div class="col-md-4 col-sm-6 col-xs-12 item mb30 hospitaly">
+                        <div class="picframe">
+                            <%= link_to user_video_path(video) do %>
+                            <span class="overlay">
+                                <span class="pf_text">
+                                    <span class="project-name"><%= video.project_name %></span>
+                                </span>
+                            </span>
+                            <% end %>
+
+                            <%= image_tag '8.jpg' %>
                         </div>
                     </div>
                     <% end %>

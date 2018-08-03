@@ -1,8 +1,9 @@
 <ol class="breadcrumb" style="margin-left: 10px; margin-right: 10px;">
 <li class="breadcrumb-item">
-  <a href="#">Dashboard</a>
+  <%= link_to (t '.dashboard'), admin_dashboards_path %>
 </li>
-<li class="breadcrumb-item active">Home</li>
+<li class="breadcrumb-item active"><%= t ".home" %></li>
 </ol>
 
 <%= render 'admin/comments/index' %>
+<%= render 'admin/services/index' %>

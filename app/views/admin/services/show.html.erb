@@ -1,0 +1,45 @@
+<ol class="breadcrumb" style="margin-left: 10px; margin-right: 10px;">
+	<li class="breadcrumb-item">
+		<%= link_to 'DASHBOARD', admin_dashboards_path %>
+	</li>
+	<li class="breadcrumb-item">
+		<%= link_to 'SHOP', admin_homes_path %>
+	</li>
+	<li class="breadcrumb-item active">VIEW</li>
+	<%= link_to 'EDIT', edit_admin_service_path(@service), :class => 'btn btn-sm btn-info left-right' %>
+</ol>
+
+<div class="row" style="margin-left: 10px; margin-right: 10px;">
+	<div class="col-sm-3">
+		<div class="picframe">
+			<div class="card mb-3">
+				<% if @service.image.present? %>
+				<%= image_tag @service.image_url, :class => 'card-img-top img-fluid w-100' %>
+				<% else %>
+				<%=image_tag('product-not-chosen.jpg', :class => 'card-img-top img-fluid w-100')%>
+				<% end %>
+				<div class="card-body">
+					<h6 class="card-title mb-1">Card Image</h6>
+				</div>
+			</div>
+		</div>
+	</div>
+	<table class="table" style="margin-left: 10px; margin-right: 10px;">
+		<tbody>
+			<tr>
+				<td class="text-success"><i class="fa fa-sort-numeric-desc"></i> Title 01</td>
+				<td><%= @service.title_1 %></td>
+			</tr> 
+			<tr>
+				<td class="text-success" style="min-width: 200px;"><i class="fa fa-header"></i> Title 02</td>
+				<td style="word-break: break-word;"><%= @service.title_2 %></td>
+			</tr>                                        
+		</tbody>
+	</table>
+	<div class="container">
+		<h5 class="text-success">Service Description</h5>
+		<blockquote>
+			<p><%= sanitize @service.description.html_safe %></p>
+		</blockquote>
+	</div>
+</div>

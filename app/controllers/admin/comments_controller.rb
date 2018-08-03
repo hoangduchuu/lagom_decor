@@ -1,5 +1,5 @@
 class Admin::CommentsController < ApplicationController
-	before_action :authenticate_admin!
+	before_action :authenticate_admin!, :set_locale
 	layout 'admin'
 
 	def index
@@ -45,5 +45,14 @@ class Admin::CommentsController < ApplicationController
 	private 
 		def allowed_params
 			params.require(:comment).permit(:title, :comment)
+	end
+
+	private
+	def set_locale
+		I18n.locale = params[:locale] if params[:locale].present?
+	end
+
+	def default_url_options(options = {})
+		{ locale: I18n.locale}.merge options
 	end
 end

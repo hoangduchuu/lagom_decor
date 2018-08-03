@@ -1,33 +1,176 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  user:
+    contacts:
+      header:
+        home: "HOME"
+        projects: "PROJECTS"
+        interiorideas: "INTERIOR IDEAS"
+        shop: "SHOP"
+        consulting: "CONSULTING"
+        contact: "CONTACT"
+        workinghours: "Working Hours"
+        phone: "Phone"
+        email: "Email"
+
+      footer:
+        contactus: "Contact Us"
+        phone: "Phone"
+        fax: "Fax"
+        email: "Email"
+
+      index:
+        contact: "contact"
+        home: "home"
+        contact_info: "contact info"
+        phone: "Phone"
+        fax: "Fax"
+        email: "Email"
+        open: "Open"
+        send_msg: "send us message"
+        send: "send message"
+        c_name: "your name..."
+        c_email: "your email..."
+        c_phone: "phone number..."
+        c_message: "type your message here..."
+
+
+    homes:
+      index:
+        consulting: "HOME"
+        shop_with_us: "PROJECTS"
+        what_we_do: "INTERIOR IDEAS"
+        5_reasons: "5 reasons to choose lagomdecor"
+        customer_says: "customer says"
+        partners: "proudly partners with"
+
+    projects:
+      index:
+        projects: "projects"
+        home: "home"
+        all_projects: "all projects"
+
+    projects:
+      index:
+        interiorideas: "projects"
+        home: "home"
+        popular: "popular designs"
+        recent: "new designs"
+
+    projects:
+      index:
+        products: "products"
+        home: "home"
+        new: "new release"
+        top_rated: "top rated products"
+
+    projects:
+      index:
+        process: "consulting process"
+        contact_us: "Contact Us"
+        faq: "frequently asked questions"
+        no_01: "what is your style ?"
+        no_02: "from style to solution"
+        no_03: "realization of solution"
+        no_04: "construction & installation"
+        no_05: "the apartment is ready to welcome you"
+
+  admin:
+    dashboards:
+      dashboard_layout:
+        dashboard: "Dashboard"
+        home: "Home"
+        projects: "Projects"
+        interiorideas: "Interiorideas"
+        shop: "Shop"
+        consulting: "Consulting"
+        contact: "Contact"
+        alert: "Alert"
+        logout: "Logout"
+        leave: "Ready to Leave ?"
+        password_again: "Next time you'll have to type your username and password again..."
+        cancel: "Cancel"
+
+      index:
+        customer_details: "Customer Details"
+        customer_msg: "Customer Message"
+        moderators: "Moderators"
+        new_moderator: "add New Moderator"
+        show: "Show"
+        entries: "entries"
+        search: "Search"
+        name: "Name"
+        phone: "Phone"
+        email: "Email"
+        message: "Message"
+        date: "Date"
+        operations: "Operations"
+        showing: "Showing"
+        pervious: "Previous"
+        next: "Next"
+        role: "Role"
+
+    homes:
+      index:
+        dashboard: "Dashboard"
+        home: "Home"
+
+    comments:
+      index:
+        comments: "Customer Comments"
+        new: "Add new Comment"
+        show: "Show"
+        entries: "entries"
+        name: "Name"
+        comment: "Comment"
+        Operations: "Operations"
+        question: "Are You Sure ?"
+
+    comments:
+      new:
+        dashboard: "Dashboard"
+        comments: "Comments"
+        new: "New"
+
+
+    projects:
+      index:
+        dashboard: "Dashboard"
+        home: "Home"
+        projects: "Projects"
+        interiorideas: "Interiorideas"
+        shop: "Shop"
+        consulting: "Consulting"
+        contact: "Contact"
+        alert: "Alert"
+        logout: "Logout"
+        leave: "Ready to Leave ?"
+        password_again: "Next time you'll have to type your username and password again..."
+
+    contacts:
+      index:
+        phone: "Phone Number"
+        fax: "Fax Number"
+        email: "Email"
+        address: "Address"
+        openday: "Open From"
+        closeday: "Open To"
+        openat: "Open at"
+        closeat: "Close at"
+        edit: "edit"
+
+      edit:
+        dashboard: "Dashboard"
+        contact: "Contact"
+        edit: "Edit"
+        phone: "Phone Number"
+        fax: "Fax Number"
+        email: "Email"
+        address: "Address"
+        openday: "Open From"
+        closeday: "Open To"
+        openat: "Open at"
+        closeat: "Close at"
+        save: "Save"
+        introduction: "Introduction"
+
+

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180729095654) do
+ActiveRecord::Schema.define(version: 20180801163545) do
 
   create_table "admins", force: :cascade do |t|
     t.string "username", default: "", null: false
@@ -65,6 +65,10 @@ ActiveRecord::Schema.define(version: 20180729095654) do
     t.string "closeat"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "facebook"
+    t.string "twitter"
+    t.string "google"
+    t.text "description"
   end
 
   create_table "customers", force: :cascade do |t|
@@ -90,6 +94,13 @@ ActiveRecord::Schema.define(version: 20180729095654) do
     t.string "image_three"
   end
 
+  create_table "product_categories", force: :cascade do |t|
+    t.string "category"
+    t.integer "admin"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "products", force: :cascade do |t|
     t.string "product_number"
     t.string "category"
@@ -101,6 +112,12 @@ ActiveRecord::Schema.define(version: 20180729095654) do
     t.string "avatar"
     t.string "material"
     t.text "description"
+  end
+
+  create_table "project_categories", force: :cascade do |t|
+    t.string "category"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "projects", force: :cascade do |t|
@@ -118,6 +135,29 @@ ActiveRecord::Schema.define(version: 20180729095654) do
     t.string "image_one"
     t.string "image_two"
     t.string "image_three"
+  end
+
+  create_table "services", force: :cascade do |t|
+    t.string "title_1"
+    t.string "title_2"
+    t.text "description"
+    t.string "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "videos", force: :cascade do |t|
+    t.string "category"
+    t.string "project_name"
+    t.string "date"
+    t.string "location"
+    t.string "value"
+    t.string "client"
+    t.text "description"
+    t.text "solution"
+    t.string "url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

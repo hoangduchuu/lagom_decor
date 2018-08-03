@@ -1,0 +1,77 @@
+<ol class="breadcrumb" style="margin-left: 10px; margin-right: 10px;">
+	<li class="breadcrumb-item">
+		<%= link_to 'DASHBOARD', admin_dashboards_path %>
+	</li>
+	<li class="breadcrumb-item">
+		<%= link_to 'PROJECTS', admin_projects_path %>
+	</li>
+	<li class="breadcrumb-item active">VIEW</li>
+	<%= link_to 'EDIT', edit_admin_video_path(@video), :class => 'btn btn-sm btn-info left-right' %>
+	<%= link_to ' DELETE', admin_video_path(@video), :class => 'btn btn-sm btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %>
+	<%= link_to 'NEW IDEA', new_admin_video_path, :class => 'btn btn-sm btn-success only-left' %>
+</ol>
+
+<div class="row" style="margin-left: 10px; margin-right: 10px;">
+	<div class="col-sm-3">
+		<div class="picframe">
+			<div class="card mb-3">
+				<% if @video.url.present? %>
+				<div class="col-md-8">
+					<div class="video-container">
+						<iframe src="<%= @video.url %>" frameborder="0" width="600" height="400" allowfullscreen></iframe>
+					</div>
+				</div>
+				<% else %>
+				<div class="col-md-8">
+					<div class="video-container">
+						<iframe src="http://www.youtube.com/embed/QgnRut8Qloc" frameborder="0" width="600" height="400" allowfullscreen></iframe>
+					</div>
+				</div>
+				<% end %>
+				<div class="card-body">
+					<h6 class="card-title mb-1">Main Image</h6>
+				</div>
+			</div>
+		</div>
+	</div>
+	<table class="table" style="margin-left: 10px; margin-right: 10px;">
+		<tbody>
+			<tr>
+				<td class="text-success" style="min-width: 200px;"><i class="fa fa-header"></i> Project Name</td>
+				<td style="word-break: break-word;"><%= @video.project_name %></td>
+			</tr>                                        
+			<tr>
+				<td class="text-success"><i class="fa fa-caret-right"></i> Project Catogory</td>
+				<td><%= @video.category %></td>
+			</tr>                                        
+			<tr>
+				<td class="text-success"><i class="fa fa-user"></i> Client</td>
+				<td><%= @video.client %></td>
+			</tr>			
+			<tr>
+				<td class="text-success"><i class="fa fa-eye"></i> Location</td>
+				<td><%= @video.location %></td>
+			</tr>
+			<tr>
+				<td class="text-success"><i class="fa fa-usd"></i> Budget</td>
+				<td><%= @video.value %></td>
+			</tr>
+			<tr>
+				<td class="text-danger"><i class="fa fa-calendar"></i> Conducted Date</td>
+				<td><%= @video.date %></td>
+			</tr>		
+		</tbody>
+	</table>
+	<div class="container">
+		<h5 class="text-success">Project Description</h5>
+		<blockquote>
+			<p><%= sanitize @video.description.html_safe %></p>
+		</blockquote>
+	</div>
+	<div class="container">
+		<h5 class="text-success">Our Solution</h5>
+		<blockquote>
+			<p><%= sanitize @video.solution.html_safe %></p>
+		</blockquote>
+	</div>
+</div>

@@ -4091,7 +4091,7 @@ padding:0;
 }
 
 .widget_top_rated_product li {
-min-height:80px;
+min-height:100px;
 }
 
 .widget_top_rated_product li .text{
@@ -4585,7 +4585,7 @@ font-size:20px;
 
 #back-to-top {
     position: fixed;
-    bottom: 40px;
+    bottom: 80px;
     right: 40px;
     z-index: 9999;
     width: 32px;
@@ -5662,4 +5662,8 @@ display:table;
   font-family: arial;
   transform: rotate(45deg);
   display:block;
+}
+
+.news-item {
+	max-width: 100px;
 }

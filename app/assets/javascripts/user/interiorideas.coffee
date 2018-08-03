@@ -15,3 +15,6 @@
 //= require demo
 //= require jquery.themepunch.plugins.min
 //= require jquery.themepunch.revolution.min
+//= require jquery.event.drag.min
+//= require jquery.mousewheel.min
+//= require jquery.newstape

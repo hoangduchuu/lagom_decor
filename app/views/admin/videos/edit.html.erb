@@ -1,0 +1,12 @@
+<ol class="breadcrumb" style="margin-left: 10px; margin-right: 10px;">
+  <li class="breadcrumb-item">
+    <%= link_to 'DASHBOARD', admin_dashboards_path %>
+  </li>
+  <li class="breadcrumb-item">
+    <%= link_to 'PROJECTS', admin_projects_path %>
+  </li>
+  <li class="breadcrumb-item active">EDIT</li>
+  <li class="breadcrumb-item active"><%= @video.project_name %></li>
+</ol>
+
+<%= render 'form' %>

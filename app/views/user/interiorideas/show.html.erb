@@ -37,7 +37,20 @@
                                 <% end %>
                             </div>
                             <div class="col-md-6">
-                                
+                                <div class="project-info">
+                                    <h2><%= @interioridea.title %></h2>
+
+                                    <div class="details">
+                                        <div class="info-text">
+                                            <span class="title">Category</span>
+                                            <span class="val"><%= @interioridea.category %></span>
+                                        </div>
+                                        <div class="info-text">
+                                            <span class="title">Designer</span>
+                                            <span class="val"><%= @interioridea.designer %></span>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="separator"><span><i class="fa fa-arrow-down"></i></span></div>

@@ -1,5 +1,5 @@
 class Admin::InteriorideasController < ApplicationController
-	before_action :authenticate_admin!
+	before_action :authenticate_admin!, :set_locale
 	layout 'admin'
 
 	def index
@@ -48,5 +48,14 @@ class Admin::InteriorideasController < ApplicationController
 	private 
 	def allowed_params
 		params.require(:interioridea).permit(:title, :category, :image, :show_on_home, :description, :image_one, :image_two, :image_three, :designer )
+	end
+
+	private
+	def set_locale
+		I18n.locale = params[:locale] if params[:locale].present?
+	end
+
+	def default_url_options(options = {})
+		{ locale: I18n.locale}.merge options
 	end
 end

@@ -1,0 +1,26 @@
+
+.news-body { font-family: 'roboto', Arial, Helvetica, sans-serif }
+
+.news-wrapper {
+  width: 450px;
+  margin: 0 auto;
+}
+
+.text-center { text-align: center; }
+
+.text-right { text-align: right; }
+
+.text-justify { text-align: justify; }
+
+.newstape {
+  color: #fff;
+  height: 600px;
+  overflow: hidden;
+}
+
+.newstape-content {
+  position: relative;
+  padding: 15px;
+}
+
+.newstape-drag { cursor: ns-resize; }

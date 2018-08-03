@@ -24,60 +24,60 @@
         </section>
         <!-- subheader close -->
 
-<div class="container project-view">
+        <div class="container project-view">
 
-    <div class="row">
-        <div class="col-md-8 project-images">
-            <%= image_tag @project.image_one_url %>
-            <%= image_tag @project.image_two_url %>
-            <%= image_tag @project.image_three_url %>
-        </div>
-        <div class="col-md-4">
-            <div class="project-info">
-                <h2><%= @project.project_name %></h2>
-
-                <div class="details">
-                    <div class="info-text">
-                        <span class="title">Date</span>
-                        <span class="val"><%= @project.date %></span>
-                    </div>
-
-                    <div class="info-text">
-                        <span class="title">Location</span>
-                        <span class="val"><%= @project.location %></span>
-                    </div>
-
-                    <div class="info-text">
-                        <span class="title">Value</span>
-                        <span class="val"><%= @project.value %> ₫</span>
-                    </div>
-
-                    <div class="info-text">
-                        <span class="title">Client</span>
-                        <span class="val"><%= @project.client %></span>
-                    </div>
-
-                    <div class="info-text">
-                        <span class="title">Category</span>
-                        <span class="val"><%= @project.category %></span>
-                    </div>
+            <div class="row">
+                <div class="col-md-8 project-images">
+                    <%= image_tag @project.image_one_url %>
+                    <%= image_tag @project.image_two_url %>
+                    <%= image_tag @project.image_three_url %>
                 </div>
+                <div class="col-md-4">
+                    <div class="project-info">
+                        <h2><%= @project.project_name %></h2>
 
-                <p><%= sanitize(@project.description.html_safe) %></p>
+                        <div class="details">
+                            <div class="info-text">
+                                <span class="title">Date</span>
+                                <span class="val"><%= @project.date %></span>
+                            </div>
 
-                <p>
-                    <h4>Our Solutions</h4>
-                    <%= sanitize(@project.solution.html_safe) %>
-                </p>
-                </p>
-                        
-                        
+                            <div class="info-text">
+                                <span class="title">Location</span>
+                                <span class="val"><%= @project.location %></span>
+                            </div>
+
+                            <div class="info-text">
+                                <span class="title">Value</span>
+                                <span class="val"><%= @project.value %> ₫</span>
+                            </div>
+
+                            <div class="info-text">
+                                <span class="title">Client</span>
+                                <span class="val"><%= @project.client %></span>
+                            </div>
+
+                            <div class="info-text">
+                                <span class="title">Category</span>
+                                <span class="val"><%= @project.category %></span>
+                            </div>
+                        </div>
+
+                        <p><%= sanitize(@project.description.html_safe) %></p>
+
+                        <p>
+                            <h4>Our Solutions</h4>
+                            <%= sanitize(@project.solution.html_safe) %>
+                        </p>
+                    </p>
+
+
+                </div>
             </div>
         </div>
     </div>
-</div>
-<!-- footer begin -->
-        <%= render 'user/contacts/footer' %>
-        <!-- footer close -->
+    <!-- footer begin -->
+    <%= render 'user/contacts/footer' %>
+    <!-- footer close -->
 </div>
 </body>

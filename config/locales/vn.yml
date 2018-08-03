@@ -1,0 +1,68 @@
+vn:
+  user:
+    contacts:
+      header:
+        home: "nhà"
+        projects: "dự án"
+        interiorideas: "ý tưởng"
+        shop: "cửa tiệm"
+        consulting: "tư vấn"
+        contact: "tiếp xúc"
+        workinghours: "Giờ làm việc"
+        phone: "ý tưởng"
+        email: "tư vấn"
+
+      footer:
+        contactus: "liên hệ chúng tôi"
+        phone: "ý tưởng"
+        fax: "cửa tiệm"
+        email: "tư vấn"
+
+  admin:
+    dashboards:
+      dashboard_layout:
+        dashboard: "bảng điều khiển"
+        home: "nhà"
+        projects: "dự án"
+        interiorideas: "ý tưởng"
+        shop: "cửa tiệm"
+        consulting: "tư vấn"
+        contact: "tiếp xúc"
+        alert: "cảnh báo"
+        logout: "đăng xuất"
+        leave: "sẵn sàng rời đi"
+        password_again: "Lần tới bạn sẽ phải nhập lại tên người dùng và mật khẩu của mình..."
+        cancel: "hủy bỏ"
+
+    contacts:
+      index:
+        phone: "ý tưởng"
+        fax: "cửa tiệm"
+        email: "tư vấn"
+        address: "tiếp xúc"
+        openday: "ý tưởng"
+        closeday: "cửa tiệm"
+        openat: "tư vấn"
+        closeat: "tiếp xúc"
+        edit: "tiếp xúc"
+        introduction: "Giới thiệu công ty"
+
+      head:
+        dashboard: "bảng điều khiển"
+        contact: "dự án"
+
+      edit:
+        dashboard: "bảng điều khiển"
+        contact: "dự án"
+        edit: "tiếp xúc"
+        phone: "ý tưởng"
+        fax: "cửa tiệm"
+        email: "tư vấn"
+        address: "tiếp xúc"
+        openday: "ý tưởng"
+        closeday: "cửa tiệm"
+        openat: "tư vấn"
+        closeat: "tiếp xúc"
+        save: "tiết kiệm"
+        introduction: "Giới thiệu công ty"
+

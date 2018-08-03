@@ -1,0 +1,19 @@
+<%= form_with model: [:admin, @category], local: true do |f| %>
+<div class="row" style="margin-left: 10px; margin-right: 10px;">
+  <div class="container">
+    <div class="col-md-12">
+      <div class="form-group">
+        <%= f.text_field :category, :class => 'form-control input-lg', :placeholder => 'category name' %>
+        <p class="font-italic text-info small">don't make it too long</p>
+      </div>
+      <%= f.text_field :admin, :class => 'form-control input-lg', :placeholder => 'category name' %>
+    </div>
+  </div>
+  <div class="container" style="padding-top: 10px;">
+    <div class="row">
+      <div class="col-xs-12 col-md-6"><%= link_to 'No! I changed my mind', admin_project_categories_path, :class => 'btn btn-danger btn-block btn-lg' %></div> 
+      <div class="col-xs-12 col-md-6"><%= f.submit 'save this category', :class => 'btn btn-success btn-block btn-lg' %></div>
+    </div>
+  </div>
+</div>
+<% end %>

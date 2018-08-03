@@ -1,9 +1,10 @@
 class Admin::ProjectsController < ApplicationController
-	before_action :authenticate_admin!
+	before_action :authenticate_admin!, :set_locale
 	layout 'admin'
 
 	def index
 		@projects = Project.all
+		@videos = Video.all
 	end
 
 	def show
@@ -47,5 +48,14 @@ class Admin::ProjectsController < ApplicationController
 	private 
 	def allowed_params
 		params.require(:project).permit(:category, :project_name, :date, :location, :value, :client, :description, :solution, :cover_photo, :image_one, :image_two, :image_three)
+	end
+
+	private
+	def set_locale
+		I18n.locale = params[:locale] if params[:locale].present?
+	end
+
+	def default_url_options(options = {})
+		{ locale: I18n.locale}.merge options
 	end
 end

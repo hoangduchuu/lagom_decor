@@ -1,4 +1,5 @@
 class User::ContactsController < ApplicationController
+	before_action :set_locale
 	layout 'user'
 
 	def index
@@ -20,5 +21,14 @@ class User::ContactsController < ApplicationController
 	private 
 		def allowed_params
 			params.require(:customer).permit(:customer_name, :phone, :email, :message)
+	end
+
+	private
+	def set_locale
+		I18n.locale = params[:locale] if params[:locale].present?
+	end
+
+	def default_url_options(options = {})
+		{ locale: I18n.locale}.merge options
 	end
 end

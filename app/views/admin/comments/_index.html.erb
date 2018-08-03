@@ -1,15 +1,15 @@
 <div class="card mb-3" style="margin-left: 15px; margin-right: 15px;">
   <div class="card-header">
-    <i class="fa fa-table"></i> Customer Comments
-    <%= link_to 'Add new Comment', new_admin_comment_path, :class => 'btn btn-success btn-sm left-right' %></div>
+    <i class="fa fa-table"></i> <%= t ".comments" %>
+    <%= link_to (t '.new'), new_admin_comment_path, :class => 'btn btn-success btn-sm left-right' %></div>
     <div class="card-body">
       <div class="table-responsive">
         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
           <thead>
             <tr>
-              <th>Name</th>
-              <th>Comment</th>
-              <th>operations</th>
+              <th><%= t ".name" %></th>
+              <th><%= t ".comment" %></th>
+              <th><%= t ".operations" %></th>
             </tr>
           </thead>
           <tbody>
@@ -19,7 +19,7 @@
               <td><%= truncate(sanitize(c.comment, :tags => %w(br a)), :length => 40) %></td>
               <td><%= link_to 'edit', edit_admin_comment_path(c), :class => 'btn btn-sm btn-warning' %>
                 <%= link_to 'view', admin_comment_path(c), :class => 'btn btn-sm btn-primary' %>
-                <%= link_to ' del', admin_comment_path(c), :class => 'btn btn-sm btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                <%= link_to ' del', admin_comment_path(c), :class => 'btn btn-sm btn-danger', method: :delete, data: { confirm: (t '.question') } %></td>
               </tr>
               <% end %>
             </tbody>

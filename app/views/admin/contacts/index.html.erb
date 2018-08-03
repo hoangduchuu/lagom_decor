@@ -1,49 +1,66 @@
-<%= render 'head' %>
+<% @contact.each do |contact| %>
+<ol class="breadcrumb" style="margin-left: 10px; margin-right: 10px;">
+  <li class="breadcrumb-item">
+    <%= link_to (t '.dashboard'), admin_dashboards_path %>
+  </li>
+  <li class="breadcrumb-item active"><%= t ".contact" %></li>
+  <%= link_to 'EDIT', edit_admin_contact_path(contact), :class => 'btn btn-sm btn-info left-right' %>
+</ol>
 
-<% @contact.each do |c| %>
-
-<table class="table">
+<div class="row" style="margin-left: 10px; margin-right: 10px;">
+  <table class="table" style="margin-left: 10px; margin-right: 10px;">
     <tbody>
-        <tr>
-          <th>Phone</th>
-            <td><%= c.phone %></td>
-            <td><%= link_to 'Edit', edit_admin_contact_path(c) %></td>
-        </tr>
-        <tr>
-          <th>Fax</th>
-            <td><%= c.fax %></td>
-            <td><%= link_to 'Edit', edit_admin_contact_path(c) %></td>
-        </tr>
       <tr>
-          <th>Email</th>
-            <td><%= c.email %></td>
-            <td><%= link_to 'Edit', edit_admin_contact_path(c) %></td>
-        </tr>
-        <tr>
-          <th>Address</th>
-            <td><%= c.address %></td>
-            <td><%= link_to 'Edit', edit_admin_contact_path(c) %></td>
-        </tr>
-        <tr>
-          <th>Open From</th>
-            <td><%= c.opendate %></td>
-            <td><%= link_to 'Edit', edit_admin_contact_path(c) %></td>
-        </tr>
+        <td class="text-success"><i class="fa fa-sort-numeric-desc"></i><%= t ".phone" %></td>
+        <td><%= contact.phone %></td>
+      </tr> 
       <tr>
-          <th>Open To</th>
-            <td><%= c.closedate %></td>
-            <td><%= link_to 'Edit', edit_admin_contact_path(c) %></td>
-        </tr>
-        <tr>
-          <th>Open at</th>
-            <td><%= c.openat %></td>
-            <td><%= link_to 'Edit', edit_admin_contact_path(c) %></td>
-        </tr>
+        <td class="text-success" style="min-width: 200px;"><i class="fa fa-header"></i><%= t ".fax" %></td>
+        <td style="word-break: break-word;"><%= contact.fax %></td>
+      </tr>                                        
       <tr>
-          <th>Close at</th>
-            <td><%= c.closeat %></td>
-            <td><%= link_to 'Edit', edit_admin_contact_path(c) %></td>
-        </tr>
+        <td class="text-success"><i class="fa fa-caret-right"></i><%= t ".email" %></td>
+        <td><%= contact.email %></td>
+      </tr>                                        
+      <tr>
+        <td class="text-success"><i class="fa fa-usd"></i><%= t ".address" %></td>
+        <td><%= contact.address %></td>
+      </tr>
+      <tr>
+        <td class="text-success"><i class="fa fa-wrench"></i><%= t ".openday" %></td>
+        <td><%= contact.opendate %></td>
+      </tr>
+      <tr>
+        <td class="text-success"><i class="fa fa-eye"></i><%= t ".closeday" %></td>
+        <td><%= contact.closedate %></td>
+      </tr>
+      <tr>
+        <td class="text-success"><i class="fa fa-pencil-square-o"></i><%= t ".openat" %></td>
+        <td><%= contact.openat %></td>
+      </tr>
+      <tr>
+        <td class="text-success"><i class="fa fa-pencil"></i><%= t ".closeat" %></td>
+        <td><%= contact.closeat %></td>
+      </tr>
+      <tr>
+        <td class="text-success"><i class="fa fa-eye"></i><%= t "Facebook" %></td>
+        <td><%= contact.facebook %></td>
+      </tr>
+      <tr>
+        <td class="text-success"><i class="fa fa-pencil-square-o"></i><%= "Twitter" %></td>
+        <td><%= contact.twitter %></td>
+      </tr>
+      <tr>
+        <td class="text-success"><i class="fa fa-pencil"></i><%= "Google" %></td>
+        <td><%= contact.google %></td>
+      </tr>
     </tbody>
-</table>
-<% end -%>
+  </table>
+  <div class="container">
+    <h5 class="text-success"><%= t ".introduction" %></h5>
+    <blockquote>
+      <p><%= sanitize contact.description.html_safe %></p>
+    </blockquote>
+  </div>
+</div>
+<% end %>

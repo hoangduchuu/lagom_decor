@@ -1,17 +1,16 @@
 <body id="homepage">
+    <div id="wrapper">
 
-        <div id="wrapper">
+        <!-- header begin -->
+        <%= render 'user/contacts/header' %>
+        <!-- header close -->
 
-            <!-- header begin -->
-                <%= render 'user/contacts/header' %>
-            <!-- header close -->
+        <!-- content begin -->
+        <div id="content" class="no-bottom no-top">
 
-            <!-- content begin -->
-            <div id="content" class="no-bottom no-top">
-
-                <!-- revolution slider begin -->
-                <section id="section-slider" class="fullwidthbanner-container" aria-label="section-slider" style="padding-top: 0;">
-                    <div id="revolution-slider" class="slider-container">
+            <!-- revolution slider begin -->
+            <section id="section-slider" class="fullwidthbanner-container" aria-label="section-slider" style="padding-top: 0;">
+                <div id="revolution-slider" class="slider-container">
                     <div class="split left">
                         <%= link_to 'Consulting', user_consultings_path, :class => 'but-slider' %>
                     </div>
@@ -28,37 +27,20 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-8 col-md-offset-2 text-center wow fadeInUp">
-                            <h1>What We Do</h1>
+                            <h1><%= t ".wedo" %></h1>
                             <div class="separator"><span><i class="fa fa-circle"></i></span></div>
                             <div class="spacer-single"></div>
                         </div>
-
+                        <% @services.each do |service| %>
                         <div class="col-md-3 wow fadeInLeft">
-                            <h3><span class="id-color">Residential</span> Design</h3>
-                            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia 
+                            <h3><span class="id-color"><%= service.title_1 %></span> <%= service.title_2 %></h3>
+                            <%= sanitize service.description.html_safe %>
                             <div class="spacer-single"></div>
-                            <%= image_tag("pic_1.jpg", :class => 'img-responsive') %>
+                            <% if service.image.present? %>
+                            <%= image_tag service.image_url, :class => 'img-responsive' %>
+                            <% end %>
                         </div>
-
-                        <div class="col-md-3 wow fadeInUp" data-wow-delay=".2s">
-                            <h3><span class="id-color">Office</span> Design</h3>
-                            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia 
-                            <div class="spacer-single"></div>
-                            <%= image_tag("pic_2.jpg", :class => 'img-responsive') %>
-                        </div>
-
-                        <div class="col-md-3 wow fadeInUp">
-                            <h3><span class="id-color">Commercial</span> Design</h3>
-                            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia 
-                            <div class="spacer-single"></div>
-                            <%= image_tag("pic_3.jpg", :class => 'img-responsive') %>
-                        </div>
-                        <div class="col-md-3 wow fadeInRight">
-                            <h3><span class="id-color">Factory</span> Design</h3>
-                            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia 
-                            <div class="spacer-single"></div>
-                            <%= image_tag("pic_4.jpg", :class => 'img-responsive') %>
-                        </div>
+                        <% end %>
                     </div>
                 </div>
             </section>
@@ -299,36 +281,36 @@
 
 
             <!-- section begin -->
-<section id="section-testimonial" class="text-light">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 col-md-offset-3 text-center wow fadeInUp">
-                <h1>Customer Says</h1>
-                <div class="separator"><span><i class="fa fa-circle"></i></span></div>
-                <div class="spacer-single"></div>
-            </div>
-        </div>
-        <div id="testimonial-carousel" class="de_carousel  wow fadeInUp" data-wow-delay=".3s">
-
-        <% @comments.each do |c| %>
-            <div class="col-md-6 item">
-                <div class="de_testi">
-                    <blockquote>
-                        <p><%= sanitize(c.comment.html_safe) %></p>
-                        <div class="de_testi_by">
-                            <%= c.title %>
+            <section id="section-testimonial" class="text-light">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 col-md-offset-3 text-center wow fadeInUp">
+                            <h1>Customer Says</h1>
+                            <div class="separator"><span><i class="fa fa-circle"></i></span></div>
+                            <div class="spacer-single"></div>
                         </div>
-                    </blockquote>
+                    </div>
+                    <div id="testimonial-carousel" class="de_carousel  wow fadeInUp" data-wow-delay=".3s">
+
+                        <% @comments.each do |c| %>
+                        <div class="col-md-6 item">
+                            <div class="de_testi">
+                                <blockquote>
+                                    <p><%= sanitize(c.comment.html_safe) %></p>
+                                    <div class="de_testi_by">
+                                        <%= c.title %>
+                                    </div>
+                                </blockquote>
+                            </div>
+                        </div>
+                        <% end -%>
+                    </div>
                 </div>
-            </div>
-        <% end -%>
-        </div>
-    </div>
-</section>
-<!-- section close -->
+            </section>
+            <!-- section close -->
 
             <!-- our customers slider START -->
-                        <section id="section-about" style="padding-bottom: 0;">
+            <section id="section-about" style="padding-bottom: 0;">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-6 col-md-offset-3 text-center wow fadeInUp">
@@ -337,65 +319,109 @@
                             <div class="spacer-single"></div>
                         </div>
                     </div>
-                      <section class="customer-logos slider" style="padding-top: 0;">
-    <div class="slide"><%= image_tag('p1.png') %></div>
-    <div class="slide"><%= image_tag('p2.png') %></div>
-    <div class="slide"><%= image_tag('p3.png') %></div>
-    <div class="slide"><%= image_tag('p4.png') %></div>
-    <div class="slide"><%= image_tag('p5.png') %></div>
-    <div class="slide"><%= image_tag('p6.png') %></div>
-    <div class="slide"><%= image_tag('p7.png') %></div>
-    <div class="slide"><%= image_tag('p8.png') %></div>
-  </section>
+                    <section class="customer-logos slider" style="padding-top: 0;">
+                        <div class="slide"><%= image_tag('p1.png') %></div>
+                        <div class="slide"><%= image_tag('p2.png') %></div>
+                        <div class="slide"><%= image_tag('p3.png') %></div>
+                        <div class="slide"><%= image_tag('p4.png') %></div>
+                        <div class="slide"><%= image_tag('p5.png') %></div>
+                        <div class="slide"><%= image_tag('p6.png') %></div>
+                        <div class="slide"><%= image_tag('p7.png') %></div>
+                        <div class="slide"><%= image_tag('p8.png') %></div>
+                    </section>
                 </div>
             </section>
             <!-- our customers slider END -->
 
-<!-- footer begin -->
-    <%= render 'user/contacts/footer' %>
-<!-- footer close -->
+            <!-- footer begin -->
+            <%= render 'user/contacts/footer' %>
+            <!-- footer close -->
+        </div>
+        <div class="modal fade" id="admodal" role="dialog" tabindex="-1">
+         <div class="modal-dialog" role="document">
+             <div class="modal-content">
+                 <div class="modal-body">
+                     <div class="carousel slide" data-ride="carousel" id="adCarousel">
+                         <!-- Wrapper for slides -->
+                         <div class="carousel-inner">
+                            <% @count = 0 %>
+                            <% @interiorideas.where(:show_on_home => 'yes').each do |interior| %>
+                            <% if @count == 0 %>
+                            <div class="item active">
+                             <div class="card">
+                                <%= link_to image_tag(interior.image_url, :class => 'card-img-top img-fluid w-100'), user_interioridea_path(interior) %>
+                            </div>
+                        </div>
+                        <% else %>
+                        <div class="item">
+                         <div class="card">
+                                <%= link_to image_tag(interior.image_url, :class => 'card-img-top img-fluid w-100'), user_interioridea_path(interior) %>
+                            </div>
+                     </div>
+                     <% end %>
+                     <% @count = 1 %>
+                     <% end %>
+                 </div>
+                 <div class="spacer-single"></div>
+             </div>
+         </div>
+     </div><!-- /.modal-content -->
+ </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
 </div>
-</div>
-        <script>
-            const left = document.querySelector(".left");
-const right = document.querySelector(".right");
-const container = document.querySelector(".slider-container");
-left.addEventListener("mouseenter", () => {
-  container.classList.add("hover-left");
-});
-left.addEventListener("mouseleave", () => {
-  container.classList.remove("hover-left");
-});
-right.addEventListener("mouseenter", () => {
-  container.classList.add("hover-right");
-});
-right.addEventListener("mouseleave", () => {
-  container.classList.remove("hover-right");
-});
-        </script>
+<script>
+    const left = document.querySelector(".left");
+    const right = document.querySelector(".right");
+    const container = document.querySelector(".slider-container");
+    left.addEventListener("mouseenter", () => {
+      container.classList.add("hover-left");
+  });
+    left.addEventListener("mouseleave", () => {
+      container.classList.remove("hover-left");
+  });
+    right.addEventListener("mouseenter", () => {
+      container.classList.add("hover-right");
+  });
+    right.addEventListener("mouseleave", () => {
+      container.classList.remove("hover-right");
+  });
+</script>
 
-        <script>
-            $(document).ready(function(){
-  $('.customer-logos').slick({
-    slidesToShow: 6,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 1500,
-    arrows: false,
-    dots: false,
-    pauseOnHover: true,
-    responsive: [{
-      breakpoint: 768,
-      settings: {
-        slidesToShow: 4
-      }
+<script>
+    $(document).ready(function(){
+      $('.customer-logos').slick({
+        slidesToShow: 6,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 1500,
+        arrows: false,
+        dots: false,
+        pauseOnHover: true,
+        responsive: [{
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 4
+        }
     }, {
       breakpoint: 520,
       settings: {
         slidesToShow: 3
-      }
-    }]
-  });
+    }
+}]
 });
-        </script>
+  });
+</script>
+<script>
+    $(window).load(function(){
+       setTimeout(function(){
+           $('#admodal').modal('show');
+       }, 2000);
+   });
+
+    $('#adCarousel').carousel({
+     interval: 4000,
+     cycle: true
+ });
+
+</script>
 </body>

@@ -1,33 +1,58 @@
 <ol class="breadcrumb" style="margin-left: 10px; margin-right: 10px;">
-<li class="breadcrumb-item">
-  <%= link_to 'DASHBOARD', admin_dashboards_path %>
-</li>
-<li class="breadcrumb-item active">PROJECTS</li>
-<%= link_to 'NEW PROJECT', new_admin_project_path, :class => 'btn btn-sm btn-success left-right' %>
+  <li class="breadcrumb-item">
+    <%= link_to (t '.dashboard'), admin_dashboards_path %>
+  </li>
+  <li class="breadcrumb-item active">PROJECTS</li>
+  <%= link_to 'NEW PROJECT', new_admin_project_path, :class => 'btn btn-sm btn-success left-right' %>
+  <%= link_to 'NEW VIDEO PROJECT', new_admin_video_path, :class => 'btn btn-sm btn-success' %>
 </ol>
 
 <div id="gallery" class="row grid_gallery gallery de-gallery wow fadeInUp" data-wow-delay=".3s" style="margin-left: 10px; margin-right: 10px;">
-    <% @projects.each do |pro| %>
-    <div class="col-md-4 item">
-        <div class="picframe">
-            <div class="card mb-3">
-                <% if pro.cover_photo.present? %>
-                <%= link_to image_tag(pro.cover_photo_url, :class => 'card-img-top img-fluid w-100'), admin_project_path(pro) %>
-                <% else %>
-                <%=image_tag('no-post-chosen.jpg', :class => 'card-img-top img-fluid w-100')%>
-                <% end %>
-            <div class="card-body">
-                <h6 class="card-title mb-1"><%= link_to truncate(pro.project_name, :length => 40), admin_project_path(pro) %></h6>
-          </div>
-          <hr class="my-0">
-          <div class="card-body py-2 small">
-            <%= link_to ' view', admin_project_path(pro), :class => 'fas fa fa-eye mr-3 d-inline-block' %>
-            <%= link_to ' edit', edit_admin_project_path(pro), :class => 'fas fa fa-pencil mr-3 d-inline-block' %>
-            <%= link_to ' delete', admin_project_path(pro), :class => 'fas fa fa-trash-o mr-3 d-inline-block', method: :delete, data: { confirm: 'Are you sure?' } %>
-                  </div>
-                  <div class="card-footer small text-muted">Last updated <%= pro.updated_at.to_date %></div>
-              </div>
-          </div>
+  <% @projects.each do |pro| %>
+  <div class="col-md-4 item">
+    <div class="picframe">
+      <div class="card mb-3">
+        <% if pro.cover_photo.present? %>
+        <%= link_to image_tag(pro.cover_photo_url, :class => 'card-img-top img-fluid w-100'), admin_project_path(pro) %>
+        <% else %>
+        <%=image_tag('no-post-chosen.jpg', :class => 'card-img-top img-fluid w-100')%>
+        <% end %>
+        <div class="card-body">
+          <h6 class="card-title mb-1"><%= link_to truncate(pro.project_name, :length => 40), admin_project_path(pro) %></h6>
+        </div>
+        <hr class="my-0">
+        <div class="card-body py-2 small">
+          <%= link_to ' view', admin_project_path(pro), :class => 'fas fa fa-eye mr-3 d-inline-block' %>
+          <%= link_to ' edit', edit_admin_project_path(pro), :class => 'fas fa fa-pencil mr-3 d-inline-block' %>
+          <%= link_to ' delete', admin_project_path(pro), :class => 'fas fa fa-trash-o mr-3 d-inline-block', method: :delete, data: { confirm: 'Are you sure?' } %>
+        </div>
+        <div class="card-footer small text-muted">Last updated <%= pro.updated_at.to_date %></div>
       </div>
-      <% end %>
+    </div>
   </div>
+  <% end %>
+
+  <% @videos.each do |video| %>
+  <div class="col-md-4 item">
+    <div class="picframe">
+      <div class="card mb-3">
+        <% if video.url.present? %>
+        <iframe src="<%= video.url %>" frameborder="0" class="card-img-top img-fluid w-100" allowfullscreen></iframe>
+        <% else %>
+        <%=image_tag('no-post-chosen.jpg', :class => 'card-img-top img-fluid w-100')%>
+        <% end %>
+        <div class="card-body">
+          <h6 class="card-title mb-1"><%= link_to truncate(video.project_name, :length => 40), admin_video_path(video) %></h6>
+        </div>
+        <hr class="my-0">
+        <div class="card-body py-2 small">
+          <%= link_to ' view', admin_video_path(video), :class => 'fas fa fa-eye mr-3 d-inline-block' %>
+          <%= link_to ' edit', edit_admin_video_path(video), :class => 'fas fa fa-pencil mr-3 d-inline-block' %>
+          <%= link_to ' delete', admin_video_path(video), :class => 'fas fa fa-trash-o mr-3 d-inline-block', method: :delete, data: { confirm: 'Are you sure?' } %>
+        </div>
+        <div class="card-footer small text-muted">Last updated <%= video.updated_at.to_date %></div>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>
