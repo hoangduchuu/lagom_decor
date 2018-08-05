@@ -5,8 +5,8 @@
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <%= link_to_unless_current 'English', locale: "en", :class => 'nav-link' %>
-    <%= link_to_unless_current 'Vietnamse', locale: "vn", :class => 'nav-link' %>
+    <%= link_to_unless_current image_tag('en.png'), locale: "en", :class => 'nav-link' %>
+    <%= link_to_unless_current image_tag('vn.png'), locale: "vn", :class => 'nav-link' %>
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="">
@@ -65,7 +65,9 @@
         <a class="nav-link dropdown-toggle mr-lg-2" id="alertsDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <i class="fa fa-fw fa-bell"></i>
           <span><%= t ".alert" %>
-            <span class="badge badge-pill badge-warning">2 New</span>
+            <% if @customers.where(:status => 'false').present? %>
+            <span class="badge badge-pill badge-warning"><%= @customers.where(:status => 'false').length %> New</span>
+            <% end %>
           </span>
           <span class="indicator text-warning d-none d-lg-block">
             <i class="fa fa-fw fa-circle"></i>
@@ -73,24 +75,17 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="alertsDropdown">
           <h6 class="dropdown-header">New Alerts:</h6>
+          <% @customers.where(:status => 'false').each do |customer| %>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">
+          <div class="dropdown-item">
             <span class="text-success">
               <strong>
-                <i class="fa fa-long-arrow-up fa-fw"></i>Customer Inquiry</strong>
+                <i class="fa fa-long-arrow-up fa-fw"></i><%= link_to  truncate(customer.email, :length => 20), admin_customer_path(customer, status: true), method: :put %></strong>
               </span>
-              <span class="small float-right text-muted">11:21 AM</span>
-              <div class="dropdown-message small">Whenever customers send message on the website, those will be shown here</div>
-            </a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">
-              <span class="text-danger">
-                <strong>
-                  <i class="fa fa-long-arrow-down fa-fw"></i>Just a notification</strong>
-                </span>
-                <span class="small float-right text-muted">11:21 AM</span>
-                <div class="dropdown-message small">some othe random notifications can also be shown here...</div>
-              </a>
+              <span class="small float-right text-muted"><%= customer.created_at.to_date %></span>
+              <div class="dropdown-message small"><%= truncate(customer.message, length: 30) %></div>
+            </div>
+            <% end %>
             </li>
             <li class="nav-item">
               <%= link_to current_admin.email, admin_dashboard_path(current_admin), :class => 'nav-link' %>

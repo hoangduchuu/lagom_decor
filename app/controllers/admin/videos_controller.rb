@@ -4,14 +4,17 @@ class Admin::VideosController < ApplicationController
 
 	def show
 		@video = Video.find(params[:id])
+		@customers = Customer.all.order(id: :desc)
 	end
 
 	def new
 		@video = Video.new
+		@customers = Customer.all.order(id: :desc)
 	end
 
 	def edit
 		@video = Video.find(params[:id])
+		@customers = Customer.all.order(id: :desc)
 	end
 	
 	def create

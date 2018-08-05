@@ -1,0 +1,35 @@
+<ol class="breadcrumb" style="margin-left: 10px; margin-right: 10px;">
+	<li class="breadcrumb-item">
+		<%= link_to 'DASHBOARD', admin_dashboards_path %>
+	</li>
+	<li class="breadcrumb-item">
+		<%= link_to 'CUSTOMERS', admin_dashboards_path %>
+	</li>
+	<li class="breadcrumb-item active">Message</li>
+	<%= link_to ' DELETE', admin_comment_path(@customer), :class => 'btn btn-sm btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %>
+</ol>
+
+<div class="row" style="margin-left: 10px; margin-right: 10px;">
+	<table class="table" style="margin-left: 10px; margin-right: 10px;">
+		<tbody>
+			<tr>
+				<td class="text-success" style="min-width: 200px;"><i class="fa fa-user"></i> Customer Name</td>
+				<td style="word-break: break-word;"><%= @customer.customer_name %></td>
+			</tr> 
+			<tr>
+				<td class="text-success" style="min-width: 200px;"><i class="fa fa-user"></i> Customer Phone</td>
+				<td style="word-break: break-word;"><%= @customer.phone %></td>
+			</tr>
+			<tr>
+				<td class="text-success" style="min-width: 200px;"><i class="fa fa-user"></i> Customer Email</td>
+				<td style="word-break: break-word;"><%= @customer.email %></td>
+			</tr>                                       
+		</tbody>
+	</table>
+	<div class="container">
+		<h5 class="text-success">Message</h5>
+		<blockquote>
+			<p><%= sanitize @customer.message %></p>
+		</blockquote>
+	</div>
+</div>

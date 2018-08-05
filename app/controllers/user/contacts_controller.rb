@@ -19,8 +19,8 @@ class User::ContactsController < ApplicationController
 	end
 
 	private 
-		def allowed_params
-			params.require(:customer).permit(:customer_name, :phone, :email, :message)
+	def allowed_params
+		params.require(:customer).permit(:customer_name, :phone, :email, :message)
 	end
 
 	private

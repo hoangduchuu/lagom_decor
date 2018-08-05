@@ -5,6 +5,7 @@ class Admin::HomesController < ApplicationController
 	def index
 		@comments = Comment.all
 		@services = Service.all
+		@customers = Customer.all.order(id: :desc)
 	end
 
 	private

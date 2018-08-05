@@ -1,12 +1,14 @@
 class Admin::CustomersController < ApplicationController
 	before_action :authenticate_admin!, :set_locale
+	layout 'admin'
 
 	def index
-		@customers = Customer.all
+		@customers = Customer.all.order(id: :desc)
 	end
 
 	def show
 		@customer = Customer.find(params[:id])
+		@customers = Customer.all.order(id: :desc)
 	end
 
 	def destroy
@@ -14,6 +16,11 @@ class Admin::CustomersController < ApplicationController
 		@customer.destroy
 
 		redirect_to admin_dashboards_path
+	end
+
+	def update
+		@customer = Customer.find(params[:id])
+		@customer.update(status: params[:status])
 	end
 
 	private

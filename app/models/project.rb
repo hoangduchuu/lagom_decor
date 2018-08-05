@@ -6,4 +6,6 @@ class Project < ApplicationRecord
 	mount_uploader :image_three, ProjectsCoverUploader
 
 	CATEGORIES = [['Residential', 'residential'], ['Hospitality', 'hospitality'], ['Office', 'office'], ['Commercial', 'commercial']]
+
+	translates :category, :project_name, :location, :client, :description, :solution
 end

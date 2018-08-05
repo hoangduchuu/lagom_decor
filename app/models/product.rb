@@ -5,4 +5,6 @@ class Product < ApplicationRecord
 
 	mount_uploader :avatar, ProductsUploader
 
+	translates :category, :product_name, :material, :description
+
 end

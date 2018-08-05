@@ -5,11 +5,12 @@ class Admin::DashboardsController < ApplicationController
 
 	def index
 		@admins = Admin.all
-		@customers = Customer.all
+		@customers = Customer.all.order(id: :desc)
 	end
 
 	def show
 		@admin = Admin.find(params[:id])
+		@customers = Customer.all.order(id: :desc)
 	end
 
 	def destroy

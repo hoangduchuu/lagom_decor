@@ -5,18 +5,22 @@ class Admin::ProjectsController < ApplicationController
 	def index
 		@projects = Project.all
 		@videos = Video.all
+		@customers = Customer.all.order(id: :desc)
 	end
 
 	def show
 		@project = Project.find(params[:id])
+		@customers = Customer.all.order(id: :desc)
 	end
 
 	def new
 		@project = Project.new
+		@customers = Customer.all.order(id: :desc)
 	end
 
 	def edit
 		@project = Project.find(params[:id])
+		@customers = Customer.all.order(id: :desc)
 	end
 	
 	def create

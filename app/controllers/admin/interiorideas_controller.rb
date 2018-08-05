@@ -4,18 +4,22 @@ class Admin::InteriorideasController < ApplicationController
 
 	def index
 		@interiorideas = Interioridea.all
+		@customers = Customer.all.order(id: :desc)
 	end
 
 	def show
 		@interioridea = Interioridea.find(params[:id])
+		@customers = Customer.all.order(id: :desc)
 	end
 
 	def new
 		@interioridea = Interioridea.new
+		@customers = Customer.all.order(id: :desc)
 	end
 
 	def edit
 		@interioridea = Interioridea.find(params[:id])
+		@customers = Customer.all.order(id: :desc)
 	end
 	
 	def create

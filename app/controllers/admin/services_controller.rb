@@ -4,18 +4,22 @@ class Admin::ServicesController < ApplicationController
 
 	def index
 		@services = Service.all
+		@customers = Customer.all.order(id: :desc)
 	end
 
 	def show
 		@service = Service.find(params[:id])
+		@customers = Customer.all.order(id: :desc)
 	end
 
 	def new
 		@service = Service.new
+		@customers = Customer.all.order(id: :desc)
 	end
 
 	def edit
 		@service = Service.find(params[:id])
+		@customers = Customer.all.order(id: :desc)
 	end
 	
 	def create

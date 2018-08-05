@@ -7,4 +7,6 @@ class Interioridea < ApplicationRecord
 	mount_uploader :image_two, InteriorideasCoverUploader
 	mount_uploader :image_three, InteriorideasCoverUploader
 
+	translates :category, :title, :designer, :description
+
 end

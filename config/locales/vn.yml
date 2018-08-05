@@ -2,67 +2,175 @@ vn:
   user:
     contacts:
       header:
-        home: "nhà"
-        projects: "dự án"
-        interiorideas: "ý tưởng"
-        shop: "cửa tiệm"
-        consulting: "tư vấn"
-        contact: "tiếp xúc"
-        workinghours: "Giờ làm việc"
-        phone: "ý tưởng"
-        email: "tư vấn"
+        home: "NHÀ"
+        projects: "DỰ ÁN"
+        interiorideas: "Ý TƯỞNG NỘI THẤT"
+        shop: "CỬA TIỆM"
+        consulting: "TƯ VẤN"
+        contact: "TIẾP XÚC"
+        workinghours: "Giá» lÃ m viá»‡c"
+        phone: "Äiá»‡n thoaá»‹"
+        email: "Email"
 
       footer:
-        contactus: "liên hệ chúng tôi"
-        phone: "ý tưởng"
-        fax: "cửa tiệm"
-        email: "tư vấn"
+        contactus: "LiÃªn há»‡"
+        phone: "Phone"
+        fax: "Fax"
+        email: "Email"
+
+      index:
+        contact: "LiÃªn há»‡"
+        home: "home"
+        contact_info: "thÃ´ng tin liÃªn há»‡"
+        phone: "Phone"
+        fax: "Fax"
+        email: "Email"
+        open: "Open"
+        send_msg: "Gá»­i tin nháº¯n cho chÃºng tÃ´i"
+        send: "gá»­i tin nháº¯n"
+        c_name: "tÃªn cá»§a báº¡n..."
+        c_email: "email cá»§a báº¡n.."
+        c_phone: "sá»‘ Ä‘iá»‡n thoáº¡i..."
+        c_message: "nháº­p lá»i nháº¯n vÃ o Ä‘Ã¢y..."
+
+
+    homes:
+      index:
+        consulting: "TRANG CHá»¦"
+        shop_with_us: "Dá»° ÃN"
+        what_we_do: "Ã TÆ¯á»žNG Ná»˜I THáº¤T"
+        5_reasons: "5 reasons to choose lagomdecor"
+        customer_says: "Ã½ kiáº¿n khÃ¡ch hÃ ng"
+        partners: "hÃ¢n háº¡nh Ä‘Æ°á»£c há»£p tÃ¡c"
+
+    projects:
+      index:
+        projects: "dá»± Ã¡n"
+        home: "trang chá»§"
+        all_projects: "táº¥t cáº£ dá»± Ã¡n"
+
+    projects:
+      index:
+        interiorideas: "dá»± Ã¡n"
+        home: "trang chá»§"
+        popular: "thiáº¿t káº¿ Ä‘Æ°á»£c Æ°a chuá»™ng"
+        recent: "thiáº¿t káº¿ má»›i"
+
+    projects:
+      index:
+        products: "sáº£n pháº©m"
+        home: "trang chá»§"
+        new: "sáº£n pháº©m má»›i"
+        top_rated: "sáº£n pháº©m Ä‘Æ°á»£c Ä‘Ã¡nh giÃ¡ cao"
+
+    projects:
+      index:
+        process: "quy trÃ¬nh tÆ° váº¥n"
+        contact_us: "LiÃªn há»‡"
+        faq: "cÃ¡c cÃ¢u há»i thÆ°á»ng gáº·p"
+        no_01: "phong cÃ¡ch cá»§a báº¡n lÃ  gÃ¬"
+        no_02: "tá»« phong cÃ¡ch Ä‘áº¿n giáº£i phÃ¡p"
+        no_03: "hiá»‡n thá»±c hoÃ¡ giáº£i phÃ¡p"
+        no_04: "xÃ¢y dá»±ng & láº¯p Ä‘áº·t"
+        no_05: "cÃ´ng trÃ¬nh Ä‘Ã£ sáºµn sÃ ng chÃ o Ä‘Ã³n báº¡n"
 
   admin:
     dashboards:
       dashboard_layout:
-        dashboard: "bảng điều khiển"
-        home: "nhà"
-        projects: "dự án"
-        interiorideas: "ý tưởng"
-        shop: "cửa tiệm"
-        consulting: "tư vấn"
-        contact: "tiếp xúc"
-        alert: "cảnh báo"
-        logout: "đăng xuất"
-        leave: "sẵn sàng rời đi"
-        password_again: "Lần tới bạn sẽ phải nhập lại tên người dùng và mật khẩu của mình..."
-        cancel: "hủy bỏ"
+        dashboard: "Dashboard"
+        home: "Trang Chá»§"
+        projects: "Dá»± Ãn"
+        interiorideas: "Ã tÆ°á»Ÿng ná»™i tháº¥t"
+        shop: "Shop"
+        consulting: "TÆ° váº¥n"
+        contact: "LiÃªn há»‡"
+        alert: "BÃ¡o Ä‘á»™ng"
+        logout: "ÄÄƒng xuáº¥t"
+        leave: "Sáºµn sÃ¡ng rá»i khá»i"
+        password_again: "Láº§n Ä‘Äƒng nháº­p sau báº¡n sáº½ pháº£i nháº­p láº¡i tÃªn Ä‘Äƒng nháº­p vÃ  máº­t kháº©u cá»§a mÃ¬nh..."
+        cancel: "Huá»·"
+
+      index:
+        customer_details: "ThÃ´ng tin chi tiáº¿t KhÃ¡ch hÃ ng"
+        customer_msg: "Tin nháº¯n khÃ¡ch hÃ ng"
+        moderators: "NgÆ°á»i quáº£n trá»‹"
+        new_moderator: "thÃªm Má»›i ngÆ°á»i quáº£n trá»‹"
+        show: "Hiá»‡n"
+        entries: "danh má»¥c"
+        search: "TÃ¬m kiáº¿m"
+        name: "TÃªn"
+        phone: "Sá»‘ Ä‘iá»‡n thoáº¡i"
+        email: "Email"
+        message: "Tin nháº¯n"
+        date: "NgÃ y"
+        operations: "Hoáº¡t Ä‘á»™ng"
+        showing: "Äang hiá»ƒn thá»‹"
+        pervious: "TrÆ°á»›c"
+        next: "Sau"
+        role: "Vai trÃ²"
+
+    homes:
+      index:
+        dashboard: "Dashboard"
+        home: "Trang chá»§"
+
+    comments:
+      index:
+        comments: "Pháº£n há»“i khÃ¡ch hÃ ng"
+        new: "ThÃªm pháº£n há»“i má»›i"
+        show: "Hiá»‡n"
+        entries: "danh má»¥c"
+        name: "TÃªn"
+        comment: "Pháº£n há»“i"
+        Operations: "Hoáº¡t Ä‘á»™ng"
+        question: "Báº¡n cháº¯c chá»© ?"
+
+    comments:
+      new:
+        dashboard: "Dashboard"
+        comments: "Pháº£n há»“i"
+        new: "Má»›i"
+
+
+    projects:
+      index:
+        dashboard: "Dashboard"
+        home: "Trang chá»§"
+        projects: "Dá»± Ã¡n"
+        interiorideas: "Ã tÆ°á»Ÿng ná»™i tháº¥t"
+        shop: "Shop"
+        consulting: "TÆ° váº¥n"
+        contact: "LiÃªn há»‡"
+        alert: "BÃ¡o Ä‘á»™ng"
+        logout: "ÄÄƒng xuáº¥t"
+        leave: "Sáºµn sÃ ng rá»i khá»i ?"
+        password_again: "Láº§n Ä‘Äƒng nháº­p sau báº¡n sáº½ pháº£i nháº­p láº¡i tÃªn Ä‘Äƒng nháº­p vÃ  máº­t kháº©u cá»§a mÃ¬nh..."
 
     contacts:
       index:
-        phone: "ý tưởng"
-        fax: "cửa tiệm"
-        email: "tư vấn"
-        address: "tiếp xúc"
-        openday: "ý tưởng"
-        closeday: "cửa tiệm"
-        openat: "tư vấn"
-        closeat: "tiếp xúc"
-        edit: "tiếp xúc"
-        introduction: "Giới thiệu công ty"
-
-      head:
-        dashboard: "bảng điều khiển"
-        contact: "dự án"
+        phone: "Sá»‘ Äiá»‡n thoáº¡i"
+        fax: "Sá»‘ Fax"
+        email: "Email"
+        address: "Äá»‹a chá»‰"
+        openday: "Má»Ÿ cá»­a tá»«"
+        closeday: "Má»Ÿ cá»­a Ä‘áº¿n"
+        openat: "Giá» má»Ÿ cá»­a"
+        closeat: "Giá» Ä‘Ã³ng cá»­a"
+        edit: "sá»­a"
 
       edit:
-        dashboard: "bảng điều khiển"
-        contact: "dự án"
-        edit: "tiếp xúc"
-        phone: "ý tưởng"
-        fax: "cửa tiệm"
-        email: "tư vấn"
-        address: "tiếp xúc"
-        openday: "ý tưởng"
-        closeday: "cửa tiệm"
-        openat: "tư vấn"
-        closeat: "tiếp xúc"
-        save: "tiết kiệm"
-        introduction: "Giới thiệu công ty"
+        dashboard: "Dashboard"
+        contact: "LiÃªn há»‡"
+        edit: "Sá»­a"
+        phone: "Sá»‘ Äiá»‡n thoáº¡i"
+        fax: "Sá»‘ Fax"
+        email: "Email"
+        address: "Äá»‹a chá»‰"
+        openday: "Má»Ÿ cá»­a tá»«"
+        closeday: "Má»Ÿ cá»­a Ä‘áº¿n"
+        openat: "Giá» má»Ÿ cá»­a"
+        closeat: "Giá» Ä‘Ã³ng cá»­a"
+        save: "LÆ°u"
+        introduction: "Giá»›i thiá»‡u"
+
 

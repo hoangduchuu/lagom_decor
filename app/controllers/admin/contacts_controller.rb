@@ -5,14 +5,17 @@ class Admin::ContactsController < ApplicationController
 	def index
 		@customer = Customer.new
 		@contact = Contact.all
+		@customers = Customer.all.order(id: :desc)
 	end
 
 	def show
 		@contact = Contact.find(params[:id])
+		@customers = Customer.all.order(id: :desc)
 	end
 
 	def new
 		@contact = Contact.new
+		@customers = Customer.all.order(id: :desc)
 	end
 
 	def create
@@ -27,6 +30,7 @@ class Admin::ContactsController < ApplicationController
 
 	def edit
 		@contact = Contact.find(params[:id])
+		@customers = Customer.all.order(id: :desc)
 	end
 
 	def update

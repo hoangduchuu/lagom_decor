@@ -4,14 +4,17 @@ class Admin::CommentsController < ApplicationController
 
 	def index
 		@comments = Comment.all
+		@customers = Customer.all.order(id: :desc)
 	end
 
 	def show
 		@comment = Comment.find(params[:id])
+		@customers = Customer.all.order(id: :desc)
 	end
 
 	def new
 		@comment = Comment.new
+		@customers = Customer.all.order(id: :desc)
 	end
 
 	def create
@@ -25,6 +28,7 @@ class Admin::CommentsController < ApplicationController
 
 	def edit
 		@comment = Comment.find(params[:id])
+		@customers = Customer.all.order(id: :desc)
 	end
 
 	def update

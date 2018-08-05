@@ -4,14 +4,17 @@ class Admin::ProjectCategoriesController < ApplicationController
 
 	def index
 		@category = ProjectCategory.all
+		@customers = Customer.all.order(id: :desc)
 	end
 
 	def new
 		@category = ProjectCategory.new
+		@customers = Customer.all.order(id: :desc)
 	end
 
 	def edit
 		@category = ProjectCategory.find(params[:id])
+		@customers = Customer.all.order(id: :desc)
 	end
 	
 	def create

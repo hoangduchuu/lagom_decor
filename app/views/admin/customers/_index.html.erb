@@ -23,7 +23,8 @@
             <td><%= truncate(customer.email, :length => 15) %></td>
             <td><%= truncate(customer.message, :length => 20) %></td>
             <td><%= customer.created_at.to_date %></td>
-            <td><%= link_to "delete", admin_customer_path(customer), method: :delete, data: { confirm: "You sure?" }, :class => 'btn btn-sm btn-danger' %></td>
+            <td><%= link_to 'view', admin_customer_path(customer), :class => 'btn btn-sm btn-info' %>
+            <%= link_to "delete", admin_customer_path(customer), method: :delete, data: { confirm: "You sure?" }, :class => 'btn btn-sm btn-danger' %></td>
           </tr>
           <% end %>
         </tbody>

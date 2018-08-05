@@ -4,18 +4,22 @@ class Admin::ProductsController < ApplicationController
 
 	def index
 		@products = Product.all
+		@customers = Customer.all.order(id: :desc)
 	end
 
 	def show
 		@product = Product.find(params[:id])
+		@customers = Customer.all.order(id: :desc)
 	end
 
 	def new
 		@product = Product.new
+		@customers = Customer.all.order(id: :desc)
 	end
 
 	def edit
 		@product = Product.find(params[:id])
+		@customers = Customer.all.order(id: :desc)
 	end
 	
 	def create
