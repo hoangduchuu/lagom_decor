@@ -24,7 +24,7 @@ class Admin::ContactsController < ApplicationController
 			ContactMailer.customer_message(@customer).deliver
 			redirect_to contacts_path
 		else
-			render 'new'
+			redirect_to contacts_path
 		end
 	end
 
@@ -38,7 +38,7 @@ class Admin::ContactsController < ApplicationController
 		if @contact.update_attributes(allowed_params)
 			redirect_to admin_contacts_path
 		else
-			render 'new'
+			redirect_to contacts_path
 		end
 	end
 

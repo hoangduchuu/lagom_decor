@@ -25,7 +25,7 @@
             <%= link_to (t '.projects'), admin_projects_path, :class => 'fas fa fa-tasks nav-link' %>
           </li>
           <li>
-            <%= link_to (t '.projects'), admin_project_categories_path, :class => 'fas fa fa-tasks nav-link' %>
+            <%= link_to 'categories', admin_project_categories_path, :class => 'fas fa fa-tasks nav-link' %>
           </li>
         </ul>
       </li>
@@ -42,7 +42,7 @@
             <%= link_to (t '.shop'), admin_products_path, :class => 'fas fa fa-shopping-cart nav-link' %>
           </li>
           <li>
-            <a href="cards.html">Cards</a>
+            <%= link_to 'categories', admin_products_path, :class => 'fas fa fa-shopping-cart nav-link' %>
           </li>
         </ul>
       </li>

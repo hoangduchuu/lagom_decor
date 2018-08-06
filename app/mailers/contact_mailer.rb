@@ -1,9 +1,10 @@
 class ContactMailer < ApplicationMailer
-  default from: 'mail@anuruddhika.website'
+  default from: "anu.in.vietnam@gmail.com"
+
   def customer_message(customer)
   	@customer = customer
 
-    mail to: "anu.in.vietnam@gmail.com", subject: "customer message"
+    mail to: "anuruddhikahettige@gmail.com", subject: "customer message"
   end
 
 end
