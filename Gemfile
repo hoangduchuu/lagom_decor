@@ -24,6 +24,7 @@ gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
 gem 'sendgrid'
 gem 'will_paginate', '~> 3.1', '>= 3.1.6'
+gem 'sqlite3'
 
 group :development, :test do
 	gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -32,7 +33,7 @@ group :development, :test do
 end
 
 group :development do
-	gem 'sqlite3'
+
 	gem 'web-console', '>= 3.3.0'
 end
 
