@@ -24,6 +24,7 @@ gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
 gem 'sendgrid'
 gem 'will_paginate', '~> 3.1', '>= 3.1.6'
+gem 'sqlite3'
 
 group :development, :test do
 	gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -33,11 +34,11 @@ end
 
 group :development do
 	gem 'web-console', '>= 3.3.0'
+	
 end
 
 group :production do
 	gem 'rails_12factor'
-	gem 'pg'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
