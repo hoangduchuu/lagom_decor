@@ -56,8 +56,9 @@
                                 </span>
                             </span>
                             <% end %>
-
+                            <% if pro.cover_photo.present? %>
                             <%= image_tag pro.cover_photo_url %>
+                            <% end %>
                         </div>
                     </div>
                     <% end %>
@@ -74,8 +75,7 @@
                                 </span>
                             </span>
                             <% end %>
-
-                            <%= image_tag '8.jpg' %>
+                            <%= image_tag 'youtube.jpg' %>
                         </div>
                     </div>
                     <% end %>

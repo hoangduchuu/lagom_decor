@@ -29,7 +29,9 @@
 	<div class="container">
 		<h5 class="text-success">Message</h5>
 		<blockquote>
+			<% if @customer.message.present? %>
 			<p><%= sanitize @customer.message %></p>
+			<% end %>
 		</blockquote>
 	</div>
 </div>

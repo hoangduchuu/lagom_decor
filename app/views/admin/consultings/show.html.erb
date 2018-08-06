@@ -23,7 +23,9 @@
 	<div class="container">
 		<h5 class="text-success">Answer</h5>
 		<blockquote>
+			<% if @consulting.text.present? %>
 			<p><%= sanitize @consulting.text %></p>
+			<% end %>
 		</blockquote>
 	</div>
 </div>

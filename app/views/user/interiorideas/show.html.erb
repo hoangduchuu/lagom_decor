@@ -10,13 +10,18 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
+                        <% if @interioridea.title.present? %>
                         <h1><%= truncate(sanitize(@interioridea.title, :tags => %w(br a)), :length => 20) %></h1>
+                        <% end %>
                         <ul class="crumb">
                             <li><a href="index.html">Home</a></li>
                             <li class="sep">/</li>
                             <li><a href="services.html">Interiorideas</a></li>
                             <li class="sep">/</li>
-                            <li><%= truncate(sanitize(@interioridea.title, :tags => %w(br a)), :length => 20) %></li>
+                            <% if @interioridea.title.present? %>
+                            <li><%= truncate(sanitize(@interioridea.title, :tags => %w(br a)), :length => 20) %>
+                                <% end %>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -56,7 +61,9 @@
                         <div class="separator"><span><i class="fa fa-arrow-down"></i></span></div>
                         <div class="row">
                             <div class="col-md-6 wow fadeInUp" data-wow-delay=".3s">
+                                <% if @interioridea.description.present? %>
                                 <%= sanitize @interioridea.description.html_safe %>
+                                <% end %>
                             </div>
                             <div class="col-md-6 pic-services wow fadeInUp" data-wow-delay=".6s">
                                 <% if @interioridea.image_one.present? %>
@@ -77,7 +84,7 @@
         </div>
 
         <section id="view-all-projects" class="call-to-action bg-color text-center" data-speed="5" data-type="background" aria-label="view-all-projects">
-            <a href="contact.html" class="btn btn-line-black btn-big">Contact the Designer</a>
+            <%= link_to 'Contact the Designer', user_contacts_path, :class => 'btn btn-line-black btn-big' %>
         </section>
 
         <!-- footer begin -->

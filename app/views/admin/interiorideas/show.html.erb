@@ -99,7 +99,9 @@
 	<div class="container">
   <h5 class="text-success">New Idea Introduction</h5>
   <blockquote>
+  	<% if @interioridea.description.present? %>
     <p><%= sanitize @interioridea.description.html_safe %></p>
+    <% end %>
   </blockquote>
 </div>
 </div>

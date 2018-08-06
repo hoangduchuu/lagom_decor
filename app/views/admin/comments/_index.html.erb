@@ -16,7 +16,9 @@
             <% @comments.each do |c| %>
             <tr>
               <td><%= c.title %></td>
+              <% if c.comment.present %>
               <td><%= truncate(sanitize(c.comment, :tags => %w(br a)), :length => 40) %></td>
+              <% end %>
               <td><%= link_to 'edit', edit_admin_comment_path(c), :class => 'btn btn-sm btn-warning' %>
                 <%= link_to 'view', admin_comment_path(c), :class => 'btn btn-sm btn-primary' %>
                 <%= link_to ' del', admin_comment_path(c), :class => 'btn btn-sm btn-danger', method: :delete, data: { confirm: (t '.question') } %></td>

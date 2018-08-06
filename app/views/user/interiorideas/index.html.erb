@@ -43,7 +43,9 @@
 
                                     <div class="post-text">
                                         <h3><%= link_to truncate(interior.title, :length => 40), user_interioridea_path(interior) %></h3>
+                                        <%if interior.description.present? %>
                                         <p><%= truncate(sanitize(interior.description, :tags => %w()), :length => 300) %></p>
+                                        <% end %>
                                     </div>
 
                                     <%= link_to 'Read More', user_interioridea_path(interior), :class => 'btn-more' %>
@@ -67,7 +69,9 @@
                                 <div class="news-block">
                                     <div class="row">
                                         <div class="col-xs-4">
+                                            <% if inte.image.present? %>
                                             <%= image_tag inte.image_url, :class => 'news-item' %>
+                                            <% end %>
                                         </div>
                                         <div class="col-xs-8">  
                                             <h5><%= inte.title %></h5>
@@ -95,7 +99,9 @@
                                             </div>
                                             <div class="col-xs-8">  
                                                 <h5><%= inte.title %></h5>
+                                                <% if inte.description.present? %>
                                                 <p style="font-size:10px; color:#03225C;"><%= truncate(sanitize(inte.description, :tags => %w()), :length => 100) %></p>
+                                                <% end %>
                                             </div>
                                         </div>
                                     </div>

@@ -34,7 +34,9 @@
                         <% @services.each do |service| %>
                         <div class="col-md-3 wow fadeInLeft">
                             <h3><span class="id-color"><%= service.title_1 %></span> <%= service.title_2 %></h3>
+                            <% if service.description.present? %>
                             <%= sanitize service.description.html_safe %>
+                            <% end %>
                             <div class="spacer-single"></div>
                             <% if service.image.present? %>
                             <%= image_tag service.image_url, :class => 'img-responsive' %>
@@ -45,7 +47,6 @@
                 </div>
             </section>
             <!-- section close -->
-
 
             <!-- section begin -->
             <section id="section-why-choose-us" class="text-light">
@@ -114,123 +115,143 @@
             </section>
             <!-- section close -->
 
-
             <!-- section begin -->
-            <section id="section-portfolio" class="no-top no-bottom" aria-label="section-portfolio">
-                <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3 text-center wow fadeInUp" style="padding-top: 15px;">
+                    <h1>Our Projects</h1>
+                    <div class="separator"><span><i class="fa fa-circle"></i></span></div>
 
-                    <div class="spacer-single"></div>
-
-                </div> 
-
-                <div id="loader-area">
-                    <div class="project-load"></div>
                 </div>
-            </section>
-            <!-- section close -->
+            </div>
+            <div class="carousel-container">
+
+              <div id="slider-carousel" class="owl-carousel">
+                <% @projects.each do |pro| %>
+                <div class="item">
+                  <%= link_to user_project_path(pro) do %>
+                  <div class="overlay">
+                  </div>
+                  <% if pro.cover_photo.present? %>
+                  <%= image_tag pro.cover_photo_url %>
+                  <% end %>
+              <% end %>
+          </div>
+          <% end %>
+      </div>
 
 
-            <!-- section begin -->
-            <section id="view-all-projects" class="call-to-action bg-color text-center" data-speed="5" data-type="background" aria-label="view-all-projects">
-                <a href="#" class="btn btn-line-black btn-big">View All Designs</a>
-            </section>
-            <!-- logo carousel section close -->
+      <div class="customNavigation">
+        <a class="btn gray prev"><i class="fa fa-angle-left"></i></a>
+        <a class="btn gray next"><i class="fa fa-angle-right"></i></a>
+    </div>
 
 
-            <!-- section begin -->
-            <section id="section-testimonial" class="text-light">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-6 col-md-offset-3 text-center wow fadeInUp">
-                            <h1>Customer Says</h1>
-                            <div class="separator"><span><i class="fa fa-circle"></i></span></div>
-                            <div class="spacer-single"></div>
-                        </div>
-                    </div>
-                    <div id="testimonial-carousel" class="de_carousel  wow fadeInUp" data-wow-delay=".3s">
+</div>
+<!-- section close -->
 
-                        <% @comments.each do |c| %>
-                        <div class="col-md-6 item">
-                            <div class="de_testi">
-                                <blockquote>
-                                    <p><%= sanitize(c.comment.html_safe) %></p>
-                                    <div class="de_testi_by">
-                                        <%= c.title %>
-                                    </div>
-                                </blockquote>
-                            </div>
-                        </div>
-                        <% end -%>
-                    </div>
-                </div>
-            </section>
-            <!-- section close -->
+<!-- section begin -->
+<section id="view-all-projects" class="call-to-action bg-color text-center" data-speed="5" data-type="background" aria-label="view-all-projects">
+    <%= link_to 'View All Projects', user_projects_path, :class => 'btn btn-line-black btn-big' %>
+</section>
+<!-- logo carousel section close -->
 
-            <!-- our customers slider START -->
-            <section id="section-about" style="padding-bottom: 0;">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-6 col-md-offset-3 text-center wow fadeInUp">
-                            <h1>Proudly Partners With</h1>
-                            <div class="separator"><span><i class="fa fa-circle"></i></span></div>
-                            <div class="spacer-single"></div>
-                        </div>
-                    </div>
-                    <section class="customer-logos slider" style="padding-top: 0;">
-                        <div class="slide"><%= image_tag('p1.png') %></div>
-                        <div class="slide"><%= image_tag('p2.png') %></div>
-                        <div class="slide"><%= image_tag('p3.png') %></div>
-                        <div class="slide"><%= image_tag('p4.png') %></div>
-                        <div class="slide"><%= image_tag('p5.png') %></div>
-                        <div class="slide"><%= image_tag('p6.png') %></div>
-                        <div class="slide"><%= image_tag('p7.png') %></div>
-                        <div class="slide"><%= image_tag('p8.png') %></div>
-                    </section>
-                </div>
-            </section>
-            <!-- our customers slider END -->
 
-            <!-- footer begin -->
-            <%= render 'user/contacts/footer' %>
-            <!-- footer close -->
-        </div>
-        <div class="modal fade" id="admodal" role="dialog" tabindex="-1">
-         <div class="modal-dialog" role="document">
-             <div class="modal-content">
-                 <div class="modal-body">
-                     <div class="carousel slide" data-ride="carousel" id="adCarousel">
-                         <!-- Wrapper for slides -->
-                         <div class="carousel-inner">
-                            <% @count = 0 %>
-                            <% @interiorideas.where(:show_on_home => 'yes').each do |interior| %>
-                            <% if @count == 0 %>
-                            <div class="item active">
-                             <div class="card">
-                                <%= link_to image_tag(interior.image_url, :class => 'card-img-top img-fluid w-100'), user_interioridea_path(interior) %>
-                            </div>
-                            <div class="jumbotron">
-                                <h2>New Arrivals</h2> 
-                                <p><%= interior.title %></p> 
-                            </div>
-                        </div>
-                        <% else %>
-                        <div class="item">
-                         <div class="card">
-                            <%= link_to image_tag(interior.image_url, :class => 'card-img-top img-fluid w-100'), user_interioridea_path(interior) %>
-                        </div>
-                        <div class="jumbotron">
-                            <h2>New Arrivals</h2> 
-                            <p><%= interior.title %></p> 
-                        </div>
-                    </div>
-                    <% end %>
-                    <% @count = 1 %>
-                    <% end %>
-                </div>
+<!-- section begin -->
+<section id="section-testimonial" class="text-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3 text-center wow fadeInUp">
+                <h1>Customer Says</h1>
+                <div class="separator"><span><i class="fa fa-circle"></i></span></div>
                 <div class="spacer-single"></div>
             </div>
         </div>
-    </div><!-- /.modal-content -->
+        <div id="testimonial-carousel" class="de_carousel  wow fadeInUp" data-wow-delay=".3s">
+
+            <% @comments.each do |c| %>
+            <div class="col-md-6 item">
+                <div class="de_testi">
+                    <blockquote>
+                        <% if c.comment.present? %>
+                        <p><%= sanitize(c.comment.html_safe) %></p>
+                        <% end %>
+                        <div class="de_testi_by">
+                            <%= c.title %>
+                        </div>
+                    </blockquote>
+                </div>
+            </div>
+            <% end -%>
+        </div>
+    </div>
+</section>
+<!-- section close -->
+
+<!-- our customers slider START -->
+<section id="section-about" style="padding-bottom: 0;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3 text-center wow fadeInUp">
+                <h1>Proudly Partners With</h1>
+                <div class="separator"><span><i class="fa fa-circle"></i></span></div>
+                <div class="spacer-single"></div>
+            </div>
+        </div>
+        <section class="customer-logos slider" style="padding-top: 0;">
+            <div class="slide"><%= image_tag('p1.png') %></div>
+            <div class="slide"><%= image_tag('p2.png') %></div>
+            <div class="slide"><%= image_tag('p3.png') %></div>
+            <div class="slide"><%= image_tag('p4.png') %></div>
+            <div class="slide"><%= image_tag('p5.png') %></div>
+            <div class="slide"><%= image_tag('p6.png') %></div>
+            <div class="slide"><%= image_tag('p7.png') %></div>
+            <div class="slide"><%= image_tag('p8.png') %></div>
+        </section>
+    </div>
+</section>
+<!-- our customers slider END -->
+
+<!-- footer begin -->
+<%= render 'user/contacts/footer' %>
+<!-- footer close -->
+</div>
+<div class="modal fade" id="admodal" role="dialog" tabindex="-1">
+ <div class="modal-dialog" role="document">
+     <div class="modal-content">
+         <div class="modal-body">
+             <div class="carousel slide" data-ride="carousel" id="adCarousel">
+                 <!-- Wrapper for slides -->
+                 <div class="carousel-inner">
+                    <% @count = 0 %>
+                    <% @interiorideas.where(:show_on_home => 'yes').each do |interior| %>
+                    <% if @count == 0 %>
+                    <div class="item active">
+                     <div class="card">
+                        <%= link_to image_tag(interior.image_url, :class => 'card-img-top img-fluid w-100'), user_interioridea_path(interior) %>
+                    </div>
+                    <div class="jumbotron">
+                        <h2>New Arrivals</h2> 
+                        <p><%= interior.title %></p> 
+                    </div>
+                </div>
+                <% else %>
+                <div class="item">
+                 <div class="card">
+                    <%= link_to image_tag(interior.image_url, :class => 'card-img-top img-fluid w-100'), user_interioridea_path(interior) %>
+                </div>
+                <div class="jumbotron">
+                    <h2>New Arrivals</h2> 
+                    <p><%= interior.title %></p> 
+                </div>
+            </div>
+            <% end %>
+            <% @count = 1 %>
+            <% end %>
+        </div>
+        <div class="spacer-single"></div>
+    </div>
+</div>
+</div><!-- /.modal-content -->
 </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 </div>
@@ -284,8 +305,28 @@
    });
 
     $('#adCarousel').carousel({
-     interval: 4000,
+     interval: 2000,
      cycle: true
+ });
+</script>
+
+<script>
+   $(document).ready(function() {
+     var owl = $("#slider-carousel");
+     owl.owlCarousel({
+       items: 4,
+       itemsDesktop: [1000, 4],
+       itemsDesktopSmall: [900, 2],
+       itemsTablet: [600, 1],
+       itemsMobile: false,
+       pagination: false
+   });
+     $(".next").click(function() {
+       owl.trigger('owl.next');
+   })
+     $(".prev").click(function() {
+       owl.trigger('owl.prev');
+   })
  });
 </script>
 

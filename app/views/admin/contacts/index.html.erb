@@ -59,7 +59,7 @@
   <div class="container">
     <h5 class="text-success"><%= t ".introduction" %></h5>
     <blockquote>
-      <% if contact.description? %>
+      <% if contact.description.present? %>
       <p><%= sanitize contact.description.html_safe %></p>
       <% end %>
     </blockquote>

@@ -55,7 +55,9 @@
                                               <span class="corner-span-text">NEW !</span>
                                           </div>
                                       </div>
+                                      <% if pro.avatar.present? %>
                                       <%= image_tag pro.avatar_url, :class => 'img-responsive' %>
+                                      <% end %>
                                       <h4><%= pro.product_name %></h4>
                                       <div class="modal fade product_view" id="<%= pro.id %>">
                                         <div class="modal-dialog">
@@ -67,7 +69,9 @@
                                                 <div class="modal-body">
                                                     <div class="row">
                                                         <div class="col-md-6 product_img">
+                                                            <% if pro.avatar.present? %>
                                                             <%= image_tag pro.avatar_url, :class => 'img-responsive' %>
+                                                            <% end %>
                                                         </div>
                                                         <div class="col-md-6 product_content">
                                                             <h3>Product Id: <span><%= pro.product_number %></span></h3>
@@ -81,7 +85,9 @@
                             <span class="glyphicon glyphicon-star"></span>
                             (10 reviews)
                         </div> !-->
+                        <% if pro.description.present? %>
                         <p><%= sanitize pro.description.html_safe %></p>
+                        <% end %>
                         <h3 class="cost"> <%= pro.price %> ₫ <!-- <small class="pre-cost"><span class="glyphicon glyphicon-usd"></span> 60.00</small> !--></h3>
                         <div class="space-ten"></div>
                         <div class="btn-ground">
@@ -108,7 +114,9 @@
         <ul>
             <% @products.where(:top_rated => 'yes').each do |p| %>
             <li>
+                <% if p.avatar.present? %>
                 <%= image_tag p.avatar_url %>
+                <% end %>
                 <div class="text">
                     <%= p.product_name %>
                     <div class="price"><%= p.price %> ₫</div>
@@ -122,7 +130,9 @@
         <ul>
             <% @products.where(:top_rated => 'yes').each do |p| %>
             <li>
+                <% if p.avatar.present? %>
                 <%= image_tag p.avatar_url %>
+                <% end %>
                 <div class="text">
                     <%= p.product_name %>
                     <div class="price"><%= p.price %> ₫</div>

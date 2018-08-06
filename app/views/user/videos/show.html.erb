@@ -64,16 +64,17 @@
                                 <span class="val"><%= @video.category %></span>
                             </div>
                         </div>
-
+                        <% if @video.description.present? %>
                         <p><%= sanitize(@video.description.html_safe) %></p>
+                        <% end %>
 
                         <p>
                             <h4>Our Solutions</h4>
+                            <% if @video.solution.present? %>
                             <%= sanitize(@video.solution.html_safe) %>
+                            <% end %>
                         </p>
                     </p>
-
-
                 </div>
             </div>
         </div>

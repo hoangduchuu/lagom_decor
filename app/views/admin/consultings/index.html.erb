@@ -23,7 +23,9 @@
             <% @consultings.each do |c| %>
             <tr>
               <td><%= c.title %></td>
+              <% if c.text.present? %>
               <td><%= truncate(sanitize(c.text, :tags => %w(br a)), :length => 40) %></td>
+              <% end %>
               <td>
                 <%= link_to 'view', admin_consulting_path(c), :class => 'btn btn-sm btn-primary' %>
                 <%= link_to 'edit', edit_admin_consulting_path(c), :class => 'btn btn-sm btn-warning' %>

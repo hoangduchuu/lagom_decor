@@ -17,7 +17,9 @@
         <%=image_tag('product-not-chosen.jpg', :class => 'card-img-top img-fluid w-100')%>
         <% end %>
         <div class="card-body">
+          <% if pro.product_number.present? %>
           <h6 class="card-title mb-1"><%= link_to truncate(pro.product_number, :length => 40), admin_product_path(pro) %></h6>
+          <% end %>
         </div>
         <hr class="my-0">
         <div class="card-body py-2 small">

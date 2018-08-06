@@ -7,6 +7,7 @@ class User::HomesController < ApplicationController
 		@comments = Comment.all
 		@interiorideas = Interioridea.all.order('created_at DESC')
 		@services = Service.all
+		@projects = Project.all
 	end
 
 	private

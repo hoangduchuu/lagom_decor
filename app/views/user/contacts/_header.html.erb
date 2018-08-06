@@ -7,15 +7,13 @@
             <div class="col"><%= t ".workinghours" %> <%= c.opendate %> - <%= c.closedate %> <span class="id-color"><strong><%= c.openat %> - <%= c.closeat %></strong></span></div>
             <div class="col"><%= t ".phone" %> <span class="id-color"><strong><%= c.phone %></strong></span></div>
             <div class="col"><%= t ".email" %><span class="id-color"><strong><%= c.email %></strong></span></div>
-            <% end -%>
             <!-- social icons -->
             <div class="col social">
-                <a href="#"><i class="fa fa-facebook"></i></a>
-                <a href="#"><i class="fa fa-twitter"></i></a>
-                <a href="#"><i class="fa fa-rss"></i></a>
-                <a href="#"><i class="fa fa-google-plus"></i></a>
-                <a href="#"><i class="fa fa-envelope-o"></i></a>
+                <a href="<%= c.facebook %>"><i class="fa fa-facebook"></i></a>
+                <a href="<%= c.twitter %>"><i class="fa fa-twitter"></i></a>
+                <a href="<%= c.google %>"><i class="fa fa-google-plus"></i></a>
             </div>
+            <% end -%>
             <!-- social icons close -->
             <%= link_to_unless_current "English", locale: "en" %>
             <%= link_to_unless_current "Vietnamse", locale: "vn" %>

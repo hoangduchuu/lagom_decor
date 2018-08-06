@@ -99,13 +99,17 @@
 	<div class="container">
 		<h5 class="text-success">Project Description</h5>
 		<blockquote>
+			<% if @project.description.present? %>
 			<p><%= sanitize @project.description.html_safe %></p>
+			<% end %>
 		</blockquote>
 	</div>
 	<div class="container">
 		<h5 class="text-success">Our Solution</h5>
 		<blockquote>
+			<% if @project.solution.present? %>
 			<p><%= sanitize @project.solution.html_safe %></p>
+			<% end %>
 		</blockquote>
 	</div>
 </div>

@@ -39,7 +39,9 @@
 	<div class="container">
 		<h5 class="text-success">Service Description</h5>
 		<blockquote>
+			<% if @service.description.present? %>
 			<p><%= sanitize @service.description.html_safe %></p>
+			<% end %>
 		</blockquote>
 	</div>
 </div>

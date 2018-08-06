@@ -23,7 +23,9 @@
 	<div class="container">
 		<h5 class="text-success">Comment</h5>
 		<blockquote>
+			<% if @comment.comment.present? %>
 			<p><%= sanitize @comment.comment %></p>
+			<% end %>
 		</blockquote>
 	</div>
 </div>

@@ -65,13 +65,17 @@
 	<div class="container">
 		<h5 class="text-success">Project Description</h5>
 		<blockquote>
+			<% if @video.description.present? %>
 			<p><%= sanitize @video.description.html_safe %></p>
+			<% end %>
 		</blockquote>
 	</div>
 	<div class="container">
 		<h5 class="text-success">Our Solution</h5>
 		<blockquote>
+			<% if @video.solution.present? %>
 			<p><%= sanitize @video.solution.html_safe %></p>
+			<% end %>
 		</blockquote>
 	</div>
 </div>
