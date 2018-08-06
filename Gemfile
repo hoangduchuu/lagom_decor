@@ -16,7 +16,6 @@ gem 'globalize', '~> 5.1.0'
 gem 'i18n', '~> 1.0', '>= 1.0.1'
 gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
-gem "passenger"
 gem 'popper_js', '~> 1.12.9'
 gem 'rails', '~> 5.1.3'
 gem 'trix'
