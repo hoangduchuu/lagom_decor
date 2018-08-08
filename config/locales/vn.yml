@@ -2,14 +2,14 @@ vn:
   user:
     contacts:
       header:
-        home: "NHÀ"
+        home: "TRANG CHỦ"
         projects: "DỰ ÁN"
         interiorideas: "Ý TƯỞNG NỘI THẤT"
-        shop: "CỬA TIỆM"
+        shop: "SẢN PHẨM"
         consulting: "TƯ VẤN"
-        contact: "TIẾP XÚC"
+        contact: "LIÊN HỆ"
         workinghours: "Giờ làm việc"
-        phone: "Điện thoaị"
+        phone: "Điện thoại"
         email: "Email"
 
       footer:
@@ -78,6 +78,7 @@ vn:
     dashboards:
       dashboard_layout:
         dashboard: "Dashboard"
+        customer_management: "customer_management"
         home: "Trang Chủ"
         projects: "Dự Án"
         interiorideas: "Ý tưởng nội thất"

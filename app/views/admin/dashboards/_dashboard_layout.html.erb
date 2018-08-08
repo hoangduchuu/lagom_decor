@@ -5,15 +5,26 @@
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <%= link_to_unless_current image_tag('en.png'), locale: "en", :class => 'nav-link' %>
-    <%= link_to_unless_current image_tag('vn.png'), locale: "vn", :class => 'nav-link' %>
+    <input type="checkbox" data-toggle="toggle" data-on="<div class='onDiv'></div>" data-off="<div class='offDiv'></div>" data-onstyle="default" data-offstyle="default" name="test" checked />
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="">
-        <%= link_to (t '.dashboard'), admin_dashboards_path, :class => 'fas fa fa-tachometer nav-link' %>
+        <%= link_to admin_dashboards_path, :class => 'nav-link' do %>
+        <i class="fas fa fa-tachometer"></i>
+        <span class="nav-link-text"><%= t '.dashboard' %></span>
+        <% end %>
       </li>
       <li class="nav-item" data-toggle="tooltip" data-placement="right" title="">
-        <%= link_to (t '.home'), admin_homes_path, :class => 'fas fa fa-home nav-link' %>
+        <%= link_to admin_customers_path, :class => 'nav-link' do %>
+        <i class="fas fa fa-tachometer"></i>
+        <span class="nav-link-text"><%= t '.customer_management' %></span>
+        <% end %>
+      </li>
+      <li class="nav-item" data-toggle="tooltip" data-placement="right" title="">
+        <%= link_to admin_homes_path, :class => 'nav-link' do %>
+        <i class="fas fa fa-home"></i>
+        <span class="nav-link-text"><%= t '.home' %></span>
+        <% end %>
       </li>
       <li class="nav-item" data-toggle="tooltip" data-placement="right" title="">
         <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
@@ -22,15 +33,24 @@
         </a>
         <ul class="sidenav-second-level collapse" id="collapseComponents">
           <li>
-            <%= link_to (t '.projects'), admin_projects_path, :class => 'fas fa fa-tasks nav-link' %>
+            <%= link_to admin_projects_path, :class => 'nav-link' do %>
+            <i class="fas fa fa-tasks"></i>
+            <span class="nav-link-text"><%= t '.projects' %></span>
+            <% end %>
           </li>
           <li>
-            <%= link_to 'categories', admin_project_categories_path, :class => 'fas fa fa-tasks nav-link' %>
+            <%= link_to admin_project_categories_path, :class => 'nav-link' do %>
+            <i class="fas fa fa-tasks"></i>
+            <span class="nav-link-text"><%= t '.categories' %></span>
+            <% end %>
           </li>
         </ul>
       </li>
       <li class="nav-item" data-toggle="tooltip" data-placement="right" title="">
-        <%= link_to (t '.interiorideas'), admin_interiorideas_path, :class => 'fas fa fa-comments nav-link' %>
+        <%= link_to admin_interiorideas_path, :class => 'nav-link' do %>
+        <i class="fas fa fa-comments"></i>
+        <span class="nav-link-text"><%= t '.interioridea' %></span>
+        <% end %>
       </li>
       <li class="nav-item" data-toggle="tooltip" data-placement="right" title="">
         <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#productcomponent" data-parent="#exampleAccordion">
@@ -39,18 +59,27 @@
         </a>
         <ul class="sidenav-second-level collapse" id="productcomponent">
           <li>
-            <%= link_to (t '.shop'), admin_products_path, :class => 'fas fa fa-shopping-cart nav-link' %>
+            <%= link_to admin_products_path, :class => 'nav-link' do %>
+            <i class="fas fa fa-shopping-cart"></i>
+            <span class="nav-link-text"><%= t '.shop' %></span>
+            <% end %>
           </li>
           <li>
-            
+
           </li>
         </ul>
       </li>
       <li class="nav-item" data-toggle="tooltip" data-placement="right" title="">
-        <%= link_to (t '.consulting'), admin_consultings_path, :class => 'fas fa fa-users nav-link' %>
+        <%= link_to admin_consultings_path, :class => 'nav-link' do %>
+        <i class="fas fa fa-users"></i>
+        <span class="nav-link-text"><%= t '.consulting' %></span>
+        <% end %>
       </li>
       <li class="nav-item" data-toggle="tooltip" data-placement="right" title="">
-        <%= link_to (t '.contact'), admin_contacts_path, :class => 'fas fa fa-phone nav-link' %>
+        <%= link_to admin_contacts_path, :class => 'nav-link' do %>
+        <i class="fas fa fa-phone"></i>
+        <span class="nav-link-text"><%= t '.contact' %></span>
+        <% end %>
       </li>
     </ul>
     <ul class="navbar-nav sidenav-toggler">
@@ -86,54 +115,54 @@
               <div class="dropdown-message small"><%= truncate(customer.message, length: 30) %></div>
             </div>
             <% end %>
+          </li>
+          <li class="nav-item">
+            <%= link_to current_admin.email, admin_dashboard_path(current_admin), :class => 'nav-link' %>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
+              <i class="fas fa fa-sign-out"></i><%= t ".logout" %></a>
             </li>
-            <li class="nav-item">
-              <%= link_to current_admin.email, admin_dashboard_path(current_admin), :class => 'nav-link' %>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
-                <i class="fas fa fa-sign-out"></i><%= t ".logout" %></a>
-              </li>
-            </ul>
-          </div>
-        </nav>
-        <div class="content-wrapper">
-          <div class="container-fluid">
-            <!-- Breadcrumbs-->
+          </ul>
+        </div>
+      </nav>
+      <div class="content-wrapper">
+        <div class="container-fluid">
+          <!-- Breadcrumbs-->
 
-          </div>
-          <!-- /.container-fluid-->
+        </div>
+        <!-- /.container-fluid-->
 
-          <%= yield %>
+        <%= yield %>
 
-          <!-- /.content-wrapper-->
-          <footer class="sticky-footer">
-            <div class="container">
-              <div class="text-center">
-                <small>Copyright © Hurryup software 2018</small>
-              </div>
-            </div>
-          </footer>
-          <!-- Scroll to Top Button-->
-          <a class="scroll-to-top rounded" href="#page-top">
-            <i class="fa fa-angle-up"></i>
-          </a>
-          <!-- Logout Modal-->
-          <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel"><%= t ".leave" %></h5>
-                  <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">×</span>
-                  </button>
-                </div>
-                <div class="modal-body"><%= t ".password_again" %></div>
-                <div class="modal-footer">
-                  <button class="btn btn-secondary" type="button" data-dismiss="modal"><%= t ".cancel" %></button>
-                  <%= link_to (t '.logout'), destroy_admin_session_path, method: :delete,  :class => 'btn btn-primary' %>
-                </div>
-              </div>
+        <!-- /.content-wrapper-->
+        <footer class="sticky-footer">
+          <div class="container">
+            <div class="text-center">
+              <small>Copyright © Hurryup software 2018</small>
             </div>
           </div>
-        </body>
+        </footer>
+        <!-- Scroll to Top Button-->
+        <a class="scroll-to-top rounded" href="#page-top">
+          <i class="fa fa-angle-up"></i>
+        </a>
+        <!-- Logout Modal-->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"><%= t ".leave" %></h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">×</span>
+                </button>
+              </div>
+              <div class="modal-body"><%= t ".password_again" %></div>
+              <div class="modal-footer">
+                <button class="btn btn-secondary" type="button" data-dismiss="modal"><%= t ".cancel" %></button>
+                <%= link_to (t '.logout'), destroy_admin_session_path, method: :delete,  :class => 'btn btn-primary' %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </body>

@@ -78,6 +78,7 @@ en:
     dashboards:
       dashboard_layout:
         dashboard: "Dashboard"
+        customer_management: "Customer Management"
         home: "Home"
         projects: "Projects"
         interiorideas: "Interiorideas"

@@ -44,9 +44,11 @@
             <%= f.text_field :price, :class => 'form-control input-lg', :placeholder => 'please enter product price in here...' %><p class="font-italic text-info small">product price in VND</p>
           </div>
         </div>
-        <div class="col-xs-12 col-sm-6 col-md-9">
-          <div class="form-group">
-            <%= f.select(:category, Product::CATEGORIES) %><p class="font-italic text-info small">choose a product category</p>
+        <div class="row">
+          <div class="col-xs-12 col-sm-6 col-md-9">
+            <div class="form-group">
+              <%= f.select(:category, Product::CATEGORIES) %><p class="font-italic text-info small">choose a product category</p>
+            </div>
           </div>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-9">
