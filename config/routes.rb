@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 scope "(:locale)", locale: /#{I18n.available_locales.join("|")}/ do
 	devise_for :admins, controllers: {registrations: "registrations"}
 
-root :to => 'user/homes#index'
+
 root :to => 'admin/dashboards#index'
 
   	devise_scope :admin do  
