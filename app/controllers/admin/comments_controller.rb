@@ -19,6 +19,7 @@ class Admin::CommentsController < ApplicationController
 
 	def create
 		@comment = Comment.new(allowed_params)
+		@comment.edited_by = current_admin.email
 		if @comment.save
 			redirect_to admin_homes_path
 		else

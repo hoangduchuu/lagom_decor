@@ -3,13 +3,8 @@ Rails.application.routes.draw do
 scope "(:locale)", locale: /#{I18n.available_locales.join("|")}/ do
 	devise_for :admins, controllers: {registrations: "registrations"}
 
-	unauthenticated do
-   		root :to => 'user/homes#index'
-	end
-
-	authenticated do
-  		root :to => 'admin/dashboards#index'
-	end
+root :to => 'user/homes#index'
+root :to => 'admin/dashboards#index'
 
   	devise_scope :admin do  
    		get '/admins/sign_out' => 'devise/sessions#destroy'

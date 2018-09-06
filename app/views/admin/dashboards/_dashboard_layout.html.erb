@@ -5,7 +5,8 @@
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <input type="checkbox" data-toggle="toggle" data-on="<div class='onDiv'></div>" data-off="<div class='offDiv'></div>" data-onstyle="default" data-offstyle="default" name="test" checked />
+    <%= link_to_unless_current "English", locale: "en" %>
+    <%= link_to_unless_current "Tiếng Việt", locale: "vn" %>
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="">
