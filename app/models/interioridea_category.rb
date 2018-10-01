@@ -1,0 +1,2 @@
+class InteriorideaCategory < ApplicationRecord
+end

@@ -47,7 +47,7 @@
         <div class="row">
           <div class="col-xs-12 col-sm-6 col-md-9">
             <div class="form-group">
-              <%= f.select(:category, Product::CATEGORIES) %><p class="font-italic text-info small">choose a product category</p>
+              <%= f.collection_select :category, ProductCategory.order(:category_name),:category_name,:show, include_blank: false %><p class="font-italic text-info small">choose a product category</p>
             </div>
           </div>
         </div>

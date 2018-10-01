@@ -25,6 +25,7 @@ root :to => 'admin/dashboards#index'
 		resources :videos
 		resources :project_categories
 		resources :product_categories
+		resources :interioridea_categories
 		resources :services
 	end
 

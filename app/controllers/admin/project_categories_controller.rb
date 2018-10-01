@@ -46,7 +46,7 @@ class Admin::ProjectCategoriesController < ApplicationController
 
 	private 
 	def allowed_params
-		params.require(:category).permit(:category, :admin)
+		params.require(:project_category).permit(:category_name, :show)
 	end
 
 	private

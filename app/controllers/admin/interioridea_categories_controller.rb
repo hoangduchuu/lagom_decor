@@ -1,36 +1,36 @@
-class Admin::ProductCategoriesController < ApplicationController
+class Admin::InteriorideaCategoriesController < ApplicationController
 	before_action :authenticate_admin!
 	layout 'admin'
 
 	def index
-		@category = ProductCategory.all
+		@category = InteriorideaCategory.all
 		@customers = Customer.all.order(id: :desc)
 	end
 
 	def new
-		@category = ProductCategory.new
+		@category = InteriorideaCategory.new
 		@customers = Customer.all.order(id: :desc)
 	end
 
 	def edit
-		@category = ProductCategory.find(params[:id])
+		@category = InteriorideaCategory.find(params[:id])
 		@customers = Customer.all.order(id: :desc)
 	end
 	
 	def create
-		@category = ProductCategory.new(allowed_params)
+		@category = InteriorideaCategory.new(allowed_params)
 
 		if @category.save
-			redirect_to admin_product_categories_path
+			redirect_to admin_interioridea_categories_path
 		else
-			redirect_to new_admin_project_category_path
+			redirect_to new_admin_interioridea_category_path
 		end
 	end
 
 	def update
-		@category = ProductCategory.find(params[:id])
+		@category = InteriorideaCategory.find(params[:id])
 		if @category.update_attributes(allowed_params)
-			redirect_to admin_product_categories_path
+			redirect_to admin_interioridea_categories_path
 		else
 			render 'new'
 		end
@@ -38,15 +38,15 @@ class Admin::ProductCategoriesController < ApplicationController
 
 	
 	def destroy
-		@category = ProductCategory.find(params[:id])
+		@category = InteriorideaCategory.find(params[:id])
 		@category.destroy
 
-		redirect_to admin_product_categories_path
+		redirect_to admin_interioridea_categories_path
 	end
 
 	private 
 	def allowed_params
-		params.require(:product_category).permit(:category_name, :show)
+		params.require(:interioridea_category).permit(:category_name, :show)
 	end
 
 	private

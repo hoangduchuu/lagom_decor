@@ -76,7 +76,9 @@
 			</tr>                                        
 			<tr>
 				<td class="text-success"><i class="fa fa-header"></i> Interior Catogory</td>
-				<td><%= @interioridea.category %></td>
+				<% @category.where(category_name: @interioridea.category).select do |cat| %>
+				<td><%= cat.show %></td>
+				<% end %>
 			</tr>                                        
 			<tr>
 				<td class="text-success"><i class="fa fa-laptop"></i> Designer</td>
@@ -97,11 +99,11 @@
 		</tbody>
 	</table>
 	<div class="container">
-  <h5 class="text-success">New Idea Introduction</h5>
-  <blockquote>
-  	<% if @interioridea.description.present? %>
-    <p><%= sanitize @interioridea.description.html_safe %></p>
-    <% end %>
-  </blockquote>
-</div>
+		<h5 class="text-success">New Idea Introduction</h5>
+		<blockquote>
+			<% if @interioridea.description.present? %>
+			<p><%= sanitize @interioridea.description.html_safe %></p>
+			<% end %>
+		</blockquote>
+	</div>
 </div>

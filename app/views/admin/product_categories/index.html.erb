@@ -2,8 +2,8 @@
   <li class="breadcrumb-item">
     <%= link_to (t '.dashboard'), admin_dashboards_path %>
   </li>
-  <li class="breadcrumb-item active">Project Categories</li>
-  <%= link_to 'NEW CATEGORY', new_admin_project_category_path, :class => 'btn btn-sm btn-success left-right' %>
+  <li class="breadcrumb-item active">Product Categories</li>
+  <%= link_to 'NEW CATEGORY', new_admin_product_category_path, :class => 'btn btn-sm btn-success left-right' %>
 </ol>
 
 <div class="card mb-3" style="margin-left: 15px; margin-right: 15px;">
@@ -24,8 +24,8 @@
             <tr>
               <td><%= c.category_name %></td>
               <td><%= c.show %></td>
-              <td><%= link_to 'edit', edit_admin_project_category_path(c), :class => 'btn btn-sm btn-warning' %>
-                <%= link_to ' del', admin_project_category_path(c), :class => 'btn btn-sm btn-danger', method: :delete, data: { confirm: (t '.question') } %></td>
+              <td><%= link_to 'edit', edit_admin_product_category_path(c), :class => 'btn btn-sm btn-warning' %>
+                <%= link_to ' del', admin_product_category_path(c), :class => 'btn btn-sm btn-danger', method: :delete, data: { confirm: (t '.question') } %></td>
               </tr>
               <% end %>
             </tbody>

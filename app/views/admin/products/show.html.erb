@@ -38,7 +38,9 @@
 			</tr>                                        
 			<tr>
 				<td class="text-success"><i class="fa fa-caret-right"></i> product Category</td>
-				<td><%= @product.category %></td>
+				<% @category.where(category_name: @product.category).select do |cat| %>
+				<td><%= cat.show %></td>
+				<% end %>
 			</tr>                                        
 			<tr>
 				<td class="text-success"><i class="fa fa-usd"></i> Price</td>

@@ -10,6 +10,7 @@ class Admin::ProjectsController < ApplicationController
 
 	def show
 		@project = Project.find(params[:id])
+		@category = ProjectCategory.all
 		@customers = Customer.all.order(id: :desc)
 	end
 

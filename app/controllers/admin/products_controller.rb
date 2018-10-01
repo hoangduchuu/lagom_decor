@@ -9,6 +9,7 @@ class Admin::ProductsController < ApplicationController
 
 	def show
 		@product = Product.find(params[:id])
+		@category = ProductCategory.all
 		@customers = Customer.all.order(id: :desc)
 	end
 

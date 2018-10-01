@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180806171836) do
+ActiveRecord::Schema.define(version: 20181001025208) do
 
   create_table "admins", force: :cascade do |t|
     t.string "username", default: "", null: false
@@ -118,6 +118,13 @@ ActiveRecord::Schema.define(version: 20180806171836) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "interioridea_categories", force: :cascade do |t|
+    t.string "category_name"
+    t.string "show"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "interioridea_translations", force: :cascade do |t|
     t.integer "interioridea_id", null: false
     t.string "locale", null: false
@@ -149,8 +156,8 @@ ActiveRecord::Schema.define(version: 20180806171836) do
   end
 
   create_table "product_categories", force: :cascade do |t|
-    t.string "category"
-    t.string "edited_by"
+    t.string "category_name"
+    t.string "show"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -194,8 +201,8 @@ ActiveRecord::Schema.define(version: 20180806171836) do
   end
 
   create_table "project_categories", force: :cascade do |t|
-    t.string "category"
-    t.string "edited_by"
+    t.string "category_name"
+    t.string "show"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

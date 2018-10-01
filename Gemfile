@@ -31,7 +31,7 @@ group :development, :test do
 end
 
 group :development do
-	gem 'sqlite3'
+	gem 'sqlite3', git: "https://github.com/larskanis/sqlite3-ruby", branch: "add-gemspec"
 	gem 'web-console', '>= 3.3.0'
 end
 

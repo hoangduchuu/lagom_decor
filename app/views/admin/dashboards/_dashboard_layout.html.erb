@@ -5,8 +5,8 @@
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <%= link_to_unless_current "English", locale: "en" %>
-    <%= link_to_unless_current "Tiếng Việt", locale: "vn" %>
+    <%= link_to_unless_current image_tag('en.png', :class => 'resizeimage'), locale: "en" %>
+    <%= link_to_unless_current image_tag('vn.png', :class => 'resizeimage'), locale: "vn" %>
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="">
@@ -48,17 +48,31 @@
         </ul>
       </li>
       <li class="nav-item" data-toggle="tooltip" data-placement="right" title="">
-        <%= link_to admin_interiorideas_path, :class => 'nav-link' do %>
-        <i class="fas fa fa-comments"></i>
-        <span class="nav-link-text"><%= t '.interioridea' %></span>
-        <% end %>
+        <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents2" data-parent="#exampleAccordion">
+          <i class="fas fa fa-comments"></i>
+          <span class="nav-link-text"><%= t ".interioridea" %></span>
+        </a>
+        <ul class="sidenav-second-level collapse" id="collapseComponents2">
+          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="">
+            <%= link_to admin_interiorideas_path, :class => 'nav-link' do %>
+            <i class="fas fa fa-comments"></i>
+            <span class="nav-link-text"><%= t '.interioridea' %></span>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to admin_interioridea_categories_path, :class => 'nav-link' do %>
+            <i class="fas fa fa-comments"></i>
+            <span class="nav-link-text"><%= t '.categories' %></span>
+            <% end %>
+          </li>
+        </ul>
       </li>
       <li class="nav-item" data-toggle="tooltip" data-placement="right" title="">
-        <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#productcomponent" data-parent="#exampleAccordion">
+        <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents1" data-parent="#exampleAccordion">
           <i class="fas fa fa-shopping-cart"></i>
           <span class="nav-link-text"><%= t ".shop" %></span>
         </a>
-        <ul class="sidenav-second-level collapse" id="productcomponent">
+        <ul class="sidenav-second-level collapse" id="collapseComponents1">
           <li>
             <%= link_to admin_products_path, :class => 'nav-link' do %>
             <i class="fas fa fa-shopping-cart"></i>
@@ -66,7 +80,10 @@
             <% end %>
           </li>
           <li>
-
+            <%= link_to admin_product_categories_path, :class => 'nav-link' do %>
+            <i class="fas fa fa-shopping-cart"></i>
+            <span class="nav-link-text"><%= t '.categories' %></span>
+            <% end %>
           </li>
         </ul>
       </li>

@@ -147,6 +147,12 @@ en:
         leave: "Ready to Leave ?"
         password_again: "Next time you'll have to type your username and password again..."
 
+    project_categories:
+      index:
+        name: "category name"
+        display_name: "display name"
+        operations: "operations"
+
     contacts:
       index:
         phone: "Phone Number"

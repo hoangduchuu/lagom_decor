@@ -497,20 +497,3 @@ footer.sticky-footer {
   display: none;
 }
 
-.onDiv{
-  background:url('http://www.kiplingsociety.co.uk/pix/unionjack2.jpg');
-  background-size:contain;
-  background-position: 50% 50%;
-  background-repeat:no-repeat;
-  height:36px;
-  width:72px;
-}
-.offDiv{
-  background:url('http://www.mapsofworld.com/images/world-countries-flags/italy-flag.gif');
-  background-size:contain;
-  background-position: 50% 50%;
-  background-repeat:no-repeat;
-  height:36px;
-  width:72px;
-}
-

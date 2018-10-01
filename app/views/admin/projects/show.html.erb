@@ -76,7 +76,9 @@
 			</tr>                                        
 			<tr>
 				<td class="text-success"><i class="fa fa-caret-right"></i> Project Catogory</td>
-				<td><%= @project.category %></td>
+				<% @category.where(category_name: @project.category).select do |cat| %>
+				<td><%= cat.show %></td>
+				<% end %>
 			</tr>                                        
 			<tr>
 				<td class="text-success"><i class="fa fa-user"></i> Client</td>
