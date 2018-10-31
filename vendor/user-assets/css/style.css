@@ -4971,7 +4971,7 @@ display:table;
 	}
 	
 	header .info{
-	display:none !important;
+	/* display:none !important; */
 	}
 	
 	header.header-bg{

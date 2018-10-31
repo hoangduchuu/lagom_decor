@@ -6,11 +6,13 @@ class User::InteriorideasController < ApplicationController
 		@contact = Contact.all
 		@interiorideas = Interioridea.all
 		@interiorideas1 = Interioridea.all.order("created_at DESC").paginate(page: params[:page], per_page: 3)
+		@banners = Banner.all
 	end
 
 	def show
 		@contact = Contact.all
 		@interioridea = Interioridea.find(params[:id])
+		@banners = Banner.all
 	end
 
 	private

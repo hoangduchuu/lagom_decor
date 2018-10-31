@@ -1,3 +1,10 @@
+<style media="screen">
+<% @banners.each do |banner| %>
+<% if banner.name == 'contacts page banner image' %>
+#subheader-db { background: url(<%= banner.image_url %>) center center no-repeat; }
+<% end %>
+<% end %>
+</style>
 <body class="page-contact">
 
         <div id="wrapper">
@@ -6,7 +13,7 @@
             <!-- header close -->
 
 <!-- subheader -->
-<section id="subheader" data-speed="8" data-type="background">
+<section id="subheader-db" data-speed="8" data-type="background">
     <div class="container">
         <div class="row">
             <div class="col-md-12">

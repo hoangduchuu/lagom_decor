@@ -6,6 +6,7 @@ class User::ProductsController < ApplicationController
 		@contact = Contact.all
 		@customer = Customer.new
 		@products = Product.all
+		@banners = Banner.all
 	end
 
 	def create
@@ -21,7 +22,7 @@ class User::ProductsController < ApplicationController
 
 	private 
 	def allowed_params
-		params.require(:customer).permit(:customer_name, :phone, :email)
+		params.require(:customer).permit(:customer_name, :phone, :email, :message)
 	end
 
 	private

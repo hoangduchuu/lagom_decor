@@ -8,6 +8,7 @@ class User::HomesController < ApplicationController
 		@interiorideas = Interioridea.all.order('created_at DESC')
 		@services = Service.all
 		@projects = Project.all
+		@banners = Banner.all
 	end
 
 	private

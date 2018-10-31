@@ -27,6 +27,7 @@ root :to => 'admin/dashboards#index'
 		resources :product_categories
 		resources :interioridea_categories
 		resources :services
+		resources :banners
 	end
 
 	namespace :user do

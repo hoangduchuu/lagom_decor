@@ -1,203 +1,213 @@
+<style media="screen">
+<% @banners.each do |banner| %>
+<% if banner.name == 'homepage slider left image' %>
+.image_div_left { background: url(<%= banner.image_url %>) center center no-repeat; }
+<% end %>
+<% if banner.name == 'homepage slider right image' %>
+.image_div_right { background: url(<%= banner.image_url %>) center center no-repeat; }
+<% end %>
+<% end %>
+</style>
 <body id="homepage">
-    <div id="wrapper">
+  <div id="wrapper">
 
-        <!-- header begin -->
-        <%= render 'user/contacts/header' %>
-        <!-- header close -->
+    <!-- header begin -->
+    <%= render 'user/contacts/header' %>
+    <!-- header close -->
 
-        <!-- content begin -->
-        <div id="content" class="no-bottom no-top">
+    <!-- content begin -->
+    <div id="content" class="no-bottom no-top">
 
-            <!-- revolution slider begin -->
-            <section id="section-slider" class="fullwidthbanner-container" aria-label="section-slider" style="padding-top: 0;">
-                <div id="revolution-slider" class="slider-container">
-                    <div class="split left">
-                        <%= link_to 'Consulting', user_consultings_path, :class => 'but-slider' %>
-                    </div>
+      <!-- revolution slider begin -->
+      <section id="section-slider" class="fullwidthbanner-container" aria-label="section-slider" style="padding-top: 0;">
+        <div id="revolution-slider" class="slider-container">
+          <div class="split left image_div_left">
+            <%= link_to 'Consulting', user_consultings_path, :class => 'but-slider' %>
+          </div>
 
-                    <div class="split right">
-                        <%= link_to 'Shop with us', user_products_path, :class => 'but-slider' %>
-                    </div>
-                </div>
-            </section>
-            <!-- revolution slider close -->
+          <div class="split right image_div_right">
+            <%= link_to 'Shop with us', user_products_path, :class => 'but-slider' %>
+          </div>
+        </div>
+      </section>
+      <!-- revolution slider close -->
 
-            <!-- section begin -->
-            <section id="section-about">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-8 col-md-offset-2 text-center wow fadeInUp">
-                            <h1><%= t ".wedo" %></h1>
-                            <div class="separator"><span><i class="fa fa-circle"></i></span></div>
-                            <div class="spacer-single"></div>
-                        </div>
-                        <% @services.each do |service| %>
-                        <div class="col-md-3 wow fadeInLeft">
-                            <h3><span class="id-color"><%= service.title_1 %></span> <%= service.title_2 %></h3>
-                            <% if service.description.present? %>
-                            <%= sanitize service.description.html_safe %>
-                            <% end %>
-                            <div class="spacer-single"></div>
-                            <% if service.image.present? %>
-                            <%= image_tag service.image_url, :class => 'img-responsive' %>
-                            <% end %>
-                        </div>
-                        <% end %>
-                    </div>
-                </div>
-            </section>
-            <!-- section close -->
-
-            <!-- section begin -->
-            <section id="section-why-choose-us" class="text-light">
-
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-6 col-md-offset-3 text-center wow fadeInUp">
-                            <h1>5 Reasons To Choose LagomDecor</h1>
-                            <div class="separator"><span><i class="fa fa-circle"></i></span></div>
-                            <div class="spacer-single"></div>
-                        </div>
-
-                        <div class="col-md-4 wow fadeIn" data-wow-delay="0s">
-                            <div class="box-number">
-                                <span class="number bg-color wow rotateIn" data-wow-delay=".5s">1</span>
-                                <div class="text">
-                                    <h3><span class="id-color">Interior Expertise</span></h3>
-                                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-4 wow fadeIn" data-wow-delay=".25s">
-                            <div class="box-number">
-                                <span class="number bg-color wow rotateIn" data-wow-delay=".75s">2</span>
-                                <div class="text">
-                                    <h3><span class="id-color">Awards Winning</span></h3>
-                                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-4 wow fadeIn" data-wow-delay=".5s">
-                            <div class="box-number">
-                                <span class="number bg-color wow rotateIn" data-wow-delay="1s">3</span>
-                                <div class="text">
-                                    <h3><span class="id-color">Affordable Price</span></h3>
-                                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="spacer-single"></div>
-
-                        <div class="col-md-4 wow fadeIn" data-wow-delay=".75s">
-                            <div class="box-number">
-                                <span class="number bg-color wow rotateIn" data-wow-delay="1.25s">4</span>
-                                <div class="text">
-                                    <h3><span class="id-color">Free Consultation</span></h3>
-                                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-4 wow fadeIn" data-wow-delay="1s">
-                            <div class="box-number">
-                                <span class="number bg-color wow rotateIn" data-wow-delay="1.5s">5</span>
-                                <div class="text">
-                                    <h3><span class="id-color">Guaranteed Works</span></h3>
-                                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- section close -->
-
-            <!-- section begin -->
-            <div class="row">
-                <div class="col-md-6 col-md-offset-3 text-center wow fadeInUp" style="padding-top: 15px;">
-                    <h1>Our Projects</h1>
-                    <div class="separator"><span><i class="fa fa-circle"></i></span></div>
-
-                </div>
+      <!-- section begin -->
+      <section id="section-about">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-8 col-md-offset-2 text-center wow fadeInUp">
+              <h1><%= t ".wedo" %></h1>
+              <div class="separator"><span><i class="fa fa-circle"></i></span></div>
+              <div class="spacer-single"></div>
             </div>
-            <div class="carousel-container">
-
-              <div id="slider-carousel" class="owl-carousel">
-                <% @projects.each do |pro| %>
-                <div class="item">
-                  <%= link_to user_project_path(pro) do %>
-                  <div class="overlay">
-                  </div>
-                  <% if pro.cover_photo.present? %>
-                  <%= image_tag pro.cover_photo_url %>
-                  <% end %>
+            <% @services.each do |service| %>
+            <div class="col-md-3 wow fadeInLeft">
+              <h3><span class="id-color"><%= service.title_1 %></span> <%= service.title_2 %></h3>
+              <% if service.description.present? %>
+              <%= sanitize service.description.html_safe %>
               <% end %>
+              <div class="spacer-single"></div>
+              <% if service.image.present? %>
+              <%= image_tag service.image_url, :class => 'img-responsive' %>
+              <% end %>
+            </div>
+            <% end %>
+          </div>
+        </div>
+      </section>
+      <!-- section close -->
+
+      <!-- section begin -->
+      <section id="section-why-choose-us" class="text-light">
+
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 col-md-offset-3 text-center wow fadeInUp">
+              <h1>5 Reasons To Choose LagomDecor</h1>
+              <div class="separator"><span><i class="fa fa-circle"></i></span></div>
+              <div class="spacer-single"></div>
+            </div>
+
+            <div class="col-md-4 wow fadeIn" data-wow-delay="0s">
+              <div class="box-number">
+                <span class="number bg-color wow rotateIn" data-wow-delay=".5s">1</span>
+                <div class="text">
+                  <h3><span class="id-color">Interior Expertise</span></h3>
+                  <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4 wow fadeIn" data-wow-delay=".25s">
+              <div class="box-number">
+                <span class="number bg-color wow rotateIn" data-wow-delay=".75s">2</span>
+                <div class="text">
+                  <h3><span class="id-color">Awards Winning</span></h3>
+                  <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4 wow fadeIn" data-wow-delay=".5s">
+              <div class="box-number">
+                <span class="number bg-color wow rotateIn" data-wow-delay="1s">3</span>
+                <div class="text">
+                  <h3><span class="id-color">Affordable Price</span></h3>
+                  <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="spacer-single"></div>
+
+            <div class="col-md-4 wow fadeIn" data-wow-delay=".75s">
+              <div class="box-number">
+                <span class="number bg-color wow rotateIn" data-wow-delay="1.25s">4</span>
+                <div class="text">
+                  <h3><span class="id-color">Free Consultation</span></h3>
+                  <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4 wow fadeIn" data-wow-delay="1s">
+              <div class="box-number">
+                <span class="number bg-color wow rotateIn" data-wow-delay="1.5s">5</span>
+                <div class="text">
+                  <h3><span class="id-color">Guaranteed Works</span></h3>
+                  <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- section close -->
+
+      <!-- section begin -->
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3 text-center wow fadeInUp" style="padding-top: 15px;">
+          <h1>Our Projects</h1>
+          <div class="separator"><span><i class="fa fa-circle"></i></span></div>
+
+        </div>
+      </div>
+      <div class="carousel-container">
+
+        <div id="slider-carousel" class="owl-carousel">
+          <% @projects.each do |pro| %>
+          <div class="item">
+            <%= link_to user_project_path(pro) do %>
+            <div class="overlay">
+            </div>
+            <% if pro.cover_photo.present? %>
+            <%= image_tag pro.cover_photo_url %>
+            <% end %>
+            <% end %>
           </div>
           <% end %>
-      </div>
-
-
-      <div class="customNavigation">
-        <a class="btn gray prev"><i class="fa fa-angle-left"></i></a>
-        <a class="btn gray next"><i class="fa fa-angle-right"></i></a>
-    </div>
-
-
-</div>
-<!-- section close -->
-
-<!-- section begin -->
-<section id="view-all-projects" class="call-to-action bg-color text-center" data-speed="5" data-type="background" aria-label="view-all-projects">
-    <%= link_to 'View All Projects', user_projects_path, :class => 'btn btn-line-black btn-big' %>
-</section>
-<!-- logo carousel section close -->
-
-
-<!-- section begin -->
-<section id="section-testimonial" class="text-light">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 col-md-offset-3 text-center wow fadeInUp">
-                <h1>Customer Says</h1>
-                <div class="separator"><span><i class="fa fa-circle"></i></span></div>
-                <div class="spacer-single"></div>
-            </div>
         </div>
-        <div id="testimonial-carousel" class="de_carousel  wow fadeInUp" data-wow-delay=".3s">
+
+
+        <div class="customNavigation">
+          <a class="btn gray prev"><i class="fa fa-angle-left"></i></a>
+          <a class="btn gray next"><i class="fa fa-angle-right"></i></a>
+        </div>
+
+
+      </div>
+      <!-- section close -->
+
+      <!-- section begin -->
+      <section id="view-all-projects" class="call-to-action bg-color text-center" data-speed="5" data-type="background" aria-label="view-all-projects">
+        <%= link_to 'View All Projects', user_projects_path, :class => 'btn btn-line-black btn-big' %>
+      </section>
+      <!-- logo carousel section close -->
+
+
+      <!-- section begin -->
+      <section id="section-testimonial" class="text-light">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 col-md-offset-3 text-center wow fadeInUp">
+              <h1>Customer Says</h1>
+              <div class="separator"><span><i class="fa fa-circle"></i></span></div>
+              <div class="spacer-single"></div>
+            </div>
+          </div>
+          <div id="testimonial-carousel" class="de_carousel  wow fadeInUp" data-wow-delay=".3s">
 
             <% @comments.each do |c| %>
             <div class="col-md-6 item">
-                <div class="de_testi">
-                    <blockquote>
-                        <% if c.comment.present? %>
-                        <p><%= sanitize(c.comment.html_safe) %></p>
-                        <% end %>
-                        <div class="de_testi_by">
-                            <%= c.title %>
-                        </div>
-                    </blockquote>
-                </div>
+              <div class="de_testi">
+                <blockquote>
+                  <% if c.comment.present? %>
+                  <p><%= sanitize(c.comment.html_safe) %></p>
+                  <% end %>
+                  <div class="de_testi_by">
+                    <%= c.title %>
+                  </div>
+                </blockquote>
+              </div>
             </div>
             <% end -%>
+          </div>
         </div>
-    </div>
-</section>
-<!-- section close -->
+      </section>
+      <!-- section close -->
 
-<!-- our customers slider START -->
-<section id="section-about" style="padding-bottom: 0;">
-    <div class="container">
-        <div class="row">
+      <!-- our customers slider START -->
+      <section id="section-about" style="padding-bottom: 0;">
+        <div class="container">
+          <div class="row">
             <div class="col-md-6 col-md-offset-3 text-center wow fadeInUp">
-                <h1>Proudly Partners With</h1>
-                <div class="separator"><span><i class="fa fa-circle"></i></span></div>
-                <div class="spacer-single"></div>
+              <h1>Proudly Partners With</h1>
+              <div class="separator"><span><i class="fa fa-circle"></i></span></div>
+              <div class="spacer-single"></div>
             </div>
-        </div>
-        <section class="customer-logos slider" style="padding-top: 0;">
+          </div>
+          <section class="customer-logos slider" style="padding-top: 0;">
             <div class="slide"><%= image_tag('p1.png') %></div>
             <div class="slide"><%= image_tag('p2.png') %></div>
             <div class="slide"><%= image_tag('p3.png') %></div>
@@ -206,126 +216,126 @@
             <div class="slide"><%= image_tag('p6.png') %></div>
             <div class="slide"><%= image_tag('p7.png') %></div>
             <div class="slide"><%= image_tag('p8.png') %></div>
-        </section>
-    </div>
-</section>
-<!-- our customers slider END -->
+          </section>
+        </div>
+      </section>
+      <!-- our customers slider END -->
 
-<!-- footer begin -->
-<%= render 'user/contacts/footer' %>
-<!-- footer close -->
-</div>
-<div class="modal fade" id="admodal" role="dialog" tabindex="-1">
- <div class="modal-dialog" role="document">
-     <div class="modal-content">
+      <!-- footer begin -->
+      <%= render 'user/contacts/footer' %>
+      <!-- footer close -->
+    </div>
+    <div class="modal fade" id="admodal" role="dialog" tabindex="-1">
+     <div class="modal-dialog" role="document">
+       <div class="modal-content">
          <div class="modal-body">
-             <div class="carousel slide" data-ride="carousel" id="adCarousel">
-                 <!-- Wrapper for slides -->
-                 <div class="carousel-inner">
-                    <% @count = 0 %>
-                    <% @interiorideas.where(:show_on_home => 'yes').each do |interior| %>
-                    <% if @count == 0 %>
-                    <div class="item active">
-                     <div class="card">
-                        <%= link_to image_tag(interior.image_url, :class => 'card-img-top img-fluid w-100'), user_interioridea_path(interior) %>
-                    </div>
-                    <div class="jumbotron">
-                        <h2>New Arrivals</h2> 
-                        <p><%= interior.title %></p> 
-                    </div>
-                </div>
-                <% else %>
-                <div class="item">
-                 <div class="card">
-                    <%= link_to image_tag(interior.image_url, :class => 'card-img-top img-fluid w-100'), user_interioridea_path(interior) %>
-                </div>
-                <div class="jumbotron">
-                    <h2>New Arrivals</h2> 
-                    <p><%= interior.title %></p> 
-                </div>
+           <div class="carousel slide" data-ride="carousel" id="adCarousel">
+             <!-- Wrapper for slides -->
+             <div class="carousel-inner">
+              <% @count = 0 %>
+              <% @interiorideas.where(:show_on_home => 'yes').each do |interior| %>
+              <% if @count == 0 %>
+              <div class="item active">
+               <div class="card">
+                <%= link_to image_tag(interior.image_url, :class => 'card-img-top img-fluid w-100'), user_interioridea_path(interior) %>
+              </div>
+              <div class="jumbotron">
+                <h2>New Arrivals</h2> 
+                <p><%= interior.title %></p> 
+              </div>
             </div>
-            <% end %>
-            <% @count = 1 %>
-            <% end %>
+            <% else %>
+            <div class="item">
+             <div class="card">
+              <%= link_to image_tag(interior.image_url, :class => 'card-img-top img-fluid w-100'), user_interioridea_path(interior) %>
+            </div>
+            <div class="jumbotron">
+              <h2>New Arrivals</h2> 
+              <p><%= interior.title %></p> 
+            </div>
+          </div>
+          <% end %>
+          <% @count = 1 %>
+          <% end %>
         </div>
         <div class="spacer-single"></div>
+      </div>
     </div>
-</div>
-</div><!-- /.modal-content -->
+  </div><!-- /.modal-content -->
 </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 </div>
 <script>
-    const left = document.querySelector(".left");
-    const right = document.querySelector(".right");
-    const container = document.querySelector(".slider-container");
-    left.addEventListener("mouseenter", () => {
-      container.classList.add("hover-left");
+  const left = document.querySelector(".left");
+  const right = document.querySelector(".right");
+  const container = document.querySelector(".slider-container");
+  left.addEventListener("mouseenter", () => {
+    container.classList.add("hover-left");
   });
-    left.addEventListener("mouseleave", () => {
-      container.classList.remove("hover-left");
+  left.addEventListener("mouseleave", () => {
+    container.classList.remove("hover-left");
   });
-    right.addEventListener("mouseenter", () => {
-      container.classList.add("hover-right");
+  right.addEventListener("mouseenter", () => {
+    container.classList.add("hover-right");
   });
-    right.addEventListener("mouseleave", () => {
-      container.classList.remove("hover-right");
+  right.addEventListener("mouseleave", () => {
+    container.classList.remove("hover-right");
   });
 </script>
 
 <script>
-    $(document).ready(function(){
-      $('.customer-logos').slick({
-        slidesToShow: 6,
-        slidesToScroll: 1,
-        autoplay: true,
-        autoplaySpeed: 1500,
-        arrows: false,
-        dots: false,
-        pauseOnHover: true,
-        responsive: [{
-          breakpoint: 768,
-          settings: {
-            slidesToShow: 4
+  $(document).ready(function(){
+    $('.customer-logos').slick({
+      slidesToShow: 6,
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 1500,
+      arrows: false,
+      dots: false,
+      pauseOnHover: true,
+      responsive: [{
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 4
         }
-    }, {
-      breakpoint: 520,
-      settings: {
-        slidesToShow: 3
-    }
-}]
-});
+      }, {
+        breakpoint: 520,
+        settings: {
+          slidesToShow: 3
+        }
+      }]
+    });
   });
 </script>
 <script>
-    $(window).load(function(){
-       setTimeout(function(){
-           $('#admodal').modal('show');
-       }, 2000);
-   });
+  $(window).load(function(){
+   setTimeout(function(){
+     $('#admodal').modal('show');
+   }, 2000);
+ });
 
-    $('#adCarousel').carousel({
-     interval: 2000,
-     cycle: true
+  $('#adCarousel').carousel({
+   interval: 2000,
+   cycle: true
  });
 </script>
 
 <script>
-   $(document).ready(function() {
-     var owl = $("#slider-carousel");
-     owl.owlCarousel({
-       items: 4,
-       itemsDesktop: [1000, 4],
-       itemsDesktopSmall: [900, 2],
-       itemsTablet: [600, 1],
-       itemsMobile: false,
-       pagination: false
+ $(document).ready(function() {
+   var owl = $("#slider-carousel");
+   owl.owlCarousel({
+     items: 4,
+     itemsDesktop: [1000, 4],
+     itemsDesktopSmall: [900, 2],
+     itemsTablet: [600, 1],
+     itemsMobile: false,
+     pagination: false
    });
-     $(".next").click(function() {
-       owl.trigger('owl.next');
+   $(".next").click(function() {
+     owl.trigger('owl.next');
    })
-     $(".prev").click(function() {
-       owl.trigger('owl.prev');
+   $(".prev").click(function() {
+     owl.trigger('owl.prev');
    })
  });
 </script>

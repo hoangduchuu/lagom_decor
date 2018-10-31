@@ -5,6 +5,7 @@ class User::VideosController < ApplicationController
 	def show
 		@contact = Contact.all
 		@video = Video.find(params[:id])
+		@banners = Banner.all
 	end
 
 	private

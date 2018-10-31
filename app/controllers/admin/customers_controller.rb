@@ -15,12 +15,13 @@ class Admin::CustomersController < ApplicationController
 		@customer = Customer.find(params[:id])
 		@customer.destroy
 
-		redirect_to admin_dashboards_path
+		redirect_to admin_customers_path
 	end
 
 	def update
 		@customer = Customer.find(params[:id])
 		@customer.update(status: params[:status])
+		redirect_to action: "index"
 	end
 
 	private
