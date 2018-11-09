@@ -14,10 +14,10 @@
 
         <!-- subheader -->
         <section id="subheader-db" data-speed="8" data-type="background">
-            <div class="container">
+            <div class="container" style="padding-top: 60px;">
                 <div class="row">
                     <div class="col-md-12">
-                        <h1>Projects</h1>
+                        <h1 class="pull-left" style="color: white;"><%= truncate(sanitize(@video.project_name, :tags => %w(br a)), :length => 20) %></h1>
                         <ul class="crumb">
                             <li><a href="index.html">Home</a></li>
                             <li class="sep">/</li>

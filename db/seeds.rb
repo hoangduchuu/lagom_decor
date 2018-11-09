@@ -7,13 +7,20 @@ contact = Contact.create(
 	closedate: "Friday",
 	openat: "08:00",
 	closeat: "16:00")
+contact.save!
+
+Banner.create([{ name: 'home slider left image', image: '' }, { name: 'home slider right image', image: '' },
+	{ name: 'consulting page banner image', image: '' }, { name: 'contacts page banner image', image: '' }, 
+	{ name: 'interior ideas page banner image', image: '' }, { name: 'shop page banner image', image: '' }, 
+	{ name: 'projects page banner image', image: '' }, { name: 'videos play page banner image', image: '' }, 
+	{ name: 'projects single page banner image', image: '' }, { name: 'interior ideas single page banner image', image: '' }])
 
 admin = Admin.create(
-	    email: "anu.in.vietnam@gmail.com",
-	    password: "000000",
-	    password_confirmation: "000000",
-	    username: "anu",
-	    role: "admin",
-	    phone: "00000000000")
-	admin.skip_confirmation!
-	admin.save!
+	email: "anu.in.vietnam@gmail.com",
+	password: "000000",
+	password_confirmation: "000000",
+	username: "anu",
+	role: "admin",
+	phone: "00000000000")
+admin.skip_confirmation!
+admin.save!

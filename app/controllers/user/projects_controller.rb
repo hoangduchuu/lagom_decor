@@ -7,6 +7,7 @@ class User::ProjectsController < ApplicationController
 		@projects = Project.all
 		@videos = Video.all
 		@banners = Banner.all
+		@project_categories = ProjectCategory.all
 	end
 
 	def show

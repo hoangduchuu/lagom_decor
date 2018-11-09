@@ -7,6 +7,7 @@ class User::ProductsController < ApplicationController
 		@customer = Customer.new
 		@products = Product.all
 		@banners = Banner.all
+		@product_categories = ProductCategory.all
 	end
 
 	def create

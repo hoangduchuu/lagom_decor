@@ -59,7 +59,7 @@
         </div>
         <div class="col-xs-12 col-sm-6 col-md-6">
           <div class="form-group">
-            <%= f.select(:category, Project::CATEGORIES) %><p class="font-italic text-info small">choose the category where this project belongs to</p>
+            <%= f.collection_select :category, ProjectCategory.order(:category_name),:category_name,:show, include_blank: false %><p class="font-italic text-info small">choose the category where this project belongs to</p>
           </div>
         </div>
       </div>

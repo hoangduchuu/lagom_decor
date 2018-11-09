@@ -1,9 +1,9 @@
 <style media="screen">
 <% @banners.each do |banner| %>
-<% if banner.name == 'homepage slider left image' %>
+<% if banner.name == 'home slider left image' %>
 .image_div_left { background: url(<%= banner.image_url %>) center center no-repeat; }
 <% end %>
-<% if banner.name == 'homepage slider right image' %>
+<% if banner.name == 'home slider right image' %>
 .image_div_right { background: url(<%= banner.image_url %>) center center no-repeat; }
 <% end %>
 <% end %>
