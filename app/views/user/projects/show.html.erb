@@ -14,10 +14,10 @@
 
         <!-- subheader -->
         <section id="subheader-db" data-speed="8" data-type="background">
-            <div class="container">
+            <div class="container" style="padding-top: 60px;">
                 <div class="row">
                     <div class="col-md-12">
-                        <h1>Projects</h1>
+                        <h1 class="pull-left" style="color: white;"><% if @project.project_name.present? %><%= truncate(sanitize(@project.project_name, :tags => %w(br a)), :length => 20) %><% end %></h1>
                         <ul class="crumb">
                             <li><a href="index.html">Home</a></li>
                             <li class="sep">/</li>
@@ -37,9 +37,38 @@
 
             <div class="row">
                 <div class="col-md-8 project-images">
-                    <% if @project.image_one.present? %><%= image_tag @project.image_one_url %><% end %>
-                    <% if @project.image_two.present? %><%= image_tag @project.image_two_url %><% end %>
-                    <% if @project.image_three.present? %><%= image_tag @project.image_three_url %><% end %>
+                    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                        <!-- Carousel indicators -->
+                        <ol class="carousel-indicators">
+                            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                            <li data-target="#myCarousel" data-slide-to="1"></li>
+                            <li data-target="#myCarousel" data-slide-to="2"></li>
+                        </ol>   
+                        <!-- Wrapper for carousel items -->
+                        <div class="carousel-inner" style="max-height: 450px; width: auto;">
+                            <div class="item active">
+                                <%= image_tag @project.cover_photo_url if @project.cover_photo.present? %>
+                            </div>
+                            <div class="item">
+                                <%= image_tag @project.image_one_url if @project.image_one.present? %>
+                            </div>
+                            <div class="item">
+                                <%= image_tag @project.image_two_url if @project.image_two.present? %>
+                            </div>
+                            <div class="item">
+                                <%= image_tag @project.image_three_url if @project.image_three.present? %>
+                            </div>
+                        </div>
+                        <!-- Carousel controls -->
+                        <div class="slider_wrapper">
+                            <a class="carousel-control left" href="#myCarousel" data-slide="prev" style="padding: 150px 0;">
+                                <span><i class="fa fa-angle-left"></i></span>
+                            </a>
+                            <a class="carousel-control right" href="#myCarousel" data-slide="next" style="padding: 150px 0;">
+                                <span><i class="fa fa-angle-right"></i></span>
+                            </a>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-md-4">
                     <div class="project-info">

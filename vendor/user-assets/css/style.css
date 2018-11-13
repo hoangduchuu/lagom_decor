@@ -5667,3 +5667,23 @@ display:table;
 .news-item {
 	max-width: 100px;
 }
+
+.slider_wrapper {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.fa-angle-left,.fa-angle-right {
+  font-size: 40px !important;/*Dont use !important when you working on  different style sheet */
+  color: white;
+  position:absolute;
+   margin-top:22.5%;
+}
+
+.fa-angle-left {
+left:7%;
+}
+
+.fa-angle-right {
+  right:7%;
+}

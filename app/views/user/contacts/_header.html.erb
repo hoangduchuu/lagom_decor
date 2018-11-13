@@ -1,24 +1,24 @@
 <header class="header-bg">
- <div class="info">
+   <div class="info">
     <div class="container">
-       <div class="row">
-          <div class="col-md-12">
-            <% @contact.each do |c| %>
-            <div class="col"><%= t ".workinghours" %> <%= c.opendate %> - <%= c.closedate %> <span class="id-color"><strong><%= c.openat %> - <%= c.closeat %></strong></span></div>
-            <div class="col"><%= t ".phone" %> <span class="id-color"><strong><%= c.phone %></strong></span></div>
-            <div class="col"><%= t ".email" %><span class="id-color"><strong><%= c.email %></strong></span></div>
-            <!-- social icons -->
-            <div class="col social">
-                <a href="<%= c.facebook %>"><i class="fa fa-facebook"></i></a>
-                <a href="<%= c.twitter %>"><i class="fa fa-twitter"></i></a>
-                <a href="<%= c.google %>"><i class="fa fa-google-plus"></i></a>
-            </div>
-            <% end -%>
-            <!-- social icons close -->
-            <%= link_to_unless_current "English", locale: "en" %>
-            <%= link_to_unless_current "Tiếng Việt", locale: "vn" %>
+     <div class="row">
+      <div class="col-md-12">
+        <% @contact.each do |c| %>
+        <div class="col"><%= t ".workinghours" %> <%= c.opendate %> - <%= c.closedate %> <span class="id-color"><strong><%= c.openat %> - <%= c.closeat %></strong></span></div>
+        <div class="col"><%= t ".phone" %> <span class="id-color"><strong><%= c.phone %></strong></span></div>
+        <div class="col"><%= t ".email" %><span class="id-color"><strong><%= c.email %></strong></span></div>
+        <!-- social icons -->
+        <div class="col social">
+            <a href="<%= c.facebook %>"><i class="fa fa-facebook"></i></a>
+            <a href="<%= c.twitter %>"><i class="fa fa-twitter"></i></a>
+            <a href="<%= c.google %>"><i class="fa fa-google-plus"></i></a>
         </div>
+        <% end -%>
+        <!-- social icons close -->
+        <%= link_to_unless_current "English", locale: "en" %>
+        <%= link_to_unless_current "Tiếng Việt", locale: "vn" %>
     </div>
+</div>
 </div>
 </div>
 
@@ -27,9 +27,7 @@
         <div class="col-md-12">
             <!-- logo begin -->
             <div id="logo">
-                <a href="index.html">
-                    <%= link_to image_tag('logo.png', :class => 'logo'), user_homes_path %>
-                </a>
+                <%= link_to image_tag('logo.png', :class => 'logo'), user_homes_path %>
             </div>
             <!-- logo close -->
 
@@ -42,14 +40,15 @@
                 <ul id="mainmenu">
                     <li><%= link_to (t '.home'), user_homes_path %></li>
                     <li><%= link_to (t '.projects'), user_projects_path %></li>
-                        <li><%= link_to (t '.interiorideas'), user_interiorideas_path %></li>
-                            <li><%= link_to (t '.shop'), user_products_path %></li>
-                            <li><%= link_to (t '.consulting'), user_consultings_path %></li>  
-                            <li><%= link_to (t '.contact'), user_contacts_path %></li>
-                        </ul>
-                    </nav>
-                </div>
-                <!-- mainmenu close -->
-            </div>
+                    <li><%= link_to (t '.interiorideas'), user_interiorideas_path %></li>
+                    <li><%= link_to (t '.shop'), user_products_path %></li>
+                    <li><%= link_to (t '.consulting'), user_consultings_path %></li>
+                    <li><%= link_to (t '.introduction'), user_abouts_path %></li>    
+                    <li><%= link_to (t '.contact'), user_contacts_path %></li>
+                </ul>
+            </nav>
         </div>
-    </header>
+        <!-- mainmenu close -->
+    </div>
+</div>
+</header>

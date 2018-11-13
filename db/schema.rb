@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181109042419) do
+ActiveRecord::Schema.define(version: 20181111171003) do
 
   create_table "admins", force: :cascade do |t|
     t.string "username", default: "", null: false
@@ -162,6 +162,13 @@ ActiveRecord::Schema.define(version: 20181109042419) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "paintings", force: :cascade do |t|
+    t.string "name"
+    t.string "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "product_categories", force: :cascade do |t|
     t.string "category_name"
     t.string "show"
@@ -204,6 +211,7 @@ ActiveRecord::Schema.define(version: 20181109042419) do
     t.string "edited_by"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "new"
   end
 
   create_table "project_categories", force: :cascade do |t|
@@ -221,6 +229,14 @@ ActiveRecord::Schema.define(version: 20181109042419) do
     t.string "category"
     t.index ["locale"], name: "index_project_category_translations_on_locale"
     t.index ["project_category_id"], name: "index_project_category_translations_on_project_category_id"
+  end
+
+  create_table "project_images", force: :cascade do |t|
+    t.integer "project_id"
+    t.string "name"
+    t.string "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "project_translations", force: :cascade do |t|

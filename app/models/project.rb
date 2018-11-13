@@ -1,5 +1,7 @@
 class Project < ApplicationRecord
 
+	has_many :project_images, dependent: :destroy
+
 	mount_uploader :cover_photo, ProjectsCoverUploader
 	mount_uploader :image_one, ProjectsCoverUploader
 	mount_uploader :image_two, ProjectsCoverUploader

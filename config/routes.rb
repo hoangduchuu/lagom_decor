@@ -28,6 +28,8 @@ root :to => 'admin/dashboards#index'
 		resources :interioridea_categories
 		resources :services
 		resources :banners
+		resources :project_images
+		resources :paintings
 	end
 
 	namespace :user do
@@ -40,6 +42,7 @@ root :to => 'admin/dashboards#index'
 		resources :interiorideas
 		resources :projects
 		resources :videos
+		resources :abouts
 	end
 	end
 end

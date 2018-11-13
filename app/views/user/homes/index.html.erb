@@ -22,11 +22,15 @@
       <section id="section-slider" class="fullwidthbanner-container" aria-label="section-slider" style="padding-top: 0;">
         <div id="revolution-slider" class="slider-container">
           <div class="split left image_div_left">
-            <%= link_to 'Consulting', user_consultings_path, :class => 'but-slider' %>
+            <%= link_to user_consultings_path, :class => 'but-slider' do %>
+            <%= t ".left_text" %>
+            <% end %>
           </div>
 
           <div class="split right image_div_right">
-            <%= link_to 'Shop with us', user_products_path, :class => 'but-slider' %>
+            <%= link_to user_products_path, :class => 'but-slider' do %>
+            <%= t ".right_text" %>
+            <% end %>
           </div>
         </div>
       </section>
@@ -69,49 +73,47 @@
               <div class="spacer-single"></div>
             </div>
 
-            <div class="col-md-4 wow fadeIn" data-wow-delay="0s">
+            <div class="col-md-6 wow fadeIn" data-wow-delay="0s">
               <div class="box-number">
                 <span class="number bg-color wow rotateIn" data-wow-delay=".5s">1</span>
                 <div class="text">
-                  <h3><span class="id-color">Interior Expertise</span></h3>
-                  <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae.</p>
+                  <h3><span class="id-color"><%= t ".rason_one_heading" %></span></h3>
+                  <p><%= t ".reason_one_text" %></p>
                 </div>
               </div>
             </div>
 
-            <div class="col-md-4 wow fadeIn" data-wow-delay=".25s">
+            <div class="col-md-6 wow fadeIn" data-wow-delay=".25s">
               <div class="box-number">
                 <span class="number bg-color wow rotateIn" data-wow-delay=".75s">2</span>
                 <div class="text">
-                  <h3><span class="id-color">Awards Winning</span></h3>
-                  <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae.</p>
+                  <h3><span class="id-color"><%= t ".reason_two_heading" %></span></h3>
+                  <p><%= t ".reason_two_text" %></p>
                 </div>
               </div>
             </div>
 
-            <div class="col-md-4 wow fadeIn" data-wow-delay=".5s">
+            <div class="col-md-6 wow fadeIn" data-wow-delay=".5s">
               <div class="box-number">
                 <span class="number bg-color wow rotateIn" data-wow-delay="1s">3</span>
                 <div class="text">
-                  <h3><span class="id-color">Affordable Price</span></h3>
-                  <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae.</p>
+                  <h3><span class="id-color"><%= t ".reason_three_heading" %></span></h3>
+                  <p><%= t ".reason_three_text" %></p>
                 </div>
               </div>
             </div>
 
-            <div class="spacer-single"></div>
-
-            <div class="col-md-4 wow fadeIn" data-wow-delay=".75s">
+            <div class="col-md-6 wow fadeIn" data-wow-delay=".75s">
               <div class="box-number">
                 <span class="number bg-color wow rotateIn" data-wow-delay="1.25s">4</span>
                 <div class="text">
-                  <h3><span class="id-color">Free Consultation</span></h3>
-                  <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae.</p>
+                  <h3><span class="id-color"><%= t ".reason_four_heading" %></span></h3>
+                  <p><%= t ".reason_four_text" %></p>
                 </div>
               </div>
             </div>
 
-            <div class="col-md-4 wow fadeIn" data-wow-delay="1s">
+            <!--<div class="col-md-4 wow fadeIn" data-wow-delay="1s">
               <div class="box-number">
                 <span class="number bg-color wow rotateIn" data-wow-delay="1.5s">5</span>
                 <div class="text">
@@ -119,7 +121,7 @@
                   <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae.</p>
                 </div>
               </div>
-            </div>
+            </div> -->
           </div>
         </div>
       </section>
@@ -134,18 +136,31 @@
         </div>
       </div>
 
-      <div id="owl-demo" class="owl-carousel">
-        <% @projects.each do |pro| %>
-        <div class="item">
-          <%= link_to user_project_path(pro) do %>
-          <div class="overlay">
+      <div id="content" class="no-top no-bottom">
+
+        <div class="owl-custom-nav">
+          <a class="btn-next"></a>
+          <a class="btn-prev"></a>
+        </div>
+        <div id="gallery-carousel-4" class="owl-slide">
+          <% @projects.each do |pro| %>
+          <!-- gallery carousel-item -->
+          <div class="carousel-item">
+            <div class="picframe">
+              <%= link_to user_project_path(pro) do %>
+              <span class="pf_text">
+                <span class="project-name"><%= pro.project_name %></span>
+              </span>
+              <% if pro.cover_photo.present? %>
+              <%= image_tag pro.cover_photo_url %>
+              <% end %>
+              <% end %>
+            </div>
+
           </div>
-          <% if pro.cover_photo.present? %>
-          <%= image_tag pro.cover_photo_url %>
-          <% end %>
+          <!-- close gallery carousel-item -->
           <% end %>
         </div>
-        <% end %>
       </div>
 
       <!-- section begin -->
@@ -307,18 +322,6 @@
    interval: 2000,
    cycle: true
  });
-</script>
-
-<script>
-  $(document).ready(function() {
-    $("#owl-demo").owlCarousel({
-      items: 4,
-      lazyLoad: true,
-      autoPlay: true,
-      speed: 900,
-      pagination: false,
-    })
-  });
 </script>
 
 </body>
