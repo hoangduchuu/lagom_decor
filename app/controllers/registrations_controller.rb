@@ -1,5 +1,5 @@
 class RegistrationsController <Devise::RegistrationsController
-	#before_action :authenticate_admin!, :redirect_unless_admin
+	before_action :authenticate_admin!, :redirect_unless_admin
 
 	private
 	def redirect_unless_admin
