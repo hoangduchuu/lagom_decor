@@ -5,6 +5,7 @@ class Admin::DashboardsController < ApplicationController
 
 	def index
 		@admins = Admin.all
+		@permissions = Permission.all
 		@customers = Customer.all.order(id: :desc)
 	end
 

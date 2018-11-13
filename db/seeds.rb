@@ -25,3 +25,5 @@ admin = Admin.create(
 	phone: "00000000000")
 admin.skip_confirmation!
 admin.save!
+
+permission = Permission.create(admin_id: "1", status: "off")
