@@ -1,5 +1,8 @@
 <ol class="breadcrumb" style="margin-left: 10px; margin-right: 10px;">
   <li class="breadcrumb-item active">WHAT WE DO</li>
+  <% if @services.count < 4 %>
+  <%= link_to 'NEW SERVICE', new_admin_service_path, :class => 'btn btn-sm btn-success left-right' %>
+  <% end %>
 </ol>
 
 <div id="gallery" class="row grid_gallery gallery de-gallery wow fadeInUp" data-wow-delay=".3s" style="margin-left: 10px; margin-right: 10px;">

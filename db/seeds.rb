@@ -13,7 +13,8 @@ Banner.create([{ name: 'home slider left image', image: '' }, { name: 'home slid
 	{ name: 'consulting page banner image', image: '' }, { name: 'contacts page banner image', image: '' }, 
 	{ name: 'interior ideas page banner image', image: '' }, { name: 'shop page banner image', image: '' }, 
 	{ name: 'projects page banner image', image: '' }, { name: 'videos play page banner image', image: '' }, 
-	{ name: 'projects single page banner image', image: '' }, { name: 'interior ideas single page banner image', image: '' }])
+	{ name: 'projects single page banner image', image: '' }, { name: 'interior ideas single page banner image', image: '' },
+	{ name: 'consulting page center image', image: '' }])
 
 admin = Admin.create(
 	email: "anu.in.vietnam@gmail.com",

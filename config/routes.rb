@@ -30,6 +30,7 @@ root :to => 'admin/dashboards#index'
 		resources :banners
 		resources :project_images
 		resources :paintings
+		resources :moderators
 	end
 
 	namespace :user do
