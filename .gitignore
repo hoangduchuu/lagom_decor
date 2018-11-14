@@ -25,6 +25,6 @@
 /config/local_env.yml
 sendgrid.env
 
-/config/environments/production.rb
+#/config/environments/production.rb
 
-/config/initializers/carrierwave.rb
+#/config/initializers/carrierwave.rb
