@@ -1,5 +1,5 @@
 class UserMailer < ApplicationMailer
-	default from: "anu.in.vietnam@gmail.com"
+	default from: "support.royaldragon.vn"
   # Subject can be set in your I18n file at config/locales/en.yml
   # with the following lookup:
   #
