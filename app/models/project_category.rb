@@ -1,3 +1,3 @@
 class ProjectCategory < ApplicationRecord
-	translates :category
+	translates :show
 end

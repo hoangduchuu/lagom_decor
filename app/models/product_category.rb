@@ -1,3 +1,3 @@
 class ProductCategory < ApplicationRecord
-	translates :category
+	translates :show
 end
