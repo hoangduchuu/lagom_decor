@@ -6,6 +6,6 @@ class CreateProjectCategories < ActiveRecord::Migration[5.1]
 
       t.timestamps
     end
-    ProjectCategory.create_translation_table! :category => :string
+    ProjectCategory.create_translation_table! :show => :string
   end
 end

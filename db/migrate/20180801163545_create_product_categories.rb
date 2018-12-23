@@ -6,6 +6,6 @@ class CreateProductCategories < ActiveRecord::Migration[5.1]
 
       t.timestamps
     end
-    ProductCategory.create_translation_table! :category => :string
+    ProductCategory.create_translation_table! :show => :string
   end
 end
