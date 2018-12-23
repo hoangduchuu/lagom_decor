@@ -1,0 +1,135 @@
+<style media="screen">
+<% @banners.each do |banner| %>
+<% if banner.name == 'about-us-banner' %>
+#subheader-db { background: url(<%= banner.image_url %>) center center no-repeat; }
+<% end %>
+<% end %>
+</style>
+<body class="page-services">
+    <div id="wrapper">
+        <!-- header begin -->
+        <%= render 'user/contacts/header' %>
+        <!-- header close -->
+
+        <!-- subheader -->
+        <section id="subheader-db" data-speed="8" data-type="background">
+            <div class="container" style="padding-top: 60px;">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="pull-left" style="color: white;">Introduce</h1>
+                        <ul class="crumb">
+                            <li><a href="index.html">Home</a></li>
+                            <li class="sep">/</li>
+                            <li>Introduce</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- subheader close -->
+        <div id="content" class="no-top no-bottom">
+            <section id="section-about-us-2" class="side-bg no-padding">
+                <div class="image-container col-md-5 pull-left" data-delay="0" style="padding-top: 10px;">
+                    <% @banners.each do |banner| %>
+                    <% if banner.name == 'about-us-image' %>
+                    <%= image_tag banner.image_url %>
+                    <% end %>
+                    <% end %></div>
+
+                    <div class="container">
+                        <div class="row">
+                            <div class="inner-padding">
+                                <div class="col-md-6 col-md-offset-6 wow fadeInRight" data-wow-delay=".5s">
+                                    <h2>House-stylist dành cho nhà đầu tư:</h2>
+
+                                    <p class="intro">Bạn là nhà đầu tư bất động sản căn hộ cho thuê, bạn đang kinh doanh dịch vụ nhà ở, bạn cần set-up một không gian nội thất với đầy đủ các tiêu chí sau:</p>
+                                    <h3>
+                                        1. Thẩm mỹ, tinh tế, có style thiết kế riêng biệt <br><br>
+                                        2. Tiết kiệm thời gian <br><br>
+                                        3. Tiết kiệm chi phí
+                                    </h3>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <section id="section-why-choose-us-3" class="text-light">
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-9 wow fadeIn" data-wow-delay="0s">
+                            <div class="box-number square">
+                                <span class="number bg-color wow rotateIn" data-wow-delay=".5s">1</span>
+                                <div class="text">
+                                    <h3><span class="id-color">Step 01</span></h3>
+                                    <p style="color: black;">Đưa ra concept thiết kế</p>
+                                    <p><br></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-9 wow fadeIn" data-wow-delay=".25s">
+                            <div class="box-number square">
+                                <span class="number bg-color wow rotateIn" data-wow-delay=".75s">2</span>
+                                <div class="text">
+                                    <h3><span class="id-color">Step 02</span></h3>
+                                    <p style="color: black;">Lên danh sách các vật dụng và chi phí</p>
+                                    <p><br></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-9 wow fadeIn" data-wow-delay=".5s">
+                            <div class="box-number square">
+                                <span class="number bg-color wow rotateIn" data-wow-delay="1s">3</span>
+                                <div class="text">
+                                    <h3><span class="id-color">Step 03</span></h3>
+                                    <p style="color: black;">Shopping - order sản phẩm hoặc tiến hành sản xuất (đối với những đồ nội thất do Lagom thiết kế và sản xuất)</p>
+                                    <p><br></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-9 wow fadeIn" data-wow-delay=".75s">
+                            <div class="box-number square">
+                                <span class="number bg-color wow rotateIn" data-wow-delay="1.25s">4</span>
+                                <div class="text">
+                                    <h3><span class="id-color">Step 04</span></h3>
+                                    <p style="color: black;">Nhận hàng, bài trí hoàn thiện không gian</p>
+                                    <p><br></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-9 wow fadeIn" data-wow-delay="1s">
+                            <div class="box-number square">
+                                <span class="number bg-color wow rotateIn" data-wow-delay="1.5s">5</span>
+                                <div class="text">
+                                    <h3><span class="id-color">Step 05</span></h3>
+                                    <p style="color: black;">Chụp hình không gian hoàn thiện và gửi cho bạn những bộ ảnh đẹp nhất để gây ấn tượng với khách hàng.</p>
+                                    <p><br></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 wow fadeIn" data-wow-delay="1.25s">
+                            <%= link_to user_products_path do %>
+                            <div class="box-number square">
+                                <span class="number bg-color wow rotateIn" data-wow-delay="1.75s"><i class="fa fa-shopping-cart"></i></span>
+                                <div class="text">
+                                    <h3><span class="id-color">Shop with us</span></h3>
+                                    <p style="color: black;">check out our latest furnitures and interior designs</p>
+                                </div>
+                            </div>
+                            <% end %>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- section close -->
+            <!-- contact us Sliding div END -->
+            <%= render 'user/contacts/footer' %>
+        </body>

@@ -1,0 +1,29 @@
+<ol class="breadcrumb" style="margin-left: 10px; margin-right: 10px;">
+  <li class="breadcrumb-item active">BANNER IMAGES</li>
+</ol>
+
+<div id="gallery" class="row grid_gallery gallery de-gallery wow fadeInUp" data-wow-delay=".3s" style="margin-left: 10px; margin-right: 10px;">
+  <% @banners.each do |ser| %>
+  <div class="col-md-3 item">
+    <div class="picframe">
+      <div class="card mb-3">
+        <% if ser.image.present? %>
+        <%= link_to image_tag(ser.image_url, :class => 'card-img-top img-fluid w-100'), edit_admin_banner_path(ser) %>
+        <% else %>
+        <%=image_tag('product-not-chosen.jpg', :class => 'card-img-top img-fluid w-100')%>
+        <% end %>
+        <div class="card-body">
+          <div class="row">
+          <h6 class="card-title mb-1"><%= link_to ser.name, edit_admin_banner_path(ser) %></h6>
+        </div>
+        </div>
+        <hr class="my-0">
+        <div class="card-body py-2 small">
+          <%= link_to ' edit', edit_admin_banner_path(ser), :class => 'fas fa fa-pencil mr-3 d-inline-block' %>
+        </div>
+        <div class="card-footer small text-muted">Last updated <%= ser.updated_at.to_date %></div>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>

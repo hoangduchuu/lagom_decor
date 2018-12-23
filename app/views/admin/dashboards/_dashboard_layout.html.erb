@@ -99,6 +99,12 @@
         <span class="nav-link-text"><%= t '.contact' %></span>
         <% end %>
       </li>
+      <li class="nav-item" data-toggle="tooltip" data-placement="right" title="">
+        <%= link_to admin_banners_path, :class => 'nav-link' do %>
+        <i class="fa fa-picture-o"></i>
+        <span class="nav-link-text"><%= t '.banner' %></span>
+        <% end %>
+      </li>
     </ul>
     <ul class="navbar-nav sidenav-toggler">
       <li class="nav-item">
@@ -117,7 +123,7 @@
             <% end %>
           </span>
           <span class="indicator text-warning d-none d-lg-block">
-            <i class="fa fa-fw fa-circle"></i>
+            
           </span>
         </a>
         <div class="dropdown-menu" aria-labelledby="alertsDropdown">

@@ -6,6 +6,7 @@ class User::ConsultingsController < ApplicationController
 		@customer = Customer.new
 		@contact = Contact.all
 		@consulting = Consulting.all
+		@banners = Banner.all
 	end
 
 	def create

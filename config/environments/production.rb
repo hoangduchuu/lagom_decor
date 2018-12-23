@@ -28,7 +28,7 @@ Rails.application.configure do
   # config.assets.css_compressor = :sass
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
-  config.assets.compile = false
+  config.assets.compile = true
 
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
 
@@ -89,18 +89,18 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  config.action_mailer.default_url_options = { :host => 'anuruddhika.website' }  
+  config.action_mailer.default_url_options = { :host => 'your host name' }  
   config.action_mailer.delivery_method = :smtp  
   config.action_mailer.perform_deliveries = true  
   config.action_mailer.raise_delivery_errors = false  
   config.action_mailer.default :charset => "utf-8"  
   config.action_mailer.smtp_settings = {  
-    address: "smtp.gmail.com",
+    address: "smtp.gmail.com", #keep it if you use gmail
     port: 587,
-    domain: "anuruddhika.website",
+    domain: "your domain name",
     authentication: "plain",
     enable_starttls_auto: true,
-    user_name: "anu.in.vietnam@gmail.com",
-    password: "pxbbvvnpqhxwgvyx"
+    user_name: "your email id", #try using your gmail username and password
+    password: "your password"
   }
 end

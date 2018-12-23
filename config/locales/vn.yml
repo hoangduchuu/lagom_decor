@@ -7,6 +7,7 @@ vn:
         interiorideas: "Ý TƯỞNG NỘI THẤT"
         shop: "SẢN PHẨM"
         consulting: "TƯ VẤN"
+        introduction: "Giới thiệu"
         contact: "LIÊN HỆ"
         workinghours: "Giờ làm việc"
         phone: "Điện thoại"
@@ -42,6 +43,16 @@ vn:
         5_reasons: "5 reasons to choose lagomdecor"
         customer_says: "ý kiến khách hàng"
         partners: "hân hạnh được hợp tác"
+        reason_one_heading: "Đội ngũ nhân viên chuyên nghiệp"
+        reason_one_text: "- Đến với Lagom Decor, khách hàng sẽ được đội ngũ những nhà kiến trúc sư, cử nhân thiết kế nội thất chuyên nghiệp tư vấn, đưa ra những giải pháp để định hình về phong cách thiết kế, nhu cầu của mình và thoả mãn một cách tốt nhất những yêu cầu đó."
+        reason_two_heading: "Đảm bảo uy tín, cam kết chất lượng vật tư thi công"
+        reason_two_text: "- Xưởng gỗ phục vụ việc sản xuất thi công với máy móc chuyên nghiệp và hiện đại (hình ảnh, địa chỉ)- Hoàn lại sản phẩm mới nếu sau khi kiểm định, lõi gỗ và vật tư không đúng chất lượng như đã báo - Bảo hành miễn phí trong vòng 12 tháng, có giấy chứng nhận bảo hành và hướng dẫn sử dụng từ Lagom Decor"
+        reason_three_heading: "Thẩm mỹ"
+        reason_three_text: "Thiết kế thẩm mỹ- tiện nghi- hiệu quả sử dụng tối đa"
+        reason_four_heading: "Nhanh chóng."
+        reason_four_text: "Luôn bám sát tiến độ đã đề ra, giúp khách hàng rút ngắn thời gian thi công- set up nội thất, đẩy nhanh thời gian đưa vào kinh doanh vận hành."
+        left_text: "tư vấn"
+        right_text: "Giới thiệu"
 
     projects:
       index:
@@ -49,30 +60,35 @@ vn:
         home: "trang chủ"
         all_projects: "tất cả dự án"
 
-    projects:
+    interiorideas:
       index:
         interiorideas: "dự án"
         home: "trang chủ"
         popular: "thiết kế được ưa chuộng"
         recent: "thiết kế mới"
 
-    projects:
+    shops:
       index:
         products: "sản phẩm"
         home: "trang chủ"
         new: "sản phẩm mới"
         top_rated: "sản phẩm được đánh giá cao"
 
-    projects:
+    consultings:
       index:
         process: "quy trình tư vấn"
         contact_us: "Liên hệ"
         faq: "các câu hỏi thường gặp"
-        no_01: "phong cách của bạn là gì"
-        no_02: "từ phong cách đến giải pháp"
-        no_03: "hiện thực hoá giải pháp"
-        no_04: "xây dựng & lắp đặt"
-        no_05: "công trình đã sẵn sàng chào đón bạn"
+        no_01: "Tư vấn và thiết kế concept"
+        no_02: "Thiết kế 3D"
+        no_03: "Thiết kế 2D"
+        no_04: "Thi công"
+        no_05: "Set up và trang trí"
+        no_01_text: "Sau khi tìm hiểu yêu cầu thiết kế và nắm bắt phong cách cá nhân của từng KH, Lagom sẽ tiến hành lên bản concept thiết kế và tư vấn bố trí các không gian chức năng. Giúp KH định hình rõ phong cách thiết kế và bố trí tổng thể của căn nhà, từ đó làm cơ sở cho các bước thiết kế chi tiết tiếp theo"
+        no_02_text: "Dựa trên bản vẽ mặt bằng bố trí không gian chức năng và concept thiết kế đã được duyệt, Lagom sẽ lên bản vẽ thiết kế phối cảnh 3D với từng góc nhìn trong căn nhà để KH có thể hình dung được tổng thể thiết kế, cũng như vật liệu, màu sắc và ánh sáng của không gian, từ đó có những điều chỉnh thích hợp và đưa ra quyết định về phương án thiết kế. "
+        no_03_text: "Sau khi thống nhất phương án thiết kế, bản thiết kế cuối cùng sẽ được triển khai chi tiết thi công với đầy đủ các thông tin về kích thước, mã vật liệu, mã màu sắc. Lagom sẽ cùng ngồi lại với KH để giải trình về các chi tiết cần thiết và điều chỉnh nếu có để phù hợp hơn với thói quen sử dụng của từng KH. Bước này đảm bảo việc thi công bám sát với thiết kế nhất, cũng như phù hợp với quá trình sử dụng lâu dài sau này"
+        no_04_text: "Lập dự toán chi phí thi công, danh mục các sản phẩm cần được đặt hàng, lên tiến độ thi công, triển khai sản xuất và lắp đặt theo tiến độ"
+        no_05_text: "Set-up trang trí nội thất và hoàn thiện công trình"
 
   admin:
     dashboards:
@@ -85,6 +101,7 @@ vn:
         shop: "Shop"
         consulting: "Tư vấn"
         contact: "Liên hệ"
+        banner: "banner hình ảnh"
         alert: "Báo động"
         logout: "Đăng xuất"
         leave: "Sẵn sáng rời khỏi"
@@ -146,6 +163,13 @@ vn:
         logout: "Đăng xuất"
         leave: "Sẵn sàng rời khỏi ?"
         password_again: "Lần đăng nhập sau bạn sẽ phải nhập lại tên đăng nhập và mật khẩu của mình..."
+
+    project_categories:
+      index:
+        name: "category name"
+        display_name: "display name"
+        operations: "operations"
+        question: "bạn có chắc không ?"
 
     contacts:
       index:

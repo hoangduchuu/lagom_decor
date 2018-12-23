@@ -1,0 +1,65 @@
+<%= form_with model: [:admin, @banner], local: true do |f| %>
+<div class="row" style="margin-left: 10px; margin-right: 10px;">
+  <div class="col-md-4">
+    <div class="picframe col-md-8">
+      <div class="card mb-3">
+        <% if @banner.image.present? %>
+        <%= image_tag @banner.image_url, :class => 'card-img-top img-fluid w-100', :id => 'img_prev' %>
+        <% else %>
+        <%=image_tag('product-not-chosen.jpg', :class => 'card-img-top img-fluid w-100', :id => 'img_prev')%>
+        <% end %>
+        <div class="card-body">
+          <h6 class="card-title mb-1">Card Image</h6>
+        </div>
+        <hr class="my-0">
+        <div class="card-body py-2 small">    
+          <label class="btn btn-sm btn-primary">
+            Browse&hellip; <%= f.file_field :image, :class => 'interior-btn', :onchange => 'readURL(this);' %>
+          </label>
+        </div>
+        <div class="card-footer font-italic small text-info">Note : for a better out-look on the webstie, please choose picture size as 600 x 600 pixels</div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-8">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-9">
+          <div class="form-group">
+            <%= f.text_field :name, :class => 'form-control input-lg', :placeholder => 'please input product name here ...', :readonly => 'true' %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container" style="padding-bottom: 20px;">
+  <div class="row">
+    <div class="col-xs-12 col-sm-8 col-md-12 col-sm-offset-2 col-md-offset-3">
+      <form role="form">
+        <hr class="colorgraph">
+        <hr class="colorgraph">
+        <div class="row">
+          <div class="col-xs-12 col-md-6"><%= link_to 'No! I changed my mind', admin_banners_path, :class => 'btn btn-danger btn-block btn-lg' %></div> 
+          <div class="col-xs-12 col-md-6"><%= f.submit 'save this banner', :class => 'btn btn-success btn-block btn-lg' %></div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<% end %>
+
+<script>
+  function readURL(input) {
+    if (input.files && input.files[0]) {
+      var reader = new FileReader();
+
+      reader.onload = function (e) {
+        $('#img_prev')
+        .attr('src', e.target.result)
+      };
+
+      reader.readAsDataURL(input.files[0]);
+    }
+  }
+</script>

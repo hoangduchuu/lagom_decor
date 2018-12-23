@@ -7,6 +7,7 @@ en:
         interiorideas: "INTERIOR IDEAS"
         shop: "SHOP"
         consulting: "CONSULTING"
+        introduction: "ABOUT US"
         contact: "CONTACT"
         workinghours: "Working Hours"
         phone: "Phone"
@@ -37,11 +38,22 @@ en:
     homes:
       index:
         consulting: "HOME"
+        wedo: "What we Do"
         shop_with_us: "PROJECTS"
         what_we_do: "INTERIOR IDEAS"
         5_reasons: "5 reasons to choose lagomdecor"
         customer_says: "customer says"
         partners: "proudly partners with"
+        reason_one_heading: "heading"
+        reason_one_text: "text"
+        reason_two_heading: "heading"
+        reason_two_text: "text"
+        reason_three_heading: "heading"
+        reason_three_text: "text"
+        reason_four_heading: "heading"
+        reason_four_text: "text"
+        left_text: "consulting"
+        right_text: "about us"
 
     projects:
       index:
@@ -49,21 +61,21 @@ en:
         home: "home"
         all_projects: "all projects"
 
-    projects:
+    interiorideas:
       index:
         interiorideas: "projects"
         home: "home"
         popular: "popular designs"
         recent: "new designs"
 
-    projects:
+    shops:
       index:
         products: "products"
         home: "home"
         new: "new release"
         top_rated: "top rated products"
 
-    projects:
+    consultings:
       index:
         process: "consulting process"
         contact_us: "Contact Us"
@@ -73,6 +85,11 @@ en:
         no_03: "realization of solution"
         no_04: "construction & installation"
         no_05: "the apartment is ready to welcome you"
+        no_01_text: "what is your style ?"
+        no_02_text: "from style to solution"
+        no_03_text: "realization of solution"
+        no_04_text: "construction & installation"
+        no_05_text: "the apartment is ready to welcome you"
 
   admin:
     dashboards:
@@ -85,6 +102,7 @@ en:
         shop: "Shop"
         consulting: "Consulting"
         contact: "Contact"
+        banner: "Banner Images"
         alert: "Alert"
         logout: "Logout"
         leave: "Ready to Leave ?"
@@ -152,6 +170,7 @@ en:
         name: "category name"
         display_name: "display name"
         operations: "operations"
+        question: "are you sure ?"
 
     contacts:
       index:

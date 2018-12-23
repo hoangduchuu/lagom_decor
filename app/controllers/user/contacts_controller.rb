@@ -5,6 +5,7 @@ class User::ContactsController < ApplicationController
 	def index
 		@customer = Customer.new
 		@contact = Contact.all
+		@banners = Banner.all
 	end
 
 	def create

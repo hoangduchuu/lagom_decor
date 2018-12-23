@@ -1,5 +1,5 @@
 class Admin::InteriorideaCategoriesController < ApplicationController
-	before_action :authenticate_admin!
+	before_action :authenticate_admin!, :set_locale
 	layout 'admin'
 
 	def index

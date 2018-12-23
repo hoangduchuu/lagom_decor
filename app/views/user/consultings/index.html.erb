@@ -1,3 +1,13 @@
+<style media="screen">
+<% @banners.each do |banner| %>
+<% if banner.name == 'consulting page banner image' %>
+#subheader-db { background: url(<%= banner.image_url %>) center center no-repeat; }
+<% end %>
+<% if banner.name == 'consulting page center image' %>
+#section-steps { background: url(<%= banner.image_url %>) center center no-repeat; }
+<% end %>
+<% end %>
+</style>
 <body class="page-services">
     <div id="wrapper">
         <!-- header begin -->
@@ -5,11 +15,11 @@
         <!-- header close -->
 
         <!-- subheader -->
-        <section id="subheader" data-speed="8" data-type="background">
-            <div class="container">
+        <section id="subheader-db" data-speed="8" data-type="background">
+            <div class="container" style="padding-top: 60px;">
                 <div class="row">
                     <div class="col-md-12">
-                        <h1>Consulting</h1>
+                        <h1 class="pull-left" style="color: white;">Consulting</h1>
                         <ul class="crumb">
                             <li><a href="index.html">Home</a></li>
                             <li class="sep">/</li>
@@ -34,49 +44,49 @@
                     <div class="col-md-12">
                         <div class="de_tab tab_steps">
                             <ul class="de_nav">
-                                <li class="active wow fadeIn" data-wow-delay="0s"><span>What is your style ?</span><div class="v-border"></div>
+                                <li class="active wow fadeIn" data-wow-delay="0s"><span><%= t ".no_01" %></span><div class="v-border"></div>
                                 </li>
-                                <li class="wow fadeIn" data-wow-delay=".4s"><span>From style to solution</span><div class="v-border"></div>
+                                <li class="wow fadeIn" data-wow-delay=".4s"><span><%= t ".no_02" %></span><div class="v-border"></div>
                                 </li>
-                                <li class="wow fadeIn" data-wow-delay=".8s"><span>Realization of solution</span><div class="v-border"></div>
+                                <li class="wow fadeIn" data-wow-delay=".8s"><span><%= t ".no_03" %></span><div class="v-border"></div>
                                 </li>
-                                <li class="wow fadeIn" data-wow-delay="1.2s"><span>Construction &amp; installation</span><div class="v-border"></div>
+                                <li class="wow fadeIn" data-wow-delay="1.2s"><span><%= t ".no_04" %></span><div class="v-border"></div>
                                 </li>
-                                <li class="wow fadeIn" data-wow-delay="1.6s"><span>The apartment is ready to welcome you</span><div class="v-border"></div>
+                                <li class="wow fadeIn" data-wow-delay="1.6s"><span><%= t ".no_05" %></span><div class="v-border"></div>
                                 </li>
                             </ul>
 
                             <div class="de_tab_content">
 
                                 <div id="tab1" style="font-size: medium;">
-                                    Customize your interior style simply and interestingly with Lagomdecor's test.
+                                    <%= t ".no_01_text" %>
                                 </div>
 
                                 <div id="tab2" style="font-size: medium;">
-                                    In just 2 hours of talking to Home Stylist, you will receive a package of solutions including: design (with products available at Lagomdecor) and quotes.
+                                    <%= t ".no_02_text" %>
                                 </div>
 
                                 <div id="tab3" style="font-size: medium;">
-                                    Get a more intuitive look through 3D drawings and get detailed quotes based on the solution.
+                                    <%= t ".no_03_text" %>
                                 </div>
                                 <div id="tab4" style="font-size: medium;">
-                                    The progress of the works is guaranteed by Lagomdecor will update you weekly via Email.
+                                    <%= t ".no_04_text" %>
                                 </div>
 
                                 <div id="tab5" style="font-size: medium;">
-                                 Enjoy the new private and cozy space in your own way!
-                             </div>
+                                   <%= t ".no_05_text" %>
+                               </div>
 
-                         </div>
+                           </div>
 
-                     </div>
-                 </div>
-             </div>
-         </div>
-     </section>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </section>
 
-     <!-- FAQ section START -->
-     <section id="section-faq" style="background-color: rgb(255, 183, 0, 0.8); padding-top: 20px; padding-bottom: 20px;">
+       <!-- FAQ section START -->
+       <section id="section-faq" style="background-color: rgb(255, 183, 0, 0.8); padding-top: 20px; padding-bottom: 20px;">
         <div class="container">
             <div class="row">
                 <div class="col-md-6 col-md-offset-3 text-center wow fadeInUp">

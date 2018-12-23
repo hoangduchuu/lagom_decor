@@ -6,11 +6,14 @@ class User::ProjectsController < ApplicationController
 		@contact = Contact.all
 		@projects = Project.all
 		@videos = Video.all
+		@banners = Banner.all
+		@project_categories = ProjectCategory.all
 	end
 
 	def show
 		@contact = Contact.all
 		@project = Project.find(params[:id])
+		@banners = Banner.all
 	end
 
 	private

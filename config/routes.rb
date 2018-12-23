@@ -1,14 +1,14 @@
 Rails.application.routes.draw do
 
-scope "(:locale)", locale: /#{I18n.available_locales.join("|")}/ do
+	scope "(:locale)", locale: /#{I18n.available_locales.join("|")}/ do
 	devise_for :admins, controllers: {registrations: "registrations"}
 
+	#root :to => 'admin/dashboards#index'
+	root :to => 'user/homes#index'
 
-root :to => 'admin/dashboards#index'
-
-  	devise_scope :admin do  
-   		get '/admins/sign_out' => 'devise/sessions#destroy'
-   		get '/admins/sign_in' => 'devise/sessions#new'     
+	devise_scope :admin do  
+		get '/admins/sign_out' => 'devise/sessions#destroy'
+		get '/admins/sign_in' => 'devise/sessions#new'    
 	end
 
 	namespace :admin do
@@ -27,6 +27,10 @@ root :to => 'admin/dashboards#index'
 		resources :product_categories
 		resources :interioridea_categories
 		resources :services
+		resources :banners
+		resources :project_images
+		resources :paintings
+		resources :moderators
 	end
 
 	namespace :user do
@@ -39,6 +43,7 @@ root :to => 'admin/dashboards#index'
 		resources :interiorideas
 		resources :projects
 		resources :videos
+		resources :abouts
 	end
-	end
+end
 end

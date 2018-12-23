@@ -25,7 +25,7 @@
               <td><%= c.category_name %></td>
               <td><%= c.show %></td>
               <td><%= link_to 'edit', edit_admin_interioridea_category_path(c), :class => 'btn btn-sm btn-warning' %>
-                <%= link_to ' del', admin_interioridea_category_path(c), :class => 'btn btn-sm btn-danger', method: :delete, data: { confirm: (t '.question') } %></td>
+                <%= link_to ' del', admin_interioridea_category_path(c), :class => 'btn btn-sm btn-danger', method: :delete, data: { confirm: "are you sure ?" } %></td>
               </tr>
               <% end %>
             </tbody>

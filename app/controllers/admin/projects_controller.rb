@@ -28,7 +28,7 @@ class Admin::ProjectsController < ApplicationController
 		@project = Project.new(allowed_params)
 
 	if @project.save
-		redirect_to admin_projects_path
+		redirect_to admin_project_images_path(project: @project.id)
 	else
 		redirect_to new_admin_project_path
 	end

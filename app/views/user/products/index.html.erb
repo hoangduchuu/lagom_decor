@@ -1,3 +1,10 @@
+<style media="screen">
+<% @banners.each do |banner| %>
+<% if banner.name == 'shop page banner image' %>
+#subheader-db { background: url(<%= banner.image_url %>) center center no-repeat; }
+<% end %>
+<% end %>
+</style>
 <body class="page-shop">
 
     <div id="wrapper">
@@ -6,11 +13,11 @@
         <!-- header close -->
 
         <!-- subheader -->
-        <section id="subheader" data-speed="8" data-type="background">
-            <div class="container">
+        <section id="subheader-db" data-speed="8" data-type="background">
+            <div class="container" style="padding-top: 60px;">
                 <div class="row">
                     <div class="col-md-12">
-                        <h1>Products</h1>
+                        <h1 class="pull-left" style="color: white;">Products</h1>
                         <ul class="crumb">
                             <li><a href="index.html">Home</a></li>
                             <li class="sep">/</li>
@@ -34,10 +41,9 @@
                                 <div class="col-md-12 text-center">
                                     <ul id="filters" class="wow fadeInUp" data-wow-delay="0s">
                                         <li><a href="#" data-filter="*" class="selected">All Designs</a></li>
-                                        <li><a href="#" data-filter=".residential">Bedroom</a></li>
-                                        <li><a href="#" data-filter=".sofa">Dining Room</a></li>
-                                        <li><a href="#" data-filter=".chair">Kitchen</a></li>
-                                        <li><a href="#" data-filter=".commercial">Guest Rooms</a></li>
+                                        <% @product_categories.map(&:category_name).uniq.each do |product| %>
+                                        <li><a href="#" data-filter=".<%= product %>"><%= product %></a></li>
+                                        <% end %>
                                     </ul>
 
                                 </div>
@@ -100,8 +106,8 @@
     </div>
 </div>
 <div class="price"><%= pro.price %> ₫</div>
-<a href="#" class="btn btn-line" data-toggle="modal" data-target="#exampleModal" onclick="inquiryform('decoration', 'sample-01')">Order this</a>
-</div>
+<a href="#" class="btn btn-line" data-toggle="" data-target="#<%= pro.id %>" onclick="inquiryform('decoration', 'sample-01')">Order this</a>
+</div>..
 <% end -%>
 </div>
 <!-- close gallery item -->
@@ -159,30 +165,30 @@
       </button>
   </div>
   <%= form_for @customer, :url => { :action => "create" } do |f| %>
-    <div class="modal-body">
-        Please fill your contact details, One of our staff will contact you soon...
-        <div class="form-group">
-            <label for="n">Your Name:</label> 
-            <%= f.text_field :customer_name, :class => 'form-control', :placeholder => 'your name...', :type => 'text', :required => true, :autocomplete => 'name' %>
-        </div>
-        <div class="form-group">
-            <label for="e">your Email:</label> 
-            <p><%= f.text_field :email, :class => 'form-control', :placeholder => 'your email...', :type => 'email', :required => true, :autocomplete => 'email' %></p>
-        </div>
-        <div class="form-group">
-            <label for="p">your Phone Number:</label> 
-            <p><%= f.text_field :phone, :class => 'form-control', :placeholder => 'your phone number...', :type => 'number', :required => true, :autocomplete => 'tel' %></p>
-        </div>
-        <div class="form-group">
-            <label for="m">Additional requests:</label> 
-            <p><%= f.text_area :message, :class => 'form-control', :placeholder => 'Type your message here...', :rows => '5' %></p>
-            <p><input id="category" type="hidden" value=""></p>
-            <p><input id="productid" type="hidden" value=""></p>
-            <div class="modal-footer">
-                <p><input id="btnclose" class="btn btn-secondary" type="button" value="clsoe" data-dismiss="modal">
-                    <%= f.submit 'Send Message', :class => 'btn btn-primary'  %></p>
-                </div>
+  <div class="modal-body">
+    Please fill your contact details, One of our staff will contact you soon...
+    <div class="form-group">
+        <label for="n">Your Name:</label> 
+        <%= f.text_field :customer_name, :class => 'form-control', :placeholder => 'your name...', :type => 'text', :required => true, :autocomplete => 'name' %>
+    </div>
+    <div class="form-group">
+        <label for="e">your Email:</label> 
+        <p><%= f.text_field :email, :class => 'form-control', :placeholder => 'your email...', :type => 'email', :required => true, :autocomplete => 'email' %></p>
+    </div>
+    <div class="form-group">
+        <label for="p">your Phone Number:</label> 
+        <p><%= f.text_field :phone, :class => 'form-control', :placeholder => 'your phone number...', :type => 'number', :required => true, :autocomplete => 'tel' %></p>
+    </div>
+    <div class="form-group">
+        <label for="m">Additional requests:</label> 
+        <p><%= f.text_area :message, :class => 'form-control', :placeholder => 'Type your message here...', :rows => '5' %></p>
+        <p><input id="category" type="hidden" value=""></p>
+        <p><input id="productid" type="hidden" value=""></p>
+        <div class="modal-footer">
+            <p><input id="btnclose" class="btn btn-secondary" type="button" value="clsoe" data-dismiss="modal">
+                <%= f.submit 'Send Message', :class => 'btn btn-primary'  %></p>
             </div>
+        </div>
         <% end %>
     </div>
 </div>

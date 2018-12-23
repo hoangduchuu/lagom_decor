@@ -1,3 +1,10 @@
+<style media="screen">
+<% @banners.each do |banner| %>
+<% if banner.name == 'interior ideas single page banner image' %>
+#subheader-db { background: url(<%= banner.image_url %>) center center no-repeat; }
+<% end %>
+<% end %>
+</style>
 <body class="page-service-item">
 
     <div id="wrapper">
@@ -6,12 +13,12 @@
         <!-- header close -->
 
         <!-- subheader -->
-        <section id="subheader" data-speed="8" data-type="background">
-            <div class="container">
+        <section id="subheader-db" data-speed="8" data-type="background">
+            <div class="container" style="padding-top: 60px;">
                 <div class="row">
                     <div class="col-md-12">
                         <% if @interioridea.title.present? %>
-                        <h1><%= truncate(sanitize(@interioridea.title, :tags => %w(br a)), :length => 20) %></h1>
+                        <h1 class="pull-left" style="color: white;"><%= truncate(sanitize(@interioridea.title, :tags => %w(br a)), :length => 20) %></h1>
                         <% end %>
                         <ul class="crumb">
                             <li><a href="index.html">Home</a></li>
@@ -36,16 +43,14 @@
 
                     <div class="col-md-12">
                         <div class="row">
-                            <div class="col-md-6 post-image wow fadeInLeft">
-                                <% if @interioridea.image.present? %>
-                                <%= image_tag(@interioridea.image_url, :class => 'img-responsive') %>
-                                <% end %>
-                            </div>
                             <div class="col-md-6">
                                 <div class="project-info">
-                                    <h2><%= @interioridea.title %></h2>
 
                                     <div class="details">
+                                        <div class="info-text">
+                                            <span class="title">Design Goes As:</span>
+                                            <span class="val"><%= @interioridea.title %></span>
+                                        </div>
                                         <div class="info-text">
                                             <span class="title">Category</span>
                                             <span class="val"><%= @interioridea.category %></span>
@@ -57,38 +62,66 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="separator"><span><i class="fa fa-arrow-down"></i></span></div>
-                        <div class="row">
-                            <div class="col-md-6 wow fadeInUp" data-wow-delay=".3s">
-                                <% if @interioridea.description.present? %>
-                                <%= sanitize @interioridea.description.html_safe %>
-                                <% end %>
-                            </div>
-                            <div class="col-md-6 pic-services wow fadeInUp" data-wow-delay=".6s">
-                                <% if @interioridea.image_one.present? %>
-                                <%= image_tag(@interioridea.image_one_url, :class => 'img-responsive') %>
-                                <% end %>
-                                <% if @interioridea.image_two.present? %>
-                                <%= image_tag(@interioridea.image_two_url, :class => 'img-responsive') %>
-                                <% end %>
-                                <% if @interioridea.image_three.present? %>
-                                <%= image_tag(@interioridea.image_three_url, :class => 'img-responsive') %>
-                                <% end %>
-                            </div>
-                        </div>
-                    </div>
+                            <div class="col-md-6">
+                                <div class="project-info">
 
+                                    <div class="details">
+                                        <div class="info-text">
+                                            <span class="title"><% if @interioridea.description.present? %>
+                                                <%= sanitize @interioridea.description.html_safe %>
+                                                <% end %></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="separator"><span><i class="fa fa-arrow-down"></i></span></div>
+                            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                                <!-- Carousel indicators -->
+                                <ol class="carousel-indicators">
+                                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                                </ol>   
+                                <!-- Wrapper for carousel items -->
+                                <div class="carousel-inner" style="max-height: 450px; width: auto;">
+                                    <div class="item active">
+                                        <div class="item">
+                                            <%= image_tag @interioridea.image_url if @interioridea.image.present? %>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <%= image_tag @interioridea.image_one_url if @interioridea.image_one.present? %>
+                                    </div>
+                                    <div class="item">
+                                        <%= image_tag @interioridea.image_two_url if @interioridea.image_two.present? %>
+                                    </div>
+                                    <div class="item">
+                                        <%= image_tag @interioridea.image_three_url if @interioridea.image_three.present? %>
+                                    </div>
+                                </div>
+                                <!-- Carousel controls -->
+                                <div class="slider_wrapper">
+                                    <a class="carousel-control left" href="#myCarousel" data-slide="prev" style="padding: 150px 0;">
+                                        <span><i class="fa fa-angle-left"></i></span>
+                                    </a>
+                                    <a class="carousel-control right" href="#myCarousel" data-slide="next" style="padding: 150px 0;">
+                                        <span><i class="fa fa-angle-right"></i></span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
             </div>
+
+            <section id="view-all-projects" class="call-to-action bg-color text-center" data-speed="5" data-type="background" aria-label="view-all-projects">
+                <%= link_to 'Contact the Designer', user_contacts_path, :class => 'btn btn-line-black btn-big' %>
+            </section>
+
+            <!-- footer begin -->
+            <%= render 'user/contacts/footer' %>
+            <!-- footer close -->
         </div>
-
-        <section id="view-all-projects" class="call-to-action bg-color text-center" data-speed="5" data-type="background" aria-label="view-all-projects">
-            <%= link_to 'Contact the Designer', user_contacts_path, :class => 'btn btn-line-black btn-big' %>
-        </section>
-
-        <!-- footer begin -->
-        <%= render 'user/contacts/footer' %>
-        <!-- footer close -->
-    </div>
-</body>
+    </body>
