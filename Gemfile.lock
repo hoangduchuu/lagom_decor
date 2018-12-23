@@ -89,6 +89,9 @@ GEM
       railties (>= 4.1.0, < 6.0)
       responders
       warden (~> 1.2.3)
+    devise_invitable (1.7.5)
+      actionmailer (>= 4.1.0)
+      devise (>= 4.0.0)
     erubi (1.7.1)
     excon (0.62.0)
     execjs (2.7.0)
@@ -254,6 +257,7 @@ DEPENDENCIES
   carrierwave (~> 1.2, >= 1.2.3)
   coffee-rails (~> 4.2)
   devise
+  devise_invitable (~> 1.7, >= 1.7.5)
   fog-aws
   font-awesome-sass (~> 5.0.13)
   globalize (~> 5.1.0)
