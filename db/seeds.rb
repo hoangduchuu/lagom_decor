@@ -17,9 +17,9 @@ Banner.create([{ name: 'home slider left image', image: '' }, { name: 'home slid
 	{ name: 'consulting page center image', image: '' }])
 
 admin = Admin.create(
-	email: "anu.in.vietnam@gmail.com",
-	password: "000000",
-	password_confirmation: "000000",
+	email: "hoangduchuuvn@gmail.com",
+	password: "123456",
+	password_confirmation: "123456",
 	username: "anu",
 	role: "admin",
 	phone: "00000000000")
